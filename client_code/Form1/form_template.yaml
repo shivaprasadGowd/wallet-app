@@ -14,7 +14,8 @@ components:
     type: Image
     layout_properties: {grid_position: 'UHHRTB,VDWJDR'}
   - name: button_1
-    properties: {text: START, background: '#34407f', foreground: '#37c5d7', role: filled-button}
+    properties: {text: START, background: '#37c5d7', foreground: '#34407f', role: filled-button,
+      bold: true}
     type: Button
     layout_properties: {grid_position: 'IMAKTP,NNGDPN'}
     event_bindings: {click: button_1_click}

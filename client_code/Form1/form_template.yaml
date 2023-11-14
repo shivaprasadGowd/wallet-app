@@ -8,11 +8,17 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
-  - type: FlowPanel
-    properties: {}
-    name: navbar_links
-    layout_properties: {grid_position: 'XTKTXK,EDQTWT'}
-    components:
-    - name: image_1
-      properties: {}
-      type: Image
+  - name: image_1
+    properties: {source: _/theme/digital-wallet-smartphone-icon-made-600nw-2314309781.webp,
+      height: 263}
+    type: Image
+    layout_properties: {grid_position: 'UHHRTB,VDWJDR'}
+  - name: button_1
+    properties: {text: START, background: '#34407f', foreground: '#37c5d7', role: filled-button}
+    type: Button
+    layout_properties: {grid_position: 'IMAKTP,NNGDPN'}
+    event_bindings: {click: button_1_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}

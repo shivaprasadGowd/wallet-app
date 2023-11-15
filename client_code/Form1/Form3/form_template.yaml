@@ -28,6 +28,10 @@ components:
   properties: {source: _/theme/new1.jpg}
   type: Image
   layout_properties: {grid_position: 'SZJELB,EBDLGQ'}
+- name: canvas_1
+  properties: {height: 458}
+  type: Canvas
+  layout_properties: {grid_position: 'HJWNXO,INWUUQ'}
 - name: button_1
   properties: {text: START, background: '#1ab6c1', foreground: 'theme:On Secondary
       Container', bold: true}

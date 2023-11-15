@@ -17,15 +17,15 @@ components:
   type: Image
   layout_properties: {grid_position: 'SZJELB,WPUBIK'}
 - name: image_5
-  properties: {}
+  properties: {source: _/theme/new1.jpg}
   type: Image
   layout_properties: {grid_position: 'SZJELB,GYDUGP'}
 - name: image_6
-  properties: {}
+  properties: {source: _/theme/wi3.jpg}
   type: Image
   layout_properties: {grid_position: 'SZJELB,SEMMKU'}
 - name: image_7
-  properties: {}
+  properties: {source: _/theme/new1.jpg}
   type: Image
   layout_properties: {grid_position: 'SZJELB,EBDLGQ'}
 - name: button_1

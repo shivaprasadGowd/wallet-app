@@ -1,12 +1,13 @@
-allow_embedding: false
-package_name: Wallet_App
-name: Wallet App
-startup_form: Form1
-renamed: true
-runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
-  server_spec: null}
 dependencies: []
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
+startup: {type: form, module: Form1.Form3}
+package_name: Wallet_App
+allow_embedding: false
+name: Wallet App
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
+  server_spec: null}
+startup_form: null
+renamed: true

@@ -1,25 +1,110 @@
-is_package: true
 container:
-  type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
+  type: ColumnPanel
+  properties: {col_spacing: none, spacing_above: large, spacing_below: large}
 components:
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: content_panel
-  layout_properties: {slot: default}
+- name: image_1
+  properties: {height: 50, source: _/theme/Logo...webp, spacing_below: large}
+  type: Image
+  layout_properties: {grid_position: 'RSSSIY,GMPCRY'}
+- name: label_1
+  properties: {text: Consumer, bold: true, align: center, background: '#f0c1c1', font_size: 17,
+    spacing_below: large}
+  type: Label
+  layout_properties: {grid_position: 'RSSSIY,VZIWYK'}
+- name: label_2
+  properties: {text: ' Business', bold: true, align: center, background: '#f0c1c1',
+    font_size: 17, spacing_below: large}
+  type: Label
+  layout_properties: {grid_position: 'RSSSIY,KWRRKR'}
+- name: label_3
+  properties: {text: Investor relations, bold: true, align: center, background: '#f0c1c1',
+    font_size: 17, spacing_below: large}
+  type: Label
+  layout_properties: {grid_position: 'RSSSIY,OXPTZR'}
+- name: label_4
+  properties: {text: Company, bold: true, align: center, background: '#f0c1c1', font_size: 17,
+    spacing_below: large}
+  type: Label
+  layout_properties: {grid_position: 'RSSSIY,QLSLYH'}
+- name: label_5
+  properties: {text: Career, bold: true, align: center, background: '#f0c1c1', font_size: 17,
+    spacing_below: large}
+  type: Label
+  layout_properties: {grid_position: 'RSSSIY,OPSRPR'}
+- name: button_1
+  properties: {text: Sign In, background: '#3c91ec', icon: 'fa:user-circle', icon_align: right,
+    foreground: '#dcefed', bold: true, font_size: 15}
+  type: Button
+  layout_properties: {grid_position: 'RSSSIY,XLIXIL', row_background: '#f8f2f2'}
+- name: label_6
+  properties: {text: "No Wallet KYC Required\ud83d\ude0ato pay using UPI on G-Wallet.",
+    align: center, bold: true, spacing_above: large, spacing_below: large, background: '#f1efef',
+    font_size: 15}
+  type: Label
+  layout_properties: {grid_position: 'HYXNST,IJVVDF'}
+- name: xy_panel_1
+  properties: {height: 408, spacing_above: large, spacing_below: large}
+  type: XYPanel
+  layout_properties: {grid_position: 'IEZDNI,ZGWYKO'}
   components:
-  - name: image_1
-    properties: {source: _/theme/digital-wallet-smartphone-icon-made-600nw-2314309781.webp,
-      height: 263}
+  - name: canvas_1
+    properties: {height: 100}
+    type: Canvas
+    layout_properties: {x: 38.45001678541303, y: 17.21249084547162, width: 200}
+  - name: image_2
+    properties: {height: 363, source: _/theme/Logo...webp}
     type: Image
-    layout_properties: {grid_position: 'UHHRTB,VDWJDR'}
-  - name: button_1
-    properties: {text: START, background: '#37c5d7', foreground: '#34407f', role: filled-button,
-      bold: true}
-    type: Button
-    layout_properties: {grid_position: 'IMAKTP,NNGDPN'}
-    event_bindings: {click: button_1_click}
-- type: FlowPanel
-  properties: {}
-  name: navbar_links
-  layout_properties: {slot: nav-right}
+    layout_properties: {x: 46.312496948987246, y: 0, width: 340}
+  - name: label_7
+    properties: {text: G-Wallet Payments App, font_size: 41, align: center, bold: true}
+    type: Label
+    layout_properties: {x: 374.17500000074506, y: 83.1500015258789, width: 547.075}
+  - name: label_8
+    properties: {text: 'Recharge & pay bills, book flights & movie tickets, open a
+        savings account, invest in stocks & mutual funds, and do a lot more.', align: center,
+      bold: true, font_size: 19}
+    type: Label
+    layout_properties: {x: 437.7375610359013, y: 150.5875015258789, width: 412}
+- name: xy_panel_2
+  properties: {height: 232, spacing_above: large}
+  type: XYPanel
+  layout_properties: {grid_position: 'FQTATE,DCTIRM'}
+  components:
+  - name: canvas_2
+    properties: {height: 41}
+    type: Canvas
+    layout_properties: {x: 4.449993897229433, y: 0, width: 966}
+  - name: label_9
+    properties: {text: Recharge & Pay Bills on G-Wallet., align: left, bold: true,
+      font_size: 30}
+    type: Label
+    layout_properties: {x: 25.387516785413027, y: 49.14999771118164, width: 501}
+  - name: image_4
+    properties: {height: 86, source: _/theme/idea_8794397.png}
+    type: Image
+    layout_properties: {x: 136.8875091560185, y: 146, width: 94}
+  - name: image_5
+    properties: {height: 85, source: _/theme/refresh-data_12657595.png}
+    type: Image
+    layout_properties: {x: 267.35001831129193, y: 147, width: 108}
+  - name: image_6
+    properties: {height: 85, source: _/theme/gas_10751861.png}
+    type: Image
+    layout_properties: {x: 394.45002441480756, y: 147, width: 113}
+  - name: image_8
+    properties: {height: 84, source: _/theme/router_9532531.png}
+    type: Image
+    layout_properties: {x: 532.0250366218388, y: 148, width: 112}
+  - name: image_7
+    properties: {height: 83, source: _/theme/hinduism_5523452.png}
+    type: Image
+    layout_properties: {x: 665.5000122077763, y: 149, width: 114.25}
+  - name: image_9
+    properties: {height: 86}
+    type: Image
+    layout_properties: {x: 808.5500000007451, y: 146, width: 112}
+  - name: image_3
+    properties: {height: 62, source: _/theme/phone.png}
+    type: Image
+    layout_properties: {x: 21.61250763013959, y: 170, width: 94}
+is_package: true

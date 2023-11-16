@@ -66,9 +66,9 @@ components:
     type: Label
     layout_properties: {x: 437.7375610359013, y: 150.5875015258789, width: 412}
 - name: xy_panel_2
-  properties: {height: 232, spacing_above: large}
+  properties: {height: 339, spacing_above: large}
   type: XYPanel
-  layout_properties: {grid_position: 'FQTATE,DCTIRM'}
+  layout_properties: {grid_position: 'BHUXZP,OFVROO'}
   components:
   - name: canvas_2
     properties: {height: 41}
@@ -79,32 +79,101 @@ components:
       font_size: 30}
     type: Label
     layout_properties: {x: 25.387516785413027, y: 49.14999771118164, width: 501}
-  - name: image_4
-    properties: {height: 86, source: _/theme/idea_8794397.png}
-    type: Image
-    layout_properties: {x: 136.8875091560185, y: 146, width: 94}
-  - name: image_5
-    properties: {height: 85, source: _/theme/refresh-data_12657595.png}
-    type: Image
-    layout_properties: {x: 267.35001831129193, y: 147, width: 108}
-  - name: image_6
-    properties: {height: 85, source: _/theme/gas_10751861.png}
-    type: Image
-    layout_properties: {x: 394.45002441480756, y: 147, width: 113}
-  - name: image_8
-    properties: {height: 84, source: _/theme/router_9532531.png}
-    type: Image
-    layout_properties: {x: 532.0250366218388, y: 148, width: 112}
-  - name: image_7
-    properties: {height: 83, source: _/theme/hinduism_5523452.png}
-    type: Image
-    layout_properties: {x: 665.5000122077763, y: 149, width: 114.25}
-  - name: image_9
-    properties: {height: 86}
-    type: Image
-    layout_properties: {x: 808.5500000007451, y: 146, width: 112}
   - name: image_3
     properties: {height: 62, source: _/theme/phone.png}
     type: Image
     layout_properties: {x: 21.61250763013959, y: 170, width: 94}
+  - name: image_4
+    properties: {height: 62, source: _/theme/idea_8794397.png}
+    type: Image
+    layout_properties: {x: 148.31249694898725, y: 170, width: 90}
+  - name: image_5
+    properties: {height: 62, source: _/theme/refresh-data_12657595.png}
+    type: Image
+    layout_properties: {x: 275.5000122077763, y: 170, width: 88}
+  - name: image_8
+    properties: {height: 60, source: _/theme/router_9532531.png}
+    type: Image
+    layout_properties: {x: 532.4624755866826, y: 172, width: 81}
+  - name: label_10
+    properties: {text: 'Recharge
+
+        Prepaid
+
+        Mobile', font_size: 14, align: left, bold: true}
+    type: Label
+    layout_properties: {x: 38.150013733655214, y: 237, width: 83.9124984741211}
+  - name: label_11
+    properties: {text: 'Pay
+
+        Electricity
+
+        Bill', bold: true}
+    type: Label
+    layout_properties: {x: 155.78750305250287, y: 237, width: 83}
+  - name: label_12
+    properties: {text: 'Recharge
+
+        DTH
+
+        Connection', bold: true}
+    type: Label
+    layout_properties: {x: 280.6249816901982, y: 237, width: 88.51250457763672}
+  - name: label_13
+    properties: {text: 'Book
+
+        Gas
+
+        Cylinder', bold: true}
+    type: Label
+    layout_properties: {x: 420.6500061042607, y: 237, width: 80.6875}
+  - name: image_6
+    properties: {height: 60, source: _/theme/gas-cylinder_8073148.png}
+    type: Image
+    layout_properties: {x: 394.7375305183232, y: 172, width: 89}
+  - name: label_14
+    properties: {text: 'Pay
+
+        Broadband &
+
+        Landline Bill', bold: true}
+    type: Label
+    layout_properties: {x: 538.2375000007451, y: 241, width: 96}
+  - name: image_7
+    properties: {height: 66, source: _/theme/hinduism_5523452.png}
+    type: Image
+    layout_properties: {x: 669.0250366218388, y: 165, width: 78.25}
+  - name: image_9
+    properties: {height: 80, source: _/theme/1626268580682.png}
+    type: Image
+    layout_properties: {x: 787.2000244148076, y: 161, width: 85}
+  - name: label_15
+    properties: {text: 'Pay
+
+        Education
+
+        Fee', bold: true}
+    type: Label
+    layout_properties: {x: 680.7000854499638, y: 241, width: 77.0625}
+  - name: label_16
+    properties: {text: 'All
+
+        Payment
+
+        Services', bold: true}
+    type: Label
+    layout_properties: {x: 803.9500244148076, y: 241, width: 81.25}
+- name: xy_panel_3
+  properties: {height: 245}
+  type: XYPanel
+  layout_properties: {grid_position: 'RQUYWN,QEXDAD'}
+  components:
+  - name: label_17
+    properties: {text: Book & Buy on G-Wallet., font_size: 30, bold: true}
+    type: Label
+    layout_properties: {x: 25.387516785413027, y: 49.14999771118164, width: 501}
+  - name: image_10
+    properties: {}
+    type: Image
+    layout_properties: {x: 120.40000915527344, y: 225, width: 200}
 is_package: true

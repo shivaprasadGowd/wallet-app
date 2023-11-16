@@ -66,7 +66,7 @@ components:
     type: Label
     layout_properties: {x: 437.7375610359013, y: 150.5875015258789, width: 412}
 - name: xy_panel_2
-  properties: {height: 339, spacing_above: large}
+  properties: {height: 339, spacing_above: large, visible: false}
   type: XYPanel
   layout_properties: {grid_position: 'BHUXZP,OFVROO'}
   components:
@@ -175,5 +175,5 @@ components:
   - name: image_10
     properties: {}
     type: Image
-    layout_properties: {x: 120.40000915527344, y: 225, width: 200}
+    layout_properties: {x: 36.60000305250287, y: 45, width: 200}
 is_package: true

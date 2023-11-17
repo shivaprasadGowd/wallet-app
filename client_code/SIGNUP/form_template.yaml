@@ -1,0 +1,72 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: label_1
+    properties: {text: username, align: center}
+    type: Label
+    layout_properties: {grid_position: 'GUOVLJ,JSTIJC'}
+  - name: text_box_1
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: 'Enter
+        Username :', border: '', enabled: true, foreground: '', visible: true, text: '',
+      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false}
+    type: TextBox
+    layout_properties: {grid_position: 'GUOVLJ,AGFZGN'}
+    data_bindings:
+    - {property: text, code: 'self.item[''username'']', writeback: true}
+    event_bindings: {pressed_enter: text_box_1_pressed_enter}
+  - name: label_2
+    properties: {text: Password, align: center}
+    type: Label
+    layout_properties: {grid_position: 'FISEPD,IXLIUJ'}
+  - name: text_box_2
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: 'Enter
+        Password:', border: '', enabled: true, foreground: '', visible: true, text: '',
+      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false}
+    type: TextBox
+    layout_properties: {grid_position: 'FISEPD,MDUSXL'}
+    data_bindings:
+    - {property: text, code: 'self.item[''password'']', writeback: true}
+  - name: label_3
+    properties: {text: Pan No, align: center}
+    type: Label
+    layout_properties: {grid_position: 'RFKNWP,IPWXCF'}
+  - name: text_box_3
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: 'Enter
+        Pan No:', border: '', enabled: true, foreground: '', visible: true, text: '',
+      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false}
+    type: TextBox
+    layout_properties: {grid_position: 'RFKNWP,OJTSIR'}
+    data_bindings:
+    - {property: text, code: 'self.item[''pan'']', writeback: true}
+  - name: label_4
+    properties: {text: address, align: center}
+    type: Label
+    layout_properties: {grid_position: 'YFGASU,AFTQPN'}
+  - name: text_box_4
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: 'Enter
+        Address:', border: '', enabled: true, foreground: '', visible: true, text: '',
+      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false}
+    type: TextBox
+    layout_properties: {grid_position: 'YFGASU,UQABJD'}
+    data_bindings:
+    - {property: text, code: 'self.item[''address'']', writeback: true}
+  - name: button_1
+    properties: {text: SIGNUP}
+    type: Button
+    layout_properties: {grid_position: 'LMCZJJ,IADSPJ'}
+    event_bindings: {click: button_1_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}

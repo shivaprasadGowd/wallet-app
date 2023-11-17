@@ -32,10 +32,11 @@ components:
   type: Label
   layout_properties: {grid_position: 'RSSSIY,OPSRPR'}
 - name: button_1
-  properties: {text: Sign In, background: '#3c91ec', icon: 'fa:user-circle', icon_align: right,
+  properties: {text: LOGIN, background: '#3c91ec', icon: 'fa:user-circle', icon_align: right,
     foreground: '#dcefed', bold: true, font_size: 15}
   type: Button
   layout_properties: {grid_position: 'RSSSIY,XLIXIL', row_background: '#f8f2f2'}
+  event_bindings: {click: button_1_click}
 - name: label_6
   properties: {text: "No Wallet KYC Required\ud83d\ude0ato pay using UPI on G-Wallet.",
     align: center, bold: true, spacing_above: large, spacing_below: large, background: '#f1efef',

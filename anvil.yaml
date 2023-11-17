@@ -10,4 +10,25 @@ name: Wallet App
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
 startup_form: Form1
+db_schema:
+  users:
+    client: none
+    server: full
+    columns:
+    - name: username
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: password
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: user_type
+      admin_ui: {order: 2, width: 200}
+      type: string
+    - name: pan
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: address
+      admin_ui: {width: 200, order: 4}
+      type: string
+    title: users
 renamed: true

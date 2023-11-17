@@ -1,0 +1,44 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: label_1
+    properties: {align: center, text: username}
+    type: Label
+    layout_properties: {grid_position: 'CRCAIL,BTNIEJ BCNAYR,DHYMWJ'}
+  - name: label_2
+    properties: {text: Password, align: center}
+    type: Label
+    layout_properties: {grid_position: 'CRCAIL,BTNIEJ EJAFAR,CURSET'}
+  - name: text_box_1
+    properties: {text: '', placeholder: Enter username}
+    type: TextBox
+    layout_properties: {grid_position: 'CRCAIL,ASHBJA ATVQAG,DQPTDE'}
+    data_bindings:
+    - {property: text, code: 'self.item[''username'']', writeback: true}
+  - name: text_box_2
+    properties: {text: '', placeholder: Enter Password}
+    type: TextBox
+    layout_properties: {grid_position: 'CRCAIL,ASHBJA JSDTEU,IUNFCO'}
+    data_bindings:
+    - {property: text, code: 'self.item[''password'']', writeback: true}
+  - name: button_1
+    properties: {text: LOGIN}
+    type: Button
+    layout_properties: {grid_position: 'EYLQZU,EGBCUK'}
+    event_bindings: {click: button_1_click}
+  - name: SIGNUP
+    properties: {text: SIGNUP}
+    type: Button
+    layout_properties: {grid_position: 'EYLQZU,SYBTHP'}
+    event_bindings: {click: SIGNUP_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}

@@ -19,7 +19,9 @@ class SIGNUP(SIGNUPTemplate):
       self.text_box_1.text, 
       self.text_box_2.text, 
       self.text_box_3.text,
-      self.text_box_4.text
+      self.text_box_4.text,
+      self.text_box_5.text,
+      self.text_box_6.text,
     )
     alert (self.text_box_1.text + ' added')
     open_form('LOGIN')

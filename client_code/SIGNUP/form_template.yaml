@@ -109,7 +109,7 @@ components:
     name: label_9
     layout_properties: {slot: default, grid_position: 'RVDJCO,TGXZHF'}
   - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Password,
+    properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Password,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: '#F7E3DF', bold: false, underline: false}
@@ -117,6 +117,14 @@ components:
     layout_properties: {grid_position: 'RVDJCO,QYNMUG'}
     data_bindings:
     - {property: text, code: 'self.item[''password'']', writeback: true}
+  - name: label_13
+    properties: {text: 'Enter Password Again:'}
+    type: Label
+    layout_properties: {grid_position: 'UTUTVB,OUYMFM'}
+  - name: text_box_7
+    properties: {placeholder: Retype Password, background: '#F7E3DF', hide_text: true}
+    type: TextBox
+    layout_properties: {grid_position: 'UTUTVB,CJFWKJ'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Enter your Pan No, font_size: null, font: '', spacing_above: small,

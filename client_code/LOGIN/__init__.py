@@ -13,8 +13,6 @@ class LOGIN(LOGINTemplate):
         # Any code you write here will run before the form opens.
 
     def button_1_click(self, **event_args):
-        """This method is called when the button is clicked"""
-        
         username = self.text_box_1.text
         password = self.text_box_2.text
 
@@ -27,12 +25,14 @@ class LOGIN(LOGINTemplate):
                 open_form('admin')
             elif user_type == 'customer':
                 open_form('customer')
+            elif user_type == '':
+                open_form('customer')
         else:
             # Show an error message for invalid login
             alert("Invalid username or password", title="Login Failed")
+          
+    def link_1_click(self, **event_args):
+      open_form('Form1')
 
-    
-
-    def SIGNUP_click(self, **event_args):
-      """This method is called when the button is clicked"""
+    def button_2_click(self, **event_args):
       open_form('SIGNUP')

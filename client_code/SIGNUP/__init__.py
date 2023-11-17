@@ -34,4 +34,7 @@ class SIGNUP(SIGNUPTemplate):
       alert (self.text_box_1.text + ' added')
       open_form('LOGIN')
 
+  def link_1_click(self, **event_args):
+    open_form()
+
 

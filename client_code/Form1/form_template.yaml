@@ -1,6 +1,6 @@
 container:
   type: ColumnPanel
-  properties: {col_spacing: none, spacing_above: large, spacing_below: large}
+  properties: {col_spacing: none, spacing_above: large, spacing_below: large, col_widths: '{}'}
 components:
 - name: image_1
   properties: {height: 50, source: _/theme/Logo...webp, spacing_below: large}

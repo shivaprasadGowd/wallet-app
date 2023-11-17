@@ -1,36 +1,7 @@
 container:
   type: ColumnPanel
-  properties: {col_spacing: none, spacing_above: large, spacing_below: large, col_widths: '{}'}
+  properties: {col_spacing: none, spacing_above: large, spacing_below: large, col_widths: '{"XLIXIL":8}'}
 components:
-- name: image_1
-  properties: {height: 50, source: _/theme/Logo...webp, spacing_below: large}
-  type: Image
-  layout_properties: {grid_position: 'RSSSIY,GMPCRY'}
-- name: label_1
-  properties: {text: Consumer, bold: true, align: center, background: '#f0c1c1', font_size: 17,
-    spacing_below: large}
-  type: Label
-  layout_properties: {grid_position: 'RSSSIY,VZIWYK'}
-- name: label_2
-  properties: {text: ' Business', bold: true, align: center, background: '#f0c1c1',
-    font_size: 17, spacing_below: large}
-  type: Label
-  layout_properties: {grid_position: 'RSSSIY,KWRRKR'}
-- name: label_3
-  properties: {text: Investor relations, bold: true, align: center, background: '#f0c1c1',
-    font_size: 17, spacing_below: large}
-  type: Label
-  layout_properties: {grid_position: 'RSSSIY,OXPTZR'}
-- name: label_4
-  properties: {text: Company, bold: true, align: center, background: '#f0c1c1', font_size: 17,
-    spacing_below: large}
-  type: Label
-  layout_properties: {grid_position: 'RSSSIY,QLSLYH'}
-- name: label_5
-  properties: {text: Career, bold: true, align: center, background: '#f0c1c1', font_size: 17,
-    spacing_below: large}
-  type: Label
-  layout_properties: {grid_position: 'RSSSIY,OPSRPR'}
 - name: button_1
   properties: {text: LOGIN, background: '#3c91ec', icon: 'fa:user-circle', icon_align: right,
     foreground: '#dcefed', bold: true, font_size: 15}

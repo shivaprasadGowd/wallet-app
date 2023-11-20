@@ -20,11 +20,13 @@ class SIGNUP(SIGNUPTemplate):
       self.text_box_7.text =''
       self.text_box_7.focus()
     elif self.text_box_3.text == self.text_box_7.text:
-      input_value = self.text_box_4.text
-      if len(input_value) != 10:
-        alert("Pan Should be of 10 characters.")
+      converted_text = self.text_box_4.text 
+      if self.is_pan_card_detail(converted_text):
+        alert("Valid PAN card detail")
+        count=count+1
       else:
-        count=count+1  
+        alert("Invalid PAN card detail")
+      
       phone_number = self.text_box_6.text
       if len(str(phone_number)) == 10:
         count=count+1
@@ -36,7 +38,7 @@ class SIGNUP(SIGNUPTemplate):
       else:
         alert("Error: Please enter a valid 12-digit Aadhar number")
         
-    if count==3:
+    if count==2:
       anvil.server.call(
         'add_info', 
         self.text_box_1.text, 
@@ -54,11 +56,22 @@ class SIGNUP(SIGNUPTemplate):
     open_form('Form1')
 
   def text_box_4_change(self, **event_args):
-    input_value = self.text_box_4.text
-    if any(char.islower() for char in input_value):
-      alert("Warning: The input contains lowercase letters.")
-    else:
-      pass
+    current_text = self.text_box_4.text
+    converted_text = current_text.upper()
+    self.text_box_4.text = converted_text
+    
+    
+   
+  def is_pan_card_detail(self, text):
+        if (
+            len(text) == 10 and
+            text[:5].isalpha() and
+            text[5:9].isdigit() and
+            text[9].isalpha()
+        ):
+          return True
+        else:
+          return False
 
     
       

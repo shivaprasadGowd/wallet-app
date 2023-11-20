@@ -26,12 +26,19 @@ class SIGNUP(SIGNUPTemplate):
         count=count+1
       else:
         alert("Invalid PAN card detail")
-      
       phone_number = self.text_box_6.text
-      if len(str(phone_number)) == 10:
-        count=count+1
+      val
+      if validate_phone_number(phone_number):
+        print("Valid phone number:", phone_number)
+        # Perform actions for a valid phone number
       else:
-        alert("Error: Please enter a valid 10-digit phone number.")
+        print("Invalid phone number:", phone_number)  
+      
+      # phone_number = self.text_box_6.text
+      # if len(str(phone_number)) == 10:
+      #   count=count+1
+      # else:
+      #   alert("Error: Please enter a valid 10-digit phone number.")
       aadharr= self.text_box_8.text
       if len(str(aadharr)) == 12:
         count=count+1
@@ -73,15 +80,26 @@ class SIGNUP(SIGNUPTemplate):
         else:
           return False
           
-  def text_box_6_change(event_args):
+  def text_box_6_change(self, **event_args):
     phone_number = self.text_box_6.text
     if validate_phone_number(phone_number):
       print("Valid phone number:", phone_number)
         # Perform further actions here if the phone number is valid
     else:
         # Phone number is invalid
-        print("Invalid phone number:", phone_number)
+      print("Invalid phone number:", phone_number)
         # Display an error message or take appropriate action for invalid input
+
+  
+  def validate_phone_number(phone_number):
+    # Define a regex pattern for the phone number format
+    pattern = r'^(0|91)[6-9]\d{9}$'
+
+    # Check if the provided phone number matches the pattern
+    if re.match(pattern, phone_number):
+        return True  # Valid phone number
+    else:
+        return False  # Invalid phone number
     
       
 

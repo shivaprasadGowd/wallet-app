@@ -162,6 +162,7 @@ components:
     data_bindings:
     - {code: 'self.item[''phone'']', writeback: true, property: text}
     name: text_box_6
+    event_bindings: {change: text_box_6_change}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Enter your Address:', font_size: null, font: '', spacing_above: small,

@@ -15,7 +15,7 @@ def validate_login(username, password):
         return None
 
 @anvil.server.callable
-def add_info(email,username, password,pan,address,phone):
+def add_info(email,username, password,pan,address,phone,aadhar):
   app_tables.users.add_row(
     email=email,
     username=username, 
@@ -23,5 +23,7 @@ def add_info(email,username, password,pan,address,phone):
     pan=pan,
     address=address,
     phone= phone,
-    usertype='customer'
+    aadhar=aadhar,
+    usertype='customer',
+    confirmed=True
   )

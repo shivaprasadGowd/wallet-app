@@ -7,7 +7,7 @@ components:
 - type: ColumnPanel
   properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
     wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-    spacing_below: small, background: '#F7E3DF'}
+    spacing_below: small, background: '#3FE5FF'}
   layout_properties: {slot: default}
   name: outlined_card_1
   components:
@@ -28,15 +28,15 @@ components:
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: Business, font_size: 16, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '#F7E3DF',
-      bold: true, underline: false, icon: ''}
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
     layout_properties: {grid_position: 'YMBFQL,VMXLZA'}
     name: label_2
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: Invester Relations, font_size: 16, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '#F7E3DF',
-      bold: true, underline: false, icon: ''}
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
     layout_properties: {grid_position: 'YMBFQL,AWHECM'}
     name: label_3
   - type: Label
@@ -80,8 +80,8 @@ components:
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Email,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '#F7E3DF', bold: false, underline: false}
+      font: '', spacing_above: small, type: email, spacing_below: small, italic: false,
+      background: '#DFFDFF', bold: false, underline: false}
     layout_properties: {grid_position: 'RUZJVE,FRGCYP'}
     data_bindings:
     - {code: 'self.item[''email'']', writeback: true, property: text}
@@ -97,7 +97,7 @@ components:
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Username,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '#F7E3DF', bold: false, underline: false}
+      background: '#DFFDFF', bold: false, underline: false}
     layout_properties: {grid_position: 'TWOERD,INKPMZ'}
     data_bindings:
     - {code: 'self.item[''username'']', writeback: true, property: text}
@@ -113,7 +113,7 @@ components:
     properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Password,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '#F7E3DF', bold: false, underline: false}
+      background: '#DFFDFF', bold: false, underline: false}
     layout_properties: {grid_position: 'RVDJCO,QYNMUG'}
     data_bindings:
     - {code: 'self.item[''password'']', writeback: true, property: text}
@@ -122,7 +122,10 @@ components:
     type: Label
     layout_properties: {grid_position: 'UTUTVB,OUYMFM'}
     name: label_13
-  - properties: {placeholder: Retype Password, background: '#F7E3DF', hide_text: true}
+  - properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Retype Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '#DFFDFF', bold: false, underline: false}
     type: TextBox
     layout_properties: {grid_position: 'UTUTVB,CJFWKJ'}
     name: text_box_7
@@ -134,14 +137,31 @@ components:
     layout_properties: {grid_position: 'RVPAQU,KMVOHA'}
     name: label_10
   - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: true, foreground: '', visible: true, text: Pan, font_size: null,
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Pan,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '#F7E3DF', bold: false, underline: false}
+      background: '#DFFDFF', bold: false, underline: false}
     layout_properties: {grid_position: 'RVPAQU,NYRBDH'}
     data_bindings:
     - {code: 'self.item[''pan'']', writeback: true, property: text}
     name: text_box_4
+    event_bindings: {change: text_box_4_change}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Enter your Phone Number:', font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    layout_properties: {grid_position: 'SAEDAX,PECDUQ'}
+    name: label_12
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Phone Number,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: '#DFFDFF', bold: false, underline: false}
+    layout_properties: {grid_position: 'SAEDAX,MNYPJE'}
+    data_bindings:
+    - {code: 'self.item[''phone'']', writeback: true, property: text}
+    name: text_box_6
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Enter your Address:', font_size: null, font: '', spacing_above: small,
@@ -153,36 +173,36 @@ components:
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Address,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '#F7E3DF', bold: false, underline: false}
-    layout_properties: {grid_position: 'CANMCM,MICABM'}
+      background: '#DFFDFF', bold: false, underline: false}
+    layout_properties: {grid_position: 'CANMCM,XETVER'}
     data_bindings:
     - {code: 'self.item[''address'']', writeback: true, property: text}
     name: text_box_5
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Enter your Phone Number:', font_size: null, font: '',
+      visible: true, text: 'Enter your Aadhar details:', font_size: null, font: '',
       spacing_above: small, icon_align: left, spacing_below: small, italic: false,
       background: '', bold: false, underline: false, icon: ''}
-    layout_properties: {grid_position: 'UQUMZD,VTHLPZ'}
-    name: label_12
+    name: label_6
+    layout_properties: {grid_position: 'OFIHSF,VRPQTJ'}
   - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Phone Number,
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Aadhar detalis,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '#F7E3DF', bold: false, underline: false}
-    layout_properties: {grid_position: 'UQUMZD,RBVTNA'}
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: '#DFFDFF', bold: false, underline: false}
+    name: text_box_8
+    layout_properties: {grid_position: 'OFIHSF,WOIVWM'}
     data_bindings:
-    - {code: 'self.item[''phone'']', writeback: true, property: text}
-    name: text_box_6
+    - {property: text, code: 'self.item[''aadhar'']', writeback: true}
   - type: Spacer
     properties: {height: 32}
     layout_properties: {grid_position: 'FRDZCL,CABLKA'}
     name: spacer_1
   - type: Button
     properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Signup, font_size: 16, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '#FF9E8A',
-      bold: true, underline: false, icon: ''}
+      foreground: '#000000', visible: true, text: Signup, font_size: 16, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#0770FF', bold: true, underline: false, icon: ''}
     layout_properties: {slot: default, grid_position: 'WJODII,ZOXGTI'}
     event_bindings: {click: button_1_click}
     name: button_1

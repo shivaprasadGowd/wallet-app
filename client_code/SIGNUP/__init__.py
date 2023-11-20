@@ -72,7 +72,20 @@ class SIGNUP(SIGNUPTemplate):
           return True
         else:
           return False
-
+          
+  def text_box_6_change(event_args):
+    # Get the phone number from the TextBox (self.text_box_6.text)
+    phone_number = self.text_box_6.text
+    
+    # Validate the phone number using the validate_phone_number function
+    if validate_phone_number(phone_number):
+        # Phone number is valid
+        print("Valid phone number:", phone_number)
+        # Perform further actions here if the phone number is valid
+    else:
+        # Phone number is invalid
+        print("Invalid phone number:", phone_number)
+        # Display an error message or take appropriate action for invalid input
     
       
 

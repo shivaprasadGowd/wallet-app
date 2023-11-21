@@ -68,7 +68,7 @@ components:
   type: Label
   layout_properties: {grid_position: 'KGCMPG,EPWJZH'}
   name: label_6
-- properties: {height: 408, spacing_above: large, spacing_below: large}
+- properties: {height: 346, spacing_above: large, spacing_below: large}
   type: XYPanel
   layout_properties: {grid_position: 'IEZDNI,ZGWYKO'}
   name: xy_panel_1

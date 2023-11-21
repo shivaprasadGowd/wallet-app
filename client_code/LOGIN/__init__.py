@@ -30,11 +30,12 @@ class LOGIN(LOGINTemplate):
             else:
                 open_form('customer')  # Default to customer form if user_type is not specified
         else:
-            alert("Invalid login credentials.")
+            self.label_9.text= "Invalid login credentials"
+            self.text_box_1.text=''
+            self.text_box_1.focus()
+            self.text_box_2.text=''
+            self.text_box_2.focus()
 
-    # def get_user(self, login_input):
-
-    #   return None  # No user found for the given input
 
     def get_user(self, login_input):
     # Check if the login input is a valid username
@@ -44,8 +45,17 @@ class LOGIN(LOGINTemplate):
         
       user_by_email = app_tables.users.get(email=login_input)
       if user_by_email:
-        return user_by_email  
+        return user_by_email 
+        
+      user_by_phone = app_tables.users.get(phone=int(login_input))
+      if user_by_phone:
+        return user_by_phone
+      else:
+        return None
 
     def link_1_click(self, **event_args):
       open_form('Form1')
+
+    def button_2_click(self, **event_args):
+      open_form('SIGNUP')
 

@@ -7,30 +7,48 @@ from anvil.tables import app_tables
 
 class LOGIN(LOGINTemplate):
     def __init__(self, **properties):
-        # Set Form properties and Data Bindings.
         self.init_components(**properties)
 
     def button_1_click(self, **event_args):
-      username = self.text_box_1.text
-      password = self.text_box_2.text
-      user_type = anvil.server.call('validate_login', username, password)
+        # Get the login input (username, phone number, or email)
+        login_input = self.text_box_1.text.strip()
 
-      if user_type:
+        # Get the password
+        password = self.text_box_2.text.strip()
+
+        # Get the user based on login input
+        user = self.get_user(login_input)
+
+        # Check if user exists and password matches
+        if user is not None and user['password'] == password:
+            user_type = user['usertype']
+
             if user_type == 'admin':
                 open_form('admin')
             elif user_type == 'customer':
                 open_form('customer')
-            elif user_type == '':
-                open_form('customer')
-      else:
-            alert("Invalid username or password", title="Login Failed")
-          
-    def link_1_click(self, **event_args):
-      open_form('Form1')
+            else:
+                open_form('customer')  # Default to customer form if user_type is not specified
+        else:
+            alert("Invalid login credentials.")
 
-    def button_2_click(self, **event_args):
-      open_form('SIGNUP')
+    def get_user(self, login_input):
+    # Check if the login input is a valid username
+      user_by_username = app_tables.users.get(username=login_input)
+    if user_by_username:
+        return user_by_username
 
-    def button_1_click(self, **event_args):
-      """This method is called when the button is clicked"""
-      pass
+    # Check if the login input is a valid phone number
+    user_by_phone = app_tables.users.search(
+        q.like('phone', '%' + login_input + '%', case_sensitive=False)
+    ).get()
+    if user_by_phone:
+        return user_by_phone
+
+    # Check if the login input is a valid email
+    user_by_email = app_tables.users.get(email=login_input)
+    if user_by_email:
+        return user_by_email
+
+    return None  # No user found for the given input
+

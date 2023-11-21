@@ -62,7 +62,7 @@ components:
     layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
     event_bindings: {click: link_1_click}
 - type: Spacer
-  properties: {height: 106}
+  properties: {height: 66}
   name: spacer_1
   layout_properties: {slot: default}
 - type: ColumnPanel
@@ -99,6 +99,18 @@ components:
       background: '#DFFDFF', bold: false, underline: false}
     name: text_box_2
     layout_properties: {grid_position: 'QUYWZW,FWYBHT'}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_3
+    layout_properties: {grid_position: 'KDIBKW,VVSKFP'}
+  - type: Label
+    properties: {}
+    name: label_9
+    layout_properties: {grid_position: 'KDIBKW,KVLVTF'}
+  - type: Spacer
+    properties: {height: 17}
+    name: spacer_4
+    layout_properties: {grid_position: 'YRKOXV,ZVINBT'}
   - type: Button
     properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
       foreground: '#000000', visible: true, text: Login, font_size: 16, font: '',
@@ -107,27 +119,22 @@ components:
     name: button_1
     layout_properties: {grid_position: 'JREMBO,UWQEEF'}
     event_bindings: {click: button_1_click}
-- type: Spacer
-  properties: {height: 70}
-  name: spacer_2
-  layout_properties: {slot: default}
-- type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{}'}
-  name: outlined_card_3
-  layout_properties: {slot: default}
-  components:
+  - type: Spacer
+    properties: {height: 98}
+    name: spacer_2
+    layout_properties: {slot: default, grid_position: 'ROSUTS,NTCBDS'}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Unable to log in, try signing up instead.', font_size: 18,
       font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
       background: '', bold: false, underline: false, icon: ''}
     name: label_8
-    layout_properties: {grid_position: 'ONKGRT,RSDVMR'}
+    layout_properties: {grid_position: 'BUDUKM,DJEXVZ'}
   - type: Button
     properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
       foreground: '#000000', visible: true, text: Sign up, font_size: 16, font: '',
       spacing_above: small, icon_align: left, spacing_below: small, italic: false,
       background: '#0770FF', bold: false, underline: false, icon: ''}
     name: button_2
-    layout_properties: {grid_position: 'IWOEHR,FOZOQC'}
+    layout_properties: {grid_position: 'ULPHDC,HAHAJX'}
     event_bindings: {click: button_2_click}

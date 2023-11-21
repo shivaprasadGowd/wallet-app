@@ -10,7 +10,7 @@ class customer(customerTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     if user:
-        self.label_3.text = f"Welcome, {user['username']}!"
+        self.label_8.text = f"Welcome, {user['username']}!"
 
     # Any code you write here will run before the form opens.
 

@@ -29,6 +29,7 @@ class SIGNUP(SIGNUPTemplate):
       phone_number = self.text_box_6.text
       val
       if validate_phone_number(phone_number):
+        count 
         print("Valid phone number:", phone_number)
         # Perform actions for a valid phone number
       else:

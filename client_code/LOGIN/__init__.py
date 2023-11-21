@@ -25,10 +25,8 @@ class LOGIN(LOGINTemplate):
 
             if user_type == 'admin':
                 open_form('admin')
-            elif user_type == 'customer':
-                open_form('customer')
-            else:
-                open_form('customer')  # Default to customer form if user_type is not specified
+            if user_type == 'customer':
+                open_form('customer', user=user)
         else:
             self.label_9.text= "Invalid login credentials"
             self.text_box_1.text=''

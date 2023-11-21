@@ -29,12 +29,12 @@ class SIGNUP(SIGNUPTemplate):
         alert("Invalid PAN card detail")
       phone_number = self.text_box_6.text
   
-      if self.validate_phone_number(phone_number):
-        count=count+1
-        print("Valid phone number:", phone_number)
-        # Perform actions for a valid phone number
-      else:
-        print("Invalid phone number:", phone_number)  
+      # if self.validate_phone_number(phone_number):
+      #   count=count+1
+      #   alert("Valid phone number:", phone_number)
+      #   # Perform actions for a valid phone number
+      # else:
+      #   alert("Invalid phone number:", phone_number)  
       
       # phone_number = self.text_box_6.text
       # if len(str(phone_number)) == 10:
@@ -85,7 +85,7 @@ class SIGNUP(SIGNUPTemplate):
   def validate_button_click(self, **event_args):
     # Get the phone number from the TextBox (self.text_box_6.text)
     phone_number = self.text_box_6.text.strip()  # Remove leading/trailing whitespace
-    if validate_phone_number(phone_number):
+    if sevalidate_phone_number(phone_number):
         alert("Valid phone number:", phone_number)
         # Perform actions for a valid phone number
     else:

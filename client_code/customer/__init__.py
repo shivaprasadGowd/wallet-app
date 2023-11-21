@@ -16,4 +16,4 @@ class customer(customerTemplate):
     open_form('Form1')
 
   def button_1_click(self, **event_args):
-    self.repeating_panel_1.items = app_tables.users.search(phone=se)
+    self.repeating_panel_1.items = app_tables.users.search(phone=int(self.text_box_1.text))

@@ -83,24 +83,16 @@ class SIGNUP(SIGNUPTemplate):
           return False
 
   def validate_button_click(self, **event_args):
-    # Get the phone number from the TextBox (self.text_box_6.text)
     phone_number = self.text_box_6.text.strip()  # Remove leading/trailing whitespace
-    if sevalidate_phone_number(phone_number):
-        alert("Valid phone number:", phone_number)
-        # Perform actions for a valid phone number
-    else:
-        alert("Invalid phone number:", phone_number)
+  
   
 
   def validate_phone_number(self, phone_number):
-    # Define a regex pattern for the phone number format
-    pattern = r'^(0|91)[6-9]\d{9}$'
-
-    # Check if the provided phone number matches the pattern
+    pattern = r'^[6-9]\d{9}$'
     if re.match(pattern, str(phone_number)):
-        return True  # Valid phone number
+        return True  
     else:
-        return False  # Invalid phone number
+        return False  
     
  
  

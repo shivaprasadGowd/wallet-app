@@ -89,6 +89,9 @@ class SIGNUP(SIGNUPTemplate):
         return True  
     else:
         return False  
+
+  def text_box_6_change(self, **event_args):
+    
     
  
  

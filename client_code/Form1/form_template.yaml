@@ -6,7 +6,7 @@ components:
 - type: ColumnPanel
   properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
     wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-    spacing_below: small, background: '#F7E3DF'}
+    spacing_below: small, background: '#3FE5FF'}
   layout_properties:
     col_widths: {}
     grid_position: CDNGVK,XXERCI

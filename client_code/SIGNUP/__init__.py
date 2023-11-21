@@ -4,6 +4,7 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+import re
 
 class SIGNUP(SIGNUPTemplate):
   def __init__(self, **properties):
@@ -27,9 +28,9 @@ class SIGNUP(SIGNUPTemplate):
       else:
         alert("Invalid PAN card detail")
       phone_number = self.text_box_6.text
-      val
-      if validate_phone_number(phone_number):
-        count 
+  
+      if self.validate_phone_number(phone_number):
+        count=count+1
         print("Valid phone number:", phone_number)
         # Perform actions for a valid phone number
       else:
@@ -80,28 +81,29 @@ class SIGNUP(SIGNUPTemplate):
           return True
         else:
           return False
-          
-  def text_box_6_change(self, **event_args):
-    phone_number = self.text_box_6.text
-    if validate_phone_number(phone_number):
-      print("Valid phone number:", phone_number)
-        # Perform further actions here if the phone number is valid
-    else:
-        # Phone number is invalid
-      print("Invalid phone number:", phone_number)
-        # Display an error message or take appropriate action for invalid input
 
+  def validate_button_click(self, **event_args):
+    # Get the phone number from the TextBox (self.text_box_6.text)
+    phone_number = self.text_box_6.text.strip()  # Remove leading/trailing whitespace
+    if validate_phone_number(phone_number):
+        alert("Valid phone number:", phone_number)
+        # Perform actions for a valid phone number
+    else:
+        alert("Invalid phone number:", phone_number)
   
-  def validate_phone_number(phone_number):
+
+  def validate_phone_number(self, phone_number):
     # Define a regex pattern for the phone number format
     pattern = r'^(0|91)[6-9]\d{9}$'
 
     # Check if the provided phone number matches the pattern
-    if re.match(pattern, phone_number):
+    if re.match(pattern, str(phone_number)):
         return True  # Valid phone number
     else:
         return False  # Invalid phone number
     
+ 
+ 
       
 
 

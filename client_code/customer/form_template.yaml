@@ -92,6 +92,8 @@ components:
     properties: {}
     name: text_box_1
     layout_properties: {grid_position: 'VWNHAD,OXWGHS'}
+    data_bindings:
+    - {property: text, code: 'self.item[''phone'']', writeback: true}
   - type: Spacer
     properties: {height: 59}
     name: spacer_3
@@ -100,3 +102,11 @@ components:
     properties: {item_template: customer.ItemTemplate2}
     name: repeating_panel_1
     layout_properties: {grid_position: 'XKVZHW,WTXUIX'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: SUBMIT, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_1
+    layout_properties: {slot: default, grid_position: 'HMGRZJ,GWERGR'}
+    event_bindings: {click: button_1_click}

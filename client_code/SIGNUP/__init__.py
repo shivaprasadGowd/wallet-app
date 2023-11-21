@@ -15,12 +15,13 @@ class SIGNUP(SIGNUPTemplate):
   def button_1_click(self, **event_args): 
     count=0
     if self.text_box_3.text != self.text_box_7.text:
-      alert("password doesn't match")
+      self.label_17.text = "Passwords doesn't match"
       self.text_box_3.text =''
       self.text_box_3.focus()
       self.text_box_7.text =''
       self.text_box_7.focus()
     elif self.text_box_3.text == self.text_box_7.text:
+      self.label_17.text = "Password matches"
       converted_text = self.text_box_4.text 
       if self.is_pan_card_detail(converted_text):
         alert("Valid PAN card detail")
@@ -32,7 +33,7 @@ class SIGNUP(SIGNUPTemplate):
   
       if self.validate_phone_number(phone_number):
         count=count+1
-        alert("Valid phone number:", phone_number)
+        Self.labe
       else:
          alert("Invalid phone number:", phone_number)  
       
@@ -90,7 +91,7 @@ class SIGNUP(SIGNUPTemplate):
     else:
         return False  
 
-  def text_box_6_change(self, **event_args):
+  
     
     
  

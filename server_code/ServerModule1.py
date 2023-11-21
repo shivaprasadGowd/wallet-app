@@ -14,6 +14,8 @@ def validate_login(username, password):
     else:
         return None
 
+
+
 @anvil.server.callable
 def add_info(email,username, password,pan,address,phone,aadhar):
   app_tables.users.add_row(

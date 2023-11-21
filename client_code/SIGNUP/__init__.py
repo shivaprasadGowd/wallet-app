@@ -4,6 +4,7 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+import re
 
 class SIGNUP(SIGNUPTemplate):
   def __init__(self, **properties):
@@ -26,12 +27,20 @@ class SIGNUP(SIGNUPTemplate):
         count=count+1
       else:
         alert("Invalid PAN card detail")
-      
       phone_number = self.text_box_6.text
-      if len(str(phone_number)) == 10:
-        count=count+1
-      else:
-        alert("Error: Please enter a valid 10-digit phone number.")
+  
+      # if self.validate_phone_number(phone_number):
+      #   count=count+1
+      #   alert("Valid phone number:", phone_number)
+      #   # Perform actions for a valid phone number
+      # else:
+      #   alert("Invalid phone number:", phone_number)  
+      
+      # phone_number = self.text_box_6.text
+      # if len(str(phone_number)) == 10:
+      #   count=count+1
+      # else:
+      #   alert("Error: Please enter a valid 10-digit phone number.")
       aadharr= self.text_box_8.text
       if len(str(aadharr)) == 12:
         count=count+1
@@ -73,7 +82,20 @@ class SIGNUP(SIGNUPTemplate):
         else:
           return False
 
+  def validate_button_click(self, **event_args):
+    phone_number = self.text_box_6.text.strip()  # Remove leading/trailing whitespace
+  
+  
+
+  def validate_phone_number(self, phone_number):
+    pattern = r'^[6-9]\d{9}$'
+    if re.match(pattern, str(phone_number)):
+        return True  
+    else:
+        return False  
     
+ 
+ 
       
 
 

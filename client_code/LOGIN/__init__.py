@@ -46,6 +46,7 @@ class LOGIN(LOGINTemplate):
       user_by_email = app_tables.users.get(email=login_input)
       if user_by_email:
         return user_by_email 
+
         
       user_by_phone = app_tables.users.get(phone=int(login_input))
       if user_by_phone:

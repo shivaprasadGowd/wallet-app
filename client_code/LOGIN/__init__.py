@@ -38,17 +38,17 @@ class LOGIN(LOGINTemplate):
       if user_by_username:
         return user_by_username
 
-    # Check if the login input is a valid phone number
-    user_by_phone = app_tables.users.search(
+      # Check if the login input is a valid phone number
+      user_by_phone = app_tables.users.search(
         q.like('phone', '%' + login_input + '%', case_sensitive=False)
-    ).get()
-    if user_by_phone:
+      ).get()
+      if user_by_phone:
         return user_by_phone
 
     # Check if the login input is a valid email
-    user_by_email = app_tables.users.get(email=login_input)
-    if user_by_email:
+      user_by_email = app_tables.users.get(email=login_input)
+      if user_by_email:
         return user_by_email
 
-    return None  # No user found for the given input
+      return None  # No user found for the given input
 

@@ -27,20 +27,16 @@ class SIGNUP(SIGNUPTemplate):
         count=count+1
       else:
         alert("Invalid PAN card detail")
+        
       phone_number = self.text_box_6.text
   
-      # if self.validate_phone_number(phone_number):
-      #   count=count+1
-      #   alert("Valid phone number:", phone_number)
-      #   # Perform actions for a valid phone number
-      # else:
-      #   alert("Invalid phone number:", phone_number)  
+      if self.validate_phone_number(phone_number):
+        count=count+1
+        alert("Valid phone number:", phone_number)
+      else:
+         alert("Invalid phone number:", phone_number)  
       
-      # phone_number = self.text_box_6.text
-      # if len(str(phone_number)) == 10:
-      #   count=count+1
-      # else:
-      #   alert("Error: Please enter a valid 10-digit phone number.")
+     
       aadharr= self.text_box_8.text
       if len(str(aadharr)) == 12:
         count=count+1
@@ -89,10 +85,8 @@ class SIGNUP(SIGNUPTemplate):
 
   def validate_phone_number(self, phone_number):
     pattern = r'^[6-9]\d{9}$'
-
-    # Check if the provided phone number matches the pattern
     if re.match(pattern, str(phone_number)):
-        return True  # Valid phone numbe
+        return True  
     else:
         return False  
     

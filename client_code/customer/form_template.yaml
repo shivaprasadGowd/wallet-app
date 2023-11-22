@@ -1,6 +1,6 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{"FNEJRJ":15,"RCEMRN":45}'}
+  properties: {col_widths: '{"FNEJRJ":10,"RCEMRN":50}'}
 components:
 - name: outlined_card_1_copy_4_copy_1_copy_1_copy_1
   properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
@@ -59,6 +59,13 @@ components:
     type: Link
     layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
     event_bindings: {click: link_1_click}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'Welcome to Green Gate Financial ', font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'IMHYXG,WPSHCS'}
 - name: button_1_copy_1_copy_1
   properties: {role: elevated-button, text: Viewprofile, font_size: 10, font: '',
     spacing_above: small, spacing_below: small, background: '#3FE5FF', bold: true,

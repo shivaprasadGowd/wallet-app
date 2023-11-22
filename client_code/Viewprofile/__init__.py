@@ -1,4 +1,4 @@
-from ._anvil_designer import LOGINTemplate
+from ._anvil_designer import ViewprofileTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables

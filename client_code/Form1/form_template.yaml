@@ -81,16 +81,16 @@ components:
     type: Image
     layout_properties: {x: 46.312496948987246, y: 0, width: 340}
     name: image_2
-  - properties: {text: G-Wallet Payments App, font_size: 41, align: center, bold: true}
-    type: Label
-    layout_properties: {x: 374.17500000074506, y: 83.1500015258789, width: 547.075}
-    name: label_7
   - properties: {text: 'Recharge & pay bills, book flights & movie tickets, open a
         savings account, invest in stocks & mutual funds, and do a lot more.', align: center,
       bold: true, font_size: 19}
     type: Label
     layout_properties: {x: 437.7375610359013, y: 150.5875015258789, width: 412}
     name: label_8
+  - properties: {text: G-Wallet Payments App, font_size: 41, align: center, bold: true}
+    type: Label
+    layout_properties: {x: 375.98610941693187, y: 51.18053690716624, width: 547.0694580078125}
+    name: label_7
 - properties: {height: 339, spacing_above: large, visible: true, spacing_below: large}
   type: XYPanel
   layout_properties: {grid_position: 'BHUXZP,OFVROO'}

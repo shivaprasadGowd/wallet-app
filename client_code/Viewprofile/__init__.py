@@ -20,7 +20,7 @@ class Viewprofile(ViewprofileTemplate):
         # Show/hide text boxes based on edit mode
         for i in range(1, 5):
             textbox = getattr(self, f'text_box_{i}')
-            textbox.visible = not self.edit_mode
+            textbox.visible = self.edit_mode
 
         self.button_1.text = "Edit Profile" if not self.edit_mode else "Save Changes"
 

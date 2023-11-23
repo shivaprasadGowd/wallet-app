@@ -88,7 +88,7 @@ components:
     name: label_8
   - properties: {text: G-Wallet Payments App, font_size: 41, align: center, bold: true}
     type: Label
-    layout_properties: {x: 375.98610941693187, y: 51.18053690716624, width: 547.0694580078125}
+    layout_properties: {x: 67.22494201734662, y: 64.02499084547162, width: 547.0625}
     name: label_7
 - properties: {height: 339, spacing_above: large, visible: true, spacing_below: large}
   type: XYPanel

@@ -13,3 +13,7 @@ class customer(customerTemplate):
     def button_1_click(self, **event_args):
         # Open the Viewprofile form and pass the user information
         open_form('Viewprofile', user=self.user)
+
+    def button_2_click(self, **event_args):
+      open_form('wallet', user=self.user)
+    

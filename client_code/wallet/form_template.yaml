@@ -81,6 +81,7 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: DQQZXL,ITKMCY
+    event_bindings: {click: button_2_click}
   - name: image_1_copy_1_copy_1
     properties: {source: _/theme/image.jpg, height: 429}
     type: Image

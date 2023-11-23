@@ -65,7 +65,7 @@ components:
   name: spacer_1
   layout_properties: {slot: default}
 - type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{"LUDXZD":70,"XOIYLU":10}'}
+  properties: {role: outlined-card, col_widths: '{"LUDXZD":70,"XOIYLU":15,"VBETKR":15}'}
   name: outlined_card_2
   layout_properties: {slot: default}
   components:
@@ -84,6 +84,14 @@ components:
     name: button_1
     layout_properties: {grid_position: 'VYUYHA,XOIYLU'}
     event_bindings: {click: button_1_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Show, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_2
+    layout_properties: {grid_position: 'VYUYHA,VBETKR'}
+    event_bindings: {click: button_2_click}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: Check your details here, font_size: 18, font: '', spacing_above: small,

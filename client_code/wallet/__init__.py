@@ -4,15 +4,24 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from anvil import alert, get_open_form
 
 class wallet(walletTemplate):
-  def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
-    self.init_components(**properties)
+    def __init__(self, user=None, **properties):
+        self.init_components(**properties)
+        self.user = user
 
-    # Any code you write here will run before the form opens.
+    def button_1_click(self, **event_args):
+        # Check if the user has a Casa account
+        account_exists = anvil.server.call('check_account_for_user', self.user['casa'])
 
-  def button_2_click(self, **event_args):
+        if account_exists:
+            my_message = f"{self.user['username']} has a Casa account!"
+            alert(my_message)
+        else:
+            my_message = f"{self.user['username']} does not have a Casa account. You can create one here!"
+            alert(my_message)
+
     
     
     

@@ -47,16 +47,26 @@ class wallet(walletTemplate):
             
 
     def create_casa_account(self):
-        try:
-            casa_number = random.randint(0, 10**10 - 1)
-            while app_tables.casa.get(casa=casa_number):
-                casa_number = random.randint(0, 10**10 - 1)
-            self.user['casa'] = casa_number
-            self.user.save()
+      try:
+        # Generate a random 10-digit Casa account number without negative values
+        casa_number = random.randint(0, 10**10 - 1)
 
-            return casa_number
-        except Exception as e:
-            return None
+        # Check if the generated number is already in use in the 'users' table
+        while app_tables.users.get(casa=casa_number):
+            casa_number = random.randint(0, 10**10 - 1)
+
+        # Save the Casa account number to the user
+        self.user['casa'] = casa_number
+        self.user.save()
+
+        print(f"Casa account created successfully: {casa_number}")
+
+        return casa_number
+      except Exception as e:
+        print(f"Error creating Casa account: {e}")
+        return None
+
+
 
     def create_digital_wallet(self):
         if self.user['casa'] is not None:

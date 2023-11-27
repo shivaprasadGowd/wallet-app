@@ -21,6 +21,7 @@ class wallet(walletTemplate):
         else:
             my_message = f"{self.user['username']} does not have a Casa account. You can create one here!"
             alert(my_message)
+          
 
     
     

@@ -30,8 +30,8 @@ class wallet(walletTemplate):
     def button_2_click(self, **event_args):
         if self.button_2.text == "Make Digital Wallet":
            digital_wallet = self.create_digital_wallet()
-        elif self.button_2.text == "Make Casa Account":
-          print("Making Casa Account...")
+        # elif self.button_2.text == "Make Casa Account":
+        #   print("Making Casa Account...")
         if self.user['casa'] is None:
             casa_account = self.create_casa_account()
         else:

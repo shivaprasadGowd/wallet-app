@@ -61,7 +61,7 @@ components:
     layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
     event_bindings: {click: link_1_click}
 - name: outlined_card_2_copy_1_copy_1
-  properties: {role: outlined-card, col_widths: '{}'}
+  properties: {role: outlined-card, col_widths: '{"DHRINU":40,"JVIFJM":20}'}
   type: ColumnPanel
   layout_properties: {grid_position: 'RPHTNO,RCEMRN'}
   components:
@@ -83,11 +83,17 @@ components:
       grid_position: DQQZXL,ITKMCY
     event_bindings: {click: button_1_click}
   - name: label_2
-    properties: {}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: 17, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
     type: Label
     layout_properties: {grid_position: 'SDRYHG,DHRINU'}
   - name: button_2
-    properties: {text: button_2}
+    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '#000000', visible: true, text: button_2, font_size: 17, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#3FE5FF', bold: true, underline: false, icon: ''}
     type: Button
     layout_properties: {grid_position: 'SDRYHG,JVIFJM'}
     event_bindings: {click: button_2_click}

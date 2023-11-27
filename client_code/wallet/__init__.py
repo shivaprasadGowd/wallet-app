@@ -20,35 +20,41 @@ class wallet(walletTemplate):
             my_message = f"{self.user['username']} has a Casa account!"
             self.label_2.text = my_message
             self.button_2.visible = True
-            self.button_2.text="Make Digital Wallet"
+            self.button_2.text = "Make Casa Account"
         else:
             my_message = f"{self.user['username']} does not have a Casa account. You can create one here!"
             self.label_2.text = my_message
             self.button_2.visible = True
-            self.button_2.text="Make Casa Account"
-          
+            self.button_2.text = "Make Casa Account"
+
     def button_2_click(self, **event_args):
-        if self.button_2.text == "Make Digital Wallet":
-           digital_wallet = self.create_digital_wallet()
-        # elif self.button_2.text == "Make Casa Account":
-        #   print("Making Casa Account...")
-        if self.user['casa'] is None:
-            casa_account = self.create_casa_account()
-        else:
+        if self.button_2.text == "Make Casa Account":
+            print("Making Casa Account...")
+            if self.user['casa'] is None:
+                casa_account = self.create_casa_account()
+                self.button_2.visible = None
+                self.label_2.text = "CASA account created and ditigal wallet linked"
+            else:
+                pass
+        elif self.button_2.text == "Make Digital Wallet":
+            # Add any additional logic or actions related to the digital wallet here
             pass
 
     def create_casa_account(self):
-     try:
-        casa_number = random.randint(10**9, 10**10 - 1)
+        try:
+            # Generate a random 10-digit Casa account number without negative values
+            casa_number = random.randint(0, 10**10 - 1)
 
-        self.user['casa'] = casa_number
-        self.user.save()
-        return casa_number
-     except Exception as e:
-        return None
+            # Check if the generated number is already in use
+            while app_tables.users.get(casa=casa_number):
+                casa_number = random.randint(0, 10**10 - 1)
 
+            # Save the Casa account number and create a unique digital wallet
+            self.user['casa'] = casa_number
+            digital_wallet = f"Digital Wallet for Casa Account {casa_number}"
+            self.user['digital_wallet'] = digital_wallet
+            self.user.save()
 
-    def create_digital_wallet(self):
-        return f"Unique Digital Wallet for {self.user['username']}"
-
-    
+            return casa_number
+        except Exception as e:
+            return None

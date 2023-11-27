@@ -40,8 +40,23 @@ def check_account_for_user(casa):
             user = app_tables.users.get(casa=casa)
             return user is not None
         else:
-            # Handle the case where casa is None
             print("Error: Casa account is None")
+            return False
+    except anvil.tables.TableError as e:
+        # Handle other table errors, if necessary
+        print(f"Error: {e}")
+        return False
+
+@anvil.server.callable
+def check_account_for_user_digital(digital):
+    try:
+        # Check if casa is not None before querying the table
+        if digital is not None:
+            user = app_tables.users.get(digital=digital)
+            return user is not None
+        else:
+            # Handle the case where casa is None
+            print("Error: digital account is None")
             return False
     except anvil.tables.TableError as e:
         # Handle other table errors, if necessary

@@ -17,11 +17,12 @@ class wallet(walletTemplate):
 
         if account_exists:
             my_message = f"{self.user['username']} has a Casa account!"
-            self.label_1.text=my_message
+            self.label_2.text=my_message
         else:
             my_message = f"{self.user['username']} does not have a Casa account. You can create one here!"
-            self.label_1.text=my_message
-          
+            self.label_2.text=my_message
+
+   
 
     
     

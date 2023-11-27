@@ -83,9 +83,13 @@ components:
       grid_position: DQQZXL,ITKMCY
     event_bindings: {click: button_1_click}
   - name: label_2
-    properties: {align: center, foreground: '#fb2d2d'}
+    properties: {}
     type: Label
-    layout_properties: {grid_position: 'FEPZTX,WLMOSE'}
+    layout_properties: {grid_position: 'SDRYHG,DHRINU'}
+  - name: button_2
+    properties: {text: button_2}
+    type: Button
+    layout_properties: {grid_position: 'SDRYHG,JVIFJM'}
   - name: image_1_copy_1_copy_1
     properties: {source: _/theme/image.jpg, height: 429}
     type: Image

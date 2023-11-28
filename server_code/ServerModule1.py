@@ -6,6 +6,7 @@ from anvil import tables, app
 import time
 import random
 
+
 # Function to validate login credentials
 @anvil.server.callable
 def validate_login(username, password):
@@ -22,8 +23,6 @@ def validate_login(username, password):
 @anvil.server.callable
 def add_info(email, username, password, pan, address, phone, aadhar):
     unique_id = generate_unique_id()
-
-    # Add the user information to the users table
     user_row = app_tables.users.add_row(
         email=email,
         username=username,
@@ -40,7 +39,6 @@ def add_info(email, username, password, pan, address, phone, aadhar):
     # Link the user to an account right after signing up
     link_accounts_to_users(account_id='', user_id=user_row['id'])
     link_accounts_to_transactions(account_id='', user_id=user_row['id'])
-
     return user_row
 
 @anvil.server.callable
@@ -129,8 +127,7 @@ def check_account_for_user_digital(digital):
 def link_user_to_casa(user_id, casa_number):
     try:
         # Search for an existing row in the accounts table with the provided user_id and casa_number
-        casa_row = app_tables.accounts.add_row(user=str(user_id), casa=casa_number)
-
+        casa_row = app_tables.accounts.get(user=user_id, casa=casa_number)
 
         # If the casa row doesn't exist, create a new one
         if not casa_row:
@@ -147,13 +144,19 @@ def link_user_to_casa(user_id, casa_number):
 
 @anvil.server.callable
 def map_casa_to_digital_wallet(user_id, casa_number):
-    try:
-        # Search for an existing row in the transactions table with the provided user_id
-        digital_row = app_tables.transactions.get(user_id=user_id)
 
-        # If the transactions row doesn't exist, create a new one
+    app_tables.transactions.add_column('user', tables.LinkType())
+    try:
+        # Search for an existing digital wallet row with the provided user_id
+        digital_row = app_tables.transactions.get(user=user_id)
+
+        # If the digital wallet row doesn't exist, create a new one
         if not digital_row:
-            digital_row = app_tables.transactions.add_row(user=user_id, digital=f"UniqueDigitalWallet-{user_id}")
+            # Generate a unique e_wallet based on the user_id
+            unique_e_wallet = f"UniqueDigitalWallet-{user_id}"
+
+            # Add a new row to the transactions table
+            digital_row = app_tables.transactions.add_row(user=user_id, digital=unique_e_wallet)
 
             # Map the Casa account to the digital wallet
             digital_row['casa'] = casa_number
@@ -161,8 +164,13 @@ def map_casa_to_digital_wallet(user_id, casa_number):
             # Save the digital row
             digital_row.save()
 
-        return digital_row
+            return unique_e_wallet  # Return the generated e_wallet
 
     except Exception as e:
         print(f"Error mapping casa to digital wallet: {e}")
-        return None
+    
+    return None
+
+
+
+

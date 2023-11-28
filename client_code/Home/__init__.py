@@ -6,8 +6,7 @@ class Home(HomeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+   
+  def link_click(self, **event_args):
+     open_form('LOGIN')
 
-    # Any code you write here will run before the form opens.
-
-  def link_1_click(self, **event_args):
-    open_form('LOGIN')

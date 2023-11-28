@@ -73,7 +73,7 @@ class wallet(walletTemplate):
             new_account = app_tables.accounts.add_row(
               id=str(id), 
               casa=int(account_number), 
-              e_wallet= f"UniqueEwallet-{int(account_number)}", 
+              e_wallet= f"UniqueEwallet-{account_number}", 
               bank_name=bank_name, 
               routing_number=routing_number
             )

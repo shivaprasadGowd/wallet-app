@@ -22,8 +22,6 @@ def validate_login(username, password):
 @anvil.server.callable
 def add_info(email, username, password, pan, address, phone, aadhar):
     unique_id = generate_unique_id()
-
-    # Add the user information to the users table
     user_row = app_tables.users.add_row(
         email=email,
         username=username,
@@ -40,7 +38,6 @@ def add_info(email, username, password, pan, address, phone, aadhar):
     # Link the user to an account right after signing up
     link_accounts_to_users(account_id='', user_id=user_row['id'])
     link_accounts_to_transactions(account_id='', user_id=user_row['id'])
-
     return user_row
 
 @anvil.server.callable

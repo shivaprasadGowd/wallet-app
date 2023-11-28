@@ -71,16 +71,35 @@ class wallet(walletTemplate):
         if bank_name and account_number and routing_number:
             # Save the bank details to the 'accounts' table
             new_account = app_tables.accounts.add_row(
-                user=self.user,
-                casa=account_number,
-                e_wallet=f"UniqueEwallet-{account_number}",  # Replace with your logic for generating unique e-wallets
-                bank_name=bank_name,
-                routing_number=routing_number
+              id=str(self.user_id), 
+              casa=account_number, 
+              e_wallet=f"UniqueEwallet-{account_number}", 
+              bank_name=bank_name, 
+              routing_number=routing_number
             )
+
 
             self.label_bank_details_error.text = "Bank details saved successfully."
         else:
             self.label_bank_details_error.text = "Please fill in all bank details."
+
+    def link_user_to_casa(self, user_id, casa_number):
+        # Call the server function to link the user to a Casa account
+        casa_row = anvil.server.call('link_user_to_casa', user_id=user_id, casa_number=casa_number)
+
+        if casa_row:
+            self.label_2.text = "User linked to Casa account successfully."
+
+    def map_casa_to_digital_wallet(self, user_id, casa_number):
+        # Call the server function to map the Casa account to a digital wallet
+        digital_row = anvil.server.call('map_casa_to_digital_wallet', user_id=user_id, casa_number=casa_number)
+
+        if digital_row:
+            self.label_2.text = "Casa account mapped to digital wallet successfully."
+            self.button_2.visible = True
+            self.button_2.text = "Make Digital Wallet"
+        else:
+            self.label_2.text = "Error mapping Casa account to digital wallet."
 
     
 

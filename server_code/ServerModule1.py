@@ -123,3 +123,46 @@ def check_account_for_user_digital(digital):
         # Handle other table errors, if necessary
         print(f"Error: {e}")
         return False
+
+
+@anvil.server.callable
+def link_user_to_casa(user_id, casa_number):
+    try:
+        # Search for an existing row in the accounts table with the provided user_id and casa_number
+        casa_row = app_tables.accounts.add_row(user=str(user_id), casa=casa_number)
+
+
+        # If the casa row doesn't exist, create a new one
+        if not casa_row:
+            casa_row = app_tables.accounts.add_row(user=user_id, casa=casa_number)
+
+        # Save the casa row
+        casa_row.save()
+
+        return casa_row
+
+    except Exception as e:
+        print(f"Error linking user to casa: {e}")
+        return None
+
+@anvil.server.callable
+def map_casa_to_digital_wallet(user_id, casa_number):
+    try:
+        # Search for an existing row in the transactions table with the provided user_id
+        digital_row = app_tables.transactions.get(user_id=user_id)
+
+        # If the transactions row doesn't exist, create a new one
+        if not digital_row:
+            digital_row = app_tables.transactions.add_row(user=user_id, digital=f"UniqueDigitalWallet-{user_id}")
+
+            # Map the Casa account to the digital wallet
+            digital_row['casa'] = casa_number
+
+            # Save the digital row
+            digital_row.save()
+
+        return digital_row
+
+    except Exception as e:
+        print(f"Error mapping casa to digital wallet: {e}")
+        return None

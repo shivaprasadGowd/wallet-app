@@ -53,7 +53,7 @@ class LOGIN(LOGINTemplate):
         return None
 
     def link_1_click(self, **event_args):
-      open_form('Form1')
+      open_form('Home')
 
     def button_2_click(self, **event_args):
       open_form('SIGNUP')

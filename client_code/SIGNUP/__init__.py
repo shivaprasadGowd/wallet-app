@@ -63,7 +63,7 @@ class SIGNUP(SIGNUPTemplate):
       open_form('LOGIN')
 
   def link_1_click(self, **event_args):
-    open_form('Form1')
+    open_form('Home')
 
   def text_box_4_change(self, **event_args):
     current_text = self.text_box_4.text

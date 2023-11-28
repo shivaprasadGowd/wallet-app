@@ -15,7 +15,7 @@ class SIGNUP(SIGNUPTemplate):
 
   def link_user_to_transactions(self):
         # Call the server function to link the user to transactions
-        transaction_row = anvil.server.call('link_user_to_transactions', user_id=self.user['id'])
+       anvil.server.call('link_accounts_to_transactions', account_id='', user_id=self.user['id'])
 
   def button_1_click(self, **event_args): 
     count=0

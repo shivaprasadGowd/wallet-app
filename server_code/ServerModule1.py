@@ -39,6 +39,7 @@ def add_info(email, username, password, pan, address, phone, aadhar):
 
     # Link the user to an account right after signing up
     link_accounts_to_users(account_id='', user_id=user_row['id'])
+    link_accounts_to_transactions(account_id='', user_id=user_row['id'])
 
     return user_row
 
@@ -75,26 +76,22 @@ def link_accounts_to_users(account_id, user_id):
 
 
 @anvil.server.callable
-def link_user_to_transactions(id):
+def link_accounts_to_transactions(account_id, user_id):
     try:
-        # Search for an existing row in the transactions table with the provided user_id
-        transaction_row = app_tables.transactions.get(user=id)
+        # Search for an existing account row with the provided account_id
+        account_row = app_tables.transactions.get(id=account_id)
 
-        # If the transaction row doesn't exist, create a new one
-        if not transaction_row:
-            transaction_row = app_tables.transactions.add_row(user=id)
+        # If the account row doesn't exist, create a new one
+        if not account_row:
+            account_row = app_tables.transactions.add_row(id=account_id)
 
-            # Set any initial values for other columns in the transactions table if needed
-            transaction_row['initial_balance'] = 0  # Replace with your logic
-
-            # Save the transaction row
-            transaction_row.save()
-
-        return transaction_row
-
+        # Update the id column in the accounts table
+        account_row['id'] = user_id
+        account_row.save()
+        
     except Exception as e:
-        print(f"Error linking user to transactions: {e}")
-        return None
+        print(f"Error linking accounts: {e}")
+
 
 @anvil.server.callable
 def check_account_for_user(casa):

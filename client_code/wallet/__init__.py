@@ -12,7 +12,6 @@ class wallet(walletTemplate):
         self.init_components(**properties)
         self.user = user
         self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
-        anvil.server.call('link_accounts_to_users', account_id='', user_id=self.user['id'])
         self.button_2.visible = False
         self.bank_details_visible = False
         self.label_bank_details_error = Label(text="", role="alert")
@@ -62,33 +61,34 @@ class wallet(walletTemplate):
         self.label_bank_details_error.text = ""
        
     def button_save_bank_details_click(self, **event_args):
-        # Get the entered bank details from textboxes
-        bank_name = self.textbox_bank_name.text
-        account_number = self.textbox_account_number.text
-        routing_number = self.textbox_routing_number.text
+    # Get the entered bank details from textboxes
+      bank_name = self.textbox_bank_name.text
+      account_number = self.textbox_account_number.text
+      routing_number = self.textbox_routing_number.text
 
-        # Validate the bank details (you can add more validation as needed)
-        if bank_name and account_number and routing_number:
-            # Save the bank details to the 'accounts' table
-            new_account = app_tables.accounts.add_row(
-              id=str(id), 
-              casa=int(account_number), 
-              e_wallet= f"UniqueEwallet-{account_number}", 
-              bank_name=bank_name, 
-              routing_number=routing_number
-            )
+    # Validate the bank details (you can add more validation as needed)
+      if bank_name and account_number and routing_number:
+        # Save the bank details to the 'accounts' table
+        new_account = app_tables.accounts.add_row(
+            id= self.user['id'],
+            user= self.user['username'],
+            casa=int(account_number), 
+            e_wallet=e_wallet,  
+            bank_name=bank_name, 
+            routing_number=routing_number
+        )
 
+        self.label_bank_details_error.text = "Bank details saved successfully."
+      else:
+        self.label_bank_details_error.text = "Please fill in all bank details."
 
-            self.label_bank_details_error.text = "Bank details saved successfully."
-        else:
-            self.label_bank_details_error.text = "Please fill in all bank details."
 
     def link_user_to_casa(self, user_id, casa_number):
-        # Call the server function to link the user to a Casa account
-        casa_row = anvil.server.call('link_user_to_casa', user_id=user_id, casa_number=casa_number)
+    # Call the server function to link the user to a Casa account
+      casa_row = anvil.server.call('link_user_to_casa', user_id=user_id, casa_number=casa_number)
 
-        if casa_row:
-            self.label_2.text = "User linked to Casa account successfully."
+      if casa_row:
+        self.label_2.text = "User linked to Casa account successfully."
 
     def map_casa_to_digital_wallet(self, user_id, casa_number):
         # Call the server function to map the Casa account to a digital wallet

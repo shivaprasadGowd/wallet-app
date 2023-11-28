@@ -71,9 +71,9 @@ class wallet(walletTemplate):
         if bank_name and account_number and routing_number:
             # Save the bank details to the 'accounts' table
             new_account = app_tables.accounts.add_row(
-              id=str(self.user_id), 
-              casa=account_number, 
-              e_wallet=f"UniqueEwallet-{account_number}", 
+              id=str(id), 
+              casa=int(account_number), 
+              e_wallet= f"UniqueEwallet-{int(account_number)}", 
               bank_name=bank_name, 
               routing_number=routing_number
             )

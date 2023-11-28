@@ -73,7 +73,7 @@ class wallet(walletTemplate):
             id= self.user['id'],
             user= self.user['username'],
             casa=int(account_number), 
-            e_wallet=e_wallet,  
+            e_wallet=,  
             bank_name=bank_name, 
             routing_number=routing_number
         )

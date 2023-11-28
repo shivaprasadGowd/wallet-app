@@ -70,10 +70,9 @@ class wallet(walletTemplate):
       if bank_name and account_number and routing_number:
         # Save the bank details to the 'accounts' table
         new_account = app_tables.accounts.add_row(
-            id= self.user['id'],
             user= self.user['username'],
             casa=int(account_number), 
-            e_wallet=,  
+            # e_wallet=anvil.server.call,  
             bank_name=bank_name, 
             routing_number=routing_number
         )

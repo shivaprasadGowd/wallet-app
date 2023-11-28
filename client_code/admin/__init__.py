@@ -11,4 +11,4 @@ class admin(adminTemplate):
     # Any code you write here will run before the form opens.
 
   def link_1_click(self, **event_args):
-    open_form('Form1')
+    open_form('Home')

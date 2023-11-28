@@ -42,9 +42,12 @@ db_schema:
     - name: email
       admin_ui: {order: 0, width: 200}
       type: string
+    - name: id
+      admin_ui: {width: 200, order: -1}
+      type: string
     title: users
   accounts:
-    client: none
+    client: full
     server: full
     columns:
     - name: casa
@@ -59,6 +62,18 @@ db_schema:
     - name: e_money
       admin_ui: {width: 200, order: 3}
       type: number
+    - name: bank_name
+      admin_ui: {width: 200, order: 4}
+      type: string
+    - name: routing_number
+      admin_ui: {width: 200, order: 5}
+      type: string
+    - name: user
+      admin_ui: {order: -0.5, width: 200}
+      type: string
+    - name: id
+      admin_ui: {order: -1, width: 135}
+      type: string
     title: accounts
   transactions:
     client: none
@@ -67,5 +82,8 @@ db_schema:
     - name: date
       admin_ui: {width: 200, order: 0}
       type: datetime
+    - name: id
+      admin_ui: {width: 200, order: -1}
+      type: string
     title: transactions
 renamed: true

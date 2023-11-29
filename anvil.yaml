@@ -54,13 +54,13 @@ db_schema:
       admin_ui: {width: 200, order: 2}
       type: number
     - name: e_money
-      admin_ui: {width: 200, order: 3}
+      admin_ui: {order: 7.5, width: 200}
       type: number
     - name: bank_name
       admin_ui: {width: 200, order: 4}
       type: string
-    - name: routing_number
-      admin_ui: {width: 200, order: 5}
+    - name: ifsc_code
+      admin_ui: {order: 7, width: 200}
       type: string
     - name: user
       admin_ui: {order: -0.5, width: 200}
@@ -68,19 +68,28 @@ db_schema:
     - name: e_wallet
       admin_ui: {order: 1, width: 200}
       type: string
+    - name: account_holder_name
+      admin_ui: {order: 1.5, width: 200}
+      type: string
+    - name: branch_name
+      admin_ui: {order: 6.5, width: 200}
+      type: string
+    - name: account_Type
+      admin_ui: {order: 7.25, width: 200}
+      type: string
     title: accounts
   transactions:
-    client: full
+    client: none
     server: full
     columns:
-    - name: date
-      admin_ui: {width: 200, order: 0}
-      type: datetime
     - name: user
-      admin_ui: {order: -1, width: 200}
+      admin_ui: {width: 200, order: 0}
       type: string
-    - name: e_wallet
+    - name: date
       admin_ui: {width: 200, order: 1}
+      type: datetime
+    - name: e_wallet
+      admin_ui: {order: 2, width: 200}
       type: string
     title: transactions
 renamed: true

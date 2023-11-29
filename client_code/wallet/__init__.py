@@ -83,6 +83,7 @@ class wallet(walletTemplate):
       account_holder_name = self.text_box_1.text
       branch_name = self.text_box_2.text
       account_Type = self.drop_down_1.selected_value
+      e_wallet = anvil.server.call('generate_unique_id1', self.user['user'])
       
       
 

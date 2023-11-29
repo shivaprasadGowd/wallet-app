@@ -5,6 +5,7 @@ import anvil.server
 from anvil import tables, app
 import time
 import random
+import uuid
 
 
 # Function to validate login credentials
@@ -168,6 +169,28 @@ def map_casa_to_digital_wallet(user_id, casa_number):
         print(f"Error mapping casa to digital wallet: {e}")
     
     return None
+@anvil.server.callable
+def generate_unique_id1(user_id):
+    # Check if the user already has a unique ID generated
+    user_row = app_tables.user_unique_ids.get(user=user_id)
+
+    if user_row is not None:
+        # If the user already has a unique ID, return that ID
+        return user_row['unique_id']
+    else:
+        # Generate a random 4-digit number
+        random_number = random.randint(1000, 9999)
+
+        # Generate another unique ID using UUID (Universal Unique Identifier)
+        unique_id = str(uuid.uuid4())
+
+        # Combine the random number and the additional unique ID to create a unique ID
+        combined_id = f"{random_number}-{unique_id}"
+
+        # Save the generated unique ID for the user in the database
+        app_tables.user_unique_ids.add_row(user=user_id, unique_id=combined_id)
+
+        return combined_id
 
 
 

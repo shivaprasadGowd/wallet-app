@@ -105,7 +105,7 @@ components:
       background: '#3FE5FF', bold: true, underline: false, icon: ''}
     type: Button
     layout_properties: {grid_position: 'SDRYHG,JVIFJM'}
-    event_bindings: {click: button_2_click}
+    event_bindings: {}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Account Holder''s Name:', font_size: null, font: '', spacing_above: small,

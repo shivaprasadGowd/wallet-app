@@ -48,34 +48,34 @@ db_schema:
     server: full
     columns:
     - name: casa
-      admin_ui: {width: 200, order: 0}
+      admin_ui: {order: 0, width: 178}
       type: number
     - name: money
-      admin_ui: {width: 200, order: 2}
+      admin_ui: {order: 2, width: 184}
       type: number
     - name: e_money
-      admin_ui: {order: 7.5, width: 200}
+      admin_ui: {order: 3, width: 168}
       type: number
     - name: bank_name
-      admin_ui: {width: 200, order: 4}
+      admin_ui: {order: 4, width: 185}
       type: string
     - name: ifsc_code
-      admin_ui: {order: 7, width: 200}
+      admin_ui: {order: 9, width: 188}
       type: string
     - name: user
-      admin_ui: {order: -0.5, width: 200}
+      admin_ui: {order: -0.5, width: 168}
       type: string
     - name: e_wallet
-      admin_ui: {order: 1, width: 200}
+      admin_ui: {order: 1, width: 201}
       type: string
     - name: account_holder_name
-      admin_ui: {order: 1.5, width: 200}
+      admin_ui: {order: 7, width: 214}
       type: string
     - name: branch_name
-      admin_ui: {order: 6.5, width: 200}
+      admin_ui: {order: 8, width: 180}
       type: string
     - name: account_Type
-      admin_ui: {order: 7.25, width: 200}
+      admin_ui: {order: 6, width: 200}
       type: string
     title: accounts
   transactions:

@@ -19,8 +19,8 @@ class wallet(walletTemplate):
         self.textbox_bank_name.visible = False
         self.label_account_number.visible = False
         self.textbox_account_number.visible = False
-        self.label_routing_number.visible = False
-        self.textbox_routing_number.visible = False
+        self.label_ifsc_code.visible = False
+        self.textbox_ifsc_code.visible = False
         self.label_bank_details_error.visible = False
         self.button_save_bank_details.visible = False
         self.label_3.visible=False
@@ -63,8 +63,8 @@ class wallet(walletTemplate):
         self.textbox_bank_name.visible = self.bank_details_visible
         self.label_account_number.visible = self.bank_details_visible
         self.textbox_account_number.visible = self.bank_details_visible
-        self.label_routing_number.visible = self.bank_details_visible
-        self.textbox_routing_number.visible = self.bank_details_visible
+        self.label_ifsc_code.visible = self.bank_details_visible
+        self.textbox_ifsc_code.visible = self.bank_details_visible
         self.button_save_bank_details.visible = self.bank_details_visible
         self.label_3.visible=self.bank_details_visible
         self.label_4.visible=self.bank_details_visible
@@ -79,7 +79,7 @@ class wallet(walletTemplate):
     # Get the entered bank details from textboxes
       bank_name = self.textbox_bank_name.text
       account_number = self.textbox_account_number.text
-      routing_number = self.textbox_routing_number.text
+      ifsc_code = self.textbox_ifsc_code.text
       account_holder_name = self.text_box_1.text
       branch_name = self.text_box_2.text
       account_Type = self.drop_down_1.selected_value
@@ -87,14 +87,14 @@ class wallet(walletTemplate):
       
 
     # Validate the bank details (you can add more validation as needed)
-      if bank_name and account_number and routing_number and account_holder_name and branch_name and account_Type:
+      if bank_name and account_number and ifsc_code and account_holder_name and branch_name and account_Type:
         # Save the bank details to the 'accounts' table
         new_account = app_tables.accounts.add_row(
             user= self.user['username'],
             casa=int(account_number), 
             # e_wallet=anvil.server.call,  
             bank_name=bank_name, 
-            routing_number=routing_number,
+            ifsc_code=ifsc_code,
             account_holder_name = account_holder_name,
             branch_name = branch_name,
             account_Type = account_Type

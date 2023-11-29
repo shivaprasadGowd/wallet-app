@@ -29,6 +29,7 @@ class wallet(walletTemplate):
         self.text_box_1.visible=False
         self.text_box_2.visible=False
         self.drop_down_1.visible=False
+       
         
 
     def button_1_click(self, **event_args):
@@ -79,21 +80,24 @@ class wallet(walletTemplate):
       bank_name = self.textbox_bank_name.text
       account_number = self.textbox_account_number.text
       routing_number = self.textbox_routing_number.text
-      account_Holder_Name = self.text_box_1.text
+      account_holder_name = self.text_box_1.text
       branch_name = self.text_box_2.text
       account_Type = self.drop_down_1.selected_value
       
       
 
     # Validate the bank details (you can add more validation as needed)
-      if bank_name and account_number and routing_number:
+      if bank_name and account_number and routing_number and account_holder_name and branch_name and account_Type:
         # Save the bank details to the 'accounts' table
         new_account = app_tables.accounts.add_row(
             user= self.user['username'],
             casa=int(account_number), 
             # e_wallet=anvil.server.call,  
             bank_name=bank_name, 
-            routing_number=routing_number
+            routing_number=routing_number,
+            account_holder_name = account_holder_name,
+            branch_name = branch_name,
+            account_Type = account_Type
         )
 
         self.label_bank_details_error.text = "Bank details saved successfully."

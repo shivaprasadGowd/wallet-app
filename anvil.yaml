@@ -68,11 +68,28 @@ db_schema:
     - name: e_wallet
       admin_ui: {order: 1, width: 200}
       type: string
-    - name: account_Holder_name
-      admin_ui: {width: 200, order: 9}
+    - name: account_holder_name
+      admin_ui: {order: 9, width: 200}
       type: string
     - name: branch_name
       admin_ui: {width: 200, order: 10}
       type: string
+    - name: account_Type
+      admin_ui: {width: 200, order: 11}
+      type: string
     title: accounts
+  transactions:
+    client: none
+    server: full
+    columns:
+    - name: user
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: date
+      admin_ui: {width: 200, order: 1}
+      type: datetime
+    - name: e_wallet
+      admin_ui: {order: 2, width: 200}
+      type: string
+    title: transactions
 renamed: true

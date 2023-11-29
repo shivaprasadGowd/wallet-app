@@ -108,6 +108,17 @@ components:
     event_bindings: {click: button_2_click}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Account Holder''s Name:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'MBATDA,HNRTMZ'}
+  - type: TextBox
+    properties: {}
+    name: text_box_1
+    layout_properties: {grid_position: 'MBATDA,EQLVEE'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Bank Name:', font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
@@ -117,6 +128,17 @@ components:
     properties: {}
     name: textbox_bank_name
     layout_properties: {grid_position: 'XGIPGB,TDJIXO'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Branch Name:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'CIFHEM,ILADGD'}
+  - type: TextBox
+    properties: {}
+    name: text_box_2
+    layout_properties: {grid_position: 'CIFHEM,KTJCFD'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Account Number:', font_size: null, font: '', spacing_above: small,
@@ -130,7 +152,7 @@ components:
     layout_properties: {grid_position: 'YCHQKJ,JGSBNN'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Routing Number:', font_size: null, font: '', spacing_above: small,
+      visible: true, text: IFSC Code, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
     name: label_routing_number
@@ -139,6 +161,35 @@ components:
     properties: {}
     name: textbox_routing_number
     layout_properties: {grid_position: 'RSOMFZ,AFRZVJ'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Account Type:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_5
+    layout_properties: {grid_position: 'KHWLCY,YGLRMF'}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: [Savings Account, Current Account, Personal Account]
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: false
+    name: drop_down_1
+    layout_properties: {grid_position: 'KHWLCY,RZPCPD'}
   - type: Button
     properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,

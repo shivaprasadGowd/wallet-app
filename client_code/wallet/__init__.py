@@ -23,6 +23,13 @@ class wallet(walletTemplate):
         self.textbox_routing_number.visible = False
         self.label_bank_details_error.visible = False
         self.button_save_bank_details.visible = False
+        self.label_3.visible=False
+        self.label_4.visible=False
+        self.label_5.visible=False
+        self.text_box_1.visible=False
+        self.text_box_2.visible=False
+        self.drop_down_1.visible=False
+        
 
     def button_1_click(self, **event_args):
         # Get the user-entered Casa account number from the textbox
@@ -58,6 +65,13 @@ class wallet(walletTemplate):
         self.label_routing_number.visible = self.bank_details_visible
         self.textbox_routing_number.visible = self.bank_details_visible
         self.button_save_bank_details.visible = self.bank_details_visible
+        self.label_3.visible=self.bank_details_visible
+        self.label_4.visible=self.bank_details_visible
+        self.label_5.visible=self.bank_details_visible
+        self.text_box_1.visible=self.bank_details_visible
+        self.text_box_2.visible=self.bank_details_visible
+        self.drop_down_1.visible=self.bank_details_visible
+        
         self.label_bank_details_error.text = ""
        
     def button_save_bank_details_click(self, **event_args):
@@ -65,6 +79,11 @@ class wallet(walletTemplate):
       bank_name = self.textbox_bank_name.text
       account_number = self.textbox_account_number.text
       routing_number = self.textbox_routing_number.text
+      account_Holder_Name = self.text_box_1.text
+      branch_name = self.text_box_2.text
+      account_Type = self.drop_down_1.selected_value
+      
+      
 
     # Validate the bank details (you can add more validation as needed)
       if bank_name and account_number and routing_number:

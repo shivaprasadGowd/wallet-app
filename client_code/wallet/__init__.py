@@ -89,6 +89,7 @@ class wallet(walletTemplate):
     # Validate the bank details (you can add more validation as needed)
       if bank_name and account_number and ifsc_code and account_holder_name and branch_name and account_Type:
         # Save the bank details to the 'accounts' table
+        
         new_account = app_tables.accounts.add_row(
             user= self.user['username'],
             casa=int(account_number), 

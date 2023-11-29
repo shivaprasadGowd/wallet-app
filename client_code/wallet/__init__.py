@@ -11,6 +11,7 @@ class wallet(walletTemplate):
     def __init__(self, user=None, **properties):
         self.init_components(**properties)
         self.user = user
+        e_wallet = anvil.server.call('add_wallet_id', self.user['username'])
         self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
         self.button_2.visible = False
         self.bank_details_visible = False
@@ -44,10 +45,6 @@ class wallet(walletTemplate):
             if not app_tables.accounts.search(q.equal('casa', casa_number)):
                 # Save the Casa account number to the user
                 app_tables.accounts.add_row(user=self.user, casa=casa_number)
-
-                # Map the e-wallet to the casa account
-                e_wallet = anvil.server.call('map_e_wallet_to_casa', self.user['id'], casa_number)
-
                 self.label_2.text = f"Casa account {casa_number} created successfully."
                 self.button_2.visible = True
                 self.button_2.text = "Make Digital Wallet"
@@ -94,7 +91,7 @@ class wallet(walletTemplate):
         new_account = app_tables.accounts.add_row(
             user= self.user['username'],
             casa=int(account_number), 
-            # e_wallet=anvil.server.call,  
+            e_wallet=sa,
             bank_name=bank_name, 
             ifsc_code=ifsc_code,
             account_holder_name = account_holder_name,

@@ -187,7 +187,7 @@ components:
           Cylinder', align: center, bold: true, foreground: '#000', font_size: 16}
       type: Link
       layout_properties: {x: 394.72727966308594, y: 249, width: 113}
-      event_bindings: {click: link_4_click}
+      event_bindings: {}
     - type: Link
       properties: {text: Withdraw, align: center, bold: true, foreground: '#000',
         font_size: 16}
@@ -205,5 +205,5 @@ components:
         italic: false, background: '', bold: true, underline: false, icon: ''}
       name: link_1
       layout_properties: {x: 31.7613525390625, y: 249.897705078125, width: 95}
-      event_bindings: {click: link_1_click}
+      event_bindings: {}
 is_package: true

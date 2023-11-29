@@ -34,19 +34,13 @@ def add_info(email, username, password, pan, address, phone, aadhar):
         usertype='customer',
         confirmed=True,
     )
-@anvil.server.callable
-def add_wallet_id(username):
-  user
-@anvil.server.callable
-def generate_unique_id():
-    # Get current timestamp (in seconds)
-    timestamp = int(time.time())
+    return user_row
 
-    # Generate a random 4-digit number
-    random_number = random.randint(1000, 9999)
+@anvil.server.callable
+def generate_unique_id(username, phone):
 
     # Combine timestamp and random number to create a unique ID
-    unique_id = f"{timestamp}-{random_number}"
+    unique_id = f"{username}-{phone}"
 
     return unique_id
 

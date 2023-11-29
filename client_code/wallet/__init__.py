@@ -8,10 +8,11 @@ from anvil import alert, get_open_form
 import random
 
 class wallet(walletTemplate):
+    global  count
     def __init__(self, user=None, **properties):
         self.init_components(**properties)
         self.user = user
-        e_wallet = anvil.server.call('add_wallet_id', self.user['username'])
+        
         self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
         self.button_2.visible = False
         self.bank_details_visible = False
@@ -73,25 +74,22 @@ class wallet(walletTemplate):
         self.label_bank_details_error.text = ""
        
     def button_save_bank_details_click(self, **event_args):
-    # Get the entered bank details from textboxes
       bank_name = self.textbox_bank_name.text
       account_number = self.textbox_account_number.text
       ifsc_code = self.textbox_ifsc_code.text
       account_holder_name = self.text_box_1.text
       branch_name = self.text_box_2.text
       account_Type = self.drop_down_1.selected_value
-      e_wallet = anvil.server.call('generate_unique_id1', self.user['user'])
+      wallet3 = anvil.server.call('generate_unique_id', self.user['username'], self.user['phone'])
       
       
-
-    # Validate the bank details (you can add more validation as needed)
       if bank_name and account_number and ifsc_code and account_holder_name and branch_name and account_Type:
         # Save the bank details to the 'accounts' table
         
         new_account = app_tables.accounts.add_row(
             user= self.user['username'],
             casa=int(account_number), 
-            e_wallet=sa,
+            e_wallet=wallet3,
             bank_name=bank_name, 
             ifsc_code=ifsc_code,
             account_holder_name = account_holder_name,
@@ -121,6 +119,8 @@ class wallet(walletTemplate):
             self.button_2.text = "Make Digital Wallet"
         else:
             self.label_2.text = "Error mapping Casa account to digital wallet."
+
+
 
     
 

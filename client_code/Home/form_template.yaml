@@ -106,7 +106,7 @@ components:
     name: label_9
   - properties: {role: null, vertical_align: center, height: 65, tooltip: '', border: '',
       foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
-      source: _/theme/money.png, spacing_below: small, background: '', horizontal_align: center}
+      source: _/theme/money-bag.png, spacing_below: small, background: '', horizontal_align: center}
     type: Image
     layout_properties: {x: 21.602264404296875, y: 170, width: 105.19338305664064}
     name: image_3

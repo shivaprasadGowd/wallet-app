@@ -3,7 +3,7 @@ from anvil import *
 import anvil.server
 
 class admin(adminTemplate):
-  def __init__(self, **properties):
+  def __init__(self, user=None, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"

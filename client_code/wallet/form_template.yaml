@@ -17,27 +17,29 @@ components:
       source: _/theme/G-logo.jpg, spacing_below: small, background: '', horizontal_align: center}
     type: Image
     layout_properties: {grid_position: 'RQYEAC,KCANDO'}
-  - name: label_1_copy_4_copy_1_copy_1_copy_1
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: Deposit, font_size: 16, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    type: Label
-    layout_properties: {grid_position: 'RQYEAC,GQVXCD'}
-  - name: label_2_copy_4_copy_1_copy_1_copy_1
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: Money Transfer, font_size: 16, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    type: Label
-    layout_properties: {grid_position: 'RQYEAC,ZXILIZ'}
-  - name: label_3_copy_4_copy_1_copy_1_copy_1
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: Withdraw, font_size: 16, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    type: Label
-    layout_properties: {grid_position: 'RQYEAC,STBFSA'}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '#000000',
+      visible: true, text: Deposit, font_size: 15, wrap_on: mobile, font: '', col_spacing: medium,
+      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+      italic: false, background: '', bold: true, underline: false, icon: ''}
+    name: link_1
+    layout_properties: {grid_position: 'RQYEAC,GPRNRT'}
+    event_bindings: {click: link_1_click}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '#000000',
+      visible: true, text: Money Transfer, font_size: 15, wrap_on: mobile, font: '',
+      col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: link_2
+    layout_properties: {grid_position: 'RQYEAC,LVPHSF'}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '#000000',
+      visible: true, text: Withdraw, font_size: 15, wrap_on: mobile, font: '', col_spacing: medium,
+      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+      italic: false, background: '', bold: true, underline: false, icon: ''}
+    name: link_3
+    layout_properties: {grid_position: 'RQYEAC,KKEDVW'}
   - name: label_4_copy_4_copy_1_copy_1_copy_1
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: Company, font_size: 16, font: '', spacing_above: small,
@@ -62,7 +64,7 @@ components:
     layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
     event_bindings: {click: link_1_click}
 - name: outlined_card_2_copy_1_copy_1
-  properties: {role: outlined-card, col_widths: '{"DHRINU":40,"JVIFJM":20,"ITKMCY":30,"PCGLCD":30}'}
+  properties: {role: outlined-card, col_widths: '{"DHRINU":40,"PCGLCD":30}'}
   type: ColumnPanel
   layout_properties: {grid_position: 'RPHTNO,RCEMRN'}
   components:
@@ -73,16 +75,6 @@ components:
       icon: ''}
     name: label_1
     layout_properties: {grid_position: 'PPKFNU,SVAGVC'}
-  - name: button_1
-    properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '#000000', visible: true, text: Click here to create E-wallet, font_size: 15,
-      font: '', spacing_above: small, icon_align: right, spacing_below: small, italic: false,
-      background: '#3FE5FF', bold: true, underline: false, icon: 'fa:google-wallet'}
-    type: Button
-    layout_properties:
-      col_widths: {}
-      grid_position: DQQZXL,ITKMCY
-    event_bindings: {click: button_1_click}
   - type: Button
     properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '#000000', visible: true, text: Add bank details, font_size: 15,
@@ -91,21 +83,6 @@ components:
     name: button_add_bank_details_click
     layout_properties: {grid_position: 'DQQZXL,PCGLCD'}
     event_bindings: {click: button_add_bank_details_click_click}
-  - name: label_2
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: 17, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '', bold: true, underline: false,
-      icon: ''}
-    type: Label
-    layout_properties: {grid_position: 'SDRYHG,DHRINU'}
-  - name: button_2
-    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '#000000', visible: true, text: button_2, font_size: 17, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '#3FE5FF', bold: true, underline: false, icon: ''}
-    type: Button
-    layout_properties: {grid_position: 'SDRYHG,JVIFJM'}
-    event_bindings: {}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Account Holder''s Name:', font_size: null, font: '', spacing_above: small,
@@ -192,9 +169,9 @@ components:
     layout_properties: {grid_position: 'KHWLCY,RZPCPD'}
   - type: Button
     properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+      foreground: '#000000', visible: true, text: Submit, font_size: 17, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#3FE5FF', bold: true, underline: false, icon: ''}
     name: button_save_bank_details
     layout_properties: {grid_position: 'XCHOIX,QGHSKM'}
     event_bindings: {click: button_save_bank_details_click}

@@ -24,7 +24,7 @@ class LOGIN(LOGINTemplate):
             user_type = user['usertype']
 
             if user_type == 'admin':
-                open_form('admin')
+                open_form('admin', user=user)
             if user_type == 'customer':
                 open_form('customer', user=user)
         else:

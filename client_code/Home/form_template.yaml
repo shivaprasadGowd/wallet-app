@@ -34,22 +34,34 @@ components:
       visible: true, text: Money Transfer, font_size: 16, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
-    layout_properties: {grid_position: 'RQYEAC,ZXILIZ'}
+    layout_properties: {grid_position: 'RQYEAC,ZXILIZ CJWOBE,DVFGZL'}
     name: label_2_copy_4
+  - name: link_9
+    properties: {}
+    type: Link
+    layout_properties: {grid_position: 'RQYEAC,ZXILIZ CUOTKD,JKACWM'}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: Withdraw, font_size: 17, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
-    layout_properties: {grid_position: 'RQYEAC,STBFSA'}
+    layout_properties: {grid_position: 'RQYEAC,STBFSA PDFTVQ,YYBYET'}
     name: label_3_copy_4
+  - name: link_10
+    properties: {}
+    type: Link
+    layout_properties: {grid_position: 'RQYEAC,STBFSA PQIJMK,FZKCTB'}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: Company, font_size: 16, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
-    layout_properties: {grid_position: 'RQYEAC,VHPMZK'}
+    layout_properties: {grid_position: 'RQYEAC,VHPMZK YTUBXQ,LWSDZS'}
     name: label_4_copy_4
+  - name: link_11
+    properties: {}
+    type: Link
+    layout_properties: {grid_position: 'RQYEAC,VHPMZK PHGUTV,JDQVSZ'}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: Career, font_size: 16, font: '', spacing_above: small,

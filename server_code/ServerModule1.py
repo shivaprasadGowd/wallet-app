@@ -44,6 +44,20 @@ def generate_unique_id(username, phone):
 
     return unique_id
 
+@anvil.server.callable
+def depo(name,account):
+  user_row = app_tables.transactions.add_row(
+    user=name,
+    account=account
+    
+  )
+
+@anvil.server.callable
+def money(type,amount):
+  unique=f"{type}-{amount}"
+  return unique
+  
+
 
 
 

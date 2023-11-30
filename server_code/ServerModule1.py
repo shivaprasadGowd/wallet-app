@@ -6,7 +6,7 @@ from anvil import tables, app
 import time
 import random
 import uuid
-
+# server_module.py
 
 # Function to validate login credentials
 @anvil.server.callable
@@ -45,12 +45,16 @@ def generate_unique_id(username, phone):
     return unique_id
 
 @anvil.server.callable
-def depo(name,account):
+def depo(name,account,e_wallet,money):
+  current_datetime = datetime.now()
   user_row = app_tables.transactions.add_row(
     user=name,
-    account=account
-    
+    account=account,
+    e_wallet=e_wallet,
+    money=money,
+    date=current_datetime
   )
+  return user_row
 
 @anvil.server.callable
 def money(type,amount):

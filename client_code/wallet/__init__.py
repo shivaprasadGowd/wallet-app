@@ -78,7 +78,7 @@ class wallet(walletTemplate):
         self.label_bank_details_error.text = "Please fill in all bank details."
 
     def link_1_click(self, **event_args):
-      open_form('deposit')
+      open_form('deposit', user=self.user)
 
 
 

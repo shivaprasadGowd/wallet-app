@@ -79,7 +79,7 @@ db_schema:
       type: string
     title: accounts
   transactions:
-    client: none
+    client: full
     server: full
     columns:
     - name: user

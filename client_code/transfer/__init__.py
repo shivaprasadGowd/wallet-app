@@ -9,22 +9,8 @@ class transfer(transferTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
-      
 
     def button_1_click(self, **event_args):
-        amount = float(self.txt_amount.text)
-        currency = self.dd_currency.selected_value
-
-        # Call the server function to transfer money
-        anvil.server.call('transfer_money', amount, currency)
-
-        # Optionally, update any UI elements or show a success message
-        self.label_status.text = f'Transferred {amount} {currency} successfully.'
-
-   
-
-    
-
-   
-   
-   
+        money=anvil.server.call('get_money_values')
+      if
+       

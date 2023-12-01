@@ -119,12 +119,12 @@ components:
       foreground: ''
       items: [$, €, ₣, ₹, '']
       visible: true
-      font_size: null
+      font_size: 18
       font: ''
       spacing_above: small
       spacing_below: small
       italic: false
-      background: ''
+      background: '#DFFDFF'
       bold: false
       underline: false
       include_placeholder: false

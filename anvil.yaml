@@ -50,9 +50,6 @@ db_schema:
     - name: casa
       admin_ui: {order: 0, width: 178}
       type: number
-    - name: money
-      admin_ui: {order: 2, width: 184}
-      type: number
     - name: e_money
       admin_ui: {order: 3, width: 168}
       type: number
@@ -63,7 +60,7 @@ db_schema:
       admin_ui: {order: 9, width: 188}
       type: string
     - name: user
-      admin_ui: {order: -0.5, width: 168}
+      admin_ui: {order: 0, width: 157}
       type: string
     - name: e_wallet
       admin_ui: {order: 1, width: 201}
@@ -77,19 +74,28 @@ db_schema:
     - name: account_Type
       admin_ui: {order: 6, width: 200}
       type: string
+    - name: money
+      admin_ui: {order: 3, width: 200}
+      type: string
     title: accounts
   transactions:
-    client: none
+    client: full
     server: full
     columns:
     - name: user
       admin_ui: {width: 200, order: 0}
       type: string
     - name: date
-      admin_ui: {order: 3, width: 200}
+      admin_ui: {order: 2.5, width: 200}
       type: datetime
     - name: e_wallet
-      admin_ui: {order: 2, width: 200}
+      admin_ui: {order: 1.125, width: 200}
+      type: string
+    - name: account
+      admin_ui: {width: 200, order: 1}
+      type: number
+    - name: money
+      admin_ui: {width: 200, order: 1.5}
       type: string
     title: transactions
 renamed: true

@@ -7,15 +7,6 @@ class SIGNUP(SIGNUPTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    # Any code you write here will run before the form opens.
-
-  def link_user_to_account(self):
-      # Call the server function to link the user to an account
-      anvil.server.call('link_accounts_to_users', account_id='', user_id=self.user['id'])
-
-  def link_user_to_transactions(self):
-        # Call the server function to link the user to transactions
-       anvil.server.call('link_accounts_to_transactions', account_id='', user_id=self.user['id'])
 
   def button_1_click(self, **event_args): 
     count=0

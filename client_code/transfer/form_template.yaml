@@ -40,12 +40,17 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''money'']', writeback: true}
 - type: FlowPanel
-  properties: {}
+  properties: {role: null, vertical_align: full, spacing: medium, align: center, tooltip: '',
+    border: '', foreground: '', visible: true, spacing_above: small, spacing_below: small,
+    background: ''}
   name: navbar_links
   layout_properties: {slot: nav-right}
   components:
   - type: Button
-    properties: {text: button_1}
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: self-tr, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
     name: button_1
     layout_properties: {slot: default}
     event_bindings: {click: button_1_click}

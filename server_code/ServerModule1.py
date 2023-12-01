@@ -1,6 +1,7 @@
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from datetime import datetime
 import anvil.server
 from anvil import tables, app
 import time
@@ -61,24 +62,37 @@ def money(type,amount):
   unique=f"{type}-{amount}"
   return unique
   
-import anvil.server
+
+
 
 @anvil.server.callable
 def transfer_money(user, amount, currency):
+    # Extract numeric part from the 'amount' string
+    amount_numeric = extract_numeric_part(amount)
+
     # Get the exchange rate for the selected currency
     exchange_rate = get_exchange_rate(currency)
 
     # Fetch the current money value from the database
-    current_money = app_tables.accounts.get(user=user)['money']
+    user_row = app_tables.accounts.get(user=user)
+    current_money_str = user_row['money']
 
     # Convert the amount to rupees based on the selected currency
-    amount_in_rupees = convert_to_rupees(amount, exchange_rate)
+    amount_in_rupees = convert_to_rupees(amount_numeric, exchange_rate)
 
     # Update the 'e_money' column with the converted amount
-    app_tables.accounts.update_row(user=user, e_money=amount_in_rupees)
+    user_row['e_money'] = amount_in_rupees
 
-    # Update the 'money' column by subtracting the transferred amount
-    app_tables.accounts.update_row(user=user, money=current_money - amount)
+    # Update the 'money' column by subtracting the transferred amount (as a string)
+    user_row['money'] = str(float(current_money_str) - amount_numeric)
+
+    # Save the changes to the row
+    user_row.update()
+
+def extract_numeric_part(amount_str):
+    # Extract numeric part from the string (assuming the numeric part is at the beginning)
+    numeric_part = ''.join(char for char in amount_str if char.isdigit() or char == '.')
+    return float(numeric_part) if '.' in numeric_part else int(numeric_part) if numeric_part else 0
 
 def get_exchange_rate(currency):
     # Implement logic to fetch exchange rate based on the selected currency
@@ -87,4 +101,7 @@ def get_exchange_rate(currency):
     return exchange_rates.get(currency, 1.0)
 
 def convert_to_rupees(amount, exchange_rate):
-    return amount * exchange_ratey_values
+    return amount * exchange_rate
+
+
+

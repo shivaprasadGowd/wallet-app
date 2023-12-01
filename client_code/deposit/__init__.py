@@ -44,6 +44,12 @@ class deposit(depositTemplate):
                 money=money3,
                 date=current_datetime
             )
+        count = 1
+        money3 = anvil.server.call('money', self.drop_down_1.selected_value, self.text_box_3.text)
+        if app_tables.accounts.search(casa=self.text_box_2.text):count += 1
+         
+        
+          
       else:
         self.label_2.text = "Error: User information is not available"
 

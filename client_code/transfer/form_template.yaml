@@ -1,21 +1,51 @@
 is_package: true
 container:
   type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: ''}
 components:
 - type: ColumnPanel
   properties: {col_widths: '{}'}
   name: content_panel
   layout_properties: {slot: default}
   components:
-  - type: Button
-    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: submit, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: button_1
-    layout_properties: {grid_position: 'DQGMDJ,LEUSCO'}
+  - name: dd_currency
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: [$, €, ₹]
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: false
+    type: DropDown
+    layout_properties: {grid_position: 'NDSRGQ,KAIFPO'}
+    event_bindings: {}
+  - name: txt_amount
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'NDSRGQ,YEVEHK'}
+    event_bindings: {}
+    data_bindings:
+    - {property: text, code: 'self.item[''money'']', writeback: true}
 - type: FlowPanel
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
+  components:
+  - type: Button
+    properties: {text: button_1}
+    name: button_1
+    layout_properties: {slot: default}
+    event_bindings: {click: button_1_click}

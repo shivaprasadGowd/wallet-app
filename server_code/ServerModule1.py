@@ -60,6 +60,44 @@ def depo(name,account,e_wallet,money):
 def money(type,amount):
   unique=f"{type}-{amount}"
   return unique
+
+
+
+
+@anvil.server.callable
+def transfer_money(amount, currency):
+    # Get the current user or any other way to identify the user
+    user = anvil.users.get_user()
+   
+    
+    # Get the exchange rate for the selected currency
+    exchange_rate = get_exchange_rate(currency)
+
+    # Fetch the current money value from the database
+    current_money = app_tables.accounts.get(user=user)['money']
+
+    # Convert the amount to rupees based on the selected currency
+    amount_in_rupees = convert_to_rupees(amount, exchange_rate)
+
+    # Update the 'e_money' column with the converted amount
+    app_tables.accounts.update_row(user=user, e_money=amount_in_rupees)
+
+    # Update the 'money' column by subtracting the transferred amount
+    app_tables.accounts.update_row(user=user, money=current_money - amount)
+
+def get_exchange_rate(currency):
+    # Implement logic to fetch exchange rate based on the selected currency
+    # For simplicity, you can have predefined rates or fetch them from an external API
+    exchange_rates = {'dollar': 73.5, 'french': 87.2, 'rupees': 1.0}
+    return exchange_rates.get(currency, 1.0)
+
+def convert_to_rupees(amount, exchange_rate):
+    return amount * exchange_rate
+
+
+
+
+  
   
 
 

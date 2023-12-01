@@ -113,7 +113,7 @@ components:
       border: ''
       enabled: true
       foreground: ''
-      items: [dollar, euro, rupees]
+      items: [usd, euro, rupees]
       visible: true
       font_size: null
       font: ''

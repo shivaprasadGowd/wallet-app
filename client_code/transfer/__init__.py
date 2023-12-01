@@ -15,8 +15,8 @@ class transfer(transferTemplate):
         # Get the current user or any other way to identify the user
         # Replace with the actual method to get the user
 
-        amount = float(self.txt_amount.text)
-        currency = self.dd_currency.selected_value
+        amount = float(self.text_box_4.text)
+        currency = self.drop_down_1.selected_value
 
         # Call the server function to transfer money
         anvil.server.call('transfer_money', self.user, amount, currency)

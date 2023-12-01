@@ -64,14 +64,13 @@ def money(type,amount):
   
 
 
-
 @anvil.server.callable
 def transfer_money(user, amount, currency):
-    # Extract numeric part from the 'amount' string
-    amount_numeric = extract_numeric_part(amount)
+    # Extract numeric part and currency type from the 'amount' string
+    amount_numeric, source_currency = extract_numeric_and_currency(amount)
 
     # Get the exchange rate for the selected currency
-    exchange_rate = get_exchange_rate(currency)
+    exchange_rate = get_exchange_rate(source_currency)
 
     # Fetch the current money value from the database
     user_row = app_tables.accounts.get(user=user)
@@ -80,28 +79,24 @@ def transfer_money(user, amount, currency):
     # Convert the amount to rupees based on the selected currency
     amount_in_rupees = convert_to_rupees(amount_numeric, exchange_rate)
 
-    # Update the 'e_money' column with the converted amount
-    user_row['e_money'] = amount_in_rupees
-
-    # Update the 'money' column by subtracting the transferred amount (as a string)
-    user_row['money'] = str(float(current_money_str) - amount_numeric)
+    # Update the 'e_money' column by adding the converted amount
+    user_row['e_money'] = str(float(user_row['e_money']) + amount_in_rupees)
 
     # Save the changes to the row
     user_row.update()
 
-def extract_numeric_part(amount_str):
-    # Extract numeric part from the string (assuming the numeric part is at the beginning)
+def extract_numeric_and_currency(amount_str):
+    # Extract numeric part and currency type from the string
     numeric_part = ''.join(char for char in amount_str if char.isdigit() or char == '.')
-    return float(numeric_part) if '.' in numeric_part else int(numeric_part) if numeric_part else 0
+    currency_type = ''.join(char for char in amount_str if char.isalpha())
+    return float(numeric_part) if '.' in numeric_part else int(numeric_part), currency_type
 
 def get_exchange_rate(currency):
     # Implement logic to fetch exchange rate based on the selected currency
     # For simplicity, you can have predefined rates or fetch them from an external API
-    exchange_rates = {'dollar': 73.5, 'french': 87.2, 'rupees': 1.0}
+    exchange_rates = {'dollar': 73.5, 'euro': 87.2, 'rupees': 1.0}
     return exchange_rates.get(currency, 1.0)
 
 def convert_to_rupees(amount, exchange_rate):
     return amount * exchange_rate
-
-
 

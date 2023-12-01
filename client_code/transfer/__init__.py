@@ -13,9 +13,7 @@ class transfer(transferTemplate):
         self.init_components(**properties)
 
     def button_1_click(self, **event_args):
-        # Get the current user or any other way to identify the user
-        # Replace with the actual method to get the user
-
+        # Get the amount and currency from the UI components
         amount = float(self.text_box_4.text)
         currency = self.drop_down_1.selected_value
 
@@ -27,5 +25,3 @@ class transfer(transferTemplate):
 
         # Optionally, update any UI elements or show a success message
         self.label_4.text = f'Transferred {amount} {currency} successfully.'
-
-   

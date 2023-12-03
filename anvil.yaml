@@ -74,8 +74,17 @@ db_schema:
     - name: account_Type
       admin_ui: {order: 6, width: 200}
       type: string
-    - name: money
-      admin_ui: {order: 3, width: 200}
+    - name: money_usd
+      admin_ui: {order: 10, width: 200}
+      type: string
+    - name: money_euro
+      admin_ui: {width: 200, order: 9.5}
+      type: string
+    - name: money_inr
+      admin_ui: {width: 200, order: 9.75}
+      type: string
+    - name: money_swis
+      admin_ui: {width: 200, order: 9.875}
       type: string
     title: accounts
   transactions:

@@ -16,3 +16,7 @@ class customer(customerTemplate):
 
     def button_2_click(self, **event_args):
       open_form('wallet', user=self.user)
+
+    def link_9_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form('transfer',user=self.user)

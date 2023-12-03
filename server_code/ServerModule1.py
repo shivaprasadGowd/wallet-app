@@ -45,8 +45,8 @@ def generate_unique_id(username, phone):
 
     return unique_id
   
-exchange_rates = {'usd': 73.5, 'eur': 87.2, 'inr': 1.0}
 
+exchange_rates = {'usd': 73.5, 'eur': 87.2, 'inr': 1.0}
 @anvil.server.callable
 def get_exchange_rate(currency):
     # Return the exchange rate for the specified currency

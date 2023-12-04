@@ -47,7 +47,7 @@ components:
     event_bindings: {click: link_1_click}
     name: link_1
 - type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{"WRPCZF":20,"OUDEWK":40,"YENLKA":20,"XXUTMQ":40}'}
+  properties: {role: outlined-card, col_widths: '{"WRPCZF":20,"OUDEWK":40}'}
   name: outlined_card_2
   layout_properties: {slot: default}
   components:
@@ -123,6 +123,44 @@ components:
     properties: {height: 51}
     name: spacer_1
     layout_properties: {grid_position: 'WBNHZD,NPCXKW'}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: E- wallet Balance, font_size: 20, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_13
+    layout_properties: {grid_position: 'QDGRMY,GMXRQF'}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: [$, Є, ₣, ₹]
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: false
+    name: drop_down_2
+    layout_properties: {grid_position: 'RBCLID,UORFHW'}
+    event_bindings: {change: drop_down_2_change}
+  - type: Label
+    properties: {}
+    name: label_14
+    layout_properties: {grid_position: 'RBCLID,YRPABG'}
+  - type: Spacer
+    properties: {height: 61}
+    name: spacer_2
+    layout_properties: {grid_position: 'COOQVA,SVZJWE'}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: Transfer Funds to E-wallet, font_size: 20, font: '', spacing_above: small,
@@ -212,43 +250,3 @@ components:
     name: button_1
     layout_properties: {grid_position: 'YITTQD,VSIGFW'}
     event_bindings: {click: button_1_click}
-  - type: Spacer
-    properties: {height: 61}
-    name: spacer_2
-    layout_properties: {grid_position: 'URXRZP,UNGPZG'}
-  - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: E- wallet Balance, font_size: 20, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    name: label_13
-    layout_properties: {grid_position: 'UUDOTI,JTZARZ'}
-  - type: DropDown
-    properties:
-      role: null
-      align: full
-      tooltip: ''
-      placeholder: ''
-      border: ''
-      enabled: true
-      foreground: ''
-      items: [$, Є, ₣, ₹]
-      visible: true
-      font_size: null
-      font: ''
-      spacing_above: small
-      spacing_below: small
-      italic: false
-      background: ''
-      bold: false
-      underline: false
-      include_placeholder: false
-    name: drop_down_2
-    layout_properties:
-      col_widths: {}
-      grid_position: WQFFEF,YENLKA
-    event_bindings: {change: drop_down_2_change}
-  - type: Label
-    properties: {}
-    name: label_14
-    layout_properties: {grid_position: 'WQFFEF,XXUTMQ'}

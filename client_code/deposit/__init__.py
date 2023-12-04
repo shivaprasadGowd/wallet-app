@@ -10,6 +10,7 @@ from datetime import datetime
 class deposit(depositTemplate):
     def __init__(self, user=None, **properties):
         # Set Form properties and Data Bindings.
+        self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
         print(f"User parameter in deposit form: {user}")
         self.user = user
         self.init_components(**properties)

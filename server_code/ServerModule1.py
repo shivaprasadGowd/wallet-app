@@ -39,8 +39,6 @@ def add_info(email, username, password, pan, address, phone, aadhar):
 
 @anvil.server.callable
 def generate_unique_id(username, phone):
-
-    # Combine timestamp and random number to create a unique ID
     unique_id = f"{username}-{phone}"
 
     return unique_id

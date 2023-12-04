@@ -14,39 +14,68 @@ class deposit(depositTemplate):
         self.user = user
         self.init_components(**properties)
 
-        # Any code you write here will run before the form opens.
-
-
     def button_1_click(self, **event_args):
       current_datetime = datetime.now()
-      count = 0
 
-      if app_tables.accounts.search(casa=self.text_box_2.text):
-        count += 1
-      else:
-        self.label_2.text = "Account does not exist"
-
-    # Check if self.user is not None before accessing attributes
       if self.user is not None:
         wallet3 = anvil.server.call('generate_unique_id', self.user['username'], self.user['phone'])
 
         if wallet3 is None:
             self.label_2.text = "Error: Wallet is empty"
-            return  # Exit the function or handle the error appropriately
+            return
 
-        money3 = anvil.server.call('money', self.drop_down_1.selected_value, self.text_box_3.text)
+        
+        money3_numeric = ''.join(filter(str.isdigit, str(self.text_box_3.text)))
+        money_value = float(money3_numeric) if money3_numeric else 0.0
 
-        if count == 1:
-            new_account = app_tables.transactions.add_row(
+        selected_symbol = self.drop_down_1.selected_value
+
+       
+        entered_account_number = str(self.text_box_2.text).strip() 
+
+        
+        if len(entered_account_number) < 10 or not entered_account_number.isdigit():
+            self.label_2.text = "Error: Invalid account number. Please enter at least 10 digits."
+            return 
+
+        
+        user_accounts = app_tables.accounts.search(
+            user=self.user['username'],
+            casa=int(entered_account_number)  
+        )
+
+        if user_accounts and len(user_accounts) > 0:
+            user_account = user_accounts[0]
+
+            
+            if selected_symbol == '€':
+                user_account['money_euro'] = str((float(user_account['money_euro'] or 0)) + money_value)
+            elif selected_symbol == '$':
+                user_account['money_usd'] = str((float(user_account['money_usd'] or 0)) + money_value)
+            elif selected_symbol == '₣':
+                user_account['money_swis'] = str((float(user_account['money_swis'] or 0)) + money_value)
+            elif selected_symbol == '₹':
+                user_account['money_inr'] = str((float(user_account['money_inr'] or 0)) + money_value)
+            else:
+                self.label_2.text = "Error: Invalid currency symbol selected."
+                return  
+
+            user_account.update()
+
+            
+            new_transaction = app_tables.transactions.add_row(
                 user=self.user['username'],
-                account=self.text_box_2.text,
+                account=int(entered_account_number),
                 e_wallet=wallet3,
-                money=money3,
+                money=f"{selected_symbol}-{money_value}",
                 date=current_datetime
             )
+
+            self.label_2.text = "Money added successfully to the account"
+        else:
+            self.label_2.text = "Error: No matching accounts found for the user or invalid account number."
       else:
         self.label_2.text = "Error: User information is not available"
 
-
-
+      
   

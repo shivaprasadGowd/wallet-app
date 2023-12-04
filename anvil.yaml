@@ -50,9 +50,6 @@ db_schema:
     - name: casa
       admin_ui: {order: 0, width: 178}
       type: number
-    - name: e_money
-      admin_ui: {order: 3, width: 168}
-      type: number
     - name: bank_name
       admin_ui: {order: 4, width: 185}
       type: string
@@ -85,6 +82,9 @@ db_schema:
       type: string
     - name: money_swis
       admin_ui: {width: 200, order: 9.875}
+      type: string
+    - name: e_money
+      admin_ui: {order: 1.5, width: 200}
       type: string
     title: accounts
   transactions:

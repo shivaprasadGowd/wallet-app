@@ -24,19 +24,19 @@ class deposit(depositTemplate):
             self.label_2.text = "Error: Wallet is empty"
             return
 
-        # Get the numeric amount entered in self.text_box_3.text
+        
         money3_numeric = ''.join(filter(str.isdigit, str(self.text_box_3.text)))
         money_value = float(money3_numeric) if money3_numeric else 0.0
 
         selected_symbol = self.drop_down_1.selected_value
 
-        # Get the entered account number as a string
+       
         entered_account_number = str(self.text_box_2.text).strip() 
 
         
         if len(entered_account_number) < 10 or not entered_account_number.isdigit():
             self.label_2.text = "Error: Invalid account number. Please enter at least 10 digits."
-            return  # Exit the function if the account number is invalid
+            return 
 
         
         user_accounts = app_tables.accounts.search(
@@ -58,7 +58,7 @@ class deposit(depositTemplate):
                 user_account['money_inr'] = str((float(user_account['money_inr'] or 0)) + money_value)
             else:
                 self.label_2.text = "Error: Invalid currency symbol selected."
-                return  # Exit the function if an invalid symbol is selected
+                return  
 
             user_account.update()
 

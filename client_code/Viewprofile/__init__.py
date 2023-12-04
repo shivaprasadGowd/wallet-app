@@ -95,3 +95,6 @@ class Viewprofile(ViewprofileTemplate):
 
     def text_box_2_pressed_enter(self, **event_args):
       phone_number = self.text_box_2.text.strip()
+
+    def link_8_click(self, **event_args):
+      open_form('deposit', user = self.user)

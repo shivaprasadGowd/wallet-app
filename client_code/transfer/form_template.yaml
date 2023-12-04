@@ -47,7 +47,7 @@ components:
     event_bindings: {click: link_1_click}
     name: link_1
 - type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{}'}
+  properties: {role: outlined-card, col_widths: '{"WRPCZF":20,"OUDEWK":40}'}
   name: outlined_card_2
   layout_properties: {slot: default}
   components:
@@ -67,36 +67,54 @@ components:
       underline: false, icon: ''}
     name: label_2
     layout_properties: {grid_position: 'CVVMVP,SLJDDG'}
-  - type: RichText
-    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-      foreground: '', visible: true, font_size: null, content: 'Dollar:', font: '',
-      spacing_above: small, spacing_below: small, data: null, background: '', format: markdown}
-    name: rich_text_1
-    layout_properties: {grid_position: 'FIMASC,NSOHLK'}
-  - type: TextBox
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Rupees:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_5
+    layout_properties: {grid_position: 'SIFEYI,XCGKVW'}
+  - type: Label
     properties: {}
-    name: text_box_1
-    layout_properties: {grid_position: 'FIMASC,ABISXU'}
-  - type: RichText
-    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-      foreground: '', visible: true, font_size: null, content: 'Euro:', font: '',
-      spacing_above: small, spacing_below: small, data: null, background: '', format: markdown}
-    name: rich_text_2
-    layout_properties: {grid_position: 'FVTLPY,GEAJEG'}
-  - type: TextBox
+    name: label_6
+    layout_properties: {grid_position: 'SIFEYI,MVTJMY'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Dollars:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_7
+    layout_properties: {grid_position: 'RXAGOV,AHPFFC'}
+  - type: Label
     properties: {}
-    name: text_box_2
-    layout_properties: {grid_position: 'FVTLPY,PIENOK'}
-  - type: RichText
-    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-      foreground: '', visible: true, font_size: null, content: 'Rupees:', font: '',
-      spacing_above: small, spacing_below: small, data: null, background: '', format: markdown}
-    name: rich_text_3
-    layout_properties: {grid_position: 'LDKNZV,HCGXTQ'}
-  - type: TextBox
+    name: label_10
+    layout_properties: {grid_position: 'RXAGOV,VPPAFI'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Euro:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_8
+    layout_properties: {grid_position: 'DYIUSM,XNHKAE'}
+  - type: Label
     properties: {}
-    name: text_box_3
-    layout_properties: {grid_position: 'LDKNZV,JYHVFC'}
+    name: label_11
+    layout_properties: {grid_position: 'DYIUSM,AACIKY'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Swiss dollars:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_9
+    layout_properties: {grid_position: 'YTWZLQ,LPFOQR'}
+  - type: Label
+    properties: {}
+    name: label_12
+    layout_properties: {grid_position: 'YTWZLQ,ZVAVXC'}
+  - type: Spacer
+    properties: {height: 51}
+    name: spacer_1
+    layout_properties: {grid_position: 'WBNHZD,NPCXKW'}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: Transfer Funds to E-wallet, font_size: 20, font: '', spacing_above: small,
@@ -113,7 +131,7 @@ components:
       border: ''
       enabled: true
       foreground: ''
-      items: [usd, euro, rupees]
+      items: [$, Є, ₣, ₹, euro, rupees]
       visible: true
       font_size: null
       font: ''
@@ -136,13 +154,9 @@ components:
     event_bindings: {pressed_enter: text_box_4_pressed_enter}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Self-Transfer, font_size: null, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '#3FE5FF', bold: true, underline: false, icon: ''}
+      foreground: '', visible: true, text: Transfer, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '#3FE5FF',
+      bold: true, underline: false, icon: ''}
     name: button_1
     layout_properties: {grid_position: 'YITTQD,VSIGFW'}
     event_bindings: {click: button_1_click}
-  - name: label_4
-    properties: {}
-    type: Label
-    layout_properties: {grid_position: 'AXJNES,ACWTHR'}

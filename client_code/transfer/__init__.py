@@ -25,3 +25,6 @@ class transfer(transferTemplate):
 
         # Optionally, update any UI elements or show a success message
         self.label_4.text = f'Transferred {amount} {currency} successfully.'
+
+    def link_1_click(self, **event_args):
+      open_form('customer', user= self)

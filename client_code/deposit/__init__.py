@@ -77,5 +77,8 @@ class deposit(depositTemplate):
       else:
         self.label_2.text = "Error: User information is not available"
 
+    def link_click(self, **event_args):
+      open_form('customer', user= self.user)
+
       
   

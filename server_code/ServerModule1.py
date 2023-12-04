@@ -46,82 +46,35 @@ def generate_unique_id(username, phone):
     return unique_id
   
 
-exchange_rates = {'usd': 73.5, 'eur': 87.2, 'inr': 1.0}
+def convert_to_inr(amount, currency):
+    conversion_rates = {
+        'usd': 75.0,   # Replace with actual rates
+        'euro': 85.0,  # Replace with actual rates
+        'inr': 1.0,    # 1:1 conversion for INR
+        'swiss': 80.0  # Replace with actual rates
+        # Add more currencies as needed
+    }
+
+    return amount * conversion_rates[currency.lower()]
+
+# Define a function to transfer money to e_wallet
 @anvil.server.callable
-def get_exchange_rate(currency):
-    # Return the exchange rate for the specified currency
-    return exchange_rates.get(currency, 1.0)  # Default to 1.0 if currency not found
+def transfer_money(username, amount, selected_currency):
+    # Get the current user's data from the accounts table
+    account_row = app_tables.accounts.get(user=username)
 
-@anvil.server.callable
-def extract_numeric_and_currency(amount_str):
-    # Initialize variables for numeric_part and currency_type
-    numeric_part = ''
-    currency_type = ''
+    # Convert the entered amount to INR
+    amount_inr = convert_to_inr(float(amount), selected_currency)
 
-    # Iterate through characters in amount_str
-    for char in amount_str:
-        if char.isdigit() or char == '.':
-            numeric_part += char
-        elif char.isalpha():
-            currency_type += char
+    # Update the e_wallet column with the transferred amount
+    account_row['e_wallet'] += amount_inr
 
-    # Convert numeric_part to float if it contains a dot, otherwise to int
-    try:
-        numeric_part = float(numeric_part)
-    except ValueError:
-        numeric_part = 0  # Default to 0 if conversion fails
+    # Update the specific currency column with the transferred amount
+    currency_column = f'money_{selected_currency.lower()}'
+    account_row[currency_column] -= float(amount)
 
-    return numeric_part, currency_type
+    # Save the changes to the accounts table
+    account_row.save()
 
-@anvil.server.callable
-def transfer_money(user, amount, currency):
-    # Extract numeric part and currency type from the 'amount' string
-    amount_numeric, source_currency = extract_numeric_and_currency(amount)
-
-    # Get the exchange rate for the selected currency
-    exchange_rate = get_exchange_rate(source_currency)
-
-    # Fetch the current money value from the database
-    user_row = app_tables.accounts.get(user=user)
-    current_money_str = user_row['money']
-
-    # Ensure current_money_str is not None
-    current_money_str = current_money_str or '0'
-
-    # Convert the amount to rupees based on the selected currency
-    amount_in_rupees = amount_numeric * exchange_rate
-
-    # Ensure 'e_money' is not None
-    user_row['e_money'] = user_row['e_money'] or 0
-
-    # Update the 'e_money' column with the converted amount
-    user_row['e_money'] += amount_in_rupees
-
-    # Update the 'money' column by subtracting the transferred amount
-    user_row['money'] = str(float(current_money_str) - amount_numeric)
-
-    # Save the changes to the row
-    user_row.update()
-
-@anvil.server.callable
-def add_money(user, amount, currency):
-    # Extract numeric part and currency type from the 'amount' string
-    amount_numeric, source_currency = extract_numeric_and_currency(amount)
-
-    # Get the exchange rate for the selected currency
-    exchange_rate = get_exchange_rate(source_currency)
-
-    # Fetch the current money value from the database
-    user_row = app_tables.accounts.get(user=user)
-
-    # Ensure 'e_money' is not None
-    user_row['e_money'] = user_row['e_money'] or 0
-
-    # Convert the amount to rupees based on the selected currency
-    amount_in_rupees = amount_numeric * exchange_rate
-
-    # Update the 'e_money' column with the converted amount
-    user_row['e_money'] += amount_in_rupees
-
-    # Save the changes to the row
-    user_row.update()
+    # Return a success message or any relevant information
+    return f"Transferred {amount} {selected_currency} to e_wallet for {user_id}"

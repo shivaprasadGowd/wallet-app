@@ -11,6 +11,7 @@ class transfer(transferTemplate):
     def __init__(self, user=None, **properties):
         self.user = user
         self.init_components(**properties)
+        self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
         self.display()
         
         

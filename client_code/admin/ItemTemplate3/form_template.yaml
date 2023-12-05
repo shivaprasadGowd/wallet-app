@@ -71,7 +71,7 @@ components:
   event_bindings: {click: button_1_click}
 - type: Button
   properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: X, font_size: null, font: '', spacing_above: small,
+    foreground: '', visible: true, text: Delete, font_size: null, font: '', spacing_above: small,
     icon_align: left, spacing_below: small, italic: false, background: '#ff0000',
     bold: true, underline: false, icon: ''}
   name: button_2

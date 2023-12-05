@@ -80,10 +80,10 @@ def transfer_money(username, amount, selected_currency):
 
 @anvil.server.callable
 def get_account_data(name):
-    account_table = app_tables.accounts.get(user=name)
+    account_table = app_tables.currencies.get(user=name)
     return account_table
 
 @anvil.server.callable
 def account_no(name):
-    account_table = app_tables.accounts.get(user=name)
+    account_table = app_tables.currencies.get(user=name)
     return account_table

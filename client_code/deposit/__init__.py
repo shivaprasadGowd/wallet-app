@@ -37,10 +37,7 @@ class deposit(depositTemplate):
             self.label_2.text = "Error: Invalid account number. Please enter at least 10 digits."
             return
 
-        user_currencies = app_tables.currencies.search(
-            user=self.user['username'],
-            casa=int(entered_account_number)
-        )
+        user_currencies = anvil.server.call('get_currency_data', self.user['username'])
 
         if user_currencies and len(user_currencies) > 0:
             user_currency = user_currencies[0]

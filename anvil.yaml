@@ -60,7 +60,7 @@ db_schema:
       admin_ui: {order: 0, width: 157}
       type: string
     - name: e_wallet
-      admin_ui: {order: 1, width: 201}
+      admin_ui: {order: 1.25, width: 201}
       type: string
     - name: account_holder_name
       admin_ui: {order: 7, width: 214}
@@ -84,7 +84,7 @@ db_schema:
       admin_ui: {width: 200, order: 9.875}
       type: string
     - name: e_money
-      admin_ui: {order: 1.5, width: 200}
+      admin_ui: {order: 3.125, width: 200}
       type: string
     title: accounts
   transactions:
@@ -107,4 +107,9 @@ db_schema:
       admin_ui: {width: 200, order: 1.5}
       type: string
     title: transactions
+  currencies:
+    client: none
+    server: full
+    columns: []
+    title: currencies
 renamed: true

@@ -88,15 +88,15 @@ db_schema:
     - name: e_wallet
       admin_ui: {order: 1.125, width: 200}
       type: string
-    - name: account
-      admin_ui: {width: 200, order: 1}
-      type: number
     - name: money
       admin_ui: {width: 200, order: 1.5}
       type: string
+    - name: casa
+      admin_ui: {width: 200}
+      type: number
     title: transactions
   currencies:
-    client: none
+    client: full
     server: full
     columns:
     - name: e_wallet
@@ -117,5 +117,8 @@ db_schema:
     - name: user
       admin_ui: {width: 200, order: -1}
       type: string
+    - name: casa
+      admin_ui: {width: 200}
+      type: number
     title: currencies
 renamed: true

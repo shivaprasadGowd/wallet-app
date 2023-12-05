@@ -37,9 +37,9 @@ class deposit(depositTemplate):
             self.label_2.text = "Error: Invalid account number. Please enter at least 10 digits."
             return
 
-        user_currencies = app_tables.currencies.add (
+        user_currencies = app_tables.currencies.search(
             user=self.user['username'],
-            account=int(entered_account_number)
+            casa=int(entered_account_number)
         )
 
         if user_currencies and len(user_currencies) > 0:
@@ -61,7 +61,7 @@ class deposit(depositTemplate):
 
             new_transaction = app_tables.transactions.add_row(
                 user=self.user['username'],
-                account=int(entered_account_number),
+                casa=int(entered_account_number),
                 e_wallet=wallet3,
                 money=f"{selected_symbol}-{money_value}",
                 date=current_datetime

@@ -36,6 +36,8 @@ class transfer(transferTemplate):
       
 
       if selected_symbol == 'Є':
+        if (money_value < 5) or (money_value > 50000):
+            self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."
         if float(user_currency['money_euro']) > money_value:
             user_currency['money_euro'] = str(float(user_currency['money_euro']) - money_value)
             money_inr_equivalent = money_value * conversion_rate_euro_to_inr

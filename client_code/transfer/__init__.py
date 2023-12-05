@@ -113,7 +113,6 @@ class transfer(transferTemplate):
       if eb == '₣':
           swis_to_rupee = float(user_currency['e_money'])/95
           self.label_14.text = swis_to_rupee
-
       if eb == '₹':
           self.label_14.text = user_currency['e_money']
         

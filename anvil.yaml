@@ -107,4 +107,9 @@ db_schema:
       admin_ui: {width: 200, order: 1.5}
       type: string
     title: transactions
+  currencies:
+    client: none
+    server: full
+    columns: []
+    title: currencies
 renamed: true

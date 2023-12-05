@@ -114,5 +114,8 @@ db_schema:
     - name: money_inr
       admin_ui: {width: 200, order: 4}
       type: string
+    - name: user
+      admin_ui: {width: 200, order: -1}
+      type: string
     title: currencies
 renamed: true

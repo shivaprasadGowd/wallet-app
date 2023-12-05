@@ -105,7 +105,7 @@ class ItemTemplate3(ItemTemplate3Template):
           # Clear textboxes after deletion
           self.clear_textboxes()
       else:
-          alert("User data not found. Deletion failed.", title="Error")
+          alert("Deletion failed.", title="Error")
 
     def clear_textboxes(self):
     # Reset the values of textboxes

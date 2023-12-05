@@ -69,7 +69,7 @@ class transfer(transferTemplate):
       
       new_transaction = app_tables.transactions.add_row(
                 user=self.user['username'],
-                account=int(entered_account_number,
+                account=int(entered_account_number),
                 e_wallet=wallet3,
                 money=f"{selected_symbol}-{money_value}",
                 date=current_datetime
@@ -85,6 +85,9 @@ class transfer(transferTemplate):
         self.label_11.text = "€ " + str(account_data['money_euro'])
         self.label_12.text = "₣ " + str(account_data['money_swis'])
         eb= self.drop_down_2.selected_value
+
+
+      
         if eb == '$':
           dollar_to_rupee = float(user_currency['e_money'])/80
           self.label_14.text = dollar_to_rupee

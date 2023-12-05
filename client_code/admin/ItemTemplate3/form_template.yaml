@@ -29,6 +29,7 @@ components:
   layout_properties: {grid_position: 'PGAQLM,ARYPBP'}
   data_bindings:
   - {property: text, code: 'self.item[''phone'']', writeback: true}
+  event_bindings: {pressed_enter: text_box_4_pressed_enter}
 - type: TextBox
   properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
     border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
@@ -47,7 +48,7 @@ components:
   layout_properties: {grid_position: 'PGAQLM,DHKJFU'}
   data_bindings:
   - {property: text, code: 'self.item[''pan'']', writeback: true}
-  event_bindings: {pressed_enter: text_box_6_pressed_enter}
+  event_bindings: {change: text_box_6_change}
 - type: TextBox
   properties: {}
   name: text_box_7

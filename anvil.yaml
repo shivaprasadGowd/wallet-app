@@ -71,18 +71,6 @@ db_schema:
     - name: account_Type
       admin_ui: {order: 6, width: 200}
       type: string
-    - name: money_usd
-      admin_ui: {order: 10, width: 200}
-      type: string
-    - name: money_euro
-      admin_ui: {width: 200, order: 9.5}
-      type: string
-    - name: money_inr
-      admin_ui: {width: 200, order: 9.75}
-      type: string
-    - name: money_swis
-      admin_ui: {width: 200, order: 9.875}
-      type: string
     - name: e_money
       admin_ui: {order: 3.125, width: 200}
       type: string
@@ -110,6 +98,24 @@ db_schema:
   currencies:
     client: none
     server: full
-    columns: []
+    columns:
+    - name: e_wallet
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: money_usd
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: money_euro
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: money_swis
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: money_inr
+      admin_ui: {width: 200, order: 4}
+      type: string
+    - name: user
+      admin_ui: {width: 200, order: -1}
+      type: string
     title: currencies
 renamed: true

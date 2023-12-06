@@ -55,7 +55,7 @@ components:
         icon: 'fa:user'}
       type: Link
       layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
-      event_bindings: {click: link_1_click}
+      event_bindings: {}
 - type: ColumnPanel
   properties: {role: outlined-card, col_widths: '{}'}
   name: outlined_card_2
@@ -71,56 +71,123 @@ components:
       col_widths: {}
       grid_position: LOJVPL,OSUQMD
   - type: Label
-    properties: {}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Username:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
     name: label_1
     layout_properties: {grid_position: 'OIKCRA,RTNSTD'}
-  - type: Label
+  - type: TextBox
     properties: {}
-    name: label_6
-    layout_properties: {grid_position: 'OIKCRA,NPMGKK'}
+    name: text_box_1
+    layout_properties: {grid_position: 'OIKCRA,DYLGNT'}
+    data_bindings:
+    - {property: text, code: 'self.item[''username'']', writeback: true}
   - type: Label
-    properties: {}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Email:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
     name: label_2
     layout_properties: {grid_position: 'PIBVJZ,TZOYZE'}
-  - type: Label
+  - type: TextBox
     properties: {}
-    name: label_7
-    layout_properties: {grid_position: 'PIBVJZ,YPCKTL'}
+    name: text_box_2
+    layout_properties: {grid_position: 'PIBVJZ,ITEBST'}
+    data_bindings:
+    - {property: text, code: 'self.item[''email'']', writeback: true}
   - type: Label
-    properties: {}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Password:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
     name: label_3
     layout_properties: {grid_position: 'QDUFKO,XDTQWA'}
-  - type: Label
+  - type: TextBox
     properties: {}
-    name: label_8
-    layout_properties: {grid_position: 'QDUFKO,BVUOTB'}
+    name: text_box_3
+    layout_properties: {grid_position: 'QDUFKO,ZUDXTS'}
+    data_bindings:
+    - {property: text, code: 'self.item[''password'']', writeback: true}
   - type: Label
-    properties: {}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'aadhar:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
     name: label_4
     layout_properties: {grid_position: 'DBPYDK,RWDOYS'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_5
+    layout_properties: {grid_position: 'DBPYDK,GZGSDC'}
   - type: Label
-    properties: {}
-    name: label_9
-    layout_properties: {grid_position: 'DBPYDK,WCLTDA'}
-  - type: Label
-    properties: {}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'pan:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
     name: label_5
     layout_properties: {grid_position: 'TNDAHE,GHVEIP'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_6
+    layout_properties: {grid_position: 'TNDAHE,RSAQKK'}
   - type: Label
-    properties: {}
-    name: label_10
-    layout_properties: {grid_position: 'TNDAHE,ABCVXF'}
-  - type: Button
-    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: edit, font_size: null, font: '', spacing_above: small,
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Phone, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
+    name: label_6
+    layout_properties: {grid_position: 'KIPYOR,WHSSKM'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_4
+    layout_properties: {grid_position: 'KIPYOR,LPPYMD'}
+    data_bindings:
+    - {property: text, code: 'self.item[''phone'']', writeback: true}
+    event_bindings: {pressed_enter: text_box_4_pressed_enter}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Address:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_7
+    layout_properties: {grid_position: 'TBCJSQ,MWVAVH'}
+  - type: TextBox
+    properties: {}
+    name: text_box_7
+    layout_properties: {grid_position: 'TBCJSQ,NQDBXJ'}
+    data_bindings:
+    - {property: text, code: 'self.item[''address'']', writeback: true}
+  - type: Button
+    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: edit, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '#add8e6',
+      bold: false, underline: false, icon: ''}
     name: button_1
     layout_properties: {grid_position: 'UVNOFD,JRHSBZ'}
+    event_bindings: {click: button_1_click}
   - type: Button
-    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: delete, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+      icon_align: left, spacing_below: small, italic: false, background: '#add8e6',
+      bold: false, underline: false, icon: ''}
     name: button_2
     layout_properties: {grid_position: 'UVNOFD,YPWAOX'}
+    event_bindings: {click: button_2_click}
+  - type: Button
+    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: back, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '#add8e6',
+      bold: false, underline: false, icon: ''}
+    name: button_3
+    layout_properties: {grid_position: 'UVNOFD,HNCBJY'}
+    event_bindings: {click: button_3_click}

@@ -11,23 +11,23 @@ class admin(adminTemplate):
   def __init__(self, user=None, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
-    self.repeating_panel_1.visible = False
+    if user is not None:
+            self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
+    else:
+        self.label_1.text = "Welcome to Green Gate Financial (User data not available)"
+    
 
   
   def link_1_click(self, **event_args):
     open_form('Home')
 
   def button_1_click(self, **event_args):
-    self.repeating_panel_1.visible = not self.repeating_panel_1.visible
+        # Open the show_users form and pass the user data
+        show_users_form = open_form('admin.show_users')
 
-    customer_type_filter = []
+       
 
-    for user in app_tables.users.search():
-        if user['usertype'] == 'customer':
-            customer_type_filter.append(user)
-
-    self.repeating_panel_1.items = customer_type_filter
+ 
 
 
  

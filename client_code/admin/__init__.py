@@ -11,13 +11,16 @@ class admin(adminTemplate):
   def __init__(self, user=None, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
-    self.repeating_panel_1.visible = False
-    self.text_box_1.visible = False
-    self.button_2.visible = False
-    self.label_2.visible = False
-    self.label_3.visible = False
-    self.label_4.visible = False
+    if user is not None:
+            self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
+            self.repeating_panel_1.visible = False
+            self.text_box_1.visible = False
+            self.button_2.visible = False
+            self.label_2.visible = False
+            self.label_3.visible = False
+            self.label_4.visible = False
+    else:
+        self.label_1.text = "Welcome to Green Gate Financial (User data not available)"
     
 
   
@@ -39,6 +42,8 @@ class admin(adminTemplate):
             customer_type_filter.append(user)
 
     self.repeating_panel_1.items = customer_type_filter
+
+ 
 
 
  

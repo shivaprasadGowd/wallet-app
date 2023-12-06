@@ -20,7 +20,7 @@ components:
   layout_properties: {grid_position: 'PGAQLM,PAPACV'}
   data_bindings:
   - {property: text, code: 'self.item[''email'']', writeback: true}
-  event_bindings: {pressed_enter: text_box_3_pressed_enter}
+  event_bindings: {}
 - type: Button
   properties: {role: outlined-button, align: left, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: View Profile, font_size: null, font: '',

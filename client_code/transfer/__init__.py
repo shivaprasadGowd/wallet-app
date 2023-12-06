@@ -12,6 +12,8 @@ class transfer(transferTemplate):
         self.user = user
         self.init_components(**properties)
         self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
+        user_account_numbers = anvil.server.call('get_user_account_numbers', self.user['username'])
+        self.dropdown_account_numbers.items = user_account_numbers
         self.display()
         
         
@@ -20,53 +22,54 @@ class transfer(transferTemplate):
 
     def button_1_click(self, **event_args):
       current_datetime = datetime.now()
+      acc = self.dropdown_account_numbers.selected_value
+      user_currency= anvil.server.call('get_currency_data',acc)
+      fore_money = anvil.server.call('get_accounts_emoney',acc)
       if self.user is not None:
         wallet3 = anvil.server.call('generate_unique_id', self.user['username'], self.user['phone'])
 
         if wallet3 is None:
-            self.label_4.text = "Error: Wallet is empty"
+            self.label_2.text = "Error: Wallet is empty"
             return
       selected_symbol = self.drop_down_1.selected_value
       money_value = float(self.text_box_4.text)
-      entered_account_number = anvil.server.call('account_no',self.user['username'])
-      user_currency = anvil.server.call('get_account_data', self.user['username'])
       conversion_rate_usd_to_inr = 80.0
       conversion_rate_swis_to_inr = 95.0
       conversion_rate_euro_to_inr = 90.0
       
-
-      if selected_symbol == 'Є':
-        if (money_value < 5) or (money_value > 50000):
-            self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."
-        if float(user_currency['money_euro']) > money_value:
+      if (money_value < 5) or (money_value > 50000):
+        self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."
+      else:
+        if selected_symbol == 'Є':  
+          if float(user_currency['money_euro']) > money_value:
             user_currency['money_euro'] = str(float(user_currency['money_euro']) - money_value)
             money_inr_equivalent = money_value * conversion_rate_euro_to_inr
-            user_currency['e_money'] = str(float(user_currency['e_money'] or 0) + money_inr_equivalent)
-        else:
+            fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + money_inr_equivalent)
+          else:
             self.label_4.text = "Insufficient funds"
-      elif selected_symbol == '$':
-        if float(user_currency['money_usd']) > money_value:
-            user_currency['money_usd'] = str(float(user_currency['money_usd']) - money_value)
-            money_inr_equivalent = money_value * conversion_rate_usd_to_inr
-            user_currency['e_money'] = str(float(user_currency['e_money'] or 0) + money_inr_equivalent)
+        elif selected_symbol == '$':
+            if float(user_currency['money_usd']) > money_value:
+              user_currency['money_usd'] = str(float(user_currency['money_usd']) - money_value)
+              money_inr_equivalent = money_value * conversion_rate_usd_to_inr
+              fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + money_inr_equivalent)
+            else:
+              self.label_4.text = "Insufficient funds"
+        elif selected_symbol == '₣':
+            if float(user_currency['money_swis']) > money_value:
+              user_currency['money_swis'] = str(float(user_currency['money_swis']) - money_value)
+              money_inr_equivalent = money_value * conversion_rate_swis_to_inr
+              fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + money_inr_equivalent)
+            else:
+              self.label_4.text = "Insufficient funds"
+        elif selected_symbol == '₹':
+            if float(user_currency['money_inr']) > money_value:
+              user_currency['money_inr'] = str(float(user_currency['money_inr']) - money_value)
+              money_inr_equivalent = money_value * 1
+              fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + money_inr_equivalent)
+            else:
+              self.label_4.text = "Insufficient funds"
         else:
-            self.label_4.text = "Insufficient funds"
-      elif selected_symbol == '₣':
-        if float(user_currency['money_swis']) > money_value:
-            user_currency['money_swis'] = str(float(user_currency['money_swis']) - money_value)
-            money_inr_equivalent = money_value * conversion_rate_swis_to_inr
-            user_currency['e_money'] = str(float(user_currency['e_money'] or 0) + money_inr_equivalent)
-        else:
-            self.label_4.text = "Insufficient funds"
-      elif selected_symbol == '₹':
-        if float(user_currency['money_inr']) > money_value:
-            user_currency['money_inr'] = str(float(user_currency['money_inr']) - money_value)
-            money_inr_equivalent = money_value * 1
-            user_currency['e_money'] = str(float(user_currency['e_money'] or 0) + money_inr_equivalent)
-        else:
-            self.label_4.text = "Insufficient funds"
-      else:
-        self.label_4.text = "Error: Invalid currency symbol selected."
+          self.label_4.text = "Error: Invalid currency symbol selected."
         return
       
       new_transaction = app_tables.transactions.add_row(
@@ -80,42 +83,53 @@ class transfer(transferTemplate):
       open_form('transfer',user=self.user)
 
     def display(self, **event_args):
-        user_currency = anvil.server.call('get_account_data', self.user['username'])
-        account_data = anvil.server.call('get_account_data',self.user['username'])
-        self.label_6.text = "$" + str(account_data['money_usd'])
-        self.label_10.text = "₹ " + str(account_data['money_inr'])
-        self.label_11.text = "€ " + str(account_data['money_euro'])
-        self.label_12.text = "₣ " + str(account_data['money_swis'])
+        acc=self.dropdown_account_numbers.selected_value
+        fore_money = anvil.server.call('get_accounts_emoney',acc)
+        acc_validate = anvil.server.call('validate_acc_no_to_display_in_transfer',acc)
+        self.label_6.text = "$" + str(acc_validate['money_usd'])
+        self.label_10.text = "₹ " + str(acc_validate['money_inr'])
+        self.label_11.text = "€ " + str(acc_validate['money_euro'])
+        self.label_12.text = "₣ " + str(acc_validate['money_swis'])
+        e_money_value = fore_money['e_money']
         eb= self.drop_down_2.selected_value
+        if eb== '$':
+          if e_money_value is not None:
+            try:
+              dollar_to_rupee = int(str(e_money_value)) / 80
+        # Continue with the rest of your code using dollar_to_rupee
+              print(f"Dollar to Rupee: {dollar_to_rupee}")
+            except ValueError:
+        # Handle the case where e_money is not a valid integer
+              print(f"Error: e_money is not a valid integer - {e_money_value}")
+          else:
+    # Set a default value or handle the case where e_money is None
+            dollar_to_rupee = float(e_money_value)/80.0  # Set a default value, adjust as needed
+            self.label_14.text=dollar_to_rupee
+            print(f"Dollar to Rupee (Default): {dollar_to_rupee}")
+        # if eb == 'Є':
+        #   euro_to_rupee = float(user_currency['e_money'])/90
+        #   self.label_14.text = euro_to_rupee
+        # if eb == '₣':
+        #   swis_to_rupee = float(user_currency['e_money'])/95
+        #   self.label_14.text = swis_to_rupee
 
+        # if eb == '₹':
+        #   self.label_14.text = user_currency['e_money']
 
-      
-        if eb == '$':
-          dollar_to_rupee = float(user_currency['e_money'])/80
-          self.label_14.text = dollar_to_rupee
-        if eb == 'Є':
-          euro_to_rupee = float(user_currency['e_money'])/90
-          self.label_14.text = euro_to_rupee
-        if eb == '₣':
-          swis_to_rupee = float(user_currency['e_money'])/95
-          self.label_14.text = swis_to_rupee
+    # def drop_down_2_change(self, **event_args):
+    #   user_currency = anvil.server.call('get_account_no', self.user['username'])
+    #   eb= self.drop_down_2.selected_value
+    #   if eb == '$':
+    #       dollar_to_rupee = float(user_currency['e_money'])/80
+    #       self.label_14.text = dollar_to_rupee
+    #   if eb == 'Є':
+    #       euro_to_rupee = float(user_currency['e_money'])/90
+    #       self.label_14.text = euro_to_rupee
+    #   if eb == '₣':
+    #       swis_to_rupee = float(user_currency['e_money'])/95
+    #       self.label_14.text = swis_to_rupee
+    #   if eb == '₹':
+    #       self.label_14.text = user_currency['e_money']
 
-        if eb == '₹':
-          self.label_14.text = user_currency['e_money']
-
-    def drop_down_2_change(self, **event_args):
-      user_currency = anvil.server.call('get_account_data', self.user['username'])
-      eb= self.drop_down_2.selected_value
-      if eb == '$':
-          dollar_to_rupee = float(user_currency['e_money'])/80
-          self.label_14.text = dollar_to_rupee
-      if eb == 'Є':
-          euro_to_rupee = float(user_currency['e_money'])/90
-          self.label_14.text = euro_to_rupee
-      if eb == '₣':
-          swis_to_rupee = float(user_currency['e_money'])/95
-          self.label_14.text = swis_to_rupee
-      if eb == '₹':
-          self.label_14.text = user_currency['e_money']
-        
-        
+    def dropdown_account_numbers_change(self, **event_args):
+      self.display()

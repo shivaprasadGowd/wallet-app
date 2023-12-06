@@ -72,6 +72,11 @@ class wallet(walletTemplate):
             branch_name = branch_name,
             account_Type = account_Type
         )
+        new_acc = app_tables.currencies.add_row(
+          user= self.user['username'],
+          casa= int(account_number),
+          e_wallet=wallet3
+        )
 
         self.label_bank_details_error.text = "Bank details saved successfully."
       else:
@@ -79,15 +84,3 @@ class wallet(walletTemplate):
 
     def link_1_click(self, **event_args):
       open_form('deposit', user=self.user)
-
-
-
-
-
-    
-
-
-
-            
-
-  

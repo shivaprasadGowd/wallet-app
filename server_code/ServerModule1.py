@@ -86,6 +86,21 @@ def get_currency_data(name):
 def get_account_no(name):
     accounts_tab = app_tables.accounts.get(user=name)
     return accounts_tab
+#
+@anvil.server.callable
+def update_all_rows(user, e_wallet, e_money_value):
+    # Fetch all rows with the same user and e_wallet
+    matching_rows = app_tables.your_table_name.search(user=user, e_wallet=e_wallet)
+
+    # Update 'e_money' column in all matching rows
+    for row in matching_rows:
+        row['e_money'] = e_money_value
+
+    # Update other columns if needed
+    # row['other_column'] = some_value
+
+    # Save changes to the table
+    app_tables.your_table_name.update(matching_rows)
 
 
 

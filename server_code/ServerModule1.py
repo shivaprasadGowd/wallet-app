@@ -77,4 +77,13 @@ def transfer_money(username, amount, selected_currency):
     # Return a success message or any relevant information
     return f"Transferred {amount} {selected_currency} to e_wallet for {user_id}"
 
+@anvil.server.callable
+def get_currency_data(name):
+    currency_table = app_tables.currencies.get(user=name)
+    return currency_table
+
+@anvil.server.callable
+def get_account_no(name):
+    accounts_tab = app_tables.accounts.get(user=name)
+    return accounts_tab
 

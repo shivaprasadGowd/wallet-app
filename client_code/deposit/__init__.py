@@ -18,6 +18,7 @@ class deposit(depositTemplate):
   
     def button_1_click(self, **event_args):
       current_datetime = datetime.now()
+      acc= anvil.server.call('get_account_no', self.user['username'])
 
       if self.user is not None:
         wallet3 = anvil.server.call('generate_unique_id', self.user['username'], self.user['phone'])
@@ -32,15 +33,22 @@ class deposit(depositTemplate):
         selected_symbol = self.drop_down_1.selected_value
 
         entered_account_number = str(self.text_box_2.text).strip()
+        
 
         if len(entered_account_number) < 10 or not entered_account_number.isdigit():
             self.label_2.text = "Error: Invalid account number. Please enter at least 10 digits."
             return
-
+        
         user_currencies = anvil.server.call('get_currency_data', self.user['username'])
-
-        if user_currencies and len(user_currencies) > 0:
-            user_currency = user_currencies[0]
+        if user_currencies['user']!= self.user['username']:
+          new_row = app_tables.currencies.add_row(
+          user= self.user['username'],
+          e_wallet= wallet3,
+          casa = acc['casa']
+          )
+        else:
+          if user_currencies is not None:
+            user_currency = user_currencies
 
             if selected_symbol == '€':
                 user_currency['money_euro'] = str((float(user_currency['money_euro'] or 0)) + money_value)
@@ -65,7 +73,7 @@ class deposit(depositTemplate):
             )
 
             self.label_2.text = "Money added successfully to the account"
-        else:
+          else:
             self.label_2.text = "Error: No matching accounts found for the user or invalid account number."
       else:
         self.label_2.text = "Error: User information is not available"

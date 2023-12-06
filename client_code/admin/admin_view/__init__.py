@@ -8,11 +8,11 @@ from anvil import alert, open_form
 import re
 
 class admin_view(admin_viewTemplate):
-  def __init__(self,user_data=None, **properties):
-    # Set Form properties and Data Bindings.
-    self.init_components(**properties)
-    if user_data:
-    # Any code you write here will run before the form opens.
+    def __init__(self, user_data=None, **properties):
+        # Set Form properties and Data Bindings.
+        self.init_components(**properties)
+        if user_data:
+            # Any code you write here will run before the form opens.
             self.text_box_1.text = user_data['username']
             self.text_box_2.text = user_data['email']
             self.text_box_3.text = user_data['password']
@@ -20,22 +20,34 @@ class admin_view(admin_viewTemplate):
             self.text_box_5.text = user_data['aadhar']
             self.text_box_6.text = user_data['pan']
             self.text_box_7.text = user_data['address']
-
   
-def button_2_click(self, **event_args):
-    confirmation = confirm("Are you sure you want to delete this user?", title="Delete Confirmation")
-
-    if confirmation:
-        user_data = self.item  # Assuming the item property is set when opening the form
-        if user_data:
-            # Assuming 'app_tables.users' is the table containing user data
-            app_tables.users.get(id=user_data['id']).delete()
-            
+    def button_2_click(self, **event_args):
+        # Get the username from the text box
+        username = self.text_box_1.text
+  
+        # Try to get the user from the users table
+        user_to_delete = app_tables.users.get(username=username)
+        
+        if user_to_delete is not None:
+            # Delete the user
+            user_to_delete.delete()
             alert("User deleted successfully.", title="Success")
             
+            # Clear textboxes after deletion
+            self.clear_textboxes()
+            open_form('admin', user=self.user_data)
+            
             # Optionally, you can close the form after deletion
-            self.close()
+          
         else:
-            alert("User data not found. Deletion failed.", title="Error")
-    else:
-        alert("Deletion canceled.", title="Canceled")
+            alert("User not found. Deletion failed.", title="Error")
+    
+    def clear_textboxes(self):
+        # Clear the text property of each textbox
+        self.text_box_1.text = ''
+        self.text_box_2.text = ''
+        self.text_box_3.text = ''
+        self.text_box_4.text = ''
+        self.text_box_5.text = ''
+        self.text_box_6.text = ''
+        self.text_box_7.text = ''

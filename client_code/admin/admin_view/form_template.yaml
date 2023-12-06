@@ -5,8 +5,8 @@ container:
     role: null, html: ''}
 components:
 - type: ColumnPanel
-  properties: {col_widths: '{"WZJKBK":15,"FOXXET":15,"RQGOHG":30,"TYKOCS":50,"WHMBUR":10}'}
-  name: content_panel
+  properties: {role: outlined-card}
+  name: outlined_card_1
   layout_properties: {slot: default}
   components:
   - name: outlined_card_1_copy_4_copy_1_copy_1_copy_1_copy_1
@@ -14,7 +14,9 @@ components:
       wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
       spacing_below: small, background: '#3FE5FF'}
     type: ColumnPanel
-    layout_properties: {grid_position: 'UNLHWC,TEAZLF'}
+    layout_properties:
+      col_widths: {}
+      grid_position: ZFYQPJ,IOYFLR
     components:
     - name: image_1_copy_4_copy_1_copy_1_copy_1_copy_1
       properties: {role: null, vertical_align: center, height: 52.36363220214844,
@@ -54,51 +56,71 @@ components:
       type: Link
       layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
       event_bindings: {click: link_1_click}
-  - name: label_1
+- type: ColumnPanel
+  properties: {role: outlined-card, col_widths: '{}'}
+  name: outlined_card_2
+  layout_properties: {slot: default}
+  components:
+  - name: label_1_copy
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: '', font_size: 20, font: '', spacing_above: small, icon_align: left,
       spacing_below: small, italic: false, background: '#3FE5FF', bold: true, underline: false,
       icon: ''}
     type: Label
-    layout_properties: {grid_position: 'NACXMP,GRXDAL'}
-  - type: Button
-    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: 'Show User''s:', font_size: null, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '#add8e6', bold: true, underline: false, icon: 'fa:angle-double-down'}
-    name: button_1
-    layout_properties: {grid_position: 'AFPTUZ,NXLUCN'}
-    event_bindings: {click: button_1_click}
-  - type: TextBox
+    layout_properties:
+      col_widths: {}
+      grid_position: LOJVPL,OSUQMD
+  - type: Label
     properties: {}
-    name: text_box_1
-    layout_properties: {grid_position: 'GWZHRI,TYKOCS'}
-  - type: Button
-    properties: {text: '', icon: 'fa:search'}
-    name: button_2
-    layout_properties: {grid_position: 'GWZHRI,WHMBUR'}
+    name: label_1
+    layout_properties: {grid_position: 'OIKCRA,RTNSTD'}
   - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Username:', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    properties: {}
+    name: label_6
+    layout_properties: {grid_position: 'OIKCRA,NPMGKK'}
+  - type: Label
+    properties: {}
     name: label_2
-    layout_properties: {grid_position: 'KUZTVG,WZJKBK'}
+    layout_properties: {grid_position: 'PIBVJZ,TZOYZE'}
   - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Phone Number:', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    properties: {}
+    name: label_7
+    layout_properties: {grid_position: 'PIBVJZ,YPCKTL'}
+  - type: Label
+    properties: {}
     name: label_3
-    layout_properties: {grid_position: 'KUZTVG,FOXXET'}
+    layout_properties: {grid_position: 'QDUFKO,XDTQWA'}
   - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Email:', font_size: null, font: '', spacing_above: small,
+    properties: {}
+    name: label_8
+    layout_properties: {grid_position: 'QDUFKO,BVUOTB'}
+  - type: Label
+    properties: {}
+    name: label_4
+    layout_properties: {grid_position: 'DBPYDK,RWDOYS'}
+  - type: Label
+    properties: {}
+    name: label_9
+    layout_properties: {grid_position: 'DBPYDK,WCLTDA'}
+  - type: Label
+    properties: {}
+    name: label_5
+    layout_properties: {grid_position: 'TNDAHE,GHVEIP'}
+  - type: Label
+    properties: {}
+    name: label_10
+    layout_properties: {grid_position: 'TNDAHE,ABCVXF'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: edit, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
-    name: label_4
-    layout_properties: {grid_position: 'KUZTVG,RQGOHG'}
-  - type: RepeatingPanel
-    properties: {item_template: admin.ItemTemplate3}
-    name: repeating_panel_1
-    layout_properties: {grid_position: 'RXYMNH,MIPJGY'}
+    name: button_1
+    layout_properties: {grid_position: 'UVNOFD,JRHSBZ'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: delete, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_2
+    layout_properties: {grid_position: 'UVNOFD,YPWAOX'}

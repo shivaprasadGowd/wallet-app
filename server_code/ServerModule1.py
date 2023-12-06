@@ -77,30 +77,29 @@ def transfer_money(username, amount, selected_currency):
     # Return a success message or any relevant information
     return f"Transferred {amount} {selected_currency} to e_wallet for {user_id}"
 
+
+# for deposit
 @anvil.server.callable
 def get_currency_data(name):
-    currency_table = app_tables.currencies.get(user=name)
+    currency_table = app_tables.currencies.get(casa= int(name))
     return currency_table
 
+# fot populating the dropdown section
 @anvil.server.callable
-def get_account_no(name):
-    accounts_tab = app_tables.accounts.get(user=name)
-    return accounts_tab
-#
+def get_user_account_numbers(username):
+    # Fetch all matching rows for the specified user
+    user_currencies = app_tables.currencies.search(user=username)
+    # Extract 'casa' values from all matching rows
+    return [str(currency['casa']) for currency in user_currencies]
+  
+#for the transfer form
 @anvil.server.callable
-def update_all_rows(user, e_wallet, e_money_value):
-    # Fetch all rows with the same user and e_wallet
-    matching_rows = app_tables.your_table_name.search(user=user, e_wallet=e_wallet)
+def validate_acc_no_to_display_in_transfer(acc):
+  user_validate= app_tables.currencies.get(casa=int(acc))
+  return user_validate
 
-    # Update 'e_money' column in all matching rows
-    for row in matching_rows:
-        row['e_money'] = e_money_value
-
-    # Update other columns if needed
-    # row['other_column'] = some_value
-
-    # Save changes to the table
-    app_tables.your_table_name.update(matching_rows)
-
-
-
+#for getting the e_money in accounts
+@anvil.server.callable
+def get_accounts_emoney(acc):
+  user_emoney= app_tables.accounts.get(casa=int(acc))
+  return user_emoney

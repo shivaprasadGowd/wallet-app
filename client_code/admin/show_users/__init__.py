@@ -13,8 +13,25 @@ class show_users(show_usersTemplate):
         self.button_1.visible = False
 
         # Filter users and set items in the repeating panel
-        customer_type_filter = [user for user in app_tables.users.search() if user['usertype'] == 'customer']
+        self.refresh_users()
+
+    def refresh_users(self, username_filter=None):
+        # If a username filter is provided, filter users based on the username
+        if username_filter:
+            customer_type_filter = [user for user in app_tables.users.search()
+                                    if user['usertype'] == 'customer' and user['username'].lower().startswith(username_filter.lower())]
+        else:
+            # If no username filter, show all customers
+            customer_type_filter = [user for user in app_tables.users.search() if user['usertype'] == 'customer']
+
+        # Set items in the repeating panel
         self.repeating_panel_1.items = customer_type_filter
 
     def button_1_click(self, **event_args):
+        # Toggle visibility of the repeating panel
         self.repeating_panel_1.visible = not self.repeating_panel_1.visible
+
+    def button_2_click(self, **event_args):
+        # Handle search button click event to refresh users based on entered username
+        username_filter = self.text_box_1.text
+        self.refresh_users(username_filter)

@@ -54,13 +54,6 @@ components:
       type: Link
       layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
       event_bindings: {click: link_1_click}
-  - name: label_1
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: 20, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '#3FE5FF', bold: true, underline: false,
-      icon: ''}
-    type: Label
-    layout_properties: {grid_position: 'NACXMP,GRXDAL'}
   - type: Button
     properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: users, font_size: null, font: '', spacing_above: small,
@@ -70,13 +63,17 @@ components:
     layout_properties: {grid_position: 'JCIPAR,KPOWGB'}
     event_bindings: {click: button_1_click}
   - type: TextBox
-    properties: {}
+    properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: l, bold: false, underline: false}
     name: text_box_1
     layout_properties: {grid_position: 'GWZHRI,TYKOCS'}
   - type: Button
     properties: {text: '', icon: 'fa:search'}
     name: button_2
     layout_properties: {grid_position: 'GWZHRI,WHMBUR'}
+    event_bindings: {click: button_2_click}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Username:', font_size: null, font: '', spacing_above: small,

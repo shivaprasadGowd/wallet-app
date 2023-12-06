@@ -7,19 +7,20 @@ components:
   name: text_box_1
   layout_properties: {grid_position: 'PGAQLM,HKNCCA'}
   data_bindings:
-  - {property: text, code: 'self.item[''email'']', writeback: true}
+  - {property: text, code: 'self.item[''username'']', writeback: true}
 - type: TextBox
   properties: {}
   name: text_box_2
   layout_properties: {grid_position: 'PGAQLM,CRAJFV'}
   data_bindings:
-  - {property: text, code: 'self.item[''username'']', writeback: true}
+  - {property: text, code: 'self.item[''phone'']', writeback: true}
 - type: TextBox
   properties: {}
   name: text_box_3
   layout_properties: {grid_position: 'PGAQLM,PAPACV'}
   data_bindings:
-  - {property: text, code: 'self.item[''password'']', writeback: true}
+  - {property: text, code: 'self.item[''email'']', writeback: true}
+  event_bindings: {pressed_enter: text_box_3_pressed_enter}
 - type: Button
   properties: {role: outlined-button, align: left, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: View Profile, font_size: null, font: '',

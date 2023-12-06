@@ -87,3 +87,20 @@ def get_account_no(name):
     accounts_tab = app_tables.accounts.get(user=name)
     return accounts_tab
 
+@anvil.server.callable
+def get_user_data(username):
+    # Fetch user data from the 'users' datatable based on the username
+    user_row = app_tables.users.get(username=username)
+    
+    if user_row is not None:
+        return {
+            'username': user_row['username'],
+            'email': user_row['email'],
+            'phone': user_row['phone'],
+            'aadhar': user_row['aadhar'],
+            'pan': user_row['pan'],
+            'password': user_row['password']
+        }
+    else:
+        return None
+

@@ -6,19 +6,15 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 class show_users(show_usersTemplate):
-  def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
-    self.init_components(**properties)
-   
-    # Any code you write here will run before the form opens.
+    def __init__(self, **properties):
+        self.init_components(**properties)
 
-  def button_1_click(self, **event_args):
-     self.repeating_panel_1.visible = not self.repeating_panel_1.visible
+        # Set the visibility of the button to False
+        self.button_1.visible = False
 
-     customer_type_filter = []
+        # Filter users and set items in the repeating panel
+        customer_type_filter = [user for user in app_tables.users.search() if user['usertype'] == 'customer']
+        self.repeating_panel_1.items = customer_type_filter
 
-     for user in app_tables.users.search():
-        if user['usertype'] == 'customer':
-            customer_type_filter.append(user)
-
-     self.repeating_panel_1.items = customer_type_filter
+    def button_1_click(self, **event_args):
+        self.repeating_panel_1.visible = not self.repeating_panel_1.visible

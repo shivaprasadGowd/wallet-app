@@ -11,6 +11,7 @@ class show_users(show_usersTemplate):
 
         # Set the visibility of the button to False
         self.button_1.visible = False
+       
 
         # Filter users and set items in the repeating panel
         self.refresh_users()

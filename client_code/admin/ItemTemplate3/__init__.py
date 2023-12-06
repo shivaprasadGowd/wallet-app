@@ -17,6 +17,8 @@ class ItemTemplate3(ItemTemplate3Template):
         
         # Open the admin_view form and pass the user details
         open_form('admin.admin_view', user_data=selected_user)
+
+  
       
        
 

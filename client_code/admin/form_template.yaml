@@ -5,7 +5,7 @@ container:
     role: null, html: ''}
 components:
 - type: ColumnPanel
-  properties: {col_widths: '{"WZJKBK":15,"FOXXET":15,"RQGOHG":30,"TYKOCS":50,"WHMBUR":10}'}
+  properties: {col_widths: '{}'}
   name: content_panel
   layout_properties: {slot: default}
   components:
@@ -69,36 +69,3 @@ components:
     name: button_1
     layout_properties: {grid_position: 'AFPTUZ,NXLUCN'}
     event_bindings: {click: button_1_click}
-  - type: TextBox
-    properties: {}
-    name: text_box_1
-    layout_properties: {grid_position: 'GWZHRI,TYKOCS'}
-  - type: Button
-    properties: {text: '', icon: 'fa:search'}
-    name: button_2
-    layout_properties: {grid_position: 'GWZHRI,WHMBUR'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Username:', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_2
-    layout_properties: {grid_position: 'KUZTVG,WZJKBK'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Phone Number:', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_3
-    layout_properties: {grid_position: 'KUZTVG,FOXXET'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Email:', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_4
-    layout_properties: {grid_position: 'KUZTVG,RQGOHG'}
-  - type: RepeatingPanel
-    properties: {item_template: admin.ItemTemplate3}
-    name: repeating_panel_1
-    layout_properties: {grid_position: 'RXYMNH,MIPJGY'}

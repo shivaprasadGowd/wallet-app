@@ -8,6 +8,7 @@ components:
   layout_properties: {grid_position: 'PGAQLM,HKNCCA'}
   data_bindings:
   - {property: text, code: 'self.item[''username'']', writeback: true}
+  event_bindings: {pressed_enter: text_box_1_pressed_enter}
 - type: TextBox
   properties: {}
   name: text_box_2

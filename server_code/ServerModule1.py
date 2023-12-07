@@ -102,16 +102,28 @@ def validate_acc_no_to_display_in_transfer(acc):
 @anvil.server.callable
 def get_accounts_emoney(acc):
   user_emoney= app_tables.accounts.get(casa=int(acc))
-  return user_emoney
+  if user_emoney is not None:
+        return {'e_money': user_emoney['e_money']}
+        
+  else:
+        return {'e_money': 0}  # Set a default value if the row is not found
 
 # for keeping the e_wallet same throughout
 @anvil.server.callable
-def update_all_rows(user, e_wallet, e_money_valu):
-    print(f"Updating rows for user: {user}, e_wallet: {e_wallet}, e_money_vaue: {e_money_valu}")
-    # Fetch all rows with the same user and e_wallet
-    matching_rows = app_tables.accounts.search(user=user, e_wallet=e_wallet)
+def update_all_rows(user,e_money_value):
+    # Print statements with proper formatting
+    print(f"User: {user}")
+    print(f"E-money: {e_money_value}")
+    matching_rows = app_tables.accounts.search(user=user)
+    print(f"Length of matching rows: {len(matching_rows)}")
     for row in matching_rows:
-        row['e_money'] = e_money_valu
-    # Save changes to the table for each row individually
-    for row in matching_rows:
+        row['e_money'] =e_money_value
         row.update()
+        
+        
+
+
+
+    
+    
+        

@@ -48,15 +48,15 @@ class transfer(transferTemplate):
         if selected_symbol == 'Є':  
           if float(user_currency['money_euro']) > money_value:
             user_currency['money_euro'] = str(float(user_currency['money_euro']) - money_value)
-            money_inr_equivalent = money_value * conversion_rate_euro_to_inr
-            anvil.server.call('update_all_rows', user_for_emoney, e_wallet_for_emoney, str(float(fore_money['e_money'] or 0) + money_inr_equivalent))
+            money_inr_equivalent_string = str(money_value * conversion_rate_usd_to_inr + float(fore_money['e_money'] or 0))
+            anvil.server.call('update_all_rows', user_for_emoney, e_wallet_for_emoney, money_inr_equivalent_string)
           else:
             self.label_4.text = "Insufficient funds"
         elif selected_symbol == '$':
             if float(user_currency['money_usd']) > money_value:
               user_currency['money_usd'] = str(float(user_currency['money_usd']) - money_value)
-              money_inr_equivalent = money_value * conversion_rate_usd_to_inr
-              fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + money_inr_equivalent)
+              money_inr_equivalent_strin = str(money_value * conversion_rate_euro_to_inr + float(fore_money['e_money'] or 0))
+              anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_strin)
             else:
               self.label_4.text = "Insufficient funds"
         elif selected_symbol == '₣':

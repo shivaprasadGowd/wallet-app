@@ -65,13 +65,23 @@ components:
     type: Image
     layout_properties: {grid_position: 'JLQNXN,GTLBJD'}
   - type: Button
-    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+    properties: {role: outlined-button, align: left, tooltip: '', border: '', enabled: true,
       foreground: '#000000', visible: true, text: Add bank details, font_size: 15,
       font: '', spacing_above: small, icon_align: right, spacing_below: small, italic: false,
       background: '#3FE5FF', bold: true, underline: false, icon: 'fa:angle-down'}
     name: button_add_bank_details_click
     layout_properties: {grid_position: 'ZBAQMJ,LZNVCS'}
     event_bindings: {click: button_add_bank_details_click_click}
+  - name: button_1
+    properties: {text: Mutual funds, role: outlined-button, background: '#3FE5FF',
+      foreground: '#000000', icon: 'fa:angle-down', icon_align: right, bold: true}
+    type: Button
+    layout_properties: {grid_position: 'ZBAQMJ,KQZMFU'}
+  - name: button_2
+    properties: {text: Investing, role: outlined-button, background: '#3FE5FF', foreground: '#000000',
+      icon: 'fa:angle-down', icon_align: right, bold: true}
+    type: Button
+    layout_properties: {grid_position: 'ZBAQMJ,KHCHNE'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Account Holder''s Name:', font_size: 17, font: '', spacing_above: small,
@@ -156,11 +166,6 @@ components:
       include_placeholder: false
     name: drop_down_1
     layout_properties: {grid_position: 'QKSHVU,XZUZRX KHWLCY,RZPCPD'}
-  - name: image_2
-    properties: {source: _/theme/pngtree-thinking-man-illustration-with-question-mark-and-light-bulb-for-business-png-image_8803664.png,
-      height: 285.25}
-    type: Image
-    layout_properties: {grid_position: 'QKSHVU,KETFSZ'}
   - name: spacer_1_copy_1_copy_1
     properties: {height: 38.24993896484375}
     type: Spacer

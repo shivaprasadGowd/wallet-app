@@ -13,7 +13,7 @@ class transfer(transferTemplate):
         self.init_components(**properties)
         self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
         user_account_numbers = anvil.server.call('get_user_account_numbers', self.user['username'])
-        #self.dropdown_account_numbers.items = user_account_numbers
+        self.dropdown_account_numbers.items = user_account_numbers
         self.display()
         
         
@@ -23,6 +23,7 @@ class transfer(transferTemplate):
     def button_1_click(self, **event_args):
       current_datetime = datetime.now()
       acc = self.dropdown_account_numbers.selected_value
+      print(acc)
       user_currency= anvil.server.call('get_currency_data',acc)
       fore_money = anvil.server.call('get_accounts_emoney',acc)
       if self.user is not None:
@@ -89,6 +90,7 @@ class transfer(transferTemplate):
     def display(self, **event_args):
         acc=self.dropdown_account_numbers.selected_value
         user_for_emoney = self.user['username']
+        print(acc)
         fore_money = anvil.server.call('get_accounts_emoney',acc)
         acc_validate = anvil.server.call('validate_acc_no_to_display_in_transfer',acc)
         self.label_6.text = "$" + str(acc_validate['money_usd'])
@@ -102,30 +104,32 @@ class transfer(transferTemplate):
             self.label_14.text=dollar_to_rupee
             # anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_string)
         if eb == 'Є':
-          euro_to_rupee = (e_money_value)/80.0
+          euro_to_rupee = (e_money_value)/90.0
           self.label_14.text = euro_to_rupee
           # anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_string)
         if eb == '₣':
-          swis_to_rupee = (e_money_value)/80.0
+          swis_to_rupee = (e_money_value)/95
           self.label_14.text = swis_to_rupee
 
         if eb == '₹':
-          self.label_14.text = user_currency['e_money']
+          self.label_14.text = (e_money_value)
 
     def drop_down_2_change(self, **event_args):
       acc=self.dropdown_account_numbers.selected_value
+      fore_money = anvil.server.call('get_accounts_emoney',acc)
+      e_money_value = float(fore_money['e_money'])
       eb= self.drop_down_2.selected_value
       if eb == '$':
-          dollar_to_rupee = float(user_currency['e_money'])/80
+          dollar_to_rupee = (e_money_value)/80.0
           self.label_14.text = dollar_to_rupee
       if eb == 'Є':
-          euro_to_rupee = float(user_currency['e_money'])/90
+          euro_to_rupee = (e_money_value)/90.0
           self.label_14.text = euro_to_rupee
       if eb == '₣':
-          swis_to_rupee = float(user_currency['e_money'])/95
+          swis_to_rupee = (e_money_value)/95.0
           self.label_14.text = swis_to_rupee
       if eb == '₹':
-          self.label_14.text = user_currency['e_money']
+          self.label_14.text = (e_money_value)
 
     def dropdown_account_numbers_change(self, **event_args):
       self.display()

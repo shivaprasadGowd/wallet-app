@@ -10,3 +10,6 @@ class Home(HomeTemplate):
   def link_click(self, **event_args):
      open_form('LOGIN')
 
+  def link_13_click(self, **event_args):
+    open_form('LOGIN')
+

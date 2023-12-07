@@ -79,33 +79,63 @@ components:
     type: DropDown
     layout_properties: {grid_position: 'YZJNJI,ZAWTJA'}
   - name: button_4
-    properties: {text: account_details}
+    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: account_details, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
     type: Button
     layout_properties: {grid_position: 'YZJNJI,RYNUJY'}
+    event_bindings: {click: button_4_click}
   - name: label_9
     properties: {text: 'ewallet balance:'}
     type: Label
     layout_properties: {grid_position: 'GWXVUZ,JNPQLZ'}
-  - name: label_14
-    properties: {text: E_wallet balance}
-    type: Label
-    layout_properties: {grid_position: 'GWXVUZ,LMGBCM'}
+  - type: TextBox
+    properties: {}
+    name: text_box_12
+    layout_properties: {grid_position: 'GWXVUZ,ZLCAXP'}
+    data_bindings:
+    - {property: text, code: 'self.item[''e_money'']', writeback: true}
   - name: label_10
     properties: {text: usd}
     type: Label
     layout_properties: {grid_position: 'KZZEES,VKXQLJ'}
+  - type: TextBox
+    properties: {}
+    name: text_box_8
+    layout_properties: {grid_position: 'KZZEES,DDXKYY'}
+    data_bindings:
+    - {property: text, code: 'self.item[''money_usd'']', writeback: true}
   - name: label_11
     properties: {text: euro}
     type: Label
     layout_properties: {grid_position: 'KZZEES,RAECTQ'}
+  - type: TextBox
+    properties: {}
+    name: text_box_9
+    layout_properties: {grid_position: 'KZZEES,DRJJEU'}
+    data_bindings:
+    - {property: text, code: 'self.item[''money_euro'']', writeback: true}
   - name: label_12
     properties: {text: inr}
     type: Label
     layout_properties: {grid_position: 'KZZEES,UYQAKU'}
+  - type: TextBox
+    properties: {}
+    name: text_box_10
+    layout_properties: {grid_position: 'KZZEES,ICKSJX'}
+    data_bindings:
+    - {property: text, code: 'self.item[''money_inr'']', writeback: true}
   - name: label_13
     properties: {text: swiss}
     type: Label
     layout_properties: {grid_position: 'KZZEES,ZGUUDE'}
+  - type: TextBox
+    properties: {}
+    name: text_box_11
+    layout_properties: {grid_position: 'KZZEES,HTKJMF'}
+    data_bindings:
+    - {property: text, code: 'self.item[''money_swis'']', writeback: true}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Username:', font_size: null, font: '', spacing_above: small,

@@ -63,16 +63,14 @@ class admin_view(admin_viewTemplate):
       user_to_delete = app_tables.users.get(username=username)
   
       if user_to_delete is not None:
-          user_to_delete.delete()
-          alert("User deleted successfully.", title="Success")
+           user_to_delete.delete()
+           alert("User deleted successfully.", title="Success")
   
           # Clear textboxes after deletion
-          self.clear_textboxes()
+           self.clear_textboxes()
   
           # Raise an event to notify the parent form (admin form) about the deletion
-          open_form('admin', user_data=user_to_delete)
-
-
+           open_form('admin', user_data=user_to_delete)
     # ... (remaining code)
 
     def clear_textboxes(self):

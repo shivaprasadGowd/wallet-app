@@ -268,7 +268,7 @@ components:
   layout_properties: {grid_position: 'QHSNOA,VKMZBC', full_width_row: true}
   components:
   - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: 'About Us
 
 
@@ -316,9 +316,9 @@ components:
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
     name: label_10
-    layout_properties: {grid_position: 'HSKNXJ,XUESUE'}
+    layout_properties: {grid_position: 'HSKNXJ,XUESUE', full_width_row: true}
   - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Customer Service
 
 
@@ -362,9 +362,9 @@ components:
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
     name: label_12
-    layout_properties: {grid_position: 'HSKNXJ,QGRNEN'}
+    layout_properties: {grid_position: 'HSKNXJ,QGRNEN', full_width_row: true}
   - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Explore
 
 
@@ -396,7 +396,7 @@ components:
       spacing_below: small, italic: false, background: '', bold: false, underline: false,
       icon: ''}
     name: label_11
-    layout_properties: {grid_position: 'HSKNXJ,DIROPX'}
+    layout_properties: {grid_position: 'HSKNXJ,DIROPX', full_width_row: true}
 - type: ColumnPanel
   properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
     wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',

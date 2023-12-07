@@ -88,62 +88,62 @@ components:
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_3
-    layout_properties: {grid_position: 'QKSHVU,XZUZRX MBATDA,HNRTMZ'}
+    layout_properties: {grid_position: 'MBATDA,HNRTMZ'}
   - type: TextBox
     properties: {background: '#DFFDFF', font_size: 17}
     name: text_box_1
-    layout_properties: {grid_position: 'QKSHVU,XZUZRX MBATDA,EQLVEE'}
+    layout_properties: {grid_position: 'MBATDA,EQLVEE'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Bank Name:', font_size: 17, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_bank_name
-    layout_properties: {grid_position: 'QKSHVU,XZUZRX XGIPGB,GONFGT'}
+    layout_properties: {grid_position: 'XGIPGB,GONFGT'}
   - type: TextBox
     properties: {background: '#DFFDFF', font_size: 17}
     name: textbox_bank_name
-    layout_properties: {grid_position: 'QKSHVU,XZUZRX XGIPGB,TDJIXO'}
+    layout_properties: {grid_position: 'XGIPGB,TDJIXO'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Branch Name:', font_size: 17, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_4
-    layout_properties: {grid_position: 'QKSHVU,XZUZRX CIFHEM,ILADGD'}
+    layout_properties: {grid_position: 'CIFHEM,ILADGD'}
   - type: TextBox
     properties: {background: '#DFFDFF', font_size: 17}
     name: text_box_2
-    layout_properties: {grid_position: 'QKSHVU,XZUZRX CIFHEM,KTJCFD'}
+    layout_properties: {grid_position: 'CIFHEM,KTJCFD'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Account Number:', font_size: 17, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_account_number
-    layout_properties: {grid_position: 'QKSHVU,XZUZRX YCHQKJ,TOODFP'}
+    layout_properties: {grid_position: 'YCHQKJ,TOODFP'}
   - type: TextBox
     properties: {background: '#DFFDFF', font_size: 17}
     name: textbox_account_number
-    layout_properties: {grid_position: 'QKSHVU,XZUZRX YCHQKJ,JGSBNN'}
+    layout_properties: {grid_position: 'YCHQKJ,JGSBNN'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'IFSC Code:', font_size: 17, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_ifsc_code
-    layout_properties: {grid_position: 'QKSHVU,XZUZRX RSOMFZ,LYRWAE'}
+    layout_properties: {grid_position: 'RSOMFZ,LYRWAE'}
   - type: TextBox
     properties: {background: '#DFFDFF', font_size: 17}
     name: textbox_ifsc_code
-    layout_properties: {grid_position: 'QKSHVU,XZUZRX RSOMFZ,AFRZVJ'}
+    layout_properties: {grid_position: 'RSOMFZ,AFRZVJ'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Account Type:', font_size: 17, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_5
-    layout_properties: {grid_position: 'QKSHVU,XZUZRX KHWLCY,YGLRMF'}
+    layout_properties: {grid_position: 'KHWLCY,YGLRMF'}
   - type: DropDown
     properties:
       role: null
@@ -165,11 +165,11 @@ components:
       underline: false
       include_placeholder: false
     name: drop_down_1
-    layout_properties: {grid_position: 'QKSHVU,XZUZRX KHWLCY,RZPCPD'}
+    layout_properties: {grid_position: 'KHWLCY,RZPCPD'}
   - name: spacer_1_copy_1_copy_1
     properties: {height: 38.24993896484375}
     type: Spacer
-    layout_properties: {grid_position: 'QKSHVU,XZUZRX JHTFCE,EAIUVX'}
+    layout_properties: {grid_position: 'JHTFCE,EAIUVX'}
   - type: Button
     properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '#000000', visible: true, text: Submit, font_size: 17, font: '',
@@ -178,3 +178,36 @@ components:
     name: button_save_bank_details
     layout_properties: {grid_position: 'TQGSCO,HHFHNO'}
     event_bindings: {click: button_save_bank_details_click}
+  - name: outlined_card_1_copy_2
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',
+      spacing_below: none, background: 'theme:On Surface Variant'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'PNYMEV,FIENHE', full_width_row: true}
+    components:
+    - name: label_1_copy
+      properties: {text: CopyRight2023@Gwallet, align: left, bold: true, font_size: 16,
+        visible: true, role: input-prompt, foreground: 'theme:On Primary'}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,XVKBKL'}
+    - name: label_2_copy
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: 'Disclaimer ', font_size: 18, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,VMILPR'}
+    - name: label_3_copy
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: 'Privacy Policy ', font_size: 18, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: true, underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,FDANOO'}
+    - name: label_4_copy
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: 'Code Of Commitment ', font_size: 18, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: true, underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,HAKDVS'}

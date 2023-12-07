@@ -11,7 +11,7 @@ components:
   layout_properties:
     col_widths: {}
     grid_position: CDNGVK,XXERCI
-  name: outlined_card_1_copy_4
+  name: outlined_card_2
   components:
   - type: Image
     properties: {role: null, vertical_align: center, height: 57, tooltip: '', border: '',
@@ -103,7 +103,7 @@ components:
     layout_properties: {grid_position: 'VIXRQD,RIXBDK VLKEHW,XRMMIJ'}
   - name: label_8
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Amount of Deposit:', font_size: 18, font: '', spacing_above: small,
+      visible: true, text: 'Amount to Deposit:', font_size: 18, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     type: Label

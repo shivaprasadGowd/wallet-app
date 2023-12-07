@@ -17,6 +17,7 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: ZFYQPJ,IOYFLR
+      full_width_row: true
     components:
     - name: image_1_copy_4_copy_1_copy_1_copy_1_copy_1
       properties: {role: null, vertical_align: center, height: 52.36363220214844,

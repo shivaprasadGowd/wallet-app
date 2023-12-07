@@ -260,6 +260,10 @@ components:
     type: Label
     layout_properties: {x: 679.7375000007451, y: 241, width: 88}
     name: label_23
+- name: outlined_card_4
+  properties: {role: outlined-card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'MJSLTI,WCRQRH'}
 - type: ColumnPanel
   properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
     wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{}', spacing_below: none,

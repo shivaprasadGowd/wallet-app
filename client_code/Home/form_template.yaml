@@ -405,27 +405,27 @@ components:
   layout_properties: {grid_position: 'LJJJVQ,RZOYHI', full_width_row: true}
   components:
   - name: label_1
-    properties: {text: CopyRight2023@Gwallet, align: center, bold: true, font_size: 16,
+    properties: {text: CopyRight2023@Gwallet, align: left, bold: true, font_size: 16,
       visible: true, role: input-prompt, foreground: 'theme:On Primary'}
     type: Label
     layout_properties: {grid_position: 'XSXLAE,XVKBKL'}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
-        Primary', visible: true, text: Disclaimer |, font_size: 18, font: '', spacing_above: small,
+        Primary', visible: true, text: Disclaimer, font_size: 18, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_2
     layout_properties: {grid_position: 'XSXLAE,VMILPR'}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
-        Primary', visible: true, text: Privacy Policy |, font_size: 18, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: true, underline: false, icon: ''}
+        Primary', visible: true, text: Privacy Policy, font_size: 18, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
     name: label_3
     layout_properties: {grid_position: 'XSXLAE,FDANOO'}
   - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:On
-        Primary', visible: true, text: Code Of Commitment |, font_size: 18, font: '',
+    properties: {role: null, align: right, tooltip: '', border: '', foreground: 'theme:On
+        Primary', visible: true, text: Code Of Commitment, font_size: 18, font: '',
       spacing_above: small, icon_align: left, spacing_below: small, italic: false,
       background: '', bold: true, underline: false, icon: ''}
     name: label_4

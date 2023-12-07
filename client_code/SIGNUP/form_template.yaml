@@ -47,27 +47,35 @@ components:
     event_bindings: {click: link_1_click}
     name: link_1
 - type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{}'}
+  properties: {role: outlined-card, col_widths: '{"LJULLI":35,"BSSSVU":25}'}
   layout_properties: {slot: default}
   name: outlined_card_2
   components:
   - type: Spacer
     properties: {height: 41}
-    layout_properties: {grid_position: 'QKDHFZ,NVMJCM'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI QKDHFZ,NVMJCM'}
     name: spacer_2
+  - name: image_2
+    properties: {source: _/theme/user-icon-1024x1024-dtzturco.png, height: 124.25}
+    type: Image
+    layout_properties: {grid_position: 'QBMHRG,LJULLI FTUTOB,OHQGCK'}
+  - name: label_1
+    properties: {text: Sign Up, align: center, bold: true, font_size: 20}
+    type: Label
+    layout_properties: {grid_position: 'QBMHRG,LJULLI TXTHFM,BIOLXE'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Enter your email:', font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
-    layout_properties: {grid_position: 'RUZJVE,JHYSWX'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI RUZJVE,JHYSWX'}
     name: label_7
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Email,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: email, spacing_below: small, italic: false,
       background: '#DFFDFF', bold: false, underline: false}
-    layout_properties: {grid_position: 'RUZJVE,FRGCYP'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI RUZJVE,FRGCYP'}
     data_bindings:
     - {code: 'self.item[''email'']', writeback: true, property: text}
     name: text_box_1
@@ -76,14 +84,14 @@ components:
       visible: true, text: 'Enter your Username:', font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
-    layout_properties: {grid_position: 'TWOERD,EDXCCQ'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI TWOERD,EDXCCQ'}
     name: label_8
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Username,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: '#DFFDFF', bold: false, underline: false}
-    layout_properties: {grid_position: 'TWOERD,INKPMZ'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI TWOERD,INKPMZ'}
     data_bindings:
     - {code: 'self.item[''username'']', writeback: true, property: text}
     name: text_box_2
@@ -92,46 +100,46 @@ components:
       visible: true, text: 'Enter your Password:', font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
-    layout_properties: {slot: default, grid_position: 'RVDJCO,TGXZHF'}
+    layout_properties: {slot: default, grid_position: 'QBMHRG,LJULLI RVDJCO,TGXZHF'}
     name: label_9
   - type: TextBox
     properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Password,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: '#DFFDFF', bold: false, underline: false}
-    layout_properties: {grid_position: 'RVDJCO,QYNMUG'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI RVDJCO,QYNMUG'}
     data_bindings:
     - {code: 'self.item[''password'']', writeback: true, property: text}
     name: text_box_3
   - properties: {text: 'Enter Password Again:'}
     type: Label
-    layout_properties: {grid_position: 'UTUTVB,OUYMFM'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI UTUTVB,OUYMFM'}
     name: label_13
   - properties: {align: left, hide_text: true, tooltip: '', placeholder: Retype Password,
       border: '', enabled: true, foreground: '', visible: true, text: '', font: '',
       spacing_above: small, type: text, spacing_below: small, italic: false, background: '#DFFDFF',
       bold: false, underline: false}
     type: TextBox
-    layout_properties: {grid_position: 'UTUTVB,CJFWKJ CWIIDG,ZBIBMP'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI UTUTVB,CJFWKJ CWIIDG,ZBIBMP'}
     name: text_box_7
   - type: Label
     properties: {}
     name: label_17
-    layout_properties: {grid_position: 'UTUTVB,CJFWKJ MAKBLU,UJHMWF'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI UTUTVB,CJFWKJ MAKBLU,UJHMWF'}
     event_bindings: {}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Enter your Pan No, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
-    layout_properties: {grid_position: 'RVPAQU,KMVOHA'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI RVPAQU,KMVOHA'}
     name: label_10
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Pan,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: '#DFFDFF', bold: false, underline: false}
-    layout_properties: {grid_position: 'RVPAQU,NYRBDH BPZHTQ,SSOYEU'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI RVPAQU,NYRBDH BPZHTQ,SSOYEU'}
     data_bindings:
     - {code: 'self.item[''pan'']', writeback: true, property: text}
     event_bindings: {change: text_box_4_change}
@@ -139,20 +147,20 @@ components:
   - type: Label
     properties: {}
     name: label_14
-    layout_properties: {grid_position: 'RVPAQU,NYRBDH TVOWMB,RNKFFT'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI RVPAQU,NYRBDH TVOWMB,RNKFFT'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Enter your Phone Number:', font_size: null, font: '',
       spacing_above: small, icon_align: left, spacing_below: small, italic: false,
       background: '', bold: false, underline: false, icon: ''}
-    layout_properties: {grid_position: 'SAEDAX,PECDUQ'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI SAEDAX,PECDUQ'}
     name: label_12
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Phone Number,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
       background: '#DFFDFF', bold: false, underline: false}
-    layout_properties: {grid_position: 'SAEDAX,MNYPJE DATAZI,ROHYRG'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI SAEDAX,MNYPJE DATAZI,ROHYRG'}
     data_bindings:
     - {code: 'self.item[''phone'']', writeback: true, property: text}
     name: text_box_6
@@ -160,20 +168,20 @@ components:
   - type: Label
     properties: {}
     name: label_15
-    layout_properties: {grid_position: 'SAEDAX,MNYPJE UXQJFZ,SSHUMZ'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI SAEDAX,MNYPJE UXQJFZ,SSHUMZ'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Enter your Address:', font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
-    layout_properties: {grid_position: 'CANMCM,FUNPMI'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI CANMCM,FUNPMI'}
     name: label_11
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Address,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: '#DFFDFF', bold: false, underline: false}
-    layout_properties: {grid_position: 'CANMCM,XETVER'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI CANMCM,XETVER'}
     data_bindings:
     - {code: 'self.item[''address'']', writeback: true, property: text}
     name: text_box_5
@@ -183,209 +191,74 @@ components:
       spacing_above: small, icon_align: left, spacing_below: small, italic: false,
       background: '', bold: false, underline: false, icon: ''}
     name: label_6
-    layout_properties: {grid_position: 'OFIHSF,ZSVTWG'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI OFIHSF,ZSVTWG'}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Aadhar detalis,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
       background: '#DFFDFF', bold: false, underline: false}
-    layout_properties: {grid_position: 'OFIHSF,WOIVWM KYGRAD,NAHVJA'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI OFIHSF,WOIVWM KYGRAD,NAHVJA'}
     data_bindings:
     - {code: 'self.item[''aadhar'']', writeback: true, property: text}
     name: text_box_8
   - type: Label
     properties: {}
     name: label_16
-    layout_properties: {grid_position: 'OFIHSF,WOIVWM JFYXNY,WSAWQM'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI OFIHSF,WOIVWM JFYXNY,WSAWQM'}
+  - name: spacer_3
+    properties: {height: 246.24996948242188}
+    type: Spacer
+    layout_properties: {grid_position: 'QBMHRG,BSSSVU QUFKFY,XTYNSX'}
+  - name: image_3
+    properties: {height: 596.25, source: _/theme/official-login.jpg}
+    type: Image
+    layout_properties: {grid_position: 'QBMHRG,BSSSVU MTWUHT,KEWUXM'}
+  - type: Spacer
+    properties: {height: 32}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI FRDZCL,CABLKA'}
+    name: spacer_1
   - type: Button
     properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
       foreground: '#000000', visible: true, text: Signup, font_size: 16, font: '',
       spacing_above: small, icon_align: left, spacing_below: small, italic: false,
       background: '#0770FF', bold: true, underline: false, icon: ''}
-    layout_properties: {slot: default, grid_position: 'WJODII,ZOXGTI'}
+    layout_properties: {grid_position: 'QBMHRG,LJULLI NPRIVT,GRWXXL'}
     event_bindings: {click: button_1_click}
     name: button_1
-  - type: Spacer
-    properties: {height: 32}
-    layout_properties: {grid_position: 'FRDZCL,CABLKA'}
-    name: spacer_1
-- type: ColumnPanel
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{}', spacing_below: none,
-    background: '#C2BDBC'}
-  name: outlined_card_3
-  layout_properties:
-    col_widths: {}
-    grid_position: MZTZOS,SAWLGL
-    full_width_row: true
-    slot: default
-  components:
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'About Us
-
-
-        Awards & Recognition
-
-        Media Center
-
-        Career Opportunities
-
-        Tools & Calculators
-
-        Fixed Deposit EMI Calculator
-
-        Personal Loan EMI Calculator
-
-        Home Loan EMI Calculator
-
-        Car Loan EMI Calculator
-
-        Mutual Fund Calculator
-
-        SIP Calculator
-
-        Education Loan Calculator
-
-        Retirement Calculator
-
-        Regulatory Information
-
-
-        Safe Banking
-
-
-        RBI Awareness Campaign
-
-        RBI: Beware of Fictitious Offers
-
-        RBI Kehta Hai
-
-        Regulatory Disclosure Section
-
-        Customer Literature on NPAs and SMAs
-
-        Regulatory Disclosure Section 2024', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_10_copy
-    layout_properties: {grid_position: 'HSKNXJ,XUESUE'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Customer Service
-
-
-        Contact Us
-
-        Customer Care
-
-        Report Unauthorized Transactions
-
-        Form Center
-
-        Raise a Service Request
-
-        Report Suspicious Activities
-
-        Complaints and Grievance Redressal
-
-
-        Popular Products & Services
-
-
-        Savings Account
-
-        Current Account
-
-        Fixed Deposit
-
-        Money Transfer
-
-        Credit Cards
-
-        Personal Loan
-
-        Home Loan
-
-        Car Loan
-
-        Mutual Fund
-
-        Debt Management Services', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_12_copy
-    layout_properties: {grid_position: 'HSKNXJ,QGRNEN'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Explore
-
-
-        Interest Rates
-
-        Service Charges and Fees
-
-        Account Activation Process
-
-        Important Information Related to Digital Lending
-
-
-        Other
-
-
-        Do Not Call Registry
-
-        Customer Service Policies
-
-        Business Conduct and Ethics
-
-        Use of Unparliamentary Language by Customers
-
-        Fair Practice Code for Lenders
-
-        Multilingual Disclaimer
-
-        Sitemap', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: label_11_copy
-    layout_properties: {grid_position: 'HSKNXJ,DIROPX'}
-- type: ColumnPanel
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"OVYRCQ":22,"VMILPR":8,"FDANOO":15,"HAKDVS":15}',
-    spacing_below: none, background: '#706967'}
-  name: outlined_card_1_copy
-  layout_properties:
-    col_widths: {}
-    grid_position: HDCUIM,CNGMAN
-    full_width_row: true
-    slot: default
-  components:
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Copyright@2023G-Wallet, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: true, background: '', bold: true,
-      underline: false, icon: ''}
-    name: label_1
-    layout_properties: {grid_position: 'XSXLAE,OVYRCQ'}
-  - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: Disclaimer |, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    name: label_2
-    layout_properties: {grid_position: 'XSXLAE,VMILPR'}
-  - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: Privacy Policy |, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    name: label_3
-    layout_properties: {grid_position: 'XSXLAE,FDANOO'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Code Of Commitment |, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    name: label_4
-    layout_properties: {grid_position: 'XSXLAE,HAKDVS'}
+  - name: spacer_4
+    properties: {height: 49.24993896484375}
+    type: Spacer
+    layout_properties: {grid_position: 'TGTWEH,ZISNPG'}
+  - name: outlined_card_1_copy_2
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',
+      spacing_below: none, background: 'theme:On Surface Variant'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'VLTQBD,SZSGBF', full_width_row: true}
+    components:
+    - name: label_1_copy
+      properties: {text: CopyRight2023@Gwallet, align: left, bold: true, font_size: 16,
+        visible: true, role: input-prompt, foreground: 'theme:On Primary'}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,XVKBKL'}
+    - name: label_2_copy
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: 'Disclaimer ', font_size: 18, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,VMILPR'}
+    - name: label_3_copy
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: 'Privacy Policy ', font_size: 18, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: true, underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,FDANOO'}
+    - name: label_4_copy
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: 'Code Of Commitment ', font_size: 18, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: true, underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,HAKDVS'}

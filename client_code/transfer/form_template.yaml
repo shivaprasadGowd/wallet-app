@@ -95,7 +95,7 @@ components:
   - type: Label
     properties: {}
     name: label_10
-    layout_properties: {grid_position: 'RXAGOV,VPPAFI'}
+    layout_properties: {grid_position: 'RXAGOV,TWHUYN'}
     data_bindings:
     - {property: text, code: 'self.item[''money_usd'']'}
   - type: Label

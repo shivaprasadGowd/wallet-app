@@ -103,8 +103,7 @@ def validate_acc_no_to_display_in_transfer(acc):
 def get_accounts_emoney(acc):
   user_emoney= app_tables.accounts.get(casa=int(acc))
   if user_emoney is not None:
-        return {'e_money': user_emoney['e_money']}
-        
+        return {'e_money': user_emoney['e_money']} 
   else:
         return {'e_money': 0}  # Set a default value if the row is not found
 

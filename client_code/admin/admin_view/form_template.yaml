@@ -61,7 +61,7 @@ components:
   name: outlined_card_2
   layout_properties: {slot: default}
   components:
-  - name: label_1_copy
+  - name: label_1c
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: '', font_size: 20, font: '', spacing_above: small, icon_align: left,
       spacing_below: small, italic: false, background: '#3FE5FF', bold: true, underline: false,
@@ -70,6 +70,42 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: LOJVPL,OSUQMD
+  - name: label_8
+    properties: {text: 'Accounts:'}
+    type: Label
+    layout_properties: {grid_position: 'YZJNJI,GMGBNG'}
+  - name: drop_down_1
+    properties: {}
+    type: DropDown
+    layout_properties: {grid_position: 'YZJNJI,ZAWTJA'}
+  - name: button_4
+    properties: {text: account_details}
+    type: Button
+    layout_properties: {grid_position: 'YZJNJI,RYNUJY'}
+  - name: label_9
+    properties: {text: 'ewallet balance:'}
+    type: Label
+    layout_properties: {grid_position: 'GWXVUZ,JNPQLZ'}
+  - name: label_14
+    properties: {text: E_wallet balance}
+    type: Label
+    layout_properties: {grid_position: 'GWXVUZ,LMGBCM'}
+  - name: label_10
+    properties: {text: usd}
+    type: Label
+    layout_properties: {grid_position: 'KZZEES,VKXQLJ'}
+  - name: label_11
+    properties: {text: euro}
+    type: Label
+    layout_properties: {grid_position: 'KZZEES,RAECTQ'}
+  - name: label_12
+    properties: {text: inr}
+    type: Label
+    layout_properties: {grid_position: 'KZZEES,UYQAKU'}
+  - name: label_13
+    properties: {text: swiss}
+    type: Label
+    layout_properties: {grid_position: 'KZZEES,ZGUUDE'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Username:', font_size: null, font: '', spacing_above: small,

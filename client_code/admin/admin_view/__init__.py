@@ -19,17 +19,6 @@ class admin_view(admin_viewTemplate):
         self.label_12.visible = False
         self.label_13.visible = False
 
-    def populate_textboxes(self, user_data):
-        self.text_box_1.text = user_data['username']
-        self.text_box_2.text = user_data['email']
-        self.text_box_3.text = user_data['password']
-        self.text_box_4.text = user_data['phone']
-        self.text_box_5.text = user_data['aadhar']
-        self.text_box_6.text = user_data['pan']
-        self.text_box_7.text = user_data['address']
-  
-# Set the initial mode to view
-
         # Initialize the dropdown with account numbers
         self.populate_account_dropdown(user_data)
 
@@ -46,55 +35,45 @@ class admin_view(admin_viewTemplate):
         account_numbers = [str(account['casa']) for account in user_accounts]
         self.drop_down_1.items = account_numbers
 
-   
-   # ... (previous code)
-
-def button_2_click(self, **event_args):
+    def button_2_click(self, **event_args):
     # Get the selected account number from the dropdown
-    selected_account_number = self.drop_down_1.selected_value
-
-    # Get the 'e_money' amount from the 'accounts' table
-    account = app_tables.accounts.get(user=self.text_box_1.text, casa=int(selected_account_number))
-    
-    # Check if 'e_money' is not empty
-    if account and account['e_money'] is not None and int(account['e_money']) > 0:
-        alert("Account cannot be deleted. Your account has some funds remaining. Please withdraw it.", title="Error")
-        return
-
-    # Check if currency values are not empty
-    currency_details = app_tables.currencies.get(casa=int(selected_account_number))
-    if currency_details and (
-        currency_details['money_usd'] is not None and int(currency_details['money_usd']) > 0 or
-        currency_details['money_inr'] is not None and int(currency_details['money_inr']) > 0 or
-        currency_details['money_euro'] is not None and int(currency_details['money_euro']) > 0 or
-        currency_details['money_swis'] is not None and int(currency_details['money_swis']) > 0
-    ):
-        alert("Account cannot be deleted. Your account has some funds in different currencies. Please withdraw them.", title="Error")
-        return
-
-    # If 'e_money' and currency values are empty, proceed with user deletion
-    username = self.text_box_1.text
-    user_to_delete = app_tables.users.get(username=username)
+      selected_account_number = self.drop_down_1.selected_value
   
-    if user_to_delete is not None:
-        # Delete the user from the 'users' table
-        user_to_delete.delete()
+      # Get the 'e_money' amount from the 'accounts' table
+      account = app_tables.accounts.get(user=self.text_box_1.text, casa=int(selected_account_number))
+      
+      # Check if 'e_money' is not empty
+      if account and account['e_money'] is not None and int(account['e_money']) > 0:
+          alert("Account cannot be deleted. Your account has some funds remaining. Please withdraw it.", title="Error")
+          return
+  
+      # Check if currency values are not empty
+      currency_details = app_tables.currencies.get(casa=int(selected_account_number))
+      if currency_details and (
+          currency_details['money_usd'] is not None and int(currency_details['money_usd']) > 0 or
+          currency_details['money_inr'] is not None and int(currency_details['money_inr']) > 0 or
+          currency_details['money_euro'] is not None and int(currency_details['money_euro']) > 0 or
+          currency_details['money_swis'] is not None and int(currency_details['money_swis']) > 0
+      ):
+          alert("Account cannot be deleted. Your account has some funds in different currencies. Please withdraw them.", title="Error")
+          return
+  
+      # If 'e_money' and currency values are empty, proceed with user deletion
+      username = self.text_box_1.text
+      user_to_delete = app_tables.users.get(username=username)
+  
+      if user_to_delete is not None:
+          user_to_delete.delete()
+          alert("User deleted successfully.", title="Success")
+  
+          # Clear textboxes after deletion
+          self.clear_textboxes()
+  
+          # Raise an event to notify the parent form (admin form) about the deletion
+          open_form('admin', user_data=user_to_delete)
 
-        # Delete the user's account from the 'accounts' table
-        app_tables.accounts.delete(user=username, casa=int(selected_account_number))
 
-        # Delete the user's currency details from the 'currencies' table
-        app_tables.currencies.delete(casa=int(selected_account_number))
-
-        alert("User deleted successfully.", title="Success")
-
-        # Clear textboxes after deletion
-        self.clear_textboxes()
-
-        # Raise an event to notify the parent form (admin form) about the deletion
-        open_form('admin', user_data=user_to_delete)
-
-# ... (remaining code)
+    # ... (remaining code)
 
     def clear_textboxes(self):
         self.text_box_1.text = ''

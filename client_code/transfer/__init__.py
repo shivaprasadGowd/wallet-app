@@ -36,6 +36,11 @@ class transfer(transferTemplate):
       conversion_rate_usd_to_inr = 80.0
       conversion_rate_swis_to_inr = 95.0
       conversion_rate_euro_to_inr = 90.0
+      user_for_emoney = self.user['username']
+      e_wallet_for_emoney = wallet3
+      print(user_for_emoney)
+      print(e_wallet_for_emoney)
+       # Replace with the actual value
       
       if (money_value < 5) or (money_value > 50000):
         self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."
@@ -44,7 +49,7 @@ class transfer(transferTemplate):
           if float(user_currency['money_euro']) > money_value:
             user_currency['money_euro'] = str(float(user_currency['money_euro']) - money_value)
             money_inr_equivalent = money_value * conversion_rate_euro_to_inr
-            fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + money_inr_equivalent)
+            anvil.server.call('update_all_rows', user_for_emoney, e_wallet_for_emoney, str(float(fore_money['e_money'] or 0) + money_inr_equivalent))
           else:
             self.label_4.text = "Insufficient funds"
         elif selected_symbol == '$':
@@ -90,22 +95,22 @@ class transfer(transferTemplate):
         self.label_10.text = "₹ " + str(acc_validate['money_inr'])
         self.label_11.text = "€ " + str(acc_validate['money_euro'])
         self.label_12.text = "₣ " + str(acc_validate['money_swis'])
-        e_money_value = fore_money['e_money']
-        eb= self.drop_down_2.selected_value
-        if eb== '$':
-          if e_money_value is not None:
-            try:
-              dollar_to_rupee = int(str(e_money_value)) / 80
-        # Continue with the rest of your code using dollar_to_rupee
-              print(f"Dollar to Rupee: {dollar_to_rupee}")
-            except ValueError:
-        # Handle the case where e_money is not a valid integer
-              print(f"Error: e_money is not a valid integer - {e_money_value}")
-          else:
-    # Set a default value or handle the case where e_money is None
-            dollar_to_rupee = float(e_money_value)/80.0  # Set a default value, adjust as needed
-            self.label_14.text=dollar_to_rupee
-            print(f"Dollar to Rupee (Default): {dollar_to_rupee}")
+    #     e_money_value = fore_money['e_money']
+    #     eb= self.drop_down_2.selected_value
+    #     if eb== '$':
+    #       if e_money_value is not None:
+    #         try:
+    #           dollar_to_rupee = int(str(e_money_value)) / 80
+    #     # Continue with the rest of your code using dollar_to_rupee
+    #           print(f"Dollar to Rupee: {dollar_to_rupee}")
+    #         except ValueError:
+    #     # Handle the case where e_money is not a valid integer
+    #           print(f"Error: e_money is not a valid integer - {e_money_value}")
+    #       else:
+    # # Set a default value or handle the case where e_money is None
+    #         dollar_to_rupee = float(e_money_value)/80.0  # Set a default value, adjust as needed
+    #         self.label_14.text=dollar_to_rupee
+    #         print(f"Dollar to Rupee (Default): {dollar_to_rupee}")
         # if eb == 'Є':
         #   euro_to_rupee = float(user_currency['e_money'])/90
         #   self.label_14.text = euro_to_rupee

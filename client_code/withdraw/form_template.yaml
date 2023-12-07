@@ -59,7 +59,7 @@ components:
   components:
   - name: label_1
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: Account Withdraw, font_size: 20, font: '', spacing_above: small,
+      visible: true, text: Account Withdrawal, font_size: 20, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '#3FE5FF',
       bold: true, underline: false, icon: ''}
     type: Label
@@ -70,7 +70,7 @@ components:
     layout_properties: {grid_position: 'ACQMUE,TJNFKE'}
   - name: label_6
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Name of the withdraw, font_size: 18, font: '', spacing_above: small,
+      visible: true, text: 'Name of the A/c Holder:', font_size: 18, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     type: Label
@@ -103,7 +103,7 @@ components:
     layout_properties: {grid_position: 'VIXRQD,RIXBDK VLKEHW,XRMMIJ'}
   - name: label_8
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Amount to Deposit:', font_size: 18, font: '', spacing_above: small,
+      visible: true, text: 'Amount to Withdraw:', font_size: 18, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     type: Label

@@ -310,7 +310,7 @@ components:
   layout_properties: {grid_position: 'GBUGHL,ARIHHH ABSHAF,XODGMC'}
   components:
   - name: image_17_copy_2
-    properties: {source: _/theme/image222222.jfif, height: 180.5}
+    properties: {source: _/theme/image33333333333333333.jfif, height: 180.5}
     type: Image
     layout_properties: {grid_position: 'UURMHZ,OLGKYC'}
   - name: label_13_copy

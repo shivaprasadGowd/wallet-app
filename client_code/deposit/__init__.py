@@ -65,7 +65,8 @@ class deposit(depositTemplate):
                 casa=int(entered_account_number),
                 e_wallet=wallet3,
                 money=f"{selected_symbol}-{money_value}",
-                date=current_datetime
+                date=current_datetime,
+                transaction_type="Deposit"
             )
 
             self.label_2.text = "Money added successfully to the account"

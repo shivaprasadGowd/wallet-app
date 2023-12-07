@@ -26,11 +26,13 @@ components:
       properties: {text: Deposit, align: center, bold: true, foreground: '#000', font_size: 18}
       type: Link
       layout_properties: {grid_position: 'RQYEAC,GQVXCD'}
+      event_bindings: {click: link_8_click}
     - name: link_9
       properties: {text: Money Transfer, align: center, bold: true, foreground: '#000',
         font_size: 17}
       type: Link
       layout_properties: {grid_position: 'RQYEAC,ZXILIZ'}
+      event_bindings: {click: link_9_click}
     - name: link_10
       properties: {text: Withdraw, bold: true, align: center, foreground: '#000',
         font_size: 18}

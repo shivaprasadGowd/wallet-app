@@ -77,3 +77,9 @@ class withdraw(withdrawTemplate):
 
     def link_click(self, **event_args):
       open_form('customer', user=self.user)
+
+    def link_8_click(self, **event_args):
+      open_form('deposit',user=self.user)
+
+    def link_9_click(self, **event_args):
+      open_form('transfer',user= self.user)

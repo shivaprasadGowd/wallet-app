@@ -83,4 +83,10 @@ class wallet(walletTemplate):
         self.label_bank_details_error.text = "Please fill in all bank details."
 
     def link_1_click(self, **event_args):
-      open_form('deposit', user=self.user)
+      open_form('Home')
+
+    def link_9_click(self, **event_args):
+      open_form('transfer',user= self.user)
+
+    def link_10_click(self, **event_args):
+      open_form('withdraw',user= self.user)

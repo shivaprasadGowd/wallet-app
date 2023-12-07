@@ -133,3 +133,9 @@ class transfer(transferTemplate):
 
     def dropdown_account_numbers_change(self, **event_args):
       self.display()
+
+    def link_8_click(self, **event_args):
+      open_form('deposit',user= self.user)
+
+    def link_10_click(self, **event_args):
+      open_form('withdraw',user= self.user)

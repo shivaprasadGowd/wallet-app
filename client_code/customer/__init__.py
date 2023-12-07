@@ -26,3 +26,6 @@ class customer(customerTemplate):
 
     def link_10_click(self, **event_args):
       open_form('withdraw', user=self.user)
+
+    def link_1_copy_4_copy_1_copy_1_copy_1_click(self, **event_args):
+      open_form('Home')

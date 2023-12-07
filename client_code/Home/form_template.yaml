@@ -260,10 +260,72 @@ components:
     type: Label
     layout_properties: {x: 679.7375000007451, y: 241, width: 88}
     name: label_23
-- name: outlined_card_4
+- name: outlined_card_4_copy
   properties: {role: outlined-card}
   type: ColumnPanel
-  layout_properties: {grid_position: 'MJSLTI,WCRQRH'}
+  layout_properties: {grid_position: 'GBUGHL,IRUGDQ PYQRNF,VSSRSX'}
+  components:
+  - name: image_1_copy
+    properties: {source: _/theme/image1111111.jfif, height: 180.5}
+    type: Image
+    layout_properties: {grid_position: 'FRDEJX,BKCEBT'}
+  - name: label_14
+    properties: {text: 'Secure Transactions:', align: center, bold: true, font_size: 18}
+    type: Label
+    layout_properties: {grid_position: 'OSCASP,RQJZTS'}
+- name: outlined_card_7
+  properties: {role: outlined-card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'GBUGHL,IRUGDQ GTWMRW,DQYFSS'}
+  components:
+  - name: image_19
+    properties: {source: _/theme/image44444.jfif, height: 177.5}
+    type: Image
+    layout_properties: {grid_position: 'LYYPFU,IKIHRD'}
+- name: outlined_card_5
+  properties: {role: outlined-card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'GBUGHL,MMGYMK BGGCYB,RHVHGC'}
+  components:
+  - name: image_17_copy
+    properties: {source: _/theme/image222222.jfif, height: 180.5}
+    type: Image
+    layout_properties: {grid_position: 'UURMHZ,OLGKYC'}
+  - name: label_13
+    properties: {text: Financial Management, bold: true, font_size: 18, align: center}
+    type: Label
+    layout_properties: {grid_position: 'GCGRGD,XRBFDX'}
+- name: outlined_card_8
+  properties: {role: outlined-card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'GBUGHL,MMGYMK NPWSOZ,PFESQW'}
+  components:
+  - name: image_20_copy
+    properties: {source: _/theme/image 2.jfif, height: 177.25}
+    type: Image
+    layout_properties: {grid_position: 'PXSOAX,AKBMCB'}
+- name: outlined_card_5_copy
+  properties: {role: outlined-card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'GBUGHL,ARIHHH ABSHAF,XODGMC'}
+  components:
+  - name: image_17_copy_2
+    properties: {source: _/theme/image222222.jfif, height: 180.5}
+    type: Image
+    layout_properties: {grid_position: 'UURMHZ,OLGKYC'}
+  - name: label_13_copy
+    properties: {text: Financial Management, bold: true, font_size: 18, align: center}
+    type: Label
+    layout_properties: {grid_position: 'GCGRGD,XRBFDX'}
+- name: outlined_card_9
+  properties: {role: outlined-card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'GBUGHL,ARIHHH HLPIYW,PCQWPG'}
+  components:
+  - name: image_21_copy
+    properties: {source: _/theme/image6666666666.jfif, height: 178.25}
+    type: Image
+    layout_properties: {grid_position: 'MLIUJZ,FFVEUN'}
 - type: ColumnPanel
   properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
     wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{}', spacing_below: none,

@@ -314,7 +314,7 @@ components:
     type: Image
     layout_properties: {grid_position: 'UURMHZ,OLGKYC'}
   - name: label_13_copy
-    properties: {text: Financial Management, bold: true, font_size: 18, align: center}
+    properties: {text: User-Friendly, bold: true, font_size: 18, align: center}
     type: Label
     layout_properties: {grid_position: 'GCGRGD,XRBFDX'}
 - name: outlined_card_9

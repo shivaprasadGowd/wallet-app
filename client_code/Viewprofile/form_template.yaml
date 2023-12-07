@@ -5,71 +5,73 @@ container:
     role: null, html: ''}
 components:
 - type: ColumnPanel
-  properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-    spacing_below: small, background: '#3FE5FF'}
-  layout_properties: {slot: default}
-  name: outlined_card_1
-  components:
-  - type: Image
-    properties: {role: null, vertical_align: center, height: 54.545440673828125, tooltip: '',
-      border: '', foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
-      source: _/theme/G-logo.jpg, spacing_below: small, background: '', horizontal_align: center}
-    layout_properties: {grid_position: 'YMBFQL,JIZYNJ'}
-    name: image_1
-  - name: link_8
-    properties: {text: Deposit, align: center, bold: true, foreground: '#000', font_size: 18}
-    type: Link
-    layout_properties: {grid_position: 'YMBFQL,JQMHJB'}
-    event_bindings: {click: link_8_click}
-  - name: link_9
-    properties: {text: Money Transfer, align: center, bold: true, foreground: '#000',
-      font_size: 17}
-    type: Link
-    layout_properties: {grid_position: 'YMBFQL,VMXLZA'}
-  - name: link_10
-    properties: {text: Withdraw, bold: true, align: center, foreground: '#000', font_size: 18}
-    type: Link
-    layout_properties: {grid_position: 'YMBFQL,AWHECM'}
-  - name: link_11
-    properties: {text: Company, align: center, bold: true, foreground: '#000', font_size: 18}
-    type: Link
-    layout_properties: {grid_position: 'YMBFQL,VWMKYH'}
-  - name: link_12
-    properties: {text: Career, align: center, bold: true, foreground: '#000', font_size: 18}
-    type: Link
-    layout_properties: {grid_position: 'YMBFQL,XAYJCX'}
-  - type: Link
-    properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: '#000000',
-      visible: true, text: Home, font_size: 17, wrap_on: mobile, font: '', col_spacing: medium,
-      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
-      italic: false, background: '', bold: true, underline: false, icon: ''}
-    layout_properties: {grid_position: 'YMBFQL,QBOZEO'}
-    event_bindings: {click: link_1_click}
-    name: link_1
-- type: Spacer
-  properties: {height: 117}
-  name: spacer_1
-  layout_properties: {slot: default}
-- type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{"LUDXZD":70,"XOIYLU":15}'}
+  properties: {role: outlined-card, col_widths: '{"LUDXZD":70,"XOIYLU":15,"CSNIRH":45,"EXKEHY":15}'}
   name: outlined_card_2
   layout_properties: {slot: default}
   components:
+  - type: ColumnPanel
+    properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+      spacing_below: small, background: '#3FE5FF'}
+    layout_properties: {grid_position: 'KZQOXY,XBVUWZ', full_width_row: true}
+    name: outlined_card_1
+    components:
+    - type: Image
+      properties: {role: null, vertical_align: center, height: 54.545440673828125,
+        tooltip: '', border: '', foreground: '', visible: true, display_mode: shrink_to_fit,
+        spacing_above: small, source: _/theme/G-logo.jpg, spacing_below: small, background: '',
+        horizontal_align: center}
+      layout_properties: {grid_position: 'YMBFQL,JIZYNJ'}
+      name: image_1
+    - name: link_8
+      properties: {text: Deposit, align: center, bold: true, foreground: '#000', font_size: 18}
+      type: Link
+      layout_properties: {grid_position: 'YMBFQL,JQMHJB'}
+      event_bindings: {click: link_8_click}
+    - name: link_9
+      properties: {text: Money Transfer, align: center, bold: true, foreground: '#000',
+        font_size: 17}
+      type: Link
+      layout_properties: {grid_position: 'YMBFQL,VMXLZA'}
+    - name: link_10
+      properties: {text: Withdraw, bold: true, align: center, foreground: '#000',
+        font_size: 18}
+      type: Link
+      layout_properties: {grid_position: 'YMBFQL,AWHECM'}
+    - name: link_11
+      properties: {text: Company, align: center, bold: true, foreground: '#000', font_size: 18}
+      type: Link
+      layout_properties: {grid_position: 'YMBFQL,VWMKYH'}
+    - name: link_12
+      properties: {text: Career, align: center, bold: true, foreground: '#000', font_size: 18}
+      type: Link
+      layout_properties: {grid_position: 'YMBFQL,XAYJCX'}
+    - type: Link
+      properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: '#000000',
+        visible: true, text: Home, font_size: 17, wrap_on: mobile, font: '', col_spacing: medium,
+        spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+        italic: false, background: '', bold: true, underline: false, icon: ''}
+      layout_properties: {grid_position: 'YMBFQL,QBOZEO'}
+      event_bindings: {click: link_1_click}
+      name: link_1
+  - name: spacer_1
+    properties: {height: 68.25}
+    type: Spacer
+    layout_properties: {grid_position: 'RPRUHK,GVZLXK'}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: '', font_size: 20, font: '', spacing_above: small, icon_align: left,
       spacing_below: small, italic: false, background: '', bold: true, underline: false,
       icon: ''}
     name: label_8
-    layout_properties: {grid_position: 'VYUYHA,LUDXZD'}
+    layout_properties: {grid_position: 'JMUPMN,CSNIRH VYUYHA,LUDXZD'}
   - type: Button
     properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: Edit, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: 'fa:edit'}
     name: button_1
-    layout_properties: {grid_position: 'VYUYHA,XOIYLU'}
+    layout_properties: {grid_position: 'JMUPMN,CSNIRH VYUYHA,XOIYLU'}
     event_bindings: {click: button_1_click}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
@@ -77,246 +79,109 @@ components:
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_6
-    layout_properties: {grid_position: 'JZQTPO,UVDYNW'}
+    layout_properties: {grid_position: 'JMUPMN,CSNIRH JZQTPO,UVDYNW'}
   - type: Spacer
-    properties: {height: 64}
+    properties: {height: 87.25}
     name: spacer_2
-    layout_properties: {grid_position: 'QCOZPR,BGUZMJ'}
+    layout_properties: {grid_position: 'JMUPMN,CSNIRH QCOZPR,BGUZMJ'}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Email ID:', font_size: 15, font: '', spacing_above: small,
+      visible: true, text: 'Email ID:', font_size: 18, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_7
-    layout_properties: {grid_position: 'FVIDMB,RGJBIA'}
+    layout_properties: {grid_position: 'JMUPMN,CSNIRH FVIDMB,RGJBIA'}
   - type: TextBox
     properties: {background: '#DFFDFF'}
     name: text_box_1
-    layout_properties: {grid_position: 'FVIDMB,LVWPBE'}
+    layout_properties: {grid_position: 'JMUPMN,CSNIRH FVIDMB,LVWPBE'}
     data_bindings:
     - {property: text, code: 'self.item[''email'']', writeback: true}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Phone Number:', font_size: 15, font: '', spacing_above: small,
+      visible: true, text: 'Phone Number:', font_size: 18, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_9
-    layout_properties: {grid_position: 'CROCAV,VQHZZX'}
+    layout_properties: {grid_position: 'JMUPMN,CSNIRH CROCAV,VQHZZX'}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
       background: '#DFFDFF', bold: false, underline: false}
     name: text_box_2
-    layout_properties: {grid_position: 'CROCAV,RNXWEJ'}
+    layout_properties: {grid_position: 'JMUPMN,CSNIRH CROCAV,RNXWEJ'}
     data_bindings:
     - {property: text, code: 'self.item[''phone'']', writeback: true}
     event_bindings: {pressed_enter: text_box_2_pressed_enter}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Pan Card:', font_size: 15, font: '', spacing_above: small,
+      visible: true, text: 'Pan Card:', font_size: 18, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_10
-    layout_properties: {grid_position: 'ZMRWKJ,KURTZW'}
+    layout_properties: {grid_position: 'JMUPMN,CSNIRH ZMRWKJ,KURTZW'}
   - type: TextBox
     properties: {background: '#DFFDFF'}
     name: text_box_3
-    layout_properties: {grid_position: 'ZMRWKJ,WISUYY'}
+    layout_properties: {grid_position: 'JMUPMN,CSNIRH ZMRWKJ,WISUYY'}
     data_bindings:
     - {property: text, code: 'self.item[''pan'']', writeback: true}
     event_bindings: {change: text_box_3_change}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Aadhar details:', font_size: 15, font: '', spacing_above: small,
+      visible: true, text: 'Aadhar details:', font_size: 18, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_11
-    layout_properties: {grid_position: 'MZGAOS,KSONDB'}
+    layout_properties: {grid_position: 'JMUPMN,CSNIRH MZGAOS,KSONDB'}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
       background: '#DFFDFF', bold: false, underline: false}
     name: text_box_4
-    layout_properties: {grid_position: 'MZGAOS,NGFRPL'}
+    layout_properties: {grid_position: 'JMUPMN,CSNIRH MZGAOS,NGFRPL'}
     data_bindings:
     - {property: text, code: 'self.item[''aadhar'']', writeback: true}
-- type: ColumnPanel
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{}', spacing_below: none,
-    background: '#C2BDBC'}
-  name: outlined_card_3
-  layout_properties:
-    col_widths: {}
-    grid_position: CGGSYB,NDPHFC
-    full_width_row: true
-  components:
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'About Us
-
-
-        Awards & Recognition
-
-        Media Center
-
-        Career Opportunities
-
-        Tools & Calculators
-
-        Fixed Deposit EMI Calculator
-
-        Personal Loan EMI Calculator
-
-        Home Loan EMI Calculator
-
-        Car Loan EMI Calculator
-
-        Mutual Fund Calculator
-
-        SIP Calculator
-
-        Education Loan Calculator
-
-        Retirement Calculator
-
-        Regulatory Information
-
-
-        Safe Banking
-
-
-        RBI Awareness Campaign
-
-        RBI: Beware of Fictitious Offers
-
-        RBI Kehta Hai
-
-        Regulatory Disclosure Section
-
-        Customer Literature on NPAs and SMAs
-
-        Regulatory Disclosure Section 2024', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_10_copy
-    layout_properties: {grid_position: 'HSKNXJ,XUESUE'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Customer Service
-
-
-        Contact Us
-
-        Customer Care
-
-        Report Unauthorized Transactions
-
-        Form Center
-
-        Raise a Service Request
-
-        Report Suspicious Activities
-
-        Complaints and Grievance Redressal
-
-
-        Popular Products & Services
-
-
-        Savings Account
-
-        Current Account
-
-        Fixed Deposit
-
-        Money Transfer
-
-        Credit Cards
-
-        Personal Loan
-
-        Home Loan
-
-        Car Loan
-
-        Mutual Fund
-
-        Debt Management Services', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_12
-    layout_properties: {grid_position: 'HSKNXJ,QGRNEN'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Explore
-
-
-        Interest Rates
-
-        Service Charges and Fees
-
-        Account Activation Process
-
-        Important Information Related to Digital Lending
-
-
-        Other
-
-
-        Do Not Call Registry
-
-        Customer Service Policies
-
-        Business Conduct and Ethics
-
-        Use of Unparliamentary Language by Customers
-
-        Fair Practice Code for Lenders
-
-        Multilingual Disclaimer
-
-        Sitemap', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: label_11_copy
-    layout_properties: {grid_position: 'HSKNXJ,DIROPX'}
-  - type: ColumnPanel
+  - name: spacer_3
+    properties: {height: 175.24993896484375}
+    type: Spacer
+    layout_properties: {grid_position: 'JMUPMN,CSNIRH LDXDEU,UUGVYF'}
+  - name: image_2
+    properties: {height: 531.25, source: _/theme/istockphoto-1317331156-612x612.jpg}
+    type: Image
+    layout_properties: {grid_position: 'JMUPMN,EXKEHY'}
+  - name: outlined_card_1_copy_2
     properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-      wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"OVYRCQ":22,"VMILPR":8,"FDANOO":15,"HAKDVS":15}',
-      spacing_below: none, background: '#706967'}
-    name: outlined_card_1_copy
-    layout_properties:
-      col_widths: {}
-      grid_position: MHPMBC,KWBGPT
-      full_width_row: true
+      wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',
+      spacing_below: none, background: 'theme:On Surface Variant'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'AOYAPP,APISXF', full_width_row: true}
     components:
-    - type: Label
-      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-        visible: true, text: Copyright@2023G-Wallet, font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: true, background: '', bold: true,
-        underline: false, icon: ''}
-      name: label_1
-      layout_properties: {grid_position: 'XSXLAE,OVYRCQ'}
-    - type: Label
-      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-        visible: true, text: Disclaimer |, font_size: null, font: '', spacing_above: small,
+    - name: label_1_copy
+      properties: {text: CopyRight2023@Gwallet, align: left, bold: true, font_size: 16,
+        visible: true, role: input-prompt, foreground: 'theme:On Primary'}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,XVKBKL', full_width_row: false}
+    - name: label_2_copy
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: 'Disclaimer ', font_size: 18, font: '', spacing_above: small,
         icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
         underline: false, icon: ''}
-      name: label_2
+      type: Label
       layout_properties: {grid_position: 'XSXLAE,VMILPR'}
-    - type: Label
-      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-        visible: true, text: Privacy Policy |, font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-        underline: false, icon: ''}
-      name: label_3
+    - name: label_3_copy
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: 'Privacy Policy ', font_size: 18, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: true, underline: false, icon: ''}
+      type: Label
       layout_properties: {grid_position: 'XSXLAE,FDANOO'}
-    - type: Label
-      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-        visible: true, text: Code Of Commitment |, font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-        underline: false, icon: ''}
-      name: label_4
+    - name: label_4_copy
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: 'Code Of Commitment ', font_size: 18, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: true, underline: false, icon: ''}
+      type: Label
       layout_properties: {grid_position: 'XSXLAE,HAKDVS'}

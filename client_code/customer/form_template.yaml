@@ -195,4 +195,182 @@ components:
       name: link_1
       layout_properties: {x: 31.7613525390625, y: 249.897705078125, width: 95}
       event_bindings: {}
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{}', spacing_below: none,
+    background: '#C2BDBC'}
+  name: outlined_card_3
+  layout_properties:
+    col_widths: {}
+    grid_position: YHANAN,DEHMDT
+    full_width_row: true
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'About Us
+
+
+        Awards & Recognition
+
+        Media Center
+
+        Career Opportunities
+
+        Tools & Calculators
+
+        Fixed Deposit EMI Calculator
+
+        Personal Loan EMI Calculator
+
+        Home Loan EMI Calculator
+
+        Car Loan EMI Calculator
+
+        Mutual Fund Calculator
+
+        SIP Calculator
+
+        Education Loan Calculator
+
+        Retirement Calculator
+
+        Regulatory Information
+
+
+        Safe Banking
+
+
+        RBI Awareness Campaign
+
+        RBI: Beware of Fictitious Offers
+
+        RBI Kehta Hai
+
+        Regulatory Disclosure Section
+
+        Customer Literature on NPAs and SMAs
+
+        Regulatory Disclosure Section 2024', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_10_copy
+    layout_properties: {grid_position: 'HSKNXJ,XUESUE'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Customer Service
+
+
+        Contact Us
+
+        Customer Care
+
+        Report Unauthorized Transactions
+
+        Form Center
+
+        Raise a Service Request
+
+        Report Suspicious Activities
+
+        Complaints and Grievance Redressal
+
+
+        Popular Products & Services
+
+
+        Savings Account
+
+        Current Account
+
+        Fixed Deposit
+
+        Money Transfer
+
+        Credit Cards
+
+        Personal Loan
+
+        Home Loan
+
+        Car Loan
+
+        Mutual Fund
+
+        Debt Management Services', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_12
+    layout_properties: {grid_position: 'HSKNXJ,QGRNEN'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Explore
+
+
+        Interest Rates
+
+        Service Charges and Fees
+
+        Account Activation Process
+
+        Important Information Related to Digital Lending
+
+
+        Other
+
+
+        Do Not Call Registry
+
+        Customer Service Policies
+
+        Business Conduct and Ethics
+
+        Use of Unparliamentary Language by Customers
+
+        Fair Practice Code for Lenders
+
+        Multilingual Disclaimer
+
+        Sitemap', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: label_11_copy
+    layout_properties: {grid_position: 'HSKNXJ,DIROPX'}
+  - type: ColumnPanel
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"OVYRCQ":22,"VMILPR":8,"FDANOO":15,"HAKDVS":15}',
+      spacing_below: none, background: '#706967'}
+    name: outlined_card_1_copy
+    layout_properties:
+      col_widths: {}
+      grid_position: MHPMBC,KWBGPT
+      full_width_row: true
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Copyright@2023G-Wallet, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: true, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_1_copy
+      layout_properties: {grid_position: 'XSXLAE,OVYRCQ'}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+        visible: true, text: Disclaimer |, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'XSXLAE,VMILPR'}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+        visible: true, text: Privacy Policy |, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_3
+      layout_properties: {grid_position: 'XSXLAE,FDANOO'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Code Of Commitment |, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_4
+      layout_properties: {grid_position: 'XSXLAE,HAKDVS'}
 is_package: true

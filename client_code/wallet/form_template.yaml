@@ -27,10 +27,12 @@ components:
       font_size: 17}
     type: Link
     layout_properties: {grid_position: 'RQYEAC,LVPHSF'}
+    event_bindings: {click: link_9_click}
   - name: link_10
     properties: {text: Withdraw, bold: true, align: center, foreground: '#000', font_size: 18}
     type: Link
     layout_properties: {grid_position: 'RQYEAC,LGCRNS'}
+    event_bindings: {click: link_10_click}
   - name: link_11
     properties: {text: Company, align: center, bold: true, foreground: '#000', font_size: 18}
     type: Link

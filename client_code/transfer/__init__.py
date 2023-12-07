@@ -13,7 +13,7 @@ class transfer(transferTemplate):
         self.init_components(**properties)
         self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
         user_account_numbers = anvil.server.call('get_user_account_numbers', self.user['username'])
-        self.dropdown_account_numbers.items = user_account_numbers
+        #self.dropdown_account_numbers.items = user_account_numbers
         self.display()
         
         
@@ -83,7 +83,7 @@ class transfer(transferTemplate):
       open_form('transfer',user=self.user)
 
     def display(self, **event_args):
-        acc=self.dropdown_account_numbers.selected_value
+        #acc=self.dropdown_account_numbers.selected_value
         fore_money = anvil.server.call('get_accounts_emoney',acc)
         acc_validate = anvil.server.call('validate_acc_no_to_display_in_transfer',acc)
         self.label_6.text = "$" + str(acc_validate['money_usd'])

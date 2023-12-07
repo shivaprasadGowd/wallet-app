@@ -270,7 +270,7 @@ components:
     name: label_23
 - type: ColumnPanel
   properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: none, spacing_above: large, col_widths: '{}', spacing_below: none,
+    wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{}', spacing_below: none,
     background: '#C2BDBC'}
   name: outlined_card_3
   layout_properties: {grid_position: 'QHSNOA,VKMZBC', full_width_row: true}

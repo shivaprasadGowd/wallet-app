@@ -75,17 +75,16 @@ class transfer(transferTemplate):
               self.label_4.text = "Insufficient funds"
         else:
           self.label_4.text = "Error: Invalid currency symbol selected."
-        return
-      
+        
       new_transaction = app_tables.transactions.add_row(
                 user=self.user['username'],
-                account=int(entered_account_number),
+                casa=int(acc),
                 e_wallet=wallet3,
                 money=f"{selected_symbol}-{money_value}",
                 date=current_datetime
             )
-      
       open_form('transfer',user=self.user)
+      
 
     def display(self, **event_args):
         acc=self.dropdown_account_numbers.selected_value

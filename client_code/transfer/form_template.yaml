@@ -47,7 +47,7 @@ components:
     event_bindings: {click: link_1_click}
     name: link_1
 - type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{"WRPCZF":20,"OUDEWK":40}'}
+  properties: {role: outlined-card, col_widths: '{"WRPCZF":20,"OUDEWK":40,"UORFHW":20,"YRPABG":40,"BJJTBS":20,"DQVMEJ":40}'}
   name: outlined_card_2
   layout_properties: {slot: default}
   components:
@@ -211,47 +211,34 @@ components:
     properties: {height: 49}
     name: spacer_3
     layout_properties: {grid_position: 'WAWOXA,AEOZIZ'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Enable Top up: (values are in Rupees)', font_size: null,
-      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
-    name: label_15
-    layout_properties: {grid_position: 'ANKUIQ,VVHGWM'}
-  - type: DropDown
-    properties:
-      role: null
-      align: full
-      tooltip: ''
-      placeholder: ''
-      border: ''
-      enabled: true
-      foreground: ''
-      items: ['5000', '10000', '20000', '30000', '40000', '']
-      visible: true
-      font_size: null
-      font: ''
-      spacing_above: small
-      spacing_below: small
-      italic: false
-      background: ''
-      bold: false
-      underline: false
-      include_placeholder: false
-    name: drop_down_3
-    layout_properties: {grid_position: 'ANKUIQ,ZTYYCP'}
-  - type: RadioButton
-    properties: {role: null, selected: false, align: center, tooltip: '', border: '',
-      enabled: true, foreground: '', value: '', visible: true, text: '✔ ', font_size: null,
-      font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
-      bold: false, group_name: radioGroup1, underline: false}
-    name: radio_button_1
-    layout_properties: {grid_position: 'OZKNTV,WMVNDP'}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Transfer, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '#3FE5FF',
-      bold: true, underline: false, icon: ''}
+      foreground: '#000000', visible: true, text: Transfer, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#3FE5FF', bold: true, underline: false, icon: ''}
     name: button_1
     layout_properties: {grid_position: 'YITTQD,VSIGFW'}
     event_bindings: {click: button_1_click}
+  - name: label_15
+    properties: {text: Transfer Funds from E-wallet to Account, align: center, bold: true,
+      font_size: 20}
+    type: Label
+    layout_properties: {grid_position: 'RSAJBC,NBVWVG'}
+  - name: drop_down_3
+    properties:
+      items: [$, Є, ₣, ₹]
+    type: DropDown
+    layout_properties: {grid_position: 'ZOFEUB,BJJTBS'}
+  - name: text_box_1
+    properties: {placeholder: Enter Amount}
+    type: TextBox
+    layout_properties: {grid_position: 'ZOFEUB,DQVMEJ'}
+  - name: spacer_4
+    properties: {height: 39.77777099609375}
+    type: Spacer
+    layout_properties: {grid_position: 'BMTTQM,YQMIET'}
+  - name: button_2
+    properties: {text: Transfer, role: outlined-button, background: '#3FE5FF', foreground: '#000000',
+      bold: true}
+    type: Button
+    layout_properties: {grid_position: 'SPVMHA,SAWEVJ'}

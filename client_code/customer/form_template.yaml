@@ -81,7 +81,7 @@ components:
   - name: image_3
     properties: {height: 338.24993896484375, source: _/theme/1000_F_398080096_Go2KtGlPcfBXmQskyyoaomyEe4BrBzgI.jpg}
     type: Image
-    layout_properties: {x: 1007.046875, y: 2.234375, width: 516}
+    layout_properties: {x: 1007.046875, y: 2.234375, width: 826}
 - name: button_1
   properties: {role: elevated-button, foreground: '#000000', text: Viewprofile, font_size: 13,
     font: '', spacing_above: small, spacing_below: small, background: '#3FE5FF', bold: true,
@@ -130,10 +130,6 @@ components:
   type: XYPanel
   layout_properties: {grid_position: 'KIJJZA,ZTOQRI', full_width_row: true}
   components:
-  - name: image_4
-    properties: {source: _/theme/laptop.jpg, height: 498.25}
-    type: Image
-    layout_properties: {x: 490, y: 3.984375, width: 1067}
   - name: label_7_copy
     properties: {text: G-Wallet Payments App, font_size: 41, align: center, bold: true}
     type: Label
@@ -143,6 +139,10 @@ components:
       bold: true, font_size: 30}
     type: Label
     layout_properties: {x: 20.046875, y: 323.390625, width: 620}
+  - name: image_4
+    properties: {source: _/theme/laptop.jpg, height: 498.25}
+    type: Image
+    layout_properties: {x: 761, y: 3.984375, width: 1067}
 - name: spacer_2
   properties: {height: 64.25}
   type: Spacer

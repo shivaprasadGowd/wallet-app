@@ -43,7 +43,7 @@ class transfer(transferTemplate):
       print(e_wallet_for_emoney)
        # Replace with the actual value
       
-      if (money_value < 5) or (money_value > 50000):
+      if selected_symbol == 'Є' or '$' or '₣' or '₹' and (money_value < 5) or (money_value > 50000):
         self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."
       else:
         if selected_symbol == 'Є':  
@@ -82,7 +82,8 @@ class transfer(transferTemplate):
                 casa=int(acc),
                 e_wallet=wallet3,
                 money=f"{selected_symbol}-{money_value}",
-                date=current_datetime
+                date=current_datetime,
+                transaction_type="Money transferred"
             )
       open_form('transfer',user=self.user)
       

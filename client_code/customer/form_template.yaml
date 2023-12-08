@@ -81,7 +81,7 @@ components:
   - name: image_3
     properties: {height: 338.24993896484375, source: _/theme/1000_F_398080096_Go2KtGlPcfBXmQskyyoaomyEe4BrBzgI.jpg}
     type: Image
-    layout_properties: {x: 1007.046875, y: 2.234375, width: 516}
+    layout_properties: {x: 1007.046875, y: 2.234375, width: 826}
 - name: button_1
   properties: {role: elevated-button, foreground: '#000000', text: Viewprofile, font_size: 13,
     font: '', spacing_above: small, spacing_below: small, background: '#3FE5FF', bold: true,

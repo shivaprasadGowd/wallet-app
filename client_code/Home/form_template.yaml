@@ -79,7 +79,7 @@ components:
   - name: image_3
     properties: {height: 342.25, source: _/theme/1000_F_398080096_Go2KtGlPcfBXmQskyyoaomyEe4BrBzgI.jpg}
     type: Image
-    layout_properties: {x: 1012.046875, y: 0, width: 485}
+    layout_properties: {x: 1008, y: 0.046875, width: 820}
 - name: outlined_card_4_copy
   properties: {role: outlined-card, background: 'theme:On Primary'}
   type: ColumnPanel

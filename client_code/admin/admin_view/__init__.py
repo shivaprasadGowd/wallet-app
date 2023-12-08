@@ -37,32 +37,36 @@ class admin_view(admin_viewTemplate):
 
     def button_2_click(self, **event_args):
     # Get the selected account number from the dropdown
-      selected_account_number = self.drop_down_1.selected_value
-  
-      # Get the 'e_money' amount from the 'accounts' table
-      account = app_tables.accounts.get(user=self.text_box_1.text, casa=int(selected_account_number))
+       selected_account_number = float(self.drop_down_1.selected_value)
+
+# Get the 'e_money' amount from the 'accounts' table
+       account = app_tables.accounts.get(user=self.text_box_1.text, casa=selected_account_number)
       
       # Check if 'e_money' is not empty
-      if account and account['e_money'] is not None and int(account['e_money']) > 0:
+       if account and account['e_money'] is not None and int(account['e_money']) > 0:
           alert("Account cannot be deleted. Your account has some funds remaining. Please withdraw it.", title="Error")
           return
   
       # Check if currency values are not empty
-      currency_details = app_tables.currencies.get(casa=int(selected_account_number))
-      if currency_details and (
-          currency_details['money_usd'] is not None and int(currency_details['money_usd']) > 0 or
-          currency_details['money_inr'] is not None and int(currency_details['money_inr']) > 0 or
-          currency_details['money_euro'] is not None and int(currency_details['money_euro']) > 0 or
-          currency_details['money_swis'] is not None and int(currency_details['money_swis']) > 0
-      ):
+       currency_details = app_tables.currencies.get(casa=float(selected_account_number))
+
+       if currency_details and (
+          currency_details['money_usd'] is not None and float(currency_details['money_usd']) > 0 or
+          currency_details['money_inr'] is not None and float(currency_details['money_inr']) > 0 or
+          currency_details['money_euro'] is not None and float(currency_details['money_euro']) > 0 or
+          currency_details['money_swis'] is not None and float(currency_details['money_swis']) > 0
+        ):
+    # Your existing code for handling the case where currency values are greater than 0
+    # ...
+
           alert("Account cannot be deleted. Your account has some funds in different currencies. Please withdraw them.", title="Error")
           return
   
       # If 'e_money' and currency values are empty, proceed with user deletion
-      username = self.text_box_1.text
-      user_to_delete = app_tables.users.get(username=username)
+       username = self.text_box_1.text
+       user_to_delete = app_tables.users.get(username=username)
   
-      if user_to_delete is not None:
+       if user_to_delete is not None:
            user_to_delete.delete()
            alert("User deleted successfully.", title="Success")
   
@@ -71,8 +75,8 @@ class admin_view(admin_viewTemplate):
   
           # Raise an event to notify the parent form (admin form) about the deletion
            open_form('admin', user_data=user_to_delete)
-    # ... (remaining code)
 
+  
     def clear_textboxes(self):
         self.text_box_1.text = ''
         self.text_box_2.text = ''

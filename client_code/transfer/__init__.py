@@ -99,10 +99,19 @@ class transfer(transferTemplate):
         self.label_12.text = "₣ " + str(acc_validate['money_swis'])
         e_money_value = str(fore_money['e_money'])
         eb= self.drop_down_2.selected_value
-        if eb== '$':
-            dollar_to_rupee = (e_money_value)/80.0  # Set a default value, adjust as needed
-            self.label_14.text=dollar_to_rupee
-            # anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_string)
+        if e_money_value and e_money_value != 'None' and e_money_value.replace('.', '', 1).isdigit() and eb == '$':
+           try:
+             e_money_value = float(e_money_value)
+             dollar_to_rupee = e_money_value / 80.0  # Set a default value, adjust as needed
+             self.label_14.text = str(dollar_to_rupee)
+           except ValueError:
+              # Handle the case where e_money_value cannot be converted to a float
+             # Provide a default value or display an error message
+             pass  # You might add specific handling or error message here
+           else:
+              # Handle the case where e_money_value is None or eb is not '$'
+             # For example, provide a default value or display an error message
+             pass  # You might add specific handling or error message here
         if eb == 'Є':
           euro_to_rupee = (e_money_value)/90.0
           self.label_14.text = euro_to_rupee

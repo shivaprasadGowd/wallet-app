@@ -80,8 +80,8 @@ def transfer_money(username, amount, selected_currency):
 
 # for deposit
 @anvil.server.callable
-def get_currency_data(name):
-    currency_table = app_tables.currencies.get(casa= int(name))
+def get_currency_data(acc):
+    currency_table = app_tables.currencies.get(casa= int(acc))
     return currency_table
 
 # fot populating the dropdown section

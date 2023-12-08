@@ -97,7 +97,7 @@ class transfer(transferTemplate):
         self.label_10.text = "₹ " + str(acc_validate['money_inr'])
         self.label_11.text = "€ " + str(acc_validate['money_euro'])
         self.label_12.text = "₣ " + str(acc_validate['money_swis'])
-        e_money_value = float(fore_money['e_money'])
+        e_money_value = str(fore_money['e_money'])
         eb= self.drop_down_2.selected_value
         if eb== '$':
             dollar_to_rupee = (e_money_value)/80.0  # Set a default value, adjust as needed

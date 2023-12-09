@@ -68,8 +68,7 @@ class transfer(transferTemplate):
         elif selected_symbol == '₹':
             if float(user_currency['money_inr']) > money_value:
               user_currency['money_inr'] = str(float(user_currency['money_inr']) - money_value)
-              money_inr_equivalent_string = str(money_value * 1 + float(fore_money['e_money'] or 0))
-              #anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_string)
+              fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + (money_value * 1))
             else:
               self.label_4.text = "Insufficient funds"
         else:

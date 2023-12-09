@@ -20,6 +20,13 @@ class transfer(transferTemplate):
     def link_1_click(self, **event_args):
       open_form('customer', user= self.user)
 
+    def safe_float_conversion(self, value):
+      try:
+        return float(value)
+      except (ValueError, TypeError):
+        return 0.0  # Return default value if conversion fails or value is not numeric
+  
+
     def button_1_click(self, **event_args):
       current_datetime = datetime.now()
       acc = self.dropdown_account_numbers.selected_value
@@ -41,6 +48,7 @@ class transfer(transferTemplate):
       e_wallet_for_emoney = wallet3
       print(user_for_emoney)
       print(e_wallet_for_emoney)
+      #e_money_value = float(fore_money['e_money'])
        # Replace with the actual value
       
       if (money_value < 5) or (money_value > 50000):#selected_symbol == 'Є' or '$' or '₣' or '₹' and 
@@ -48,11 +56,13 @@ class transfer(transferTemplate):
       else:
         if selected_symbol == 'Є':  
           if float(user_currency['money_euro']) > money_value:
-            user_currency['money_euro'] = str(float(user_currency['money_euro']) - money_value)
-            money_inr_equivalent_string = str(money_value * conversion_rate_euro_to_inr + float(fore_money['e_money'] or 0))
-            #anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_string)
+                user_currency['money_euro'] = str(float(user_currency['money_euro']) - money_value)
+                e_money_value = safe_float_conversion(fore_money['e_money'])
+                fore_money['e_money'] = str(e_money_value + (money_value * conversion_rate_euro_to_inr))
+                app_tables.currencies.update_row(casa=int(acc), money_euro=user_currency['money_euro'])
+                app_tables.accounts.update_row(casa=int(acc), e_money=fore_money['e_money'])
           else:
-            self.label_4.text = "Insufficient funds"
+                self.label_4.text = "Insufficient funds"
         elif selected_symbol == '$':
             if float(user_currency['money_usd']) > money_value:
               user_currency['money_usd'] = str(float(user_currency['money_usd']) - money_value)

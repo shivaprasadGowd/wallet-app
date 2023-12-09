@@ -43,7 +43,7 @@ class transfer(transferTemplate):
       print(e_wallet_for_emoney)
        # Replace with the actual value
       
-      if selected_symbol == 'Є' or '$' or '₣' or '₹' and (money_value < 5) or (money_value > 50000):
+      if (money_value < 5) or (money_value > 50000):#selected_symbol == 'Є' or '$' or '₣' or '₹' and 
         self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."
       else:
         if selected_symbol == 'Є':  
@@ -57,7 +57,7 @@ class transfer(transferTemplate):
             if float(user_currency['money_usd']) > money_value:
               user_currency['money_usd'] = str(float(user_currency['money_usd']) - money_value)
               money_inr_equivalent_string = str(money_value * conversion_rate_usd_to_inr + float(fore_money['e_money'] or 0))
-              anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_strin)
+              anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_string)
             else:
               self.label_4.text = "Insufficient funds"
         elif selected_symbol == '₣':

@@ -20,12 +20,6 @@ class transfer(transferTemplate):
     def link_1_click(self, **event_args):
       open_form('customer', user= self.user)
 
-    def safe_float_conversion(self, value):
-      try:
-        return float(value)
-      except (ValueError, TypeError):
-        return 0.0  # Return default value if conversion fails or value is not numeric
-  
 
     def button_1_click(self, **event_args):
       current_datetime = datetime.now()
@@ -57,7 +51,12 @@ class transfer(transferTemplate):
         if selected_symbol == 'Є':  
           if float(user_currency['money_euro']) > money_value:
                 user_currency['money_euro'] = str(float(user_currency['money_euro']) - money_value)
-                e_money_value = safe_float_conversion(fore_money['e_money'])
+                e_money_value = 0.0  # Default value if conversion fails
+                if fore_money['e_money'] and fore_money['e_money'].strip():
+                    try:
+                        e_money_value = float(fore_money['e_money'])
+                    except ValueError:
+                        pass  # Keep the default value if conversion fails
                 fore_money['e_money'] = str(e_money_value + (money_value * conversion_rate_euro_to_inr))
                 app_tables.currencies.update_row(casa=int(acc), money_euro=user_currency['money_euro'])
                 app_tables.accounts.update_row(casa=int(acc), e_money=fore_money['e_money'])

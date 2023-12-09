@@ -37,6 +37,7 @@ class transfer(transferTemplate):
     
       selected_symbol = self.drop_down_1.selected_value
       money_value = float(self.text_box_4.text)
+      
     # Add your conversion rates here
       conversion_rate_usd_to_inr = 80.0
       conversion_rate_swis_to_inr = 95.0
@@ -73,7 +74,7 @@ class transfer(transferTemplate):
               self.label_4.text = "Insufficient funds"
         else:
           self.label_4.text = "Error: Invalid currency symbol selected."
-        
+  
       new_transaction = app_tables.transactions.add_row(
                 user=self.user['username'],
                 casa=int(acc),
@@ -140,12 +141,44 @@ class transfer(transferTemplate):
 
     def dropdown_account_numbers_change(self, **event_args):
       self.display()
-      
-      
-      
+    
+
+    def button_2_click(self, **event_args):
+      current_datetime = datetime.now()
+      acc = self.dropdown_account_numbers.selected_value
+      print(acc)
+      user_currency = anvil.server.call('get_currency_data', acc)
+      fore_money = anvil.server.call('get_accounts_emoney', acc)
+      selected_symbol = self.drop_down_3.selected_value
+      money_value = float(self.text_box_1.text)
+      conversion_rate_inr_to_usd = 0.012
+      conversion_rate_swis_to_inr = 95.0
+      conversion_rate_euro_to_inr = 90.0
+      if (money_value < 5) or (money_value > 50000):
+        self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."
+        if selected_symbol == '$':
+            if float(fore_money['e_money']) > money_value:
+              fore_money['e_money'] = str(float(fore_money['e_money']) - (money_value * conversion_rate_inr_to_usd))
+              user_currency['money_usd'] = str(float(user_currency['money_usd']) + money_value)
+            else:
+              self.label_18.text = "no balance"
+        elif selected_symbol == '₹':
+            if float(fore_money['e_money']) > money_value:
+              fore_money['e_money'] = str(float(fore_money['e_money']) - (money_value * 1))
+              user_currency['money_usd'] = str(float(user_currency['money_usd']) + money_value)
+            else:
+              self.label_18.text = "no balance"     
+        else:
+          pass
+
 
     def link_8_click(self, **event_args):
       open_form('deposit',user= self.user)
 
     def link_10_click(self, **event_args):
       open_form('withdraw',user= self.user)
+
+    def drop_down_1_change(self, **event_args):
+      """This method is called when an item is selected"""
+      pass
+              

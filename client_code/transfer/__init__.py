@@ -25,42 +25,38 @@ class transfer(transferTemplate):
       current_datetime = datetime.now()
       acc = self.dropdown_account_numbers.selected_value
       print(acc)
-      user_currency= anvil.server.call('get_currency_data',acc)
-      fore_money = anvil.server.call('get_accounts_emoney',acc)
+      user_currency = anvil.server.call('get_currency_data', acc)
+      fore_money = anvil.server.call('get_accounts_emoney', acc)
+    
       if self.user is not None:
         wallet3 = anvil.server.call('generate_unique_id', self.user['username'], self.user['phone'])
-
+        
         if wallet3 is None:
             self.label_2.text = "Error: Wallet is empty"
             return
+    
       selected_symbol = self.drop_down_1.selected_value
       money_value = float(self.text_box_4.text)
+    # Add your conversion rates here
       conversion_rate_usd_to_inr = 80.0
       conversion_rate_swis_to_inr = 95.0
       conversion_rate_euro_to_inr = 90.0
       user_for_emoney = self.user['username']
       e_wallet_for_emoney = wallet3
-      print(user_for_emoney)
-      print(e_wallet_for_emoney)
-      #e_money_value = float(fore_money['e_money'])
-       # Replace with the actual value
-      
-      if (money_value < 5) or (money_value > 50000):#selected_symbol == 'Є' or '$' or '₣' or '₹' and 
+    
+      if (money_value < 5) or (money_value > 50000):
         self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."
       else:
         if selected_symbol == 'Є':  
-          if float(user_currency['money_euro']) > money_value:
+            if float(user_currency['money_euro']) > money_value:
                 user_currency['money_euro'] = str(float(user_currency['money_euro']) - money_value)
-                e_money_value = 0.0  # Default value if conversion fails
-                if fore_money['e_money'] and fore_money['e_money'].strip():
-                    try:
-                        e_money_value = float(fore_money['e_money'])
-                    except ValueError:
-                        pass  # Keep the default value if conversion fails
-                fore_money['e_money'] = str(e_money_value + (money_value * conversion_rate_euro_to_inr))
-                app_tables.currencies.update_row(casa=int(acc), money_euro=user_currency['money_euro'])
-                app_tables.accounts.update_row(casa=int(acc), e_money=fore_money['e_money'])
-          else:
+                fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + (money_value * conversion_rate_euro_to_inr))
+                
+                # Update the 'e_money' value in the accounts table
+                account_row = app_tables.accounts.get(casa=int(acc))
+                account_row['e_money'] = fore_money['e_money']
+                account_row.save()
+            else:
                 self.label_4.text = "Insufficient funds"
         elif selected_symbol == '$':
             if float(user_currency['money_usd']) > money_value:

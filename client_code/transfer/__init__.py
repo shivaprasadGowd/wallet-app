@@ -151,9 +151,9 @@ class transfer(transferTemplate):
       fore_money = anvil.server.call('get_accounts_emoney', acc)
       selected_symbol = self.drop_down_3.selected_value
       money_value = float(self.text_box_1.text)
-      conversion_rate_inr_to_usd = 0.012
-      conversion_rate_swis_to_inr = 95.0
-      conversion_rate_euro_to_inr = 90.0
+      # conversion_rate_inr_to_usd = 0.012
+      # conversion_rate_swis_to_inr = 95.0
+      # conversion_rate_euro_to_inr = 90.0
       if (money_value < 5) or (money_value > 50000):
         self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."
         if selected_symbol == '$':
@@ -163,11 +163,22 @@ class transfer(transferTemplate):
             else:
               self.label_18.text = "no balance"
         elif selected_symbol == '₹':
+            # Transfer e-money to INR
             if float(fore_money['e_money']) > money_value:
-              fore_money['e_money'] = str(float(fore_money['e_money']) - (money_value * 1))
-              user_currency['money_usd'] = str(float(user_currency['money_usd']) + money_value)
+                fore_money['e_money'] = str(float(fore_money['e_money']) - money_value)
+                user_currency['money_inr'] = str(float(user_currency['money_inr']) + money_value)
+                # Update currencies datatable for money_inr
+                app_tables.currencies.add_row(
+                    money_usd=0,
+                    money_inr=money_value,
+                    money_euro=0,
+                    money_swis=0,
+                    date=current_datetime,
+                    transaction_type="Money transferred",
+                    user=self.user['username']
+                )
             else:
-              self.label_18.text = "no balance"     
+                self.label_18.text = "Insufficient e-money balance" 
         else:
           pass
 

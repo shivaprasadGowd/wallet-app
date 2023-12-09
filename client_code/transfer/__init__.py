@@ -47,10 +47,10 @@ class transfer(transferTemplate):
       if (money_value < 5) or (money_value > 50000):
         self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."
       else:
-        if selected_symbol == 'Є':  
-            if float(user_currency['money_euro']) > money_value:
-                user_currency['money_euro'] = str(float(user_currency['money_euro']) - money_value)
-                fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + (money_value * conversion_rate_euro_to_inr))
+        if selected_symbol == '$':  
+            if float(user_currency['money_usd']) > money_value:
+                user_currency['money_usd'] = str(float(user_currency['money_usd']) - money_value)
+                fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + (money_value * conversion_rate_usd_to_inr))
                 
                 # Update the 'e_money' value in the accounts table
                 account_row = app_tables.accounts.get(casa=int(acc))
@@ -58,11 +58,17 @@ class transfer(transferTemplate):
                 account_row.save()
             else:
                 self.label_4.text = "Insufficient funds"
-        elif selected_symbol == '$':
-            if float(user_currency['money_usd']) > money_value:
-              user_currency['money_usd'] = str(float(user_currency['money_usd']) - money_value)
-              money_inr_equivalent_string = str(money_value * conversion_rate_usd_to_inr + float(fore_money['e_money'] or 0))
-              #anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_string)
+        elif selected_symbol == 'Є':
+            if float(user_currency['money_euro']) > money_value:
+              user_currency['money_euro'] = str(float(user_currency['money_euro']) - money_value)
+              fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + (money_value * conversion_rate_euro_to_inr))
+                
+                # Update the 'e_money' value in the accounts table
+              account_row = app_tables.accounts.get(casa=int(acc))
+              account_row['e_money'] = fore_money['e_money']
+              account_row.save()
+            
+              
             else:
               self.label_4.text = "Insufficient funds"
         elif selected_symbol == '₣':

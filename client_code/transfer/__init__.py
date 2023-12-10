@@ -178,7 +178,7 @@ class transfer(transferTemplate):
                     money_euro=0,  # Adjust these values based on conversions
                     money_swis=0,
                     date=current_datetime,
-                    transaction_type="Money transferred",
+                    transaction_type="no",
                     user=self.user['username']
                 )
             else:

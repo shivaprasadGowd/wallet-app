@@ -163,24 +163,29 @@ class transfer(transferTemplate):
             else:
               self.label_18.text = "no balance"
         elif selected_symbol == '₹':
-            # Transfer e-money to INR
+            # Transfer e-money to INR (Not required as it's already in e-money)
             if float(fore_money['e_money']) > money_value:
+                # Update e-money and INR balance
                 fore_money['e_money'] = str(float(fore_money['e_money']) - money_value)
                 user_currency['money_inr'] = str(float(user_currency['money_inr']) + money_value)
+
                 # Update currencies datatable for money_inr
                 app_tables.currencies.add_row(
                     money_usd=0,
                     money_inr=money_value,
-                    money_euro=0,
+                    money_euro=0,  # Adjust these values based on conversions
                     money_swis=0,
                     date=current_datetime,
                     transaction_type="Money transferred",
                     user=self.user['username']
                 )
             else:
-                self.label_18.text = "Insufficient e-money balance" 
+                self.label_18.text = "Insufficient e-money balance"
+
+        # Add conditions for other currency transfers (Euro, Swiss Franc) similarly
+
         else:
-          pass
+            pass  # Handle other selected symbols if needed
 
 
     def link_8_click(self, **event_args):

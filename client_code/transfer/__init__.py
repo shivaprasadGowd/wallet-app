@@ -114,9 +114,12 @@ class transfer(transferTemplate):
         if eb == '₣':
           swis_to_rupee = (e_money_value)/95
           self.label_14.text = swis_to_rupee
-
         if eb == '₹':
           self.label_14.text = (e_money_value)
+
+        
+
+        
 
     def drop_down_2_change(self, **event_args):
       acc=self.dropdown_account_numbers.selected_value
@@ -147,6 +150,7 @@ class transfer(transferTemplate):
       fore_money = anvil.server.call('get_accounts_emoney', acc)
       selected_symbol = self.drop_down_3.selected_value
       money_value = float(self.text_box_1.text)
+      user_for_emoney = self.user['username']
       # conversion_rate_inr_to_usd = 0.012
       # conversion_rate_swis_to_inr = 95.0
       # conversion_rate_euro_to_inr = 90.0

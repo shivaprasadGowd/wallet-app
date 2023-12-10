@@ -104,13 +104,9 @@ class transfer(transferTemplate):
              dollar_to_rupee = e_money_value / 80.0  # Set a default value, adjust as needed
              self.label_14.text = str(dollar_to_rupee)
            except ValueError:
-              # Handle the case where e_money_value cannot be converted to a float
-             # Provide a default value or display an error message
-             pass  # You might add specific handling or error message here
+             pass 
            else:
-              # Handle the case where e_money_value is None or eb is not '$'
-             # For example, provide a default value or display an error message
-             pass  # You might add specific handling or error message here
+              pass
         if eb == 'Є':
           euro_to_rupee = (e_money_value)/90.0
           self.label_14.text = euro_to_rupee

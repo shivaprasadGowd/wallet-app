@@ -121,6 +121,8 @@ class transfer(transferTemplate):
 
         
 
+        
+
     def drop_down_2_change(self, **event_args):
       acc=self.dropdown_account_numbers.selected_value
       fore_money = anvil.server.call('get_accounts_emoney',acc)
@@ -155,7 +157,7 @@ class transfer(transferTemplate):
       # conversion_rate_swis_to_inr = 95.0
       # conversion_rate_euro_to_inr = 90.0
       if (money_value < 5) or (money_value > 50000):
-        self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."
+        self.label_18.text = "Money value should be between 5 and 50000 for a transfer Funds."
         if selected_symbol == '$':
             if float(fore_money['e_money']) > money_value:
               fore_money['e_money'] = str(float(fore_money['e_money']) - (money_value * conversion_rate_inr_to_usd))
@@ -185,6 +187,9 @@ class transfer(transferTemplate):
         # Add conditions for other currency transfers (Euro, Swiss Franc) similarly
 
         else:
+            pass  
+
+      else:
             pass  # Handle other selected symbols if needed
 
 

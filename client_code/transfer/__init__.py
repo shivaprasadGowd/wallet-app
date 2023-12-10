@@ -117,6 +117,7 @@ class transfer(transferTemplate):
         if eb == '₹':
           self.label_14.text = (e_money_value)
 
+        
     def drop_down_2_change(self, **event_args):
       acc=self.dropdown_account_numbers.selected_value
       fore_money = anvil.server.call('get_accounts_emoney',acc)
@@ -210,7 +211,8 @@ class transfer(transferTemplate):
             if selected_symbol == '₹':
                 user_currency['money_inr'] = str(float(user_currency['money_inr']) + money_value)
             else:
-                user_currency[selected_symbol.lower()] = str(float(user_currency[selected_symbol.lower()]) + (money_value * conversion_rate_inr_to_selected))
+                user_currency['money_usd' or 'money_swis' or 'money_euro'] = str(float(user_currency['money_usd' or 'money_swis' or 'money_euro']) + (money_value * conversion_rate_inr_to_selected))
+                #user_currency[selected_symbol.lower()] = str(float(user_currency[selected_symbol.lower()]) + (money_value * conversion_rate_inr_to_selected))
             new_transaction = app_tables.transactions.add_row(
                 user=self.user['username'],
                 casa=int(acc),

@@ -42,6 +42,9 @@ db_schema:
     - name: email
       admin_ui: {order: 0, width: 200}
       type: string
+    - name: banned
+      admin_ui: {width: 200, order: 9}
+      type: bool
     title: users
   accounts:
     client: full

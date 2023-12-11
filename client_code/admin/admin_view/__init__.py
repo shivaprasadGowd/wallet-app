@@ -18,6 +18,11 @@ class admin_view(admin_viewTemplate):
         self.label_11.visible = False
         self.label_12.visible = False
         self.label_13.visible = False
+      
+        if hasattr(self, 'button_5'):
+            self.button_5.text = "Freeze"
+            self.button_5_click()
+
 
         # Initialize the dropdown with account numbers
         self.populate_account_dropdown(user_data)
@@ -44,7 +49,10 @@ class admin_view(admin_viewTemplate):
       
       # Check if 'e_money' is not empty
        if account and account['e_money'] is not None and int(account['e_money']) > 0:
-          alert("Account cannot be deleted. Your account has some funds remaining. Please withdraw it.", title="Error")
+          user_to_delete = app_tables.users.get(username=self.text_box_1.text)
+          if user_to_delete is not None:
+            user_to_delete.update(banned=True)
+            alert("User has some funds remaining.User added to banned list .", title="Error")
           return
   
       # Check if currency values are not empty
@@ -56,25 +64,37 @@ class admin_view(admin_viewTemplate):
           currency_details['money_euro'] is not None and float(currency_details['money_euro']) > 0 or
           currency_details['money_swis'] is not None and float(currency_details['money_swis']) > 0
         ):
-    # Your existing code for handling the case where currency values are greater than 0
-    # ...
-
-          alert("Account cannot be deleted. Your account has some funds in different currencies. Please withdraw them.", title="Error")
+          user_to_delete = app_tables.users.get(username=self.text_box_1.text)
+          if user_to_delete is not None:
+            user_to_delete.update(banned=True)
+            alert("User has some funds remaining.User added to banned list.", title="Error")
           return
-  
+   
       # If 'e_money' and currency values are empty, proceed with user deletion
        username = self.text_box_1.text
        user_to_delete = app_tables.users.get(username=username)
   
        if user_to_delete is not None:
-           user_to_delete.delete()
-           alert("User deleted successfully.", title="Success")
-  
-          # Clear textboxes after deletion
-           self.clear_textboxes()
-  
-          # Raise an event to notify the parent form (admin form) about the deletion
-           open_form('admin', user_data=user_to_delete)
+              # Delete user from 'users' table
+              user_to_delete.delete()
+      
+              # Delete user's accounts from 'accounts' table
+              accounts_to_delete = app_tables.accounts.search(user=username)
+              for account in accounts_to_delete:
+                  account.delete()
+      
+              # Delete user's currencies from 'currencies' table
+              currencies_to_delete = app_tables.currencies.search(user=username)
+              for currency in currencies_to_delete:
+                  currency.delete()
+      
+              alert("User and associated information deleted successfully.", title="Success")
+      
+              # Clear textboxes after deletion
+              self.clear_textboxes()
+      
+              # Raise an event to notify the parent form (admin form) about the deletion
+              open_form('admin', user_data=user_to_delete)
 
   
     def clear_textboxes(self):
@@ -181,4 +201,25 @@ class admin_view(admin_viewTemplate):
                     self.label_11.visible = True
                     self.label_12.visible = True
                     self.label_13.visible = True
+
+    def button_5_click(self, **event_args):
+        username = self.text_box_1.text
+        user_to_update = app_tables.users.get(username=username)
+
+        if user_to_update is not None:
+            # Check the current state of 'banned' column
+            current_state = user_to_update['banned']
+
+            # Toggle the state
+            new_state = not current_state
+
+            # Update the 'banned' column in the 'users' table
+            user_to_update.update(banned=new_state)
+
+            # Update button text based on the new state
+            self.button_5.text = "Unfreeze" if new_state else "Freeze"
+
+            # Display alert based on the action
+            alert_message = "User is frozen." if new_state else "User is unfrozen."
+            alert(alert_message, title="Status")
 

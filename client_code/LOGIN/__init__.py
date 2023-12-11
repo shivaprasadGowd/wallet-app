@@ -21,49 +21,47 @@ class LOGIN(LOGINTemplate):
 
         # Check if user exists and password matches
         if user is not None and user['password'] == password:
-            # Check if the user is banned (or 'banned' is None)
+            # Check if the user is banned
+            if user['banned'] is not None and user['banned']:
+                open_form('LOGIN.banned_form')
+                return
+
+            # Check if the user is on hold/freeze
             if user['hold'] is not None and user['hold']:
                 alert("Your account is on hold/freeze. Please try again later.", title="Account On Hold")
                 return
-              
-            if user['banned'] is not None and user['banned']:
-                open_form('LOGIN.banned_form')
-            return
 
             user_type = user['usertype']
 
             if user_type == 'admin':
                 open_form('admin', user=user)
-            if user_type == 'customer':
+            elif user_type == 'customer':
                 open_form('customer', user=user)
         else:
-            self.label_9.text= "Invalid login credentials"
-            self.text_box_1.text=''
+            self.label_9.text = "Invalid login credentials"
+            self.text_box_1.text = ''
             self.text_box_1.focus()
-            self.text_box_2.text=''
+            self.text_box_2.text = ''
             self.text_box_2.focus()
 
-
     def get_user(self, login_input):
-    # Check if the login input is a valid username
-      user_by_username = app_tables.users.get(username=login_input)
-      if user_by_username:
-        return user_by_username
+        # Check if the login input is a valid username
+        user_by_username = app_tables.users.get(username=login_input)
+        if user_by_username:
+            return user_by_username
         
-      user_by_email = app_tables.users.get(email=login_input)
-      if user_by_email:
-        return user_by_email 
+        user_by_email = app_tables.users.get(email=login_input)
+        if user_by_email:
+            return user_by_email 
 
-        
-      user_by_phone = app_tables.users.get(phone=int(login_input))
-      if user_by_phone:
-        return user_by_phone
-      else:
-        return None
+        user_by_phone = app_tables.users.get(phone=int(login_input))
+        if user_by_phone:
+            return user_by_phone
+        else:
+            return None
 
     def link_1_click(self, **event_args):
-      open_form('Home')
+        open_form('Home')
 
     def button_2_click(self, **event_args):
-      open_form('SIGNUP')
-
+        open_form('SIGNUP')

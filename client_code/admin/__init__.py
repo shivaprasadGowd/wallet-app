@@ -25,6 +25,10 @@ class admin(adminTemplate):
         # Open the show_users form and pass the user data
         show_users_form = open_form('admin.show_users')
 
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('admin.admin_add_user')
+
        
 
  

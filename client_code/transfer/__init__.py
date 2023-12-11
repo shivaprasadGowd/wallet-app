@@ -24,7 +24,6 @@ class transfer(transferTemplate):
     def button_1_click(self, **event_args):
       current_datetime = datetime.now()
       acc = self.dropdown_account_numbers.selected_value
-      print(acc)
       user_currency = anvil.server.call('get_currency_data', acc)
       fore_money = anvil.server.call('get_accounts_emoney', acc)
     
@@ -89,7 +88,6 @@ class transfer(transferTemplate):
     def display(self, **event_args):
         acc=self.dropdown_account_numbers.selected_value
         user_for_emoney = self.user['username']
-        print(acc)
         fore_money = anvil.server.call('get_accounts_emoney',acc)
         acc_validate = anvil.server.call('validate_acc_no_to_display_in_transfer',acc)
         self.label_6.text = "$" + str(acc_validate['money_usd'])
@@ -197,19 +195,43 @@ class transfer(transferTemplate):
         self.label_18.text = "Insufficient e_money balance for the transfer"
 
      self.display()
+     open_form('transfer', user= self.user)
 
 
 
 
-    
 
     def link_8_click(self, **event_args):
       open_form('deposit',user= self.user)
-
+  
     def link_10_click(self, **event_args):
       open_form('withdraw',user= self.user)
 
-    def drop_down_1_change(self, **event_args):
-      """This method is called when an item is selected"""
-      pass
+    def button_6_click(self, **event_args):
+      print(f"CheckBalance initialization with user: {self.user}")
+      open_form('transfer.check_balance', user=self.user)
+
+    def button_5_click(self, **event_args):
+      open_form('transfer.transaction_history',user= self.user)
+
+    def button_4_click(self, **event_args):
+      open_form('transfer.e_wallet_to_accounts', user= self.user)
+
+    def outlined_button_1_click(self, **event_args):
+      open_form('transfer.account_to_ewallet',user = self.user)
+
+    def button_3_click(self, **event_args):
+      open_form('transfer.e_wallet_to_e_wallet', user= self.user)
+
+  
+
+    
+
+    
+
+    
+      
+      
+
+    
               

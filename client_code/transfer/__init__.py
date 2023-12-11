@@ -138,19 +138,6 @@ class transfer(transferTemplate):
       if eb == '₹':
           self.label_14.text = (e_money_value)
 
-      # st = self.drop_down_3.selected_value
-      # if st == '$':
-      #     dollar_to_rupee = (e_money_value)*80.0
-      #     self.label_14.text = dollar_to_rupee
-      # if st == 'Є':
-      #     euro_to_rupee = (e_money_value)*90.0
-      #     self.label_14.text = euro_to_rupee
-      # if st == '₣':
-      #     swis_to_rupee = (e_money_value)*95.0
-      #     self.label_14.text = swis_to_rupee
-      # if st == '₹':
-      #     self.label_14.text = (e_money_value)
-
     def dropdown_account_numbers_change(self, **event_args):
       self.display()
     

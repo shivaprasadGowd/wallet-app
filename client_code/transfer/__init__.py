@@ -208,7 +208,6 @@ class transfer(transferTemplate):
       open_form('withdraw',user= self.user)
 
     def button_6_click(self, **event_args):
-      print(f"CheckBalance initialization with user: {self.user}")
       open_form('transfer.check_balance', user=self.user)
 
     def button_5_click(self, **event_args):

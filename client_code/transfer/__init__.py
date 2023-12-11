@@ -96,17 +96,17 @@ class transfer(transferTemplate):
         self.label_10.text = "₹ " + str(acc_validate['money_inr'])
         self.label_11.text = "€ " + str(acc_validate['money_euro'])
         self.label_12.text = "₣ " + str(acc_validate['money_swis'])
-        e_money_value = str(fore_money['e_money'])
+        e_money_value = float(fore_money['e_money'])
         eb= self.drop_down_2.selected_value
-        if e_money_value and e_money_value != 'None' and e_money_value.replace('.', '', 1).isdigit() and eb == '$':
-           try:
-             e_money_value = float(e_money_value)
+        if e_money_value and e_money_value != 'None' and eb == '$': #e_money_value.replace('.', '', 1).isdigit() and eb == '$':
+           #try:
+             #e_money_value = float(e_money_value)
              dollar_to_rupee = e_money_value / 80.0  # Set a default value, adjust as needed
              self.label_14.text = str(dollar_to_rupee)
-           except ValueError:
-             pass 
-           else:
-              pass
+           # except ValueError:
+           #   pass 
+           # else:
+           #    pass
         if eb == 'Є':
           euro_to_rupee = (e_money_value)/90.0
           self.label_14.text = euro_to_rupee
@@ -193,11 +193,11 @@ class transfer(transferTemplate):
      conversion_rate_euro_to_inr = 90.0
 
      if selected_symbol == '$':
-        conversion_rate_inr_to_usd = 1 / conversion_rate_usd_to_inr
+        conversion_rate_inr_to_selected = 1 / conversion_rate_usd_to_inr
      elif selected_symbol == '₣':
-        conversion_rate_inr_to_swis = 1 / conversion_rate_swis_to_inr
+        conversion_rate_inr_to_selected = 1 / conversion_rate_swis_to_inr
      elif selected_symbol == 'Є':
-        conversion_rate_inr_to_euro = 1 / conversion_rate_euro_to_inr
+        conversion_rate_inr_to_selected = 1 / conversion_rate_euro_to_inr
      elif selected_symbol == '₹':
         conversion_rate_inr_to_selected = 1  # No conversion needed for INR
      else:
@@ -211,7 +211,7 @@ class transfer(transferTemplate):
             if selected_symbol == '₹':
                 user_currency['money_inr'] = str(float(user_currency['money_inr']) + money_value)
             else:
-                user_currency['money_usd' or 'money_swis' or 'money_euro'] = str(float(user_currency['money_usd' or 'money_swis' or 'money_euro']) + (money_value * conversion_rate_inr_to_))
+                user_currency['money_usd' or 'money_swis' or 'money_euro'] = str(float(user_currency['money_usd' or 'money_swis' or 'money_euro']) + (money_value * conversion_rate_inr_to_selected))
                 #user_currency[selected_symbol.lower()] = str(float(user_currency[selected_symbol.lower()]) + (money_value * conversion_rate_inr_to_selected))
             new_transaction = app_tables.transactions.add_row(
                 user=self.user['username'],
@@ -223,8 +223,6 @@ class transfer(transferTemplate):
             )
         else:
             self.label_4.text = "Insufficient e_money balance for the transfer"
-
-    # Update UI or perform any necessary actions after the transfer
      self.display()
 
 

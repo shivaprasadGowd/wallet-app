@@ -102,9 +102,6 @@ db_schema:
     client: full
     server: full
     columns:
-    - name: e_wallet
-      admin_ui: {width: 200, order: 0}
-      type: string
     - name: money_usd
       admin_ui: {width: 200, order: 1}
       type: string

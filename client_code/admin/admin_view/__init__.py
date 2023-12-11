@@ -19,9 +19,7 @@ class admin_view(admin_viewTemplate):
         self.label_12.visible = False
         self.label_13.visible = False
       
-        if hasattr(self, 'button_5'):
-            self.button_5.text = "Freeze"
-            self.button_5_click()
+        
 
 
         # Initialize the dropdown with account numbers
@@ -30,7 +28,20 @@ class admin_view(admin_viewTemplate):
         if user_data:
             # Any code you write here will run before the form opens.
             self.populate_textboxes(user_data)
-            self.toggle_edit_mode()  # Initial mode setup
+            self.toggle_edit_mode()
+          
+        self.set_button_text()
+          
+    def set_button_text(self):
+        username = self.text_box_1.text
+        user = app_tables.users.get(username=username)
+
+        if user is not None:
+            # Check the current state of 'hold' column
+            current_state = user['hold']
+
+            # Set button text based on the current state
+            self.button_5.text = "Unfreeze" if current_state else "Freeze"# Initial mode setup
 
     def populate_account_dropdown(self, user_data):
         # Get account numbers associated with the user from the 'accounts' table
@@ -207,14 +218,14 @@ class admin_view(admin_viewTemplate):
         user_to_update = app_tables.users.get(username=username)
 
         if user_to_update is not None:
-            # Check the current state of 'banned' column
-            current_state = user_to_update['banned']
+            # Check the current state of 'hold' column
+            current_state = user_to_update['hold']
 
-            # Toggle the state
+            # If 'hold' is None or 'true', user is considered frozen, otherwise unfrozen
             new_state = not current_state
 
-            # Update the 'banned' column in the 'users' table
-            user_to_update.update(banned=new_state)
+            # Update the 'hold' column in the 'users' table
+            user_to_update.update(hold=new_state if new_state else None)
 
             # Update button text based on the new state
             self.button_5.text = "Unfreeze" if new_state else "Freeze"
@@ -222,4 +233,3 @@ class admin_view(admin_viewTemplate):
             # Display alert based on the action
             alert_message = "User is frozen." if new_state else "User is unfrozen."
             alert(alert_message, title="Status")
-

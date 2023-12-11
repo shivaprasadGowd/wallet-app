@@ -169,11 +169,14 @@ class transfer(transferTemplate):
         if selected_symbol == '₹':
             user_currency['money_inr'] = str(float(user_currency['money_inr']) + money_value)
         elif selected_symbol == '$':
-            user_currency['money_usd'] = str(float(user_currency['money_usd']) + money_value * conversion_rate_inr_to_usd)
+            user_currency['money_usd'] = str(float(user_currency['money_usd']) + money_value)
+            fore_money['e_money'] = str(float(fore_money['e_money']) - (money_value * conversion_rate_inr_to_usd))
         elif selected_symbol == '₣':
-            user_currency['money_swis'] = str(float(user_currency['money_swis']) + money_value * conversion_rate_inr_to_swis)
+            user_currency['money_swis'] = str(float(user_currency['money_swis']) + money_value)
+            fore_money['e_money'] = str(float(fore_money['e_money']) - (money_value * conversion_rate_inr_to_swis))
         elif selected_symbol == 'Є':
-            user_currency['money_euro'] = str(float(user_currency['money_euro']) + money_value * conversion_rate_inr_to_euro)
+            user_currency['money_euro'] = str(float(user_currency['money_euro']) + money_value)
+            fore_money['e_money'] = str(float(fore_money['e_money']) - (money_value * conversion_rate_inr_to_euro))
           
         new_transaction = app_tables.transactions.add_row(
             user=self.user['username'],

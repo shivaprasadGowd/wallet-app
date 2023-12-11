@@ -18,6 +18,11 @@ class admin_view(admin_viewTemplate):
         self.label_11.visible = False
         self.label_12.visible = False
         self.label_13.visible = False
+      
+        if hasattr(self, 'button_5'):
+            self.button_5.text = "Freeze"
+            self.button_5_click()
+
 
         # Initialize the dropdown with account numbers
         self.populate_account_dropdown(user_data)
@@ -196,4 +201,25 @@ class admin_view(admin_viewTemplate):
                     self.label_11.visible = True
                     self.label_12.visible = True
                     self.label_13.visible = True
+
+    def button_5_click(self, **event_args):
+        username = self.text_box_1.text
+        user_to_update = app_tables.users.get(username=username)
+
+        if user_to_update is not None:
+            # Check the current state of 'banned' column
+            current_state = user_to_update['banned']
+
+            # Toggle the state
+            new_state = not current_state
+
+            # Update the 'banned' column in the 'users' table
+            user_to_update.update(banned=new_state)
+
+            # Update button text based on the new state
+            self.button_5.text = "Unfreeze" if new_state else "Freeze"
+
+            # Display alert based on the action
+            alert_message = "User is frozen." if new_state else "User is unfrozen."
+            alert(alert_message, title="Status")
 

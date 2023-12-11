@@ -61,7 +61,7 @@ components:
     layout_properties: {grid_position: 'USEFYS,KNZTIO'}
   - name: label_1
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: Account Deposit, font_size: 20, font: '', spacing_above: small,
+      visible: true, text: Deposit, font_size: 20, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '#3FE5FF',
       bold: true, underline: false, icon: ''}
     type: Label

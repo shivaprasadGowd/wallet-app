@@ -16,3 +16,13 @@ class e_wallet_to_e_wallet(e_wallet_to_e_walletTemplate):
     self.dropdown_account_numbers.items = user_account_numbers
 
     # Any code you write here will run before the form opens.
+
+  def link_8_click(self, **event_args):
+      open_form('deposit',user= self.user)
+  
+  def link_10_click(self, **event_args):
+      open_form('withdraw',user= self.user)
+
+  def link_1_click(self, **event_args):
+      open_form('customer', user= self.user)
+  

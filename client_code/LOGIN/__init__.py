@@ -21,6 +21,10 @@ class LOGIN(LOGINTemplate):
 
         # Check if user exists and password matches
         if user is not None and user['password'] == password:
+            # Check if the user is banned
+            if user['banned']:
+                alert("Your account is on hold. Please try again later.", title="Account On Hold")
+            return
             user_type = user['usertype']
 
             if user_type == 'admin':

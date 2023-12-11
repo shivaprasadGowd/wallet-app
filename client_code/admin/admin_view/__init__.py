@@ -44,7 +44,10 @@ class admin_view(admin_viewTemplate):
       
       # Check if 'e_money' is not empty
        if account and account['e_money'] is not None and int(account['e_money']) > 0:
-          alert("Account cannot be deleted. Your account has some funds remaining. Please withdraw it.", title="Error")
+          user_to_delete = app_tables.users.get(username=self.text_box_1.text)
+          if user_to_delete is not None:
+            user_to_delete.update(banned=True)
+            alert("User has some funds remaining.User added to banned list .", title="Error")
           return
   
       # Check if currency values are not empty
@@ -56,9 +59,12 @@ class admin_view(admin_viewTemplate):
           currency_details['money_euro'] is not None and float(currency_details['money_euro']) > 0 or
           currency_details['money_swis'] is not None and float(currency_details['money_swis']) > 0
         ):
-          alert("Account cannot be deleted. Your account has some funds in different currencies. Please withdraw them.", title="Error")
+          user_to_delete = app_tables.users.get(username=self.text_box_1.text)
+          if user_to_delete is not None:
+            user_to_delete.update(banned=True)
+            alert("User has some funds remaining.User added to banned list.", title="Error")
           return
-  
+   
       # If 'e_money' and currency values are empty, proceed with user deletion
        username = self.text_box_1.text
        user_to_delete = app_tables.users.get(username=username)

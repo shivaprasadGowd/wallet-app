@@ -108,9 +108,12 @@ class transfer(transferTemplate):
            else:
               pass
         if eb == 'Є':
-          euro_to_rupee = (e_money_value)/90.0
-          self.label_14.text = euro_to_rupee
-          # anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_string)
+           try:
+             e_money_value = float(e_money_value)  
+             euro_to_rupee = e_money_value / 90.0
+             self.label_14.text = str(euro_to_rupee)  # Convert result to string before assigning to label
+           except ValueError:
+             pass
         if eb == '₣':
           swis_to_rupee = (e_money_value)/95
           self.label_14.text = swis_to_rupee

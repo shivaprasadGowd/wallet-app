@@ -1,0 +1,267 @@
+container:
+  type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
+components:
+- name: outlined_card_1_copy
+  properties: {role: outlined-card, tooltip: '', border: '0', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: '#3FE5FF'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'PYWTTG,SUYXKQ', full_width_row: true}
+  components:
+  - name: image_1_copy
+    properties: {role: null, vertical_align: center, height: 53.181793212890625, tooltip: '',
+      border: '', foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
+      source: _/theme/G-logo.jpg, spacing_below: small, background: '', horizontal_align: center}
+    type: Image
+    layout_properties: {grid_position: 'YMBFQL,JIZYNJ'}
+  - name: link_8_copy
+    properties: {text: Deposit, align: center, bold: true, foreground: '#000', font_size: 18}
+    type: Link
+    layout_properties: {grid_position: 'YMBFQL,JQMHJB'}
+  - name: link_9_copy
+    properties: {text: Money Transfer, align: center, bold: true, foreground: '#000',
+      font_size: 17}
+    type: Link
+    layout_properties: {grid_position: 'YMBFQL,VMXLZA'}
+  - name: link_10_copy
+    properties: {text: Withdraw, bold: true, align: center, foreground: '#000', font_size: 18}
+    type: Link
+    layout_properties: {grid_position: 'YMBFQL,AWHECM'}
+  - name: link_11_copy
+    properties: {text: Company, align: center, bold: true, foreground: '#000', font_size: 18}
+    type: Link
+    layout_properties: {grid_position: 'YMBFQL,VWMKYH'}
+  - name: link_12_copy
+    properties: {text: Career, align: center, bold: true, foreground: '#000', font_size: 18}
+    type: Link
+    layout_properties: {grid_position: 'YMBFQL,XAYJCX'}
+  - name: link_1
+    properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: '#000000',
+      visible: true, text: Home, font_size: 16, wrap_on: mobile, font: '', col_spacing: medium,
+      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+      italic: false, background: '', bold: true, underline: false, icon: ''}
+    type: Link
+    layout_properties: {grid_position: 'YMBFQL,QBOZEO'}
+    event_bindings: {click: link_1_click}
+- name: outlined_card_2
+  properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"LJULLI":40,"BSSSVU":20}',
+    spacing_below: small, background: 'theme:On Primary'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'LDWGQD,CWUDID', full_width_row: true}
+  components:
+  - name: spacer_5_copy
+    properties: {height: 47.25}
+    type: Spacer
+    layout_properties: {grid_position: 'ULSWLP,HMSIBM'}
+  - name: spacer_2_copy
+    properties: {height: 41}
+    type: Spacer
+    layout_properties: {grid_position: 'QBMHRG,LJULLI QKDHFZ,NVMJCM'}
+  - name: image_2_copy
+    properties: {source: _/theme/adduser.jfif, height: 124.25}
+    type: Image
+    layout_properties: {grid_position: 'QBMHRG,LJULLI FTUTOB,OHQGCK'}
+  - name: label_1_copy
+    properties: {text: ADD USERS, align: center, bold: true, font_size: 20}
+    type: Label
+    layout_properties: {grid_position: 'QBMHRG,LJULLI TXTHFM,BIOLXE'}
+  - name: label_7_copy
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Enter your email:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'QBMHRG,LJULLI RUZJVE,JHYSWX'}
+  - name: text_box_1
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Email,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: email, spacing_below: small, italic: false,
+      background: '#DFFDFF', bold: false, underline: false}
+    type: TextBox
+    layout_properties: {grid_position: 'QBMHRG,LJULLI RUZJVE,FRGCYP'}
+    data_bindings:
+    - {code: 'self.item[''email'']', writeback: true, property: text}
+  - name: label_8_copy
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Enter your Username:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'QBMHRG,LJULLI TWOERD,EDXCCQ'}
+  - name: text_box_2
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Username,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '#DFFDFF', bold: false, underline: false}
+    type: TextBox
+    layout_properties: {grid_position: 'QBMHRG,LJULLI TWOERD,INKPMZ'}
+    data_bindings:
+    - {code: 'self.item[''username'']', writeback: true, property: text}
+  - name: label_9_copy
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Enter your Password:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    type: Label
+    layout_properties: {slot: default, grid_position: 'QBMHRG,LJULLI RVDJCO,TGXZHF'}
+  - name: text_box_3
+    properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '#DFFDFF', bold: false, underline: false}
+    type: TextBox
+    layout_properties: {grid_position: 'QBMHRG,LJULLI RVDJCO,QYNMUG'}
+    data_bindings:
+    - {code: 'self.item[''password'']', writeback: true, property: text}
+  - name: label_13_copy
+    properties: {text: 'Enter Password Again:'}
+    type: Label
+    layout_properties: {grid_position: 'QBMHRG,LJULLI UTUTVB,OUYMFM'}
+  - name: text_box_7
+    properties: {align: left, hide_text: true, tooltip: '', placeholder: Retype Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font: '',
+      spacing_above: small, type: text, spacing_below: small, italic: false, background: '#DFFDFF',
+      bold: false, underline: false}
+    type: TextBox
+    layout_properties: {grid_position: 'QBMHRG,LJULLI UTUTVB,CJFWKJ CWIIDG,ZBIBMP'}
+  - name: label_17
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'QBMHRG,LJULLI UTUTVB,CJFWKJ MAKBLU,UJHMWF'}
+    event_bindings: {}
+  - name: label_10_copy
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Enter your Pan No, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'QBMHRG,LJULLI RVPAQU,KMVOHA'}
+  - name: text_box_4
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Pan,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '#DFFDFF', bold: false, underline: false}
+    type: TextBox
+    layout_properties: {grid_position: 'QBMHRG,LJULLI RVPAQU,NYRBDH BPZHTQ,SSOYEU'}
+    data_bindings:
+    - {code: 'self.item[''pan'']', writeback: true, property: text}
+    event_bindings: {change: text_box_4_change}
+  - name: label_14
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'QBMHRG,LJULLI RVPAQU,NYRBDH TVOWMB,RNKFFT'}
+  - name: label_12_copy
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Enter your Phone Number:', font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'QBMHRG,LJULLI SAEDAX,PECDUQ'}
+  - name: text_box_6
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Phone Number,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: '#DFFDFF', bold: false, underline: false}
+    type: TextBox
+    layout_properties: {grid_position: 'QBMHRG,LJULLI SAEDAX,MNYPJE DATAZI,ROHYRG'}
+    data_bindings:
+    - {code: 'self.item[''phone'']', writeback: true, property: text}
+    event_bindings: {pressed_enter: validate_button_click}
+  - name: label_15
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'QBMHRG,LJULLI SAEDAX,MNYPJE UXQJFZ,SSHUMZ'}
+  - name: label_11_copy
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Enter your Address:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'QBMHRG,LJULLI CANMCM,FUNPMI'}
+  - name: text_box_5
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Address,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '#DFFDFF', bold: false, underline: false}
+    type: TextBox
+    layout_properties: {grid_position: 'QBMHRG,LJULLI CANMCM,XETVER'}
+    data_bindings:
+    - {code: 'self.item[''address'']', writeback: true, property: text}
+  - name: label_6_copy
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Enter your Aadhar details:', font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'QBMHRG,LJULLI OFIHSF,ZSVTWG'}
+  - name: text_box_8
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Aadhar detalis,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: '#DFFDFF', bold: false, underline: false}
+    type: TextBox
+    layout_properties: {grid_position: 'QBMHRG,LJULLI OFIHSF,WOIVWM KYGRAD,NAHVJA'}
+    data_bindings:
+    - {code: 'self.item[''aadhar'']', writeback: true, property: text}
+  - name: label_16
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'QBMHRG,LJULLI OFIHSF,WOIVWM JFYXNY,WSAWQM'}
+  - name: image_3
+    properties: {height: 688.25, source: _/theme/addusers1.jfif}
+    type: Image
+    layout_properties: {grid_position: 'QBMHRG,BSSSVU'}
+  - name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'QBMHRG,LJULLI FRDZCL,CABLKA'}
+  - name: button_1
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '#000000', visible: true, text: ADD USERS, font_size: 16, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#0770FF', bold: true, underline: false, icon: ''}
+    type: Button
+    layout_properties: {grid_position: 'QBMHRG,LJULLI NPRIVT,GRWXXL'}
+    event_bindings: {click: button_1_click}
+  - name: spacer_4
+    properties: {height: 49.24993896484375}
+    type: Spacer
+    layout_properties: {grid_position: 'NISQOJ,HIRXXH'}
+- name: outlined_card_1_copy_2
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":9,"FDANOO":17,"XVKBKL":17,"LVSKGG":17}',
+    spacing_below: none, background: 'theme:On Surface Variant'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'PAKEZE,GJTVHB', full_width_row: true}
+  components:
+  - name: label_1_copy_copy
+    properties: {text: CopyRight2023@Gwallet, align: left, bold: true, font_size: 16,
+      visible: true, role: input-prompt, foreground: 'theme:On Primary'}
+    type: Label
+    layout_properties: {grid_position: 'XSXLAE,XVKBKL'}
+  - name: label_2_copy
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
+        Primary', visible: true, text: 'Disclaimer ', font_size: 18, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'XSXLAE,VMILPR'}
+  - name: label_3_copy
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
+        Primary', visible: true, text: 'Privacy Policy ', font_size: 18, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'XSXLAE,FDANOO'}
+  - name: label_4_copy
+    properties: {role: null, align: right, tooltip: '', border: '', foreground: 'theme:On
+        Primary', visible: true, text: 'Code Of Commitment ', font_size: 18, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'XSXLAE,LVSKGG'}
+is_package: true

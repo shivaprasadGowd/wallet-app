@@ -193,11 +193,11 @@ class transfer(transferTemplate):
      conversion_rate_euro_to_inr = 90.0
 
      if selected_symbol == '$':
-        conversion_rate_inr_to_selected = 1 / conversion_rate_usd_to_inr
+        conversion_rate_inr_to_usd = 1 / conversion_rate_usd_to_inr
      elif selected_symbol == '₣':
-        conversion_rate_inr_to_selected = 1 / conversion_rate_swis_to_inr
+        conversion_rate_inr_to_swis = 1 / conversion_rate_swis_to_inr
      elif selected_symbol == 'Є':
-        conversion_rate_inr_to_selected = 1 / conversion_rate_euro_to_inr
+        conversion_rate_inr_to_euro = 1 / conversion_rate_euro_to_inr
      elif selected_symbol == '₹':
         conversion_rate_inr_to_selected = 1  # No conversion needed for INR
      else:
@@ -211,7 +211,7 @@ class transfer(transferTemplate):
             if selected_symbol == '₹':
                 user_currency['money_inr'] = str(float(user_currency['money_inr']) + money_value)
             else:
-                user_currency['money_usd' or 'money_swis' or 'money_euro'] = str(float(user_currency['money_usd' or 'money_swis' or 'money_euro']) + (money_value * conversion_rate_inr_to_selected))
+                user_currency['money_usd' or 'money_swis' or 'money_euro'] = str(float(user_currency['money_usd' or 'money_swis' or 'money_euro']) + (money_value * conversion_rate_inr_to_))
                 #user_currency[selected_symbol.lower()] = str(float(user_currency[selected_symbol.lower()]) + (money_value * conversion_rate_inr_to_selected))
             new_transaction = app_tables.transactions.add_row(
                 user=self.user['username'],

@@ -1,0 +1,120 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: ''}
+components:
+- type: ColumnPanel
+  properties: {role: outlined-card, col_widths: '{"XNGELW":40,"LHCCER":20}', background: 'theme:On
+      Primary'}
+  name: outlined_card_2
+  layout_properties: {slot: default}
+  components:
+  - type: ColumnPanel
+    properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+      spacing_below: small, background: '#3FE5FF'}
+    name: outlined_card_1
+    layout_properties: {grid_position: 'HZCCVZ,SOQBBC', full_width_row: true}
+    components:
+    - type: Image
+      properties: {role: null, vertical_align: center, height: 52.545440673828125,
+        tooltip: '', border: '', foreground: '', visible: true, display_mode: shrink_to_fit,
+        spacing_above: small, source: _/theme/G-logo.jpg, spacing_below: small, background: '',
+        horizontal_align: center}
+      name: image_1
+      layout_properties: {grid_position: 'RQYEAC,HWVPRX'}
+    - name: link_8
+      properties: {text: Deposit, align: center, bold: true, foreground: '#000', font_size: 18}
+      type: Link
+      layout_properties: {grid_position: 'RQYEAC,GQVXCD'}
+    - name: link_9
+      properties: {text: Money Transfer, align: center, bold: true, foreground: '#000',
+        font_size: 17}
+      type: Link
+      layout_properties: {grid_position: 'RQYEAC,ZXILIZ'}
+    - name: link_10
+      properties: {text: Withdraw, bold: true, align: center, foreground: '#000',
+        font_size: 18}
+      type: Link
+      layout_properties: {grid_position: 'RQYEAC,STBFSA'}
+    - name: link_11
+      properties: {text: Company, align: center, bold: true, foreground: '#000', font_size: 18}
+      type: Link
+      layout_properties: {grid_position: 'RQYEAC,VHPMZK'}
+    - name: link_12
+      properties: {text: Career, align: center, bold: true, foreground: '#000', font_size: 18}
+      type: Link
+      layout_properties: {grid_position: 'RQYEAC,BTDIEG'}
+    - type: Link
+      properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: '#000000',
+        visible: true, text: Home, font_size: 17, wrap_on: mobile, font: '', col_spacing: medium,
+        spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+        italic: false, background: '', bold: true, underline: false, icon: ''}
+      name: link_1
+      layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
+      event_bindings: {click: link_1_click}
+  - name: spacer_1
+    properties: {height: 51.25}
+    type: Spacer
+    layout_properties: {grid_position: 'FPAAVI,JQZPUV'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Enter Your Username /email /phone number, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: label_6
+    layout_properties: {grid_position: 'XKDXHI,XNGELW SIWSCY,VLXKHJ'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Username/ email / phone number,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '#DFFDFF', bold: false, underline: false}
+    name: text_box_1
+    layout_properties: {grid_position: 'XKDXHI,XNGELW SIWSCY,LMDOIO'}
+    data_bindings: []
+  - type: Spacer
+    properties: {height: 17}
+    name: spacer_4
+    layout_properties: {grid_position: 'XKDXHI,XNGELW YRKOXV,ZVINBT'}
+  - name: image_3
+    properties: {height: 489.33331298828125, source: _/theme/official-login.jpg}
+    type: Image
+    layout_properties: {grid_position: 'XKDXHI,LHCCER'}
+  - name: spacer_5
+    properties: {height: 72.25}
+    type: Spacer
+    layout_properties: {grid_position: 'HYCZTE,EVKDEV'}
+  - name: outlined_card_1_copy_2
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',
+      spacing_below: none, background: 'theme:On Surface Variant'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'OZSBBF,NRUBQN', full_width_row: true}
+    components:
+    - name: label_1_copy
+      properties: {text: CopyRight2023@Gwallet, align: left, bold: true, font_size: 16,
+        visible: true, role: input-prompt, foreground: 'theme:On Primary'}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,XVKBKL'}
+    - name: label_2_copy
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: 'Disclaimer ', font_size: 18, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,VMILPR'}
+    - name: label_3_copy
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: 'Privacy Policy ', font_size: 18, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: true, underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,FDANOO'}
+    - name: label_4_copy
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: 'Code Of Commitment ', font_size: 18, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: true, underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,HAKDVS'}

@@ -79,7 +79,7 @@ class withdraw(withdrawTemplate):
                 e_wallet=wallet3,
                 money=f"{selected_symbol}-{money_value}",
                 date=current_datetime,
-                transaction_type="Withdrawal"
+                transaction_type="Withdrawal successful"
             )
 
             self.label_2.text = "Withdrawal successful"

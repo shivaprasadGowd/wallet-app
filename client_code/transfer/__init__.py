@@ -48,25 +48,25 @@ class transfer(transferTemplate):
         self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."
       else:
         if selected_symbol == '$':  
-            if float(user_currency['money_usd']) > money_value:
+            if float(user_currency['money_usd']) >= money_value:
                 user_currency['money_usd'] = str(float(user_currency['money_usd']) - money_value)
                 fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + (money_value * conversion_rate_usd_to_inr))
             else:
                 self.label_4.text = "Insufficient funds"
         elif selected_symbol == 'Є':
-            if float(user_currency['money_euro']) > money_value:
+            if float(user_currency['money_euro']) >= money_value:
               user_currency['money_euro'] = str(float(user_currency['money_euro']) - money_value)
               fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + (money_value * conversion_rate_euro_to_inr))  
             else:
               self.label_4.text = "Insufficient funds"
         elif selected_symbol == '₣':
-            if float(user_currency['money_swis']) > money_value:
+            if float(user_currency['money_swis']) >= money_value:
               user_currency['money_swis'] = str(float(user_currency['money_swis']) - money_value)
               fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + (money_value * conversion_rate_swis_to_inr))
             else:
               self.label_4.text = "Insufficient funds"
         elif selected_symbol == '₹':
-            if float(user_currency['money_inr']) > money_value:
+            if float(user_currency['money_inr']) >= money_value:
               user_currency['money_inr'] = str(float(user_currency['money_inr']) - money_value)
               fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + (money_value * 1))
             else:
@@ -80,7 +80,7 @@ class transfer(transferTemplate):
                 e_wallet=wallet3,
                 money=f"{selected_symbol}-{money_value}",
                 date=current_datetime,
-                transaction_type="Money transferred"
+                transaction_type=f"Money transferred from {selected_symbol} to e_money"
             )
       open_form('transfer',user=self.user)
       

@@ -67,22 +67,45 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: KSXYZY,JAFCZH
-  - name: label_16
-    properties: {text: 'Account number:', align: center, bold: true, font_size: 18}
+  - name: label_2
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: Transaction History, font_size: 18, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
     type: Label
-    layout_properties:
-      col_widths: {}
-      grid_position: KRRRWN,HWKADY
-  - name: dropdown_account_numbers
-    properties: {background: '#DFFDFF'}
-    type: DropDown
-    layout_properties:
-      col_widths: {}
-      grid_position: KRRRWN,XNLEZM
-  - name: spacer_1
-    properties: {height: 543.2499389648438}
-    type: Spacer
-    layout_properties: {grid_position: 'LWLCIE,YMFDHS'}
+    layout_properties: {grid_position: 'SYMVXZ,MYTABF'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Username:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'ZZBNUY,CWGCNK'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Money:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'ZZBNUY,PEBVVS'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Time:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_5
+    layout_properties: {grid_position: 'ZZBNUY,MPSZXU'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Type:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_6
+    layout_properties: {grid_position: 'ZZBNUY,BWUGTA'}
+  - type: RepeatingPanel
+    properties: {item_template: transfer.transaction_history.ItemTemplate5}
+    name: repeating_panel_1
+    layout_properties: {grid_position: 'EBBUAS,QKMKJQ'}
   - name: outlined_card_1_copy_2
     properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
       wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',

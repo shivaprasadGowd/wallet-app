@@ -5,7 +5,7 @@ container:
     role: null, html: ''}
 components:
 - type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{}'}
+  properties: {role: outlined-card, col_widths: '{"FSPRFI":10,"OSYAGJ":50,"EBBFTH":10,"KSGDIP":50}'}
   name: outlined_card_1
   layout_properties: {slot: default}
   components:
@@ -79,16 +79,161 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: KRRRWN,XNLEZM
-  - name: spacer_1
-    properties: {height: 535.25}
-    type: Spacer
-    layout_properties: {grid_position: 'SMGVHO,PRFNIE'}
+  - type: Spacer
+    properties: {height: 42}
+    name: spacer_1
+    layout_properties: {grid_position: 'CNHPIP,ZZGVWX'}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Dollars:', font_size: 18, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'CLZZKW,NMHLWI'}
+  - type: Label
+    properties: {align: center, font_size: 18}
+    name: label_6
+    layout_properties:
+      col_widths: {}
+      grid_position: CLZZKW,GWHCAE
+    data_bindings:
+    - {property: text, code: 'self.item[''money_inr'']'}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Rupees:', font_size: 18, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_7
+    layout_properties:
+      col_widths: {}
+      grid_position: YWLNGX,UOOGGM
+  - type: Label
+    properties: {align: center, font_size: 18}
+    name: label_10
+    layout_properties:
+      col_widths: {}
+      grid_position: YWLNGX,FJSFBB
+    data_bindings:
+    - {property: text, code: 'self.item[''money_usd'']'}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Euro:', font_size: 18, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_8
+    layout_properties:
+      col_widths: {}
+      grid_position: KCTSJS,FSPWYW
+  - type: Label
+    properties: {align: center, font_size: 18}
+    name: label_11
+    layout_properties:
+      col_widths: {}
+      grid_position: KCTSJS,APOHLH
+    data_bindings:
+    - {property: text, code: 'self.item[''money_euro'']'}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Swiss dollars:', font_size: 18, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_9
+    layout_properties:
+      col_widths: {}
+      grid_position: CTBVEU,BCTFFU
+  - type: Label
+    properties: {align: center, font_size: 18}
+    name: label_12
+    layout_properties:
+      col_widths: {}
+      grid_position: CTBVEU,WBKJZK
+    data_bindings:
+    - {property: text, code: 'self.item[''money_swis'']'}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: E- wallet Balance, font_size: 20, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_13
+    layout_properties:
+      col_widths: {}
+      grid_position: VVETLV,KQQNGS
+  - type: Spacer
+    properties: {height: 46}
+    name: spacer_2
+    layout_properties: {grid_position: 'FTJFTO,ABWRAT'}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: [$, Є, ₣, ₹]
+      visible: true
+      font_size: 18
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: '#DFFDFF'
+      bold: false
+      underline: false
+      include_placeholder: false
+    name: drop_down_2
+    layout_properties:
+      col_widths: {}
+      grid_position: KPOXBF,FSPRFI
+  - type: Label
+    properties: {font_size: 18, align: center}
+    name: label_14
+    layout_properties:
+      col_widths: {}
+      grid_position: KPOXBF,OSYAGJ
+  - type: Spacer
+    properties: {height: 59}
+    name: spacer_3
+    layout_properties: {grid_position: 'AXERDN,WOASJA'}
+  - name: label_15
+    properties: {text: Transfer Funds from E-wallet to Account, align: center, bold: true,
+      font_size: 20}
+    type: Label
+    layout_properties:
+      col_widths: {}
+      grid_position: CUTPEB,XKCKNK
+  - type: Spacer
+    properties: {height: 46}
+    name: spacer_4
+    layout_properties: {grid_position: 'NXLXDN,XYYOLH'}
+  - name: drop_down_3
+    properties:
+      items: [$, Є, ₣, ₹]
+      background: '#DFFDFF'
+    type: DropDown
+    layout_properties:
+      col_widths: {}
+      grid_position: MSABBX,EBBFTH
+  - name: text_box_1
+    properties: {placeholder: Enter Amount, background: '#DFFDFF'}
+    type: TextBox
+    layout_properties:
+      col_widths: {}
+      grid_position: MSABBX,KSGDIP
+  - name: button_2
+    properties: {text: Transfer, role: outlined-button, background: '#3FE5FF', foreground: '#000000',
+      bold: true, font_size: 18}
+    type: Button
+    layout_properties:
+      col_widths: {}
+      grid_position: XSQSVO,HMVUOT
   - name: outlined_card_1_copy_2
     properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
       wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',
       spacing_below: none, background: 'theme:On Surface Variant'}
     type: ColumnPanel
-    layout_properties: {grid_position: 'PKLHXD,YGOHKF', full_width_row: true}
+    layout_properties: {grid_position: 'PKLHXD,FNOHXX', full_width_row: true}
     components:
     - name: label_1_copy
       properties: {text: CopyRight2023@Gwallet, align: left, bold: true, font_size: 16,

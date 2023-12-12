@@ -10,10 +10,8 @@ class transaction_history(transaction_historyTemplate):
     self.user = user
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
-    self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
-    user_account_numbers = anvil.server.call('get_user_account_numbers', self.user['username'])
-    self.dropdown_account_numbers.items = user_account_numbers
+    item= app_tables.transactions.search(user=self.user['username'])
+    self.repeating_panel_1.items= item
 
     # Any code you write here will run before the form opens.
 

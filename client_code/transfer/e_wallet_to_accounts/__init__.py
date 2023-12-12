@@ -39,17 +39,22 @@ class e_wallet_to_accounts(e_wallet_to_accountsTemplate):
       conversion_rate_euro_to_inr = 90.0
       user_for_emoney = self.user['username']
       e_wallet_for_emoney = wallet3
+      main_money= float(fore_money['e_money'])
+      print(main_money)
     
       if (money_value < 5) or (money_value > 50000):
         self.label_3.text = "Money value should be between 5 and 50000 for a transfer Funds."
       else:
-        fore_money_float = float(fore_money['e_money'])
         if selected_symbol == '$':  
-           if float(user_currency['money_usd']) >= money_value:
+           if main_money < money_value:
                user_currency['money_usd'] = str(float(user_currency['money_usd']) + money_value)
-               fore_money_float = fore_money_float - money_value * conversion_rate_usd_to_inr  # Subtracting the value
-               fore_money['e_money'] = str(fore_money_float)  # Convert back to string for storage
-               anvil.server.call('update_all_rows_1', user_for_emoney, fore_money)
+               if(float(fore_money['e_money'])< float(money_value)):
+                 alert("insufficient funds")
+               else:
+                money_inr_equivalent_string = str(main_money - money_value * conversion_rate_usd_to_inr)
+                print(money_value* conversion_rate_usd_to_inr)
+                print(money_inr_equivalent_string)
+                anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_string)
            else:
                self.label_3.text = "Insufficient funds"
         else:

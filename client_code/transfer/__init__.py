@@ -48,7 +48,7 @@ class transfer(transferTemplate):
         self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."
       else:
         if selected_symbol == '$':  
-            if float(user_currency['money_usd']) > money_value:
+            if float(user_currency['money_usd']) >= money_value:
                 user_currency['money_usd'] = str(float(user_currency['money_usd']) - money_value)
                 fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + (money_value * conversion_rate_usd_to_inr))
             else:

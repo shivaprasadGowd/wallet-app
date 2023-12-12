@@ -80,7 +80,7 @@ class transfer(transferTemplate):
                 e_wallet=wallet3,
                 money=f"{selected_symbol}-{money_value}",
                 date=current_datetime,
-                transaction_type="Money transferred"
+                transaction_type=f"Money transferred from {selected_symbol} to e_money"
             )
       open_form('transfer',user=self.user)
       

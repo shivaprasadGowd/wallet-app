@@ -228,6 +228,7 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: XSQSVO,HMVUOT
+    event_bindings: {click: button_2_click}
   - name: outlined_card_1_copy_2
     properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
       wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',

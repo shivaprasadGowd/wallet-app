@@ -4,6 +4,7 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from datetime import datetime
 
 class account_to_ewallet(account_to_ewalletTemplate):
   def __init__(self, user=None, **properties):
@@ -32,7 +33,7 @@ class account_to_ewallet(account_to_ewalletTemplate):
             return
     
       selected_symbol = self.drop_down_1.selected_value
-      money_value = float(self.text_box_4.text)
+      money_value = float(self.text_box_1.text)
       
     # Add your conversion rates here
       conversion_rate_usd_to_inr = 80.0
@@ -146,3 +147,5 @@ class account_to_ewallet(account_to_ewalletTemplate):
 
   def link_1_click(self, **event_args):
       open_form('customer', user= self.user)
+
+

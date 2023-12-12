@@ -242,6 +242,7 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: CZKQDS,OHTATL
+    event_bindings: {pressed_enter: text_box_1_pressed_enter}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '#000000', visible: true, text: Transfer, font_size: 18, font: '',
@@ -251,6 +252,7 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: NNAPVT,PJIAWR
+    event_bindings: {click: button_1_click}
   - name: outlined_card_1_copy_2
     properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
       wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',

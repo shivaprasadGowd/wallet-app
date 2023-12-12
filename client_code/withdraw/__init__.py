@@ -1,3 +1,4 @@
+# withdraw form
 from ._anvil_designer import withdrawTemplate
 from anvil import *
 import anvil.server
@@ -6,80 +7,76 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from datetime import datetime
 
-
 class withdraw(withdrawTemplate):
     def __init__(self, user=None, **properties):
-        # Set Form properties and Data Bindings.
-        self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
-        print(f"User parameter in withdrawal form: {user}")
+        # Set Form properties and Data Bindings
         self.user = user
+        self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}" if user is not None and 'username' in user else "Welcome to Green Gate Financial"
+        print(f"User parameter in withdrawal form: {user}")
         self.init_components(**properties)
 
-  
     def button_1_click(self, **event_args):
-      current_datetime = datetime.now()
-      
+        current_datetime = datetime.now()
 
-      if self.user is not None:
-        wallet3 = anvil.server.call('generate_unique_id', self.user['username'], self.user['phone'])
+        if self.user is not None and 'username' in self.user:
+            wallet3 = anvil.server.call('generate_unique_id', self.user['username'], self.user['phone'])
 
-        if wallet3 is None:
-            self.label_2.text = "Error: Wallet is empty"
-            return
-
-        money3_numeric = ''.join(filter(str.isdigit, str(self.text_box_3.text)))
-        money_value = float(money3_numeric) if money3_numeric else 0.0
-
-        selected_symbol = self.drop_down_1.selected_value
-
-        entered_account_number = self.text_box_2.text
-        
-        user_currencies = anvil.server.call('get_currency_data',entered_account_number)
-        
-
-        if len(str(entered_account_number)) < 10 or not str(entered_account_number).isdigit():
-          self.label_2.text = "Error: Invalid account number. Please enter at least 10 digits."
-          return
-        
-        
-       
-        if user_currencies is not None:
-            user_currency = user_currencies
-
-            if selected_symbol == '€':
-                user_currency['money_euro'] = str((float(user_currency['money_euro'] or 0)) - money_value)
-            elif selected_symbol == '$':
-                user_currency['money_usd'] = str((float(user_currency['money_usd'] or 0)) - money_value)
-            elif selected_symbol == '₣':
-                user_currency['money_swis'] = str((float(user_currency['money_swis'] or 0)) - money_value)
-            elif selected_symbol == '₹':
-                user_currency['money_inr'] = str((float(user_currency['money_inr'] or 0)) - money_value)
-            else:
-                self.label_2.text = "Error: Invalid currency symbol selected."
+            if wallet3 is None:
+                self.label_2.text = "Error: Wallet is empty"
                 return
 
-            user_currency.update()
+            money3_numeric = ''.join(filter(str.isdigit, str(self.text_box_3.text)))
+            money_value = float(money3_numeric) if money3_numeric else 0.0
 
-            new_transaction = app_tables.transactions.add_row(
-                user=self.user['username'],
-                casa=int(entered_account_number),
-                e_wallet=wallet3,
-                money=f"{selected_symbol}-{money_value}",
-                date=current_datetime,
-                transaction_type="Withdrawal"
-            )
+            selected_symbol = self.drop_down_1.selected_value
 
-            self.label_2.text = "Withdrawal successful"
+            entered_account_number = self.text_box_2.text
+
+            user_currencies = anvil.server.call('get_currency_data', entered_account_number)
+
+            if len(str(entered_account_number)) < 10 or not str(entered_account_number).isdigit():
+                self.label_2.text = "Error: Invalid account number. Please enter at least 10 digits."
+                return
+
+            if user_currencies is not None:
+                user_currency = user_currencies
+
+                if selected_symbol == '€':
+                    user_currency['money_euro'] = str((float(user_currency['money_euro'] or 0)) - money_value)
+                elif selected_symbol == '$':
+                    user_currency['money_usd'] = str((float(user_currency['money_usd'] or 0)) - money_value)
+                elif selected_symbol == '₣':
+                    user_currency['money_swis'] = str((float(user_currency['money_swis'] or 0)) - money_value)
+                elif selected_symbol == '₹':
+                    user_currency['money_inr'] = str((float(user_currency['money_inr'] or 0)) - money_value)
+                else:
+                    self.label_2.text = "Error: Invalid currency symbol selected."
+                    return
+
+                user_currency.update()
+
+                new_transaction = app_tables.transactions.add_row(
+                    user=self.user['username'],
+                    casa=int(entered_account_number),
+                    e_wallet=wallet3,
+                    money=f"{selected_symbol}-{money_value}",
+                    date=current_datetime,
+                    transaction_type="Withdrawal"
+                )
+
+                self.label_2.text = "Withdrawal successful"
+            else:
+                self.label_2.text = "Error: No matching wallet found for the user or invalid account number."
         else:
-            self.label_2.text = "Error: No matching wallet found for the user or invalid account number."
-      else:
-        self.label_2.text = "Error: User information is not available"
+            self.label_2.text = "Error: User information is not available"
 
     def link_click(self, **event_args):
-      open_form('customer', user=self.user)
+        open_form('customer', user=self.user)
 
     def link_8_click(self, **event_args):
-      open_form('deposit',user=self.user)
+        open_form('deposit', user=self.user)
 
     def link_9_click(self, **event_args):
-      open_form('transfer',user= self.user)
+        open_form('transfer', user=self.user)
+
+

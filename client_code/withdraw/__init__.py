@@ -47,26 +47,39 @@ class withdraw(withdrawTemplate):
             user_currency = user_currencies
 
             if selected_symbol == '€':
-                user_currency['money_euro'] = str((float(user_currency['money_euro'] or 0)) - money_value)
+                current_balance = float(user_currency['money_euro'] or 0)
             elif selected_symbol == '$':
-                user_currency['money_usd'] = str((float(user_currency['money_usd'] or 0)) - money_value)
+                current_balance = float(user_currency['money_usd'] or 0)
             elif selected_symbol == '₣':
-                user_currency['money_swis'] = str((float(user_currency['money_swis'] or 0)) - money_value)
+                current_balance = float(user_currency['money_swis'] or 0)
             elif selected_symbol == '₹':
-                user_currency['money_inr'] = str((float(user_currency['money_inr'] or 0)) - money_value)
+                current_balance = float(user_currency['money_inr'] or 0)
             else:
                 self.label_2.text = "Error: Invalid currency symbol selected."
                 return
 
-            user_currency.update()
+            if money_value > current_balance:
+                self.label_2.text = "Error: Insufficient funds for withdrawal"
+                return
 
+            # Deduct the withdrawal amount from the balance
+            if selected_symbol == '€':
+                user_currency['money_euro'] = str(current_balance - money_value)
+            elif selected_symbol == '$':
+                user_currency['money_usd'] = str(current_balance - money_value)
+            elif selected_symbol == '₣':
+                user_currency['money_swis'] = str(current_balance - money_value)
+            elif selected_symbol == '₹':
+                user_currency['money_inr'] = str(current_balance - money_value)
+
+            user_currency.update()
             new_transaction = app_tables.transactions.add_row(
                 user=self.user['username'],
                 casa=int(entered_account_number),
                 e_wallet=wallet3,
                 money=f"{selected_symbol}-{money_value}",
                 date=current_datetime,
-                transaction_type="Withdrawal"
+                transaction_type="Withdrawal successful"
             )
 
             self.label_2.text = "Withdrawal successful"

@@ -18,6 +18,12 @@ class ItemTemplate3(ItemTemplate3Template):
         # Open the admin_view form and pass the user details
         open_form('admin.admin_view', user_data=selected_user)
 
+    def button_2_click(self, **event_args):
+        selected_user = self.item  # Assuming you have set the 'item' property of the repeating panel to the user row
+        
+        # Open the admin_view form and pass the user details
+        open_form('admin.admin_view', user_data=selected_user)
+
   
       
        

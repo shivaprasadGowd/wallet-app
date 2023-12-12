@@ -61,29 +61,76 @@ components:
       icon: ''}
     type: Label
     layout_properties: {grid_position: 'NACXMP,GRXDAL'}
+  - type: ColumnPanel
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: none, spacing_above: small, col_widths: '{"VGVFIV":25,"FORECV":10,"DHQSXC":25}',
+      spacing_below: small, background: ''}
+    name: outlined_card_1
+    layout_properties: {grid_position: 'IKSSKQ,JREYYC'}
+    components:
+    - type: Button
+      properties: {role: tonal-button, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: User Management, font_size: 15, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#3FE5FF', bold: true, underline: false, icon: ''}
+      name: button_1
+      layout_properties: {grid_position: 'YAMGBP,QVZJRW'}
+      event_bindings: {click: button_1_click}
+    - type: Button
+      properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+        foreground: '#000000', visible: true, text: Account Balance Management, font_size: null,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#3FE5FF', bold: true, underline: false, icon: ''}
+      name: button_5
+      layout_properties: {grid_position: 'YAMGBP,GQOBVK'}
+      event_bindings: {click: button_5_click}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#000000', visible: true, text: Report and Analysis, font_size: null,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#3FE5FF', bold: true, underline: false, icon: ''}
+      name: button_3
+      layout_properties: {grid_position: 'BTGZKK,NMCAIH'}
+    - type: Button
+      properties: {role: tonal-button, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: Transaction Monitoring, font_size: 15,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#3FE5FF', bold: true, underline: false, icon: ''}
+      name: button_2
+      layout_properties: {grid_position: 'BTGZKK,WWTXPP'}
+      event_bindings: {click: button_2_click}
+    - type: Button
+      properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+        foreground: '#000000', visible: true, text: Security Control, font_size: null,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#3FE5FF', bold: true, underline: false, icon: ''}
+      name: button_6
+      layout_properties: {grid_position: 'QXQZMX,VGVFIV'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_7
+      layout_properties: {grid_position: 'QXQZMX,FORECV'}
+    - type: Button
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '#000000', visible: true, text: Audit Trail, font_size: null,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#3FE5FF', bold: true, underline: false, icon: ''}
+      name: button_7
+      layout_properties: {grid_position: 'QXQZMX,DHQSXC'}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#000000', visible: true, text: User Support, font_size: null,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#3FE5FF', bold: true, underline: false, icon: ''}
+      name: button_4
+      layout_properties: {grid_position: 'EUKCJF,XIIBNB'}
   - type: Image
     properties: {role: null, vertical_align: center, height: 213, tooltip: '', border: '',
       foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
       source: 'data:image/jpeg;base64,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',
       spacing_below: small, background: '', horizontal_align: center}
     name: image_1
-    layout_properties: {grid_position: 'PSBUGE,KETGIH'}
-  - type: Button
-    properties: {role: tonal-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Show Users, font_size: 15, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '#add8e6',
-      bold: true, underline: false, icon: ''}
-    name: button_1
-    layout_properties: {grid_position: 'AFPTUZ,NXLUCN'}
-    event_bindings: {click: button_1_click}
-  - type: Button
-    properties: {role: tonal-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Add Users, font_size: 15, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '#add8e6',
-      bold: true, underline: false, icon: ''}
-    name: button_2
-    layout_properties: {grid_position: 'AFPTUZ,EBASVV'}
-    event_bindings: {click: button_2_click}
+    layout_properties: {grid_position: 'PSBUGE,PMJLQO'}
   - type: Spacer
     properties: {height: 32}
     name: spacer_2

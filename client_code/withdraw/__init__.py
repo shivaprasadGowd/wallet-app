@@ -9,9 +9,11 @@ from datetime import datetime
 
 class withdraw(withdrawTemplate):
     def __init__(self, user=None, **properties):
-        # Set Form properties and Data Bindings.
-        self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
-        print(f"User parameter in withdrawal form: {user}")
+        # Set Form properties and Data Bindings
+        
+        
+        # self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
+        # print(f"User parameter in withdrawal form: {user}")
         self.user = user
         self.init_components(**properties)
 
@@ -47,39 +49,26 @@ class withdraw(withdrawTemplate):
             user_currency = user_currencies
 
             if selected_symbol == '€':
-                current_balance = float(user_currency['money_euro'] or 0)
+                user_currency['money_euro'] = str((float(user_currency['money_euro'] or 0)) - money_value)
             elif selected_symbol == '$':
-                current_balance = float(user_currency['money_usd'] or 0)
+                user_currency['money_usd'] = str((float(user_currency['money_usd'] or 0)) - money_value)
             elif selected_symbol == '₣':
-                current_balance = float(user_currency['money_swis'] or 0)
+                user_currency['money_swis'] = str((float(user_currency['money_swis'] or 0)) - money_value)
             elif selected_symbol == '₹':
-                current_balance = float(user_currency['money_inr'] or 0)
+                user_currency['money_inr'] = str((float(user_currency['money_inr'] or 0)) - money_value)
             else:
                 self.label_2.text = "Error: Invalid currency symbol selected."
                 return
 
-            if money_value > current_balance:
-                self.label_2.text = "Error: Insufficient funds for withdrawal"
-                return
-
-            # Deduct the withdrawal amount from the balance
-            if selected_symbol == '€':
-                user_currency['money_euro'] = str(current_balance - money_value)
-            elif selected_symbol == '$':
-                user_currency['money_usd'] = str(current_balance - money_value)
-            elif selected_symbol == '₣':
-                user_currency['money_swis'] = str(current_balance - money_value)
-            elif selected_symbol == '₹':
-                user_currency['money_inr'] = str(current_balance - money_value)
-
             user_currency.update()
+
             new_transaction = app_tables.transactions.add_row(
                 user=self.user['username'],
                 casa=int(entered_account_number),
                 e_wallet=wallet3,
                 money=f"{selected_symbol}-{money_value}",
                 date=current_datetime,
-                transaction_type="Withdrawal successful"
+                transaction_type="Withdrawal"
             )
 
             self.label_2.text = "Withdrawal successful"

@@ -54,19 +54,19 @@ class transfer(transferTemplate):
             else:
                 self.label_4.text = "Insufficient funds"
         elif selected_symbol == 'Є':
-            if float(user_currency['money_euro']) > money_value:
+            if float(user_currency['money_euro']) >= money_value:
               user_currency['money_euro'] = str(float(user_currency['money_euro']) - money_value)
               fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + (money_value * conversion_rate_euro_to_inr))  
             else:
               self.label_4.text = "Insufficient funds"
         elif selected_symbol == '₣':
-            if float(user_currency['money_swis']) > money_value:
+            if float(user_currency['money_swis']) >= money_value:
               user_currency['money_swis'] = str(float(user_currency['money_swis']) - money_value)
               fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + (money_value * conversion_rate_swis_to_inr))
             else:
               self.label_4.text = "Insufficient funds"
         elif selected_symbol == '₹':
-            if float(user_currency['money_inr']) > money_value:
+            if float(user_currency['money_inr']) >= money_value:
               user_currency['money_inr'] = str(float(user_currency['money_inr']) - money_value)
               fore_money['e_money'] = str(float(fore_money['e_money'] or 0) + (money_value * 1))
             else:

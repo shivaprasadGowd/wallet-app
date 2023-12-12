@@ -117,6 +117,17 @@ def update_all_rows(user,e_money_value):
         row['e_money'] =e_money_value
         row.update()
 
+#for updating all the emoney rows
+@anvil.server.callable
+def update_all_rows(user,e_money_value):
+    # Print statements with proper formatting
+    print(f"User: {user}")
+    print(f"E-money: {e_money_value}")
+    matching_rows = app_tables.accounts.search(user=user)
+    print(f"Length of matching rows: {len(matching_rows)}")
+    for row in matching_rows:
+        row['e_money'] =e_money_value
+        row.update()
 
 
 

@@ -116,7 +116,7 @@ components:
       col_widths: {}
       grid_position: JGKUWY,NTDZSS
   - type: Spacer
-    properties: {height: 50}
+    properties: {height: 108.25}
     name: spacer_1
     layout_properties: {grid_position: 'JCBUGT,SUDTZD'}
   - name: outlined_card_1_copy_2

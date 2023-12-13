@@ -65,3 +65,5 @@ class LOGIN(LOGINTemplate):
 
     def button_2_click(self, **event_args):
         open_form('SIGNUP')
+
+  

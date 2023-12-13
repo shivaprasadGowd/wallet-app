@@ -5,7 +5,7 @@ container:
     role: null, html: ''}
 components:
 - type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{}'}
+  properties: {role: outlined-card, col_widths: '{"FWISPB":30,"WVHRGO":5,"IQOION":25}'}
   name: outlined_card_1
   layout_properties: {slot: default}
   components:
@@ -85,10 +85,62 @@ components:
     properties: {height: 49}
     type: Spacer
     layout_properties: {grid_position: 'LGSSTP,HJNRTN'}
-  - name: spacer_1
-    properties: {height: 572.25}
+  - name: label_16
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'E - Wallet ID:', font_size: 20, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'MMUBSO,XZEJMG'}
+  - name: text_box_1
+    properties: {background: '#DFFDFF', font_size: 20}
+    type: TextBox
+    layout_properties: {grid_position: 'MMUBSO,HXHWXA'}
+  - name: label_2
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Enter Account''s E - Wallet ID:', font_size: 20, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'QLJUXY,EXDRWE'}
+  - name: text_box_2
+    properties: {background: '#DFFDFF', font_size: 20}
+    type: TextBox
+    layout_properties: {grid_position: 'QLJUXY,WDJKCR'}
+  - name: label_3
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Amount to Transfer:', font_size: 20, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'EQTHXP,FWISPB'}
+  - name: drop_down_1
+    properties:
+      font_size: 20
+      background: '#DFFDFF'
+      items: [$, €, ₣, ₹, '']
+    type: DropDown
+    layout_properties: {grid_position: 'EQTHXP,WVHRGO'}
+  - name: text_box_3
+    properties: {font_size: 18, background: '#DFFDFF'}
+    type: TextBox
+    layout_properties: {grid_position: 'EQTHXP,IQOION'}
+  - name: label_4
+    properties: {font_size: 18, align: center, bold: true}
+    type: Label
+    layout_properties: {grid_position: 'JZBKHL,IEFYES'}
+  - name: spacer_3_copy
+    properties: {height: 24.5}
     type: Spacer
-    layout_properties: {grid_position: 'FZWQKU,ISRRGW'}
+    layout_properties: {grid_position: 'GHLLSB,ULWLAT'}
+  - name: button_1
+    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '#000000', visible: true, text: Transfer, font_size: 18, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#3FE5FF', bold: true, underline: false, icon: ''}
+    type: Button
+    layout_properties: {grid_position: 'ASBXWR,HDHCND'}
+    event_bindings: {click: button_1_click}
   - name: outlined_card_1_copy_2
     properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
       wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',
@@ -122,24 +174,3 @@ components:
         background: '', bold: true, underline: false, icon: ''}
       type: Label
       layout_properties: {grid_position: 'XSXLAE,HAKDVS'}
-  - name: label_16
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'E - Wallet ID:', font_size: 20, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    type: Label
-    layout_properties: {grid_position: 'GGSLED,ZLKRAD'}
-  - name: label_2
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Enter Account''s E - Wallet ID:', font_size: 20, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: true, underline: false, icon: ''}
-    type: Label
-    layout_properties: {grid_position: 'GGSLED,COPAJU'}
-  - name: label_3
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Amount to Transfer:', font_size: 20, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    type: Label
-    layout_properties: {grid_position: 'GGSLED,SHXZDJ'}

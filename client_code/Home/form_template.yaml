@@ -5,53 +5,77 @@ container:
     wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"IRUGDQ":20,"MMGYMK":20,"ARIHHH":20}',
     spacing_below: none, background: 'theme:On Secondary'}
 components:
-- name: outlined_card_1_copy
-  properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-    spacing_below: small, background: '#3FE5FF'}
+- name: column_panel_2
+  properties: {col_widths: '{}', background: white}
   type: ColumnPanel
-  layout_properties: {grid_position: 'NLBULT,KFHJDY', full_width_row: true}
+  layout_properties: {grid_position: 'JWPYKG,FHGXYH', full_width_row: true}
   components:
-  - name: image_1
-    properties: {role: null, vertical_align: center, height: 52.545440673828125, tooltip: '',
-      border: '', foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
-      source: _/theme/G-logo.jpg, spacing_below: small, background: '', horizontal_align: center}
-    type: Image
-    layout_properties: {grid_position: 'RQYEAC,HWVPRX'}
-  - name: link_8
-    properties: {text: Deposit, align: center, bold: true, foreground: '#000', font_size: 18}
-    type: Link
-    layout_properties: {grid_position: 'RQYEAC,GQVXCD'}
-  - name: link_9
-    properties: {text: Money Transfer, align: center, bold: true, foreground: '#000',
-      font_size: 17}
-    type: Link
-    layout_properties: {grid_position: 'RQYEAC,ZXILIZ'}
-  - name: link_10
-    properties: {text: Withdraw, bold: true, align: center, foreground: '#000', font_size: 18}
-    type: Link
-    layout_properties: {grid_position: 'RQYEAC,STBFSA'}
-  - name: link_11
-    properties: {text: Company, align: center, bold: true, foreground: '#000', font_size: 18}
-    type: Link
-    layout_properties: {grid_position: 'RQYEAC,VHPMZK'}
-  - name: link_12
-    properties: {text: Career, align: center, bold: true, foreground: '#000', font_size: 18}
-    type: Link
-    layout_properties: {grid_position: 'RQYEAC,BTDIEG'}
-  - name: link_1_copy
-    properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: '#000000',
-      visible: true, text: Login, font_size: 17, wrap_on: mobile, font: '', col_spacing: medium,
-      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
-      italic: false, background: '', bold: true, underline: false, icon: ''}
-    type: Link
-    layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
-    event_bindings: {click: link_1_click}
+  - name: flow_panel_1
+    properties: {}
+    type: FlowPanel
+    layout_properties: {grid_position: 'GEGIPF,SDCJWC', full_width_row: true}
+    components:
+    - name: image_1
+      properties: {role: null, vertical_align: center, height: 52.19996643066406,
+        tooltip: '', border: '', foreground: '', visible: true, display_mode: shrink_to_fit,
+        spacing_above: small, source: _/theme/GW-logo.jpg, spacing_below: small, background: white,
+        horizontal_align: right}
+      type: Image
+      layout_properties: {width: 89.19999694824219}
+    - name: label_7_copy_2
+      properties: {text: 'G-Wallet ', font_size: 25, align: left, bold: true, font: a,
+        italic: false, underline: false, foreground: black}
+      type: Label
+      layout_properties: {}
+    - name: spacer_3
+      properties: {height: 58.19996643066406}
+      type: Spacer
+      layout_properties: {width: 225.39999389648438}
+    - name: column_panel_1
+      properties: {background: white, col_widths: '{"FKFVNM":10,"LDONGM":10,"EKRNNM":10,"CLCQWK":10,"VLVRBN":10,"HNRYLJ":10}',
+        col_spacing: medium}
+      type: ColumnPanel
+      layout_properties: {width: 942.949951171875}
+      components:
+      - name: link_8
+        properties: {text: Deposit, align: center, bold: true, foreground: '#000',
+          font_size: 15}
+        type: Link
+        layout_properties: {grid_position: 'JXFFNM,FKFVNM'}
+      - name: link_9
+        properties: {text: Money Transfer, align: center, bold: true, foreground: black,
+          font_size: 15, col_spacing: tiny}
+        type: Link
+        layout_properties: {grid_position: 'JXFFNM,LDONGM'}
+      - name: link_10
+        properties: {text: Withdraw, bold: true, align: center, foreground: black,
+          font_size: 15, background: white}
+        type: Link
+        layout_properties: {grid_position: 'JXFFNM,EKRNNM', full_width_row: true}
+        event_bindings: {click: link_10_click}
+      - name: link_12
+        properties: {text: Career, align: center, bold: true, foreground: black, font_size: 15}
+        type: Link
+        layout_properties: {grid_position: 'JXFFNM,CLCQWK'}
+      - name: link_11
+        properties: {text: Company, align: center, bold: true, foreground: black,
+          font_size: 15}
+        type: Link
+        layout_properties: {grid_position: 'JXFFNM,VLVRBN'}
+      - name: link_1_copy
+        properties: {role: null, url: '', align: center, tooltip: '', border: '',
+          foreground: black, visible: true, text: Login, font_size: 15, wrap_on: mobile,
+          font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
+          spacing_below: small, italic: false, background: '', bold: true, underline: false,
+          icon: ''}
+        type: Link
+        layout_properties: {grid_position: 'JXFFNM,HNRYLJ', full_width_row: true}
+        event_bindings: {click: link_1_click}
 - properties: {text: "No Wallet KYC Required\ud83d\ude0ato pay using UPI on G-Wallet.",
     align: center, bold: true, spacing_above: large, spacing_below: large, background: '#f1efef',
     font_size: 15}
   type: Label
-  layout_properties: {grid_position: 'NYEFWN,XEJOUM'}
+  layout_properties: {grid_position: 'UVNSKA,SMSSYW'}
   name: label_6
 - properties: {height: 346, spacing_above: large, spacing_below: large}
   type: XYPanel

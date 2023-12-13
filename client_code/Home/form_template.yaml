@@ -16,7 +16,7 @@ components:
     layout_properties: {grid_position: 'GEGIPF,SDCJWC', full_width_row: true}
     components:
     - name: image_1
-      properties: {role: null, vertical_align: center, height: 52.19996643066406,
+      properties: {role: null, vertical_align: center, height: 44.80000305175781,
         tooltip: '', border: '', foreground: '', visible: true, display_mode: shrink_to_fit,
         spacing_above: small, source: _/theme/GW-logo.jpg, spacing_below: small, background: white,
         horizontal_align: right}
@@ -30,12 +30,12 @@ components:
     - name: spacer_3
       properties: {height: 58.19996643066406}
       type: Spacer
-      layout_properties: {width: 225.39999389648438}
+      layout_properties: {width: 357.3999877929688}
     - name: column_panel_1
-      properties: {background: white, col_widths: '{"FKFVNM":9,"LDONGM":9,"EKRNNM":9,"CLCQWK":9,"VLVRBN":9,"XYUIQH":7,"EEYLHE":8}',
-        col_spacing: medium}
+      properties: {background: white, col_widths: '{"FKFVNM":8,"LDONGM":13,"EKRNNM":8,"CLCQWK":8,"VLVRBN":8,"GIPCOP":13}',
+        col_spacing: none}
       type: ColumnPanel
-      layout_properties: {width: 942.949951171875}
+      layout_properties: {width: 833.1500244140625}
       components:
       - name: link_8
         properties: {text: Deposit, align: center, bold: true, foreground: '#000',
@@ -62,22 +62,13 @@ components:
           font_size: 15}
         type: Link
         layout_properties: {grid_position: 'JXFFNM,VLVRBN'}
-      - name: link_1_copy
-        properties: {role: null, url: '', align: center, tooltip: '', border: '',
-          foreground: black, visible: true, text: Login, font_size: 15, wrap_on: mobile,
-          font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
-          spacing_below: small, italic: false, background: '#186eaf', bold: true,
-          underline: false, icon: ''}
-        type: Link
-        layout_properties: {grid_position: 'JXFFNM,XYUIQH'}
-        event_bindings: {click: link_1_click}
-- properties: {text: "No Wallet KYC Required\ud83d\ude0ato pay using UPI on G-Wallet.",
-    align: center, bold: true, spacing_above: large, spacing_below: large, background: '#f1efef',
-    font_size: 15}
-  type: Label
-  layout_properties: {grid_position: 'UVNSKA,SMSSYW'}
-  name: label_6
-- properties: {height: 346, spacing_above: large, spacing_below: large}
+      - name: button_1
+        properties: {text: 'Login     ', bold: true, foreground: white, font_size: 15,
+          role: filled-button, background: '#258ee1'}
+        type: Button
+        layout_properties: {grid_position: 'JXFFNM,GIPCOP'}
+        event_bindings: {click: button_1_click}
+- properties: {height: 286, spacing_above: large, spacing_below: large, background: '#1e75b9'}
   type: XYPanel
   layout_properties: {grid_position: 'IEZDNI,ZGWYKO', full_width_row: true}
   name: xy_panel_1
@@ -86,24 +77,34 @@ components:
     type: Canvas
     layout_properties: {x: 38.45001678541303, y: 17.21249084547162, width: 200}
     name: canvas_1
-  - properties: {height: 344, source: _/theme/GW-logo.jpg}
-    type: Image
-    layout_properties: {x: 46.312496948987246, y: 0, width: 340}
-    name: image_2
-  - properties: {text: 'Recharge & pay bills, book flights & movie tickets, open a
-        savings account, invest in stocks & mutual funds, and do a lot more.', align: center,
-      bold: true, font_size: 19}
+  - properties: {text: "Welcome to \n", font_size: 37, align: left, bold: false, foreground: white,
+      spacing_below: none}
     type: Label
-    layout_properties: {x: 437.7375610359013, y: 150.5875015258789, width: 412}
-    name: label_8
-  - properties: {text: G-Wallet Payments App, font_size: 41, align: center, bold: true}
-    type: Label
-    layout_properties: {x: 373.66249084472656, y: 59.36250305175781, width: 547.05}
+    layout_properties: {x: 138.612484741956, y: 29.900006104260683, width: 547.0499877929688}
     name: label_7
+  - name: label_7_copy_3
+    properties: {text: 'G-Wallet Payment App
+
+        ', font_size: 41, align: left, bold: true, foreground: white, font: a, spacing_above: none,
+      spacing_below: none}
+    type: Label
+    layout_properties: {x: 136.1874950416386, y: 72.18749694898725, width: 510.8000183105469}
   - name: image_3
-    properties: {height: 342.25, source: _/theme/1000_F_398080096_Go2KtGlPcfBXmQskyyoaomyEe4BrBzgI.jpg}
+    properties: {height: 263.1999816894531, source: 'https://www.temenos.com/wp-content/uploads/2023/05/Genie-Wallet-pic1-768x432.png'}
     type: Image
-    layout_properties: {x: 1008, y: 0.046875, width: 820}
+    layout_properties: {x: 929.7000244148076, y: 3.75, width: 411.1875}
+  - properties: {text: '   No Wallet KYC Required to pay using UPI on G-Wallet.',
+      align: left, bold: false, spacing_above: large, spacing_below: large, background: white,
+      font_size: 15, italic: true}
+    type: Label
+    layout_properties: {x: 144.27502136304975, y: 139.69999389722943, width: 391.98798779296874}
+    name: label_6
+- properties: {text: 'Recharge & pay bills, book flights & movie tickets, open a savings
+      account, invest in stocks & mutual funds, and do a lot more.', align: center,
+    bold: true, font_size: 19}
+  type: Label
+  layout_properties: {grid_position: 'BWFERJ,XTCAVE'}
+  name: label_8
 - name: outlined_card_4_copy
   properties: {role: outlined-card, background: 'theme:On Primary'}
   type: ColumnPanel
@@ -114,7 +115,8 @@ components:
     type: Image
     layout_properties: {grid_position: 'FRDEJX,BKCEBT'}
   - name: label_14
-    properties: {text: 'Secure Transactions:', align: center, bold: true, font_size: 18}
+    properties: {text: 'Secure Transactions:', align: center, bold: true, font_size: 18,
+      visible: false}
     type: Label
     layout_properties: {grid_position: 'OSCASP,RQJZTS'}
 - name: outlined_card_7
@@ -127,7 +129,7 @@ components:
     type: Image
     layout_properties: {grid_position: 'LYYPFU,IKIHRD'}
   - name: label_5
-    properties: {text: 'Go Digital:', align: center, bold: true, font_size: 18}
+    properties: {text: 'Go Digital:', align: center, bold: true, font_size: 18, visible: false}
     type: Label
     layout_properties: {grid_position: 'XYUKPI,HEEDXN'}
 - name: outlined_card_5
@@ -140,7 +142,8 @@ components:
     type: Image
     layout_properties: {grid_position: 'UURMHZ,OLGKYC'}
   - name: label_13
-    properties: {text: Financial Management, bold: true, font_size: 18, align: center}
+    properties: {text: Financial Management, bold: true, font_size: 18, align: center,
+      visible: false}
     type: Label
     layout_properties: {grid_position: 'GCGRGD,XRBFDX'}
 - name: outlined_card_8
@@ -153,7 +156,8 @@ components:
     type: Image
     layout_properties: {grid_position: 'PXSOAX,AKBMCB'}
   - name: label_9
-    properties: {text: 'Create E-wallet:', align: center, bold: true, font_size: 18}
+    properties: {text: 'Create E-wallet:', align: center, bold: true, font_size: 18,
+      visible: false}
     type: Label
     layout_properties: {grid_position: 'QEHXWR,LAWTOI'}
 - name: outlined_card_5_copy
@@ -166,7 +170,7 @@ components:
     type: Image
     layout_properties: {grid_position: 'UURMHZ,OLGKYC'}
   - name: label_13_copy
-    properties: {text: User-Friendly, bold: true, font_size: 18, align: center}
+    properties: {text: User-Friendly, bold: true, font_size: 18, align: center, visible: false}
     type: Label
     layout_properties: {grid_position: 'GCGRGD,XRBFDX'}
 - name: outlined_card_9
@@ -179,7 +183,7 @@ components:
     type: Image
     layout_properties: {grid_position: 'MLIUJZ,FFVEUN'}
   - name: label_15
-    properties: {text: UPI, align: center, bold: true, font_size: 18}
+    properties: {text: UPI, align: center, bold: true, font_size: 18, visible: false}
     type: Label
     layout_properties: {grid_position: 'NNLGYI,YYBTLE'}
 - name: spacer_1

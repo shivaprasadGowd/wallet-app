@@ -4,12 +4,14 @@ unique_ids:
     deposit: '1701256848559470288389878.8175'
     withdraw: '1701411302520447423255113.82043'
     transfer.transaction_history.ItemTemplate5: '1702377874098216211241838.8653'
+    admin.account_management: '170246626599114178708529.71559'
     transfer.e_wallet_to_e_wallet: '1702315167564689217291083.1984'
     wallet: '1700735521297405342818204.4116'
     admin.admin_view: '1701853564815966028298492.2816'
     Viewprofile.ItemTemplate2: '1700558120994607838817366.404'
     admin.transaction_monitoring: '1702379421139779860213683.6781'
     admin: '1700199610247838843848268.7214'
+    admin.account_management.ItemTemplate6: '1702466863839286833553505.93054'
     admin.admin_add_user: 32Q2RSJZI57ON37KYU63PP4TMBFH3JKF
     admin.show_users: '1701866131079410237471234.79047'
     transfer.account_to_ewallet: UYFCYS6J2JMSIY5KVCB7RYN2BMRBD3RB

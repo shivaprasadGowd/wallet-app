@@ -15,6 +15,6 @@ class ItemTemplate6(ItemTemplate6Template):
         selected_user = self.item  # Assuming you have set the 'item' property of the repeating panel to the user row
         
         # Open the admin_view form and pass the user details
-        open_form('admin.admin_view', user_data=selected_user)
+        open_form('admin.set_limit', user_data=selected_user)
 
     # Any code you write here will run before the form opens.

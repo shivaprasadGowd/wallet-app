@@ -75,7 +75,7 @@ components:
       col_widths: {}
       grid_position: KRRRWN,HWKADY
   - name: dropdown_numbers
-    properties: {}
+    properties: {background: '#DFFDFF', placeholder: ''}
     type: DropDown
     layout_properties: {grid_position: 'KRRRWN,CIRMVQ'}
     event_bindings: {change: dropdown_numbers_change}

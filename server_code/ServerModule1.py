@@ -34,6 +34,7 @@ def add_info(email, username, password, pan, address, phone, aadhar):
         aadhar=aadhar,
         usertype='customer',
         confirmed=True,
+        limit=100000
     )
     return user_row
 

@@ -1,0 +1,189 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- name: outlined_card_1_copy_4_copy_1_copy_1_copy_1_copy_1
+  properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: '#3FE5FF'}
+  type: ColumnPanel
+  layout_properties:
+    col_widths: {}
+    grid_position: YOXRSF,ZQQXES
+    full_width_row: true
+  components:
+  - name: image_1_copy_4_copy_1_copy_1_copy_1_copy_1
+    properties: {role: null, vertical_align: center, height: 52.36363220214844, tooltip: '',
+      border: '', foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
+      source: _/theme/G-logo.jpg, spacing_below: small, background: '', horizontal_align: center}
+    type: Image
+    layout_properties: {grid_position: 'RQYEAC,KWAVZI'}
+  - name: link_8
+    properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: '#000',
+      visible: true, text: Home, font_size: 18, wrap_on: mobile, font: '', col_spacing: medium,
+      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+      italic: false, background: '', bold: true, underline: false, icon: 'fa:home'}
+    type: Link
+    layout_properties: {grid_position: 'RQYEAC,GQVXCD'}
+    event_bindings: {click: link_8_click}
+  - name: link_9
+    properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: '#000',
+      visible: true, text: About, font_size: 17, wrap_on: mobile, font: '', col_spacing: medium,
+      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+      italic: false, background: '', bold: true, underline: false, icon: ''}
+    type: Link
+    layout_properties: {grid_position: 'RQYEAC,ZXILIZ'}
+  - name: link_12
+    properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: '#000',
+      visible: true, text: User Support, font_size: 18, wrap_on: mobile, font: '',
+      col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    type: Link
+    layout_properties: {grid_position: 'RQYEAC,BTDIEG'}
+  - name: link_1_copy_4_copy_1_copy_1_copy_1_copy_1
+    properties: {role: selected, url: '', align: center, tooltip: '', border: '',
+      foreground: '#000000', visible: true, text: Log out, font_size: 16, wrap_on: mobile,
+      font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: 'fa:user'}
+    type: Link
+    layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
+    event_bindings: {click: link_1_click}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'Username:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'KETDRV,PLYGOS'}
+- type: TextBox
+  properties: {}
+  name: text_box_1
+  layout_properties: {grid_position: 'KETDRV,YLCPML'}
+  data_bindings:
+  - {property: text, code: 'self.item[''username'']', writeback: true}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'Email:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'KURRND,NFPQGA'}
+- type: TextBox
+  properties: {}
+  name: text_box_2
+  layout_properties: {grid_position: 'KURRND,EIECKG'}
+  data_bindings:
+  - {property: text, code: 'self.item[''email'']', writeback: true}
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '#000000',
+    visible: true, text: 'Account Details:', font_size: 20, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '#3FE5FF',
+    bold: true, underline: false, icon: ''}
+  name: label_3
+  layout_properties: {grid_position: 'OTTLAZ,RJELMW'}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'Accounts:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_4
+  layout_properties: {grid_position: 'PKKRUS,ZNIPYU'}
+- type: DropDown
+  properties:
+    role: null
+    align: full
+    tooltip: ''
+    placeholder: Select Account
+    border: ''
+    enabled: true
+    foreground: ''
+    items: []
+    visible: true
+    font_size: null
+    font: ''
+    spacing_above: small
+    spacing_below: small
+    italic: false
+    background: ''
+    bold: false
+    underline: false
+    include_placeholder: true
+  name: drop_down_1
+  layout_properties: {grid_position: 'PKKRUS,ELDOPY'}
+  data_bindings:
+  - {property: selected_value, code: 'self.item[''casa'']', writeback: true}
+- type: Button
+  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '#000000', visible: true, text: Show Balance, font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#3FE5FF',
+    bold: true, underline: false, icon: ''}
+  name: button_1
+  layout_properties: {grid_position: 'PKKRUS,YAYCNT'}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'E-Wallet:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_9
+  layout_properties: {grid_position: 'ZSCEDM,IVWDWH'}
+- type: TextBox
+  properties: {}
+  name: text_box_7
+  layout_properties: {grid_position: 'ZSCEDM,JZTACS'}
+  data_bindings:
+  - {property: text, code: 'self.item[''e_money'']', writeback: true}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'USD:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_5
+  layout_properties: {grid_position: 'ZHLKIT,HSQIMD'}
+- type: TextBox
+  properties: {}
+  name: text_box_3
+  layout_properties: {grid_position: 'ZHLKIT,OLWHJM'}
+  data_bindings:
+  - {property: text, code: 'self.item[''money_usd'']', writeback: true}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'EURO:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_6
+  layout_properties: {grid_position: 'ZHLKIT,VIEPUH'}
+- type: TextBox
+  properties: {}
+  name: text_box_4
+  layout_properties: {grid_position: 'ZHLKIT,QWMQTJ'}
+  data_bindings:
+  - {property: text, code: 'self.item[''money_euro'']', writeback: true}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'INR:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_7
+  layout_properties: {grid_position: 'NZSLZR,QFBKCB'}
+- type: TextBox
+  properties: {}
+  name: text_box_5
+  layout_properties: {grid_position: 'NZSLZR,ZTYBZO'}
+  data_bindings:
+  - {property: text, code: 'self.item[''money_inr'']', writeback: true}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'SWIS:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_8
+  layout_properties: {grid_position: 'NZSLZR,EZQRVQ'}
+- type: TextBox
+  properties: {}
+  name: text_box_6
+  layout_properties: {grid_position: 'NZSLZR,HKMPPJ'}
+  data_bindings:
+  - {property: text, code: 'self.item[''money_swis'']', writeback: true}
+is_package: true

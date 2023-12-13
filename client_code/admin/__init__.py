@@ -26,7 +26,7 @@ class admin(adminTemplate):
         show_users_form = open_form('admin.user_management')
 
   def button_5_click(self, **event_args):
-   open_form('admin.show_users')
+   open_form('admin.account_management')
 
   def link_8_click(self, **event_args):
    open_form('admin')

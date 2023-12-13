@@ -56,6 +56,7 @@ components:
   layout_properties:
     col_widths: {}
     grid_position: DBZYGI,GZDWBP
+  event_bindings: {click: button_1_click}
 - type: TextBox
   properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: 'type
       to search ', border: '', enabled: true, foreground: '', visible: true, text: '',

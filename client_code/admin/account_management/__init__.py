@@ -10,11 +10,10 @@ class account_management(account_managementTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-     self.button_1.visible = False
+    self.button_1.visible = False
        
 
-        # Filter users and set items in the repeating panel
-        self.refresh_users()
+    self.refresh_users()
 
   def refresh_users(self, username_filter=None):
         # If a username filter is provided, filter users based on the username

@@ -30,6 +30,10 @@ class admin(adminTemplate):
 
   def link_8_click(self, **event_args):
    open_form('admin')
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('admin.transaction_monitoring')
  
 
        

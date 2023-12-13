@@ -7,7 +7,7 @@ components:
   type: ColumnPanel
   layout_properties:
     col_widths: {}
-    grid_position: RXATLE,NOGJMG
+    grid_position: GAZASJ,ITGNXM
     full_width_row: true
   components:
   - name: image_1_copy_4_copy_1_copy_1_copy_1_copy_1
@@ -48,4 +48,33 @@ components:
     type: Link
     layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
     event_bindings: {click: link_1_click}
+- name: textbox_search
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'POZJGA,KFAJIB'}
+- name: button_1
+  properties: {text: button_1}
+  type: Button
+  layout_properties: {grid_position: 'POZJGA,YDIODU'}
+  event_bindings: {click: button_1_click}
+- name: label_1
+  properties: {text: username}
+  type: Label
+  layout_properties: {grid_position: 'OWITEO,LATDYG'}
+- name: label_2
+  properties: {text: money}
+  type: Label
+  layout_properties: {grid_position: 'OWITEO,GEXBTN'}
+- name: label_3
+  properties: {text: Date and Time}
+  type: Label
+  layout_properties: {grid_position: 'OWITEO,KGEHVG'}
+- name: label_4
+  properties: {text: Type}
+  type: Label
+  layout_properties: {grid_position: 'OWITEO,HMYEMZ'}
+- name: repeating_panel_1
+  properties: {item_template: transfer.transaction_history.ItemTemplate5}
+  type: RepeatingPanel
+  layout_properties: {grid_position: 'RXATLE,NOGJMG YPOAMN,SSUOFY'}
 is_package: true

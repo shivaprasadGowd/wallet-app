@@ -138,7 +138,10 @@ db_schema:
       admin_ui: {width: 200, order: 0}
       type: string
     - name: Query
-      admin_ui: {width: 200, order: 1}
+      admin_ui: {order: 3, width: 200}
       type: string
+    - name: number
+      admin_ui: {width: 200, order: 2}
+      type: number
     title: Sevices
 renamed: true

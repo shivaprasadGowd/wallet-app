@@ -77,24 +77,34 @@ class Home(HomeTemplate):
   def image_2_mouse_enter(self, x, y, **event_args):
     """This method is called when the mouse cursor enters this component"""
     self.label_19.visible=True
+    self.spacer_8.visible=False
 
   def image_2_mouse_leave(self, x, y, **event_args):
     """This method is called when the mouse cursor leaves this component"""
     self.label_19.visible=False
+    self.spacer_8.visible=True
 
   def image_5_mouse_enter(self, x, y, **event_args):
     """This method is called when the mouse cursor enters this component"""
     self.label_20.visible=True
+    self.spacer_8.visible=False
 
   def image_5_mouse_leave(self, x, y, **event_args):
     """This method is called when the mouse cursor leaves this component"""
     self.label_20.visible=False
+    self.spacer_8.visible=True
 
   def image_4_mouse_enter(self, x, y, **event_args):
     """This method is called when the mouse cursor enters this component"""
     self.label_21.visible=True
+    self.spacer_8.visible=False
 
   def image_4_mouse_leave(self, x, y, **event_args):
     """This method is called when the mouse cursor leaves this component"""
     self.label_21.visible=False
+    self.spacer_8.visible=True
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form("LOGIN")
 

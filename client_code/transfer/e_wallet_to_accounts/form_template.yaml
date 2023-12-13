@@ -36,6 +36,7 @@ components:
         font_size: 17}
       type: Link
       layout_properties: {grid_position: 'YMBFQL,VMXLZA'}
+      event_bindings: {click: link_9_click}
     - name: link_10
       properties: {text: Withdraw, bold: true, align: center, foreground: '#000',
         font_size: 18}
@@ -73,12 +74,11 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: KRRRWN,HWKADY
-  - name: dropdown_account_numbers
-    properties: {background: '#DFFDFF'}
+  - name: dropdown_numbers
+    properties: {background: '#DFFDFF', placeholder: ''}
     type: DropDown
-    layout_properties:
-      col_widths: {}
-      grid_position: KRRRWN,XNLEZM
+    layout_properties: {grid_position: 'KRRRWN,CIRMVQ'}
+    event_bindings: {change: dropdown_numbers_change}
   - type: Spacer
     properties: {height: 42}
     name: spacer_1
@@ -186,6 +186,7 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: KPOXBF,FSPRFI
+    event_bindings: {change: drop_down_2_change}
   - type: Label
     properties: {font_size: 18, align: center}
     name: label_14

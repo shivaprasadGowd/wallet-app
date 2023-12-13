@@ -98,3 +98,6 @@ class admin_add_user(admin_add_userTemplate):
         return True  
     else:
         return False
+
+  def link_8_click(self, **event_args):
+   open_form('admin')

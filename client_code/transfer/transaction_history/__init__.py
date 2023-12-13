@@ -24,3 +24,6 @@ class transaction_history(transaction_historyTemplate):
 
   def link_1_click(self, **event_args):
       open_form('customer', user= self.user)
+
+  def link_9_click(self, **event_args):
+    open_form('transfer',user= self.user)

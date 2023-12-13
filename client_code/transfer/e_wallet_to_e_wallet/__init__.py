@@ -26,4 +26,7 @@ class e_wallet_to_e_wallet(e_wallet_to_e_walletTemplate):
 
   def link_1_click(self, **event_args):
       open_form('customer', user= self.user)
+
+  def link_9_click(self, **event_args):
+    open_form('transfer',user= self.user)
   

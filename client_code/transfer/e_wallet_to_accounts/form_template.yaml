@@ -221,6 +221,10 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: MSABBX,KSGDIP
+  - name: label_3
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'YKPFTX,ZMRJAA'}
   - name: button_2
     properties: {text: Transfer, role: outlined-button, background: '#3FE5FF', foreground: '#000000',
       bold: true, font_size: 18}

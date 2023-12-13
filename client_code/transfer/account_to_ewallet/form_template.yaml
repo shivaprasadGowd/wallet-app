@@ -79,6 +79,7 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: PMAQMO,VKDZFB
+    event_bindings: {change: dropdown_account_numbers_change}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: Current Balance, font_size: 20, font: '', spacing_above: small,

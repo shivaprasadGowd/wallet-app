@@ -32,7 +32,7 @@ components:
       type: Spacer
       layout_properties: {width: 225.39999389648438}
     - name: column_panel_1
-      properties: {background: white, col_widths: '{"FKFVNM":10,"LDONGM":10,"EKRNNM":10,"CLCQWK":10,"VLVRBN":10,"HNRYLJ":10}',
+      properties: {background: white, col_widths: '{"FKFVNM":9,"LDONGM":9,"EKRNNM":9,"CLCQWK":9,"VLVRBN":9,"XYUIQH":7,"EEYLHE":8}',
         col_spacing: medium}
       type: ColumnPanel
       layout_properties: {width: 942.949951171875}
@@ -66,10 +66,10 @@ components:
         properties: {role: null, url: '', align: center, tooltip: '', border: '',
           foreground: black, visible: true, text: Login, font_size: 15, wrap_on: mobile,
           font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
-          spacing_below: small, italic: false, background: '', bold: true, underline: false,
-          icon: ''}
+          spacing_below: small, italic: false, background: '#186eaf', bold: true,
+          underline: false, icon: ''}
         type: Link
-        layout_properties: {grid_position: 'JXFFNM,HNRYLJ', full_width_row: true}
+        layout_properties: {grid_position: 'JXFFNM,XYUIQH'}
         event_bindings: {click: link_1_click}
 - properties: {text: "No Wallet KYC Required\ud83d\ude0ato pay using UPI on G-Wallet.",
     align: center, bold: true, spacing_above: large, spacing_below: large, background: '#f1efef',

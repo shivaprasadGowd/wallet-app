@@ -5,7 +5,7 @@ container:
     role: null, html: ''}
 components:
 - type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{"FWISPB":30,"WVHRGO":5,"IQOION":25}'}
+  properties: {role: outlined-card, col_widths: '{"FWISPB":20,"WVHRGO":20,"IQOION":20}'}
   name: outlined_card_1
   layout_properties: {slot: default}
   components:
@@ -114,13 +114,6 @@ components:
       underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'EQTHXP,FWISPB'}
-  - name: drop_down_1
-    properties:
-      font_size: 20
-      background: '#DFFDFF'
-      items: [$, €, ₣, ₹, '']
-    type: DropDown
-    layout_properties: {grid_position: 'EQTHXP,WVHRGO'}
   - name: text_box_3
     properties: {font_size: 18, background: '#DFFDFF', type: number}
     type: TextBox

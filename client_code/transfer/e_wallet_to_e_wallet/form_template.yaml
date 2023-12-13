@@ -87,7 +87,7 @@ components:
     layout_properties: {grid_position: 'LGSSTP,HJNRTN'}
   - name: label_16
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'E - Wallet ID:', font_size: 20, font: '', spacing_above: small,
+      visible: true, text: 'Name of Depositor:', font_size: 20, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     type: Label

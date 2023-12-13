@@ -233,3 +233,6 @@ class admin_view(admin_viewTemplate):
             # Display alert based on the action
             alert_message = "User is frozen." if new_state else "User is unfrozen."
             alert(alert_message, title="Status")
+
+    def link_1_click(self, **event_args):
+     open_form('Home')

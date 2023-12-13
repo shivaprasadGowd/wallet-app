@@ -15,15 +15,12 @@ class e_wallet_to_e_wallet(e_wallet_to_e_walletTemplate):
 
 
     def button_1_click(self, **event_args):
-        from_user_ewallet = self.text_box_1.text
-        to_user_ewallet = self.text_box_2.text
+        depoitor = self.text_box_1.text
+        wallet_id = self.text_box_2.text
         transfer_amount = float(self.text_box_3.text)
         selected_symbol = self.drop_down_1.selected_value
-        user_for_emoney = self.user['username']
-        from_user_emoney = anvil.server.call('get_accounts_emoneys', from_user_ewallet)
-        to_user_emoney = anvil.server.call('get_accounts_emoneys', to_user_ewallet)
-        print(f"From User e-money: {from_user_emoney}")  # Check the value returned
-        print(f"To User e-money: {to_user_emoney}")  # Check the value returned
+        userwallet_id= anvil.server.call('generate_unique_id', self.user['username'], self.user['phone'])
+        
 
         if (transfer_amount < 5) or (transfer_amount > 50000):
           self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."  

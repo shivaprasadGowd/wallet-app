@@ -58,21 +58,6 @@ components:
     properties: {height: 51.25}
     type: Spacer
     layout_properties: {grid_position: 'FPAAVI,JQZPUV'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Enter Your Username /email /phone number, font_size: null,
-      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
-    name: label_6
-    layout_properties: {grid_position: 'XKDXHI,XNGELW SIWSCY,VLXKHJ'}
-  - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Username/ email / phone number,
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '#DFFDFF', bold: false, underline: false}
-    name: text_box_1
-    layout_properties: {grid_position: 'XKDXHI,XNGELW SIWSCY,LMDOIO'}
-    data_bindings: []
   - type: Spacer
     properties: {height: 17}
     name: spacer_4

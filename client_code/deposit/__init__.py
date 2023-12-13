@@ -59,9 +59,13 @@ class deposit(depositTemplate):
                 # Convert deposited amount to INR
                 inr_value = money_value
                 if selected_symbol != '₹':
-                    # Define exchange rates (you need to fetch these dynamically from an API or another source)
-                    exchange_rates = {'USD': 74.5, 'EUR': 88.2, 'SWIS': 80.0}  # Example rates
-                    inr_value = money_value * exchange_rates[selected_symbol]
+                    # Define exchange rates
+                    exchange_rates = {'$': 74.5, '€': 88.2, '₣': 80.0}  # Example rates
+                    if selected_symbol in exchange_rates:
+                        inr_value = money_value * exchange_rates[selected_symbol]
+                    else:
+                        self.label_2.text = "Error: Invalid currency symbol selected."
+                        return
 
                 # Update the user's limit in INR
                 remaining_limit = int(self.user['limit'] or 0) - inr_value

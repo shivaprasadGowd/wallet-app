@@ -50,6 +50,15 @@ components:
     type: Link
     layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
     event_bindings: {click: link_1_click}
+- type: Label
+  properties: {role: input-prompt, align: center, tooltip: '', border: '', foreground: '#3FE5FF',
+    visible: true, text: '', font_size: 20, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'SYORRU,HNWZMU'}
+  data_bindings:
+  - {property: text, code: 'self.item[''username'']'}
 - type: Image
   properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '',
     foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
@@ -58,38 +67,12 @@ components:
   name: image_1
   layout_properties: {grid_position: 'FROBYZ,EKAUZE'}
 - type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: 'Username:', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: true, underline: false,
-    icon: ''}
-  name: label_1
-  layout_properties: {grid_position: 'KETDRV,PLYGOS'}
-- type: TextBox
-  properties: {}
-  name: text_box_1
-  layout_properties: {grid_position: 'KETDRV,YLCPML'}
-  data_bindings:
-  - {property: text, code: 'self.item[''username'']', writeback: true}
-- type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: 'Email:', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: true, underline: false,
-    icon: ''}
-  name: label_2
-  layout_properties: {grid_position: 'KURRND,NFPQGA'}
-- type: TextBox
-  properties: {}
-  name: text_box_2
-  layout_properties: {grid_position: 'KURRND,EIECKG'}
-  data_bindings:
-  - {property: text, code: 'self.item[''email'']', writeback: true}
-- type: Label
   properties: {role: null, align: center, tooltip: '', border: '', foreground: '#000000',
     visible: true, text: 'Account Details:', font_size: 20, font: '', spacing_above: small,
     icon_align: left, spacing_below: small, italic: false, background: '#3FE5FF',
     bold: true, underline: false, icon: ''}
   name: label_3
-  layout_properties: {grid_position: 'OTTLAZ,RJELMW'}
+  layout_properties: {grid_position: 'GYXIXB,DSYCPV'}
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
     text: 'Accounts:', font_size: null, font: '', spacing_above: small, icon_align: left,

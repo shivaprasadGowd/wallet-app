@@ -116,6 +116,19 @@ def update_all_rows(user,e_money_value):
         row['e_money'] =e_money_value
         row.update()
 
+@anvil.server.callable
+def update_rows_emoney_trasaction(wallet, e_money_value):
+  matching_rows = app_tables.accounts.search(e_wallet=wallet)
+
+  for row in matching_rows:
+    row['e_money'] = e_money_value
+    row.update()
+
+#for getting the e_money in accounts using wallet id
+@anvil.server.callable
+def get_accounts_emoney_using_wallet_id(acc):
+  user_emoney= app_tables.accounts.get(e_wallet=acc)
+  return user_emoney
 
 
     

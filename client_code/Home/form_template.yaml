@@ -6,7 +6,7 @@ container:
     spacing_below: none, background: 'theme:On Secondary'}
 components:
 - name: column_panel_2
-  properties: {col_widths: '{}', background: white}
+  properties: {col_widths: '{}', background: 'theme:On Secondary'}
   type: ColumnPanel
   layout_properties: {grid_position: 'JWPYKG,FHGXYH', full_width_row: true}
   components:
@@ -41,6 +41,7 @@ components:
           font_size: 15}
         type: Link
         layout_properties: {grid_position: 'JXFFNM,FKFVNM'}
+        event_bindings: {click: link_8_click}
       - name: link_9
         properties: {text: Money Transfer, align: center, bold: true, foreground: black,
           font_size: 15, col_spacing: tiny}
@@ -88,16 +89,16 @@ components:
       spacing_below: none}
     type: Label
     layout_properties: {x: 136.1874950416386, y: 72.18749694898725, width: 510.8000183105469}
-  - name: image_3
-    properties: {height: 263.1999816894531, source: 'https://www.temenos.com/wp-content/uploads/2023/05/Genie-Wallet-pic1-768x432.png'}
-    type: Image
-    layout_properties: {x: 929.7000244148076, y: 3.75, width: 411.1875}
   - properties: {text: '   No Wallet KYC Required to pay using UPI on G-Wallet.',
       align: left, bold: false, spacing_above: large, spacing_below: large, background: white,
       font_size: 15, italic: true}
     type: Label
     layout_properties: {x: 144.27502136304975, y: 139.69999389722943, width: 391.98798779296874}
     name: label_6
+  - name: image_3
+    properties: {height: 263.1999816894531, source: 'https://www.temenos.com/wp-content/uploads/2023/05/Genie-Wallet-pic1-768x432.png'}
+    type: Image
+    layout_properties: {x: 1378.78125, y: 2.84375, width: 411.1875}
 - properties: {text: 'Recharge & pay bills, book flights & movie tickets, open a savings
       account, invest in stocks & mutual funds, and do a lot more.', align: center,
     bold: true, font_size: 19}

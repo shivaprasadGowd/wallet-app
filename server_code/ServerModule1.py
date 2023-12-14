@@ -148,6 +148,13 @@ def get_accounts_emoney_using_wallet_id(wallet):
         print("No matching row found.")
         return None
 
+@anvil.server.callable
+def update_daily_limit(name, emoney_value):
+  user_row = app_tables.users.search(username=name)
+  user_row['limit']=emoney_value
+  user_row.update()
+  
+
 
 # @anvil.server.background_task
 # def refresh_transaction_limit():

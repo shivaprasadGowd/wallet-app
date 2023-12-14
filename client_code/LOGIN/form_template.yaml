@@ -41,7 +41,7 @@ components:
           font_size: 15}
         type: Link
         layout_properties: {grid_position: 'JXFFNM,FKFVNM'}
-        event_bindings: {click: link_8_click}
+        event_bindings: {}
       - name: link_9_copy
         properties: {text: Money Transfer, align: center, bold: false, foreground: black,
           font_size: 15, col_spacing: tiny}
@@ -52,7 +52,7 @@ components:
           font_size: 15, background: white}
         type: Link
         layout_properties: {grid_position: 'JXFFNM,EKRNNM', full_width_row: true}
-        event_bindings: {click: link_10_click}
+        event_bindings: {}
       - name: link_12_copy
         properties: {text: Career, align: center, bold: false, foreground: black,
           font_size: 15}

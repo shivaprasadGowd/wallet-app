@@ -17,7 +17,7 @@ class LOGIN(LOGINTemplate):
         password = self.text_box_2.text.strip()
 
         # Get the user based on login input
-        user = self.get_user(login_input)
+        user = anvil.server.call('get_user_for_login',login_input)
 
         # Check if user exists and password matches
         if user is not None and user['password'] == password:
@@ -43,24 +43,6 @@ class LOGIN(LOGINTemplate):
             self.text_box_1.focus()
             self.text_box_2.text = ''
             self.text_box_2.focus()
-
-    def get_user(self, login_input):
-        # Check if the login input is a valid username
-        user_by_username = app_tables.users.get(username=login_input)
-        if user_by_username:
-            return user_by_username
-        
-        user_by_email = app_tables.users.get(email=login_input)
-        if user_by_email:
-            return user_by_email 
-
-        user_by_phone = app_tables.users.get(phone=int(login_input))
-        if user_by_phone:
-            return user_by_phone
-        else:
-            return None
-
-   
 
     def button_2_click(self, **event_args):
         open_form('SIGNUP')

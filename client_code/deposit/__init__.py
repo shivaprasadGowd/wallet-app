@@ -57,24 +57,24 @@ class deposit(depositTemplate):
                 user_currency.update()
 
                 # Convert deposited amount to INR
-                inr_value = money_value
-                if selected_symbol != '₹':
-                    # Define exchange rates
-                    exchange_rates = {'$': 74.5, '€': 88.2, '₣': 80.0}  # Example rates
-                    if selected_symbol in exchange_rates:
-                        inr_value = money_value * exchange_rates[selected_symbol]
-                    else:
-                        self.label_2.text = "Error: Invalid currency symbol selected."
-                        return
+                # inr_value = money_value
+                # if selected_symbol != '₹':
+                #     # Define exchange rates
+                #     exchange_rates = {'$': 74.5, '€': 88.2, '₣': 80.0}  # Example rates
+                #     if selected_symbol in exchange_rates:
+                #         inr_value = money_value * exchange_rates[selected_symbol]
+                #     else:
+                #         self.label_2.text = "Error: Invalid currency symbol selected."
+                #         return
 
-                # Update the user's limit in INR
-                remaining_limit = int(self.user['limit'] or 0) - inr_value
-                if remaining_limit < 0:
-                    alert("Limit exceeded. Cannot deposit more than the limit.")
-                    return  # Return to prevent storing negative value in 'limit' column and further execution
+                # # Update the user's limit in INR
+                # remaining_limit = int(self.user['limit'] or 0) - inr_value
+                # if remaining_limit < 0:
+                #     alert("Limit exceeded. Cannot deposit more than the limit.")
+                #     return  # Return to prevent storing negative value in 'limit' column and further execution
 
-                self.user['limit'] = remaining_limit
-                self.user.update()
+                # self.user['limit'] = remaining_limit
+                # self.user.update()
 
                 new_transaction = app_tables.transactions.add_row(
                     user=self.user['username'],
@@ -85,7 +85,7 @@ class deposit(depositTemplate):
                     transaction_type="Deposit"
                 )
 
-                self.label_2.text = "Money added successfully to the account. Remaining limit: {}".format(remaining_limit)
+                # self.label_2.text = "Money added successfully to the account. Remaining limit: {}".format(remaining_limit)
             else:
                 self.label_2.text = "Error: No matching accounts found for the user or invalid account number."
         else:

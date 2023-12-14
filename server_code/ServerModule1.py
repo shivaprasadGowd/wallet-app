@@ -2,6 +2,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from datetime import datetime
+from datetime import datetime, timedelta
 import anvil.server
 from anvil import tables, app
 import time
@@ -146,6 +147,27 @@ def get_accounts_emoney_using_wallet_id(wallet):
         # If no rows are found, return None
         print("No matching row found.")
         return None
+
+
+@anvil.server.background_task
+def refresh_transaction_limit():
+    # Set the transaction limit to 100,000 every 24 hours
+    while True:
+        # Wait for 24 hours
+        anvil.server.wait(24 * 60 * 60)  # 24 hours in seconds
+
+        # Update the transaction limit to 100,000 for every user
+        with anvil.server.transaction():
+            users_table = app_tables.users
+            all_users = users_table.search()  # Get all users in the table
+            
+            for user_record in all_users:
+                user_record['limit'] = 100000
+                users_table.update(user_record)
+
+# Start the background task
+refresh_transaction_limit()
+
 
 
     

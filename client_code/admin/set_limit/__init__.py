@@ -43,8 +43,8 @@ class set_limit(set_limitTemplate):
         self.drop_down_1.items = account_numbers
     
   def populate_textboxes(self, user_data):
-        self.text_box_1.text = user_data['username']
-        self.text_box_2.text = user_data['email']
+        self.label_1.text = user_data['username']
+        
        
     
   def button_1_click(self, **event_args):

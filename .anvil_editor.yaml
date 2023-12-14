@@ -29,6 +29,7 @@ unique_ids:
     transfer.transaction_history.ItemTemplate4: '17023778375281450567700.6879659'
     Viewprofile.ItemTemplate1: '1700558077194623003567799.6544'
     Home: 27OJC6EWBTRQ34P5OQF2I5IMMQAQK7SC
+    transfer.auto_top_up: '1702544880929562645787474.6378'
   modules: {}
   server_modules:
     ServerModule1: '1700198830978493420714307.2622'

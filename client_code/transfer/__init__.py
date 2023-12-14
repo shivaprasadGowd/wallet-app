@@ -31,6 +31,9 @@ class transfer(transferTemplate):
     def button_3_click(self, **event_args):
       open_form('transfer.e_wallet_to_e_wallet', user= self.user)
 
+    def outlined_button_2_click(self, **event_args):
+      open_form('transfer.auto_top_up',user= self.user)
+
   
 
     

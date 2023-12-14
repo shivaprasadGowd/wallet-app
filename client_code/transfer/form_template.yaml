@@ -100,6 +100,11 @@ components:
     type: Button
     layout_properties: {grid_position: 'DKTORS,QAOZXR'}
     event_bindings: {click: button_5_click}
+  - name: outlined_button_2
+    properties: {text: Auto-Top up, role: outlined-button}
+    type: Button
+    layout_properties: {grid_position: 'DKTORS,JONGTK'}
+    event_bindings: {click: outlined_button_2_click}
   - name: image_1_copy
     properties: {source: _/theme/pngtree-thinking-man-illustration-with-question-mark-and-light-bulb-for-business-png-image_8803664.png,
       height: 272.25}

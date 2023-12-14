@@ -51,6 +51,9 @@ db_schema:
     - name: limit
       admin_ui: {width: 200, order: 11}
       type: string
+    - name: date
+      admin_ui: {width: 200, order: 12}
+      type: datetime
     title: users
   accounts:
     client: full

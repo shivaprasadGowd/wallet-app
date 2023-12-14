@@ -95,3 +95,5 @@ class deposit(depositTemplate):
 
     def link_10_click(self, **event_args):
         open_form('withdraw', user=self.user)
+
+  

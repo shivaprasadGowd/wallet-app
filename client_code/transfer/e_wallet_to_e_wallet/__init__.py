@@ -15,6 +15,7 @@ class e_wallet_to_e_wallet(e_wallet_to_e_walletTemplate):
 
 
     def button_1_click(self, **event_args):
+        current_datetime = datetime.now()
         depoitor = self.text_box_1.text
         wallet_id = self.text_box_2.text
         transfer_amount = self.text_box_3.text
@@ -23,46 +24,30 @@ class e_wallet_to_e_wallet(e_wallet_to_e_walletTemplate):
         fore_money_depositor = anvil.server.call('get_accounts_emoney_using_wallet_id', depositor_wallet_id)
         #getting the reciever's details
         fore_money_sent = anvil.server.call('get_accounts_emoney_using_wallet_id',wallet_id)
-        #calculating the money to be added in the recieve's end
-        transfer_fianl_sent_amount= float(fore_money_sent['e_money']) + transfer_amount
-        #calculating the money to be deducted in the depositor's end
-        transfer_amount_final = float(fore_money_depositor['e_money'])-transfer_amount
-        #setting the value
-        anvil.server.call('update_rows_emoney_trasaction',depositor_wallet_id, str(transfer_amount_final))
-        anvil.server.call('update_rows_emoney_trasaction',wallet_id, str(transfer_fianl_sent_amount))
       
-        
-        
+        if (transfer_amount < 5) or (transfer_amount > 50000):
+           self.label_4.text = "Transfer amount should be between 5 and 50000 for a transfer Funds." 
+        else:
+           if float(fore_money_depositor['e_money']) < transfer_amount:
+             self.label_4.text = "Insufficient Funds in E-Wallet."
+           else: 
+             #calculating the money to be added in the recieve's end
+             transfer_fianl_sent_amount= float(fore_money_sent['e_money']) + transfer_amount
+             #calculating the money to be deducted in the depositor's end
+             transfer_amount_final = float(fore_money_depositor['e_money'])-transfer_amount
+             #setting the value
+             anvil.server.call('update_rows_emoney_trasaction',depositor_wallet_id, str(transfer_amount_final))
+             anvil.server.call('update_rows_emoney_trasaction',wallet_id, str(transfer_fianl_sent_amount))
+             self.label_4.text = "Money transferred successfully"
 
-        # if (transfer_amount < 5) or (transfer_amount > 50000):
-        #   self.label_4.text = "Money value should be between 5 and 50000 for a transfer Funds."  
-        # else:  
-        #    if from_user_emoney is not None and to_user_emoney is not None:
-        #      if float(from_user_emoney['e_money']) >= transfer_amount:
-        #       from_user_emoney['e_money'] = str(float(from_user_emoney['e_money']) - transfer_amount)
-        #       to_user_emoney['e_money'] = str(float(to_user_emoney['e_money']) + transfer_amount)
-        #       anvil.server.call('update_all_rows', from_user_ewallet, user_for_emoney)
-        #       anvil.server.call('update_all_rows', to_user_ewallet, user_for_emoney)
-
-        #       app_tables.transactions.add_row(
-        #         user=self.user,
-        #         e_wallet=from_user_ewallet,
-        #         money=f"Transfer-{transfer_amount}",
-        #         date=current_datetime,
-        #         transaction_type="E-wallet to E-wallet"
-        #       )
-
-        #       app_tables.transactions.add_row(
-        #         user=self.user,
-        #         e_wallet=to_user_ewallet,
-        #         money=f"Transfer-{transfer_amount}",
-        #         date=current_datetime,
-        #         transaction_type="E-wallet to E-wallet"
-        #       )
-        #      else:
-        #        self.label_4.text="insufficient fund"
-        #    else:
-        #        self.label_4.text="Error retrieving e-money information"
+             app_tables.transactions.add_row(
+                 user=self.user['username'],
+                 e_wallet=f"{depositor_wallet_id} to {wallet_id}",
+                 money=f"Transfer-{transfer_amount}",
+                 date=current_datetime,
+                 transaction_type="E-wallet to E-wallet"
+               )
+     
 
     def link_8_click(self, **event_args):
       open_form('deposit',user= self.user)

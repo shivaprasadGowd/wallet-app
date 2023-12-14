@@ -118,6 +118,35 @@ def update_all_rows(user,e_money_value):
         row['e_money'] =e_money_value
         row.update()
 
+@anvil.server.callable
+def update_rows_emoney_trasaction(wallet, e_money_value):
+  matching_rows = app_tables.accounts.search(e_wallet=wallet)
+  print("hi we will start deducting")
+  for row in matching_rows:
+    row['e_money'] = e_money_value
+    row.update()
+
+#for getting the e_money in accounts using wallet id
+@anvil.server.callable
+def get_accounts_emoney_using_wallet_id(wallet):
+    print(f"Received wallet ID: {wallet}")
+
+    user_emoney = app_tables.accounts.search(e_wallet=wallet)
+
+    if len(user_emoney) == 1:
+        # If only one row is found, return it
+        result = user_emoney[0]
+        print(f"Found user emoney: {result}")
+        return result
+    elif len(user_emoney) > 1:
+        # If multiple rows are found, handle the first one
+        print("Multiple rows found. Handling only the first one.")
+        result = user_emoney[0]
+        return result
+    else:
+        # If no rows are found, return None
+        print("No matching row found.")
+        return None
 
 
 @anvil.server.background_task

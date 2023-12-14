@@ -19,6 +19,7 @@ class e_wallet_to_e_wallet(e_wallet_to_e_walletTemplate):
         depoitor = self.text_box_1.text
         wallet_id = self.text_box_2.text
         transfer_amount = self.text_box_3.text
+        
         depositor_wallet_id= anvil.server.call('generate_unique_id', self.user['username'], self.user['phone'])
         #getting the depositor's details
         fore_money_depositor = anvil.server.call('get_accounts_emoney_using_wallet_id', depositor_wallet_id)
@@ -38,6 +39,9 @@ class e_wallet_to_e_wallet(e_wallet_to_e_walletTemplate):
              #setting the value
              anvil.server.call('update_rows_emoney_trasaction',depositor_wallet_id, str(transfer_amount_final))
              anvil.server.call('update_rows_emoney_trasaction',wallet_id, str(transfer_fianl_sent_amount))
+             #Updating the daily limit
+             answer = float(self.user['limit'])- transfer_amount
+             anvil.server.call('update_daily_limit', self.user['username'], str(answer))
              self.label_4.text = "Money transferred successfully"
 
              app_tables.transactions.add_row(

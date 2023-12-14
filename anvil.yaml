@@ -50,7 +50,7 @@ db_schema:
       type: bool
     - name: limit
       admin_ui: {width: 200, order: 11}
-      type: number
+      type: string
     title: users
   accounts:
     client: full

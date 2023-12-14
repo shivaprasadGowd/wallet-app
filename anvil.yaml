@@ -55,6 +55,21 @@ db_schema:
     - name: limit
       admin_ui: {width: 200, order: 11}
       type: string
+    - name: password_hash
+      admin_ui: {width: 200}
+      type: string
+    - name: n_password_failures
+      admin_ui: {width: 200}
+      type: number
+    - name: confirmed_email
+      admin_ui: {width: 200}
+      type: bool
+    - name: enabled
+      admin_ui: {width: 200}
+      type: bool
+    - name: last_login
+      admin_ui: {width: 200}
+      type: datetime
     title: users
   accounts:
     client: full

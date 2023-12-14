@@ -21,6 +21,23 @@ def validate_login(username, password):
     else:
         return None
 
+@anvil.server.callable
+def get_user_for_login(login_input):
+  user_by_username = app_tables.users.get(username=login_input)
+  if login_input.isdigit():
+    phone_number = int(login_input)
+    user_by_phone = app_tables.users.get(phone=phone_number)
+    return user_by_phone
+    # Continue with the rest of your code
+  else:
+    print("Invalid phone number. Please enter a numeric value.")
+  user_by_email = app_tables.users.get(email=login_input)
+  if user_by_username:
+            return user_by_username
+  if user_by_email:
+            return user_by_email 
+  else:
+            return None
 
 
 @anvil.server.callable
@@ -35,7 +52,7 @@ def add_info(email, username, password, pan, address, phone, aadhar):
         aadhar=aadhar,
         usertype='customer',
         confirmed=True,
-        limit=100000
+        limit=str(100000)
     )
     return user_row
 
@@ -147,6 +164,18 @@ def get_accounts_emoney_using_wallet_id(wallet):
         # If no rows are found, return None
         print("No matching row found.")
         return None
+
+@anvil.server.callable
+def update_daily_limit(name, emoney_value):
+    user_row = app_tables.users.get(username=name)  # Use get() instead of search() if username is unique
+
+    if user_row is not None:
+        user_row['limit'] = emoney_value
+        user_row.update()
+        return "Daily limit updated successfully"
+    else:
+        return "User not found"
+  
 
 
 # @anvil.server.background_task

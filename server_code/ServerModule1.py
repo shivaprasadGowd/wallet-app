@@ -1,3 +1,4 @@
+import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
@@ -175,6 +176,20 @@ def update_daily_limit(name, emoney_value):
 # # Start the background task
 # refresh_transaction_limit()
 
+@anvil.server.callable
+def add_query(query):
+  row=app_tables.sevices.add_row(Query=query)
+# server module
+
+
+
+@anvil.server.callable
+def get_user_info(username):
+    user_row = app_tables.users.get(username=username)
+    if user_row:
+        return {'username': user_row['username'], 'phone': user_row['phone']}
+    else:
+        return None
 
 
     

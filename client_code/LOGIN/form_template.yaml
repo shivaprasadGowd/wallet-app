@@ -5,152 +5,173 @@ container:
     role: null, html: ''}
 components:
 - type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{"XNGELW":40,"LHCCER":20}', background: 'theme:On
-      Primary'}
+  properties: {role: outlined-card, col_widths: '{}', background: 'theme:On Primary'}
   name: outlined_card_2
   layout_properties: {slot: default}
   components:
-  - type: ColumnPanel
-    properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
-      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-      spacing_below: small, background: '#3FE5FF'}
-    name: outlined_card_1
-    layout_properties: {grid_position: 'HZCCVZ,SOQBBC', full_width_row: true}
-    components:
-    - type: Image
-      properties: {role: null, vertical_align: center, height: 52.545440673828125,
-        tooltip: '', border: '', foreground: '', visible: true, display_mode: shrink_to_fit,
-        spacing_above: small, source: _/theme/G-logo.jpg, spacing_below: small, background: '',
-        horizontal_align: center}
-      name: image_1
-      layout_properties: {grid_position: 'RQYEAC,HWVPRX'}
-    - name: link_8
-      properties: {text: Deposit, align: center, bold: true, foreground: '#000', font_size: 18}
-      type: Link
-      layout_properties: {grid_position: 'RQYEAC,GQVXCD'}
-      event_bindings: {click: link_8_click}
-    - name: link_9
-      properties: {text: Money Transfer, align: center, bold: true, foreground: '#000',
-        font_size: 17}
-      type: Link
-      layout_properties: {grid_position: 'RQYEAC,ZXILIZ'}
-    - name: link_10
-      properties: {text: Withdraw, bold: true, align: center, foreground: '#000',
-        font_size: 18}
-      type: Link
-      layout_properties: {grid_position: 'RQYEAC,STBFSA'}
-    - name: link_11
-      properties: {text: Company, align: center, bold: true, foreground: '#000', font_size: 18}
-      type: Link
-      layout_properties: {grid_position: 'RQYEAC,VHPMZK'}
-    - name: link_12
-      properties: {text: Career, align: center, bold: true, foreground: '#000', font_size: 18}
-      type: Link
-      layout_properties: {grid_position: 'RQYEAC,BTDIEG'}
-    - type: Link
-      properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: '#000000',
-        visible: true, text: Home, font_size: 17, wrap_on: mobile, font: '', col_spacing: medium,
-        spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
-        italic: false, background: '', bold: true, underline: false, icon: ''}
-      name: link_1
-      layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
-      event_bindings: {click: link_1_click}
-  - name: spacer_1
-    properties: {height: 51.25}
-    type: Spacer
-    layout_properties: {grid_position: 'FPAAVI,JQZPUV'}
-  - name: image_2
-    properties: {source: _/theme/user-icon-1024x1024-dtzturco.png, height: 113.66668701171875}
-    type: Image
-    layout_properties: {grid_position: 'XKDXHI,XNGELW JBWNEI,XVASND'}
-  - name: label_5
-    properties: {text: Login, align: center, bold: true, font_size: 22}
-    type: Label
-    layout_properties: {grid_position: 'XKDXHI,XNGELW OLSBRM,SCDRFX'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Enter Your Username /email /phone number, font_size: null,
-      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
-    name: label_6
-    layout_properties: {grid_position: 'XKDXHI,XNGELW SIWSCY,VLXKHJ'}
-  - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Username/ email / phone number,
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '#DFFDFF', bold: false, underline: false}
-    name: text_box_1
-    layout_properties: {grid_position: 'XKDXHI,XNGELW SIWSCY,LMDOIO'}
-    data_bindings: []
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Enter Your Password:', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_7
-    layout_properties: {grid_position: 'XKDXHI,XNGELW QUYWZW,EPIENL'}
-  - type: TextBox
-    properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: 'Password:',
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '#DFFDFF', bold: false, underline: false}
-    name: text_box_2
-    layout_properties: {grid_position: 'XKDXHI,XNGELW QUYWZW,FWYBHT'}
-  - type: Spacer
-    properties: {height: 32}
-    name: spacer_3
-    layout_properties: {grid_position: 'XKDXHI,XNGELW KDIBKW,VVSKFP'}
-  - type: Label
+  - name: flow_panel_1
     properties: {}
-    name: label_9
-    layout_properties: {grid_position: 'XKDXHI,XNGELW KDIBKW,KVLVTF'}
-  - type: Spacer
-    properties: {height: 17}
-    name: spacer_4
-    layout_properties: {grid_position: 'XKDXHI,XNGELW YRKOXV,ZVINBT'}
-  - type: Button
-    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '#000000', visible: true, text: Login, font_size: 16, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '#0770FF', bold: false, underline: false, icon: ''}
-    name: button_1
-    layout_properties: {grid_position: 'XKDXHI,XNGELW JREMBO,UWQEEF'}
-    event_bindings: {click: button_1_click}
-  - type: Spacer
-    properties: {height: 75.111083984375}
-    name: spacer_2
-    layout_properties: {slot: default, grid_position: 'XKDXHI,XNGELW ROSUTS,NTCBDS'}
-  - name: image_3
-    properties: {height: 489.33331298828125, source: _/theme/official-login.jpg}
-    type: Image
-    layout_properties: {grid_position: 'XKDXHI,LHCCER'}
-  - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: Signup Instead, font_size: 20, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    name: label_8
-    layout_properties: {grid_position: 'LAACVJ,YXJUMK', full_width_row: true}
-  - name: spacer_6
-    properties: {height: 39.25}
+    type: FlowPanel
+    layout_properties: {grid_position: 'PPIOBW,BVKSOQ', full_width_row: true}
+    components:
+    - name: image_1_copy
+      properties: {role: null, vertical_align: center, height: 44.80000305175781,
+        tooltip: '', border: '', foreground: '', visible: true, display_mode: shrink_to_fit,
+        spacing_above: small, source: _/theme/GW-logo.jpg, spacing_below: small, background: white,
+        horizontal_align: right}
+      type: Image
+      layout_properties: {width: 89.19999694824219}
+    - name: label_7_copy_2
+      properties: {text: 'G-Wallet         ', font_size: 25, align: left, bold: true,
+        font: a, italic: false, underline: false, foreground: black}
+      type: Label
+      layout_properties: {}
+    - name: spacer_3_copy
+      properties: {height: 58.19996643066406}
+      type: Spacer
+      layout_properties: {width: 342.38698779296874}
+    - name: column_panel_1
+      properties: {background: white, col_widths: '{"FKFVNM":25,"LDONGM":10,"EKRNNM":5,"CLCQWK":5,"VLVRBN":5,"GIPCOP":10}',
+        col_spacing: medium}
+      type: ColumnPanel
+      layout_properties: {width: 833.1500244140625, expand: true}
+      components:
+      - name: link_8_copy
+        properties: {text: Deposit, align: right, bold: false, foreground: '#000',
+          font_size: 15}
+        type: Link
+        layout_properties: {grid_position: 'JXFFNM,FKFVNM'}
+        event_bindings: {click: link_8_click}
+      - name: link_9_copy
+        properties: {text: Money Transfer, align: center, bold: false, foreground: black,
+          font_size: 15, col_spacing: tiny}
+        type: Link
+        layout_properties: {grid_position: 'JXFFNM,LDONGM'}
+      - name: link_10_copy
+        properties: {text: 'Withdraw ', bold: false, align: center, foreground: black,
+          font_size: 15, background: white}
+        type: Link
+        layout_properties: {grid_position: 'JXFFNM,EKRNNM', full_width_row: true}
+        event_bindings: {click: link_10_click}
+      - name: link_12_copy
+        properties: {text: Career, align: center, bold: false, foreground: black,
+          font_size: 15}
+        type: Link
+        layout_properties: {grid_position: 'JXFFNM,CLCQWK'}
+      - name: link_11_copy
+        properties: {text: 'Company  ', align: center, bold: false, foreground: black,
+          font_size: 15}
+        type: Link
+        layout_properties: {grid_position: 'JXFFNM,VLVRBN'}
+      - name: button_3
+        properties: {text: Home, bold: false, foreground: black, font_size: 15, role: null,
+          background: ''}
+        type: Button
+        layout_properties: {grid_position: 'JXFFNM,GIPCOP'}
+        event_bindings: {click: button_3_click}
+  - name: spacer_1
+    properties: {height: 38.399993896484375}
     type: Spacer
-    layout_properties: {grid_position: 'YMWBMJ,UFAKPC'}
-  - type: Button
-    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '#000000', visible: true, text: Sign up, font_size: 16, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '#0770FF', bold: false, underline: false, icon: ''}
-    name: button_2
-    layout_properties: {grid_position: 'RBCHYE,DNBCAB'}
-    event_bindings: {click: button_2_click}
+    layout_properties: {grid_position: 'SUZGNG,ADHUEW'}
+  - name: image_1
+    properties: {source: 'https://as1.ftcdn.net/v2/jpg/02/58/08/00/1000_F_258080094_ZZBJctFXuoz3GweY4mzGN5nGCXHEsRTI.jpg',
+      background: '', display_mode: zoom_to_fill}
+    type: Image
+    layout_properties: {grid_position: 'OAUKWI,UFRAVW', full_width_row: true}
+  - name: spacer_7
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'NFDZJO,UWBPYT'}
+  - name: label_5
+    properties: {text: Login / Signup, align: center, bold: true, font_size: 25, underline: true,
+      font: a, foreground: white, background: '#2196f3'}
+    type: Label
+    layout_properties: {grid_position: 'PFGLDN,AVEKEF', full_width_row: true}
+  - name: grid_panel_1
+    properties: {background: ''}
+    type: GridPanel
+    layout_properties: {grid_position: 'OVNFTG,XQMAHM', full_width_row: false}
+    components:
+    - name: spacer_2
+      properties: {height: 47}
+      type: Spacer
+      layout_properties: {row: YZSGZO, width_xs: 12, col_xs: 0}
+    - name: label_8_copy
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'New user ?', font_size: 16, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: true, icon: ''}
+      type: Label
+      layout_properties: {row: YZSGZO, width_xs: 12, col_xs: 0}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Enter Your Username /email /phone number, font_size: null,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: true, underline: false, icon: ''}
+      name: label_6
+      layout_properties: {row: OOCCMJ, width_xs: 4, col_xs: 2}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Username/ email / phone number,
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: white, bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {row: OOCCMJ, width_xs: 5, col_xs: 6}
+      data_bindings: []
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'Enter Your Password:', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_7
+      layout_properties: {row: ACBDXG, width_xs: 4, col_xs: 2}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Password,
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: white, bold: false, underline: false}
+      name: text_box_2
+      layout_properties: {row: ACBDXG, width_xs: 5, col_xs: 6}
+      event_bindings: {pressed_enter: text_box_2_pressed_enter}
+    - type: Label
+      properties: {}
+      name: label_9
+      layout_properties: {row: ZXNPCG, width_xs: 6, col_xs: 6}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: white, visible: true, text: 'Login        ', font_size: 16, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#1b7bc9', bold: true, underline: false, icon: ''}
+      name: button_1
+      layout_properties: {row: IAVNQX, width_xs: 10, col_xs: 1}
+      event_bindings: {click: button_1_click}
+    - name: spacer_6
+      properties: {height: 57.199981689453125}
+      type: Spacer
+      layout_properties: {row: QTSQGX, width_xs: 12, col_xs: 0}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'Existing user ?', font_size: 16, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_8
+      layout_properties: {row: HVMAXF, width_xs: 12, col_xs: 0}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: white, visible: true, text: 'Sign up     ', font_size: 16, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#1b7bc9', bold: true, underline: false, icon: ''}
+      name: button_2
+      layout_properties: {row: IOYNMJ, width_xs: 12, col_xs: 0}
+      event_bindings: {click: button_2_click}
   - name: spacer_5
-    properties: {height: 72.25}
+    properties: {height: 99.39996337890625}
     type: Spacer
     layout_properties: {grid_position: 'HYCZTE,EVKDEV'}
   - name: outlined_card_1_copy_2
     properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
       wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',
-      spacing_below: none, background: 'theme:On Surface Variant'}
+      spacing_below: none, background: '#1b7bc9'}
     type: ColumnPanel
     layout_properties: {grid_position: 'OZSBBF,NRUBQN', full_width_row: true}
     components:

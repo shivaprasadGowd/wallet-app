@@ -55,12 +55,6 @@ db_schema:
     - name: limit
       admin_ui: {order: 14.5, width: 200}
       type: string
-    - name: password_hash
-      admin_ui: {width: 200}
-      type: string
-    - name: n_password_failures
-      admin_ui: {width: 200}
-      type: number
     - name: confirmed_email
       admin_ui: {width: 200}
       type: bool
@@ -72,6 +66,9 @@ db_schema:
       type: date
     - name: daily_limit_set
       admin_ui: {order: 14.875, width: 200}
+      type: string
+    - name: top_up
+      admin_ui: {order: 15.625, width: 200}
       type: string
     title: users
   accounts:
@@ -163,10 +160,10 @@ db_schema:
       admin_ui: {order: 3, width: 200}
       type: string
     - name: phone
-      admin_ui: {width: 200}
+      admin_ui: {order: 2.5, width: 200}
       type: number
     - name: username
-      admin_ui: {width: 200}
+      admin_ui: {order: 2, width: 200}
       type: string
     title: Sevices
 renamed: true

@@ -195,7 +195,10 @@ def get_user_info(username):
     else:
         return None
 
-
+@anvil.server.callable
+def get_accounts_emoney_with_user(name):
+  user_emoney= app_tables.accounts.get(user=name)
+  return user_emoney
 
 
     

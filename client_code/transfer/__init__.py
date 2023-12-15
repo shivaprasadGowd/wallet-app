@@ -35,6 +35,9 @@ class transfer(transferTemplate):
     def outlined_button_2_click(self, **event_args):
       open_form('transfer.auto_top_up',user= self.user)
 
+    def outlined_button_3_click(self, **event_args):
+      open_form('transfer.set',user= self.user)
+
   
 
     
@@ -42,7 +45,7 @@ class transfer(transferTemplate):
     
 
     
-      
+       
       
 
     

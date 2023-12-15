@@ -11,4 +11,8 @@ class user_support(user_supportTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    # Any code you write here will run before the form opens.
+    # Any code you write here will run before the form opens
+table_data = app_tables.table_1.search()
+
+# Bind the data to the repeating panel
+self.repeating_panel_1.items = table_data

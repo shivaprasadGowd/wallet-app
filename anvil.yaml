@@ -67,9 +67,6 @@ db_schema:
     - name: daily_limit_set
       admin_ui: {order: 14.875, width: 200}
       type: string
-    - name: top_up_amount
-      admin_ui: {order: 14.375, width: 200}
-      type: string
     - name: top_up
       admin_ui: {order: 14.25, width: 200}
       type: bool

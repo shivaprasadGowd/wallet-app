@@ -197,8 +197,8 @@ def get_user_info(username):
 
 @anvil.server.callable
 def get_accounts_emoney_with_user(name):
-  user_emoney= app_tables.accounts.get(user=name)
-  return user_emoney
+  user_emoney= app_tables.accounts.search(user=name)
+  return user_emoney[0]
 
 
     

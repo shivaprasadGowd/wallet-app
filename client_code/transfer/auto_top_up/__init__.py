@@ -27,4 +27,5 @@ class auto_top_up(auto_top_upTemplate):
     open_form('transfer',user= self.user)
 
   def button_1_click(self, **event_args):
-    self.button_1.text.visible = False
+    self.button_1.visible = False
+    self.button_2.visible = True

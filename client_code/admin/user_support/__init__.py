@@ -12,7 +12,7 @@ class user_support(user_supportTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens
-table_data = app_tables.table_1.search()
+    table_data = app_tables.sevices.search()
 
 # Bind the data to the repeating panel
-self.repeating_panel_1.items = table_data
+    self.repeating_panel_1.items = table_data

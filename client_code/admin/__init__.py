@@ -38,7 +38,7 @@ class admin(adminTemplate):
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
+    open_form('admin.user_support')
  
 
        

@@ -5,7 +5,7 @@ container:
     role: null, html: ''}
 components:
 - type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{"VGGDSU":10,"DRXYTM":50,"ZGXNHJ":50,"YJXFEP":20,"SWYGFX":10}'}
+  properties: {role: outlined-card, col_widths: '{"VGGDSU":10,"DRXYTM":50,"YJXFEP":27,"SWYGFX":5}'}
   name: outlined_card_1
   layout_properties: {slot: default}
   components:
@@ -59,100 +59,10 @@ components:
       layout_properties: {grid_position: 'YMBFQL,QBOZEO'}
       event_bindings: {click: link_1_click}
       name: link_1
-  - name: label_16
-    properties: {text: 'Account number:', align: center, bold: true, font_size: 18}
-    type: Label
-    layout_properties:
-      col_widths: {}
-      grid_position: PMAQMO,LPEBRC
-  - name: dropdown_account_numbers
-    properties: {background: '#DFFDFF'}
-    type: DropDown
-    layout_properties:
-      col_widths: {}
-      grid_position: PMAQMO,VKDZFB
-    event_bindings: {change: dropdown_account_numbers_change}
-  - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: Current Balance, font_size: 20, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    name: label_2
-    layout_properties:
-      col_widths: {}
-      grid_position: TZARYW,BDDQIF
   - type: Spacer
     properties: {height: 40}
     name: spacer_2
     layout_properties: {grid_position: 'HLMSTJ,ZFRFDG'}
-  - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Dollars:', font_size: 18, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    name: label_5
-    layout_properties:
-      col_widths: {}
-      grid_position: ALAKGO,XLOZVP
-  - type: Label
-    properties: {align: center, font_size: 18}
-    name: label_6
-    layout_properties:
-      col_widths: {}
-      grid_position: ALAKGO,WTIXAI
-    data_bindings:
-    - {property: text, code: 'self.item[''money_inr'']'}
-  - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Rupees:', font_size: 18, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    name: label_7
-    layout_properties:
-      col_widths: {}
-      grid_position: ZFOAOT,XUWCUZ
-  - type: Label
-    properties: {align: center, font_size: 18}
-    name: label_10
-    layout_properties:
-      col_widths: {}
-      grid_position: ZFOAOT,ZVQGUV
-    data_bindings:
-    - {property: text, code: 'self.item[''money_usd'']'}
-  - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Euro:', font_size: 18, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    name: label_8
-    layout_properties:
-      col_widths: {}
-      grid_position: XNCJUW,JJZIRM
-  - type: Label
-    properties: {align: center, font_size: 18}
-    name: label_11
-    layout_properties:
-      col_widths: {}
-      grid_position: XNCJUW,MXDWNC
-    data_bindings:
-    - {property: text, code: 'self.item[''money_euro'']'}
-  - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Swiss dollars:', font_size: 18, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
-    name: label_9
-    layout_properties:
-      col_widths: {}
-      grid_position: BUVYNI,GHAWMV
-  - type: Label
-    properties: {align: center, font_size: 18}
-    name: label_12
-    layout_properties:
-      col_widths: {}
-      grid_position: BUVYNI,UEOKPB
-    data_bindings:
-    - {property: text, code: 'self.item[''money_swis'']'}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: E- wallet Balance, font_size: 20, font: '', spacing_above: small,
@@ -201,20 +111,23 @@ components:
     properties: {text: Top up, align: center, bold: true, font_size: 18}
     type: Label
     layout_properties: {grid_position: 'ENVRNU,VFQRHZ'}
-  - name: drop_down_3
-    properties:
-      items: [$, Є, ₣, ₹]
-    type: DropDown
-    layout_properties: {grid_position: 'MGTKGN,SWYGFX'}
-  - name: drop_down_1
-    properties:
-      items: ['20000', '40000', '60000', '80000']
-    type: DropDown
-    layout_properties: {grid_position: 'MGTKGN,ZGXNHJ'}
+  - name: label_1
+    properties: {text: switch Top up on}
+    type: Label
+    layout_properties: {grid_position: 'PZNTDV,XVPXJR'}
   - name: button_1
     properties: {text: button_1}
     type: Button
     layout_properties: {grid_position: 'MGTKGN,YJXFEP'}
+    event_bindings: {click: button_1_click}
+  - name: button_2
+    properties: {text: button_2}
+    type: Button
+    layout_properties: {grid_position: 'MGTKGN,EGKDCV'}
+  - name: spacer_3
+    properties: {height: 297.74993896484375}
+    type: Spacer
+    layout_properties: {grid_position: 'ZJYNZW,DLBRCE'}
   - name: outlined_card_1_copy_2
     properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
       wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',

@@ -6,30 +6,42 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 class service(serviceTemplate):
-  def __init__(self, **properties):
-    self.init_components(**properties)
+    def __init__(self,user=None,**properties):
+        self.init_components(**properties)
+        self.user = user
 
-  
+    def link_1_click(self, **event_args):
+        open_form('Home')
 
+    def button_2_click(self, **event_args):
+        open_form('SIGNUP')
 
-  
+    def button_3_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        open_form("customer", user=self.user)
 
-  def link_1_click(self, **event_args):
-    open_form('Home')
+    def link_10_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        open_form("withdraw", user=self.user)
 
-  def button_2_click(self, **event_args):
-    open_form('SIGNUP')
+    def link_9_copy_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        open_form("transfer", user=self.user)
 
-  def button_3_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form("customer",user=self.user)
+    def button_1_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        query = self.text_box_1.text
 
-  def link_10_click(self, **event_args):
-    """This method is called when the link is clicked"""
-    open_form("withdraw",user=self.user)
+        # Fetch user information from the "users" table
+        user_info = app_tables.users.get(username=self.user['username'])
 
-  def link_9_copy_click(self, **event_args):
-    """This method is called when the link is clicked"""
-    open_form("transfer",user=self.user)
-
- 
+        if user_info is not None:
+            # Update the "Services" table with the query and user information
+            app_tables.sevices.add_row(
+                username=user_info['username'],
+                phone=user_info['phone'],
+                Query=query
+            )
+            alert("Your query has been submitted, and our Technical Executive will get in touch with you")
+        else:
+            alert("User information not found.")

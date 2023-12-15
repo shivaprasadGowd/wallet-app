@@ -9,6 +9,7 @@ from anvil import tables, app
 import time
 import random
 import uuid
+import datetime
 # server_module.py
 
 # Function to validate login credentials
@@ -53,7 +54,8 @@ def add_info(email, username, password, pan, address, phone, aadhar):
         aadhar=aadhar,
         usertype='customer',
         confirmed=True,
-        limit=str(100000)
+        limit=str(100000),
+        last_login=datetime.datetime.now().date()
     )
     return user_row
 
@@ -178,35 +180,11 @@ def update_daily_limit(name, emoney_value):
         return "User not found"
   
 
-
-# @anvil.server.background_task
-# def refresh_transaction_limit():
-#     # Set the transaction limit to 100,000 every 24 hours
-#     while True:
-#         # Wait for 24 hours
-#         anvil.server.wait(24 * 60 * 60)  # 24 hours in seconds
-
-#         # Update the transaction limit to 100,000 for every user
-#         with anvil.server.transaction():
-#             users_table = app_tables.users
-#             all_users = users_table.search()  # Get all users in the table
-            
-#             for user_record in all_users:
-#                 user_record['limit'] = 100000
-#                 users_table.update(user_record)
-
-# # Start the background task
-# refresh_transaction_limit()
-
-
-
-
-
-# ServerModule1
-
-# ServerModule1
-
-import anvil.server
+@anvil.server.callable
+def user_detail(name, no):
+  user_row = app_tables.users.get(username=name)
+  user_row['daily_limit_set']= str(no)
+  user_row.update()
 
 @anvil.server.callable
 def get_user_info(username):
@@ -217,7 +195,10 @@ def get_user_info(username):
     else:
         return None
 
-
+@anvil.server.callable
+def get_accounts_emoney_with_user(name):
+  user_emoney= app_tables.accounts.get(user=name)
+  return user_emoney
 
 
     

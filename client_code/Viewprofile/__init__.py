@@ -33,8 +33,7 @@ class Viewprofile(ViewprofileTemplate):
         self.text_box_3.text = f"{user_data['pan']}"
         self.text_box_4.text = f"{user_data['aadhar']}"
 
-    def link_1_click(self, **event_args):
-        open_form('customer', user=self.user)
+
 
     def button_1_click(self, **event_args):
         if not self.edit_mode:
@@ -99,3 +98,14 @@ class Viewprofile(ViewprofileTemplate):
 
     def link_8_click(self, **event_args):
       open_form('deposit', user = self.user)
+
+    def button_3_click(self, **event_args):
+      """This method is called when the button is clicked"""
+      open_form('customer', user=self.user)
+
+
+
+
+
+
+  

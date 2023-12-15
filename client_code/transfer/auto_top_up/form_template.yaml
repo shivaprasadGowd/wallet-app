@@ -5,7 +5,7 @@ container:
     role: null, html: ''}
 components:
 - type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{"VGGDSU":10,"DRXYTM":50,"YJXFEP":27,"SWYGFX":5}'}
+  properties: {role: outlined-card, col_widths: '{"VGGDSU":10,"DRXYTM":50,"YJXFEP":27,"UXWJPW":15,"RPEAIR":45}'}
   name: outlined_card_1
   layout_properties: {slot: default}
   components:
@@ -63,6 +63,14 @@ components:
     properties: {height: 40}
     name: spacer_2
     layout_properties: {grid_position: 'HLMSTJ,ZFRFDG'}
+  - name: label_2
+    properties: {text: 'Account no:'}
+    type: Label
+    layout_properties: {grid_position: 'QUZPXW,UXWJPW'}
+  - name: dropdown_account_numbers
+    properties: {}
+    type: DropDown
+    layout_properties: {grid_position: 'QUZPXW,RPEAIR'}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: E- wallet Balance, font_size: 20, font: '', spacing_above: small,

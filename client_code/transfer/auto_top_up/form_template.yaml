@@ -59,15 +59,6 @@ components:
       layout_properties: {grid_position: 'YMBFQL,QBOZEO'}
       event_bindings: {click: link_1_click}
       name: link_1
-  - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: 20, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '#3FE5FF', bold: true, underline: false,
-      icon: ''}
-    name: label_1
-    layout_properties:
-      col_widths: {}
-      grid_position: CFLMZJ,QLALFF
   - name: label_16
     properties: {text: 'Account number:', align: center, bold: true, font_size: 18}
     type: Label

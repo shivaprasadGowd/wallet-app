@@ -96,12 +96,31 @@ class Viewprofile(ViewprofileTemplate):
     def text_box_2_pressed_enter(self, **event_args):
       phone_number = self.text_box_2.text.strip()
 
-    def link_8_click(self, **event_args):
-      open_form('deposit', user = self.user)
+    def link_2_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("deposit",user=self.user)
 
-    def button_3_click(self, **event_args):
-      """This method is called when the button is clicked"""
-      open_form('customer', user=self.user)
+    def link_3_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("transfer",user=self.user)
+
+    def link_4_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("withdraw",user=self.user)
+
+    def link_7_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("service",user=self.user)
+
+    def link_13_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("Home")
+
+    def link_1_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("customer",user=self.user)
+
+  
 
 
 

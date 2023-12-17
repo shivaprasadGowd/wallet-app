@@ -70,6 +70,9 @@ db_schema:
     - name: top_up
       admin_ui: {order: 14.25, width: 200}
       type: bool
+    - name: top_up_amount
+      admin_ui: {width: 200}
+      type: string
     title: users
   accounts:
     client: full

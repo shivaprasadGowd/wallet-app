@@ -5,72 +5,70 @@ container:
     role: null, html: ''}
 components:
 - type: ColumnPanel
-  properties: {role: outlined-card, col_widths: '{"XNGELW":40}', background: 'theme:On
-      Primary'}
+  properties: {role: outlined-card, col_widths: '{}', background: 'theme:On Primary'}
   name: outlined_card_2
   layout_properties: {slot: default}
   components:
-  - name: flow_panel_1
+  - name: flow_panel_1_copy
     properties: {}
     type: FlowPanel
-    layout_properties: {grid_position: 'PWVQDP,HECYXR', full_width_row: true}
+    layout_properties: {grid_position: 'KPHMXP,RRRXSG', full_width_row: true}
     components:
-    - name: image_1_copy
+    - name: image_1_copy_copy
       properties: {role: null, vertical_align: center, height: 44.80000305175781,
         tooltip: '', border: '', foreground: '', visible: true, display_mode: shrink_to_fit,
         spacing_above: small, source: _/theme/GW-logo.jpg, spacing_below: small, background: white,
         horizontal_align: right}
       type: Image
       layout_properties: {width: 89.19999694824219}
-    - name: label_7_copy_2
+    - name: label_7_copy_2_copy
       properties: {text: 'G-Wallet         ', font_size: 25, align: left, bold: true,
         font: a, italic: false, underline: false, foreground: black}
       type: Label
       layout_properties: {}
-    - name: spacer_3_copy
+    - name: spacer_3_copy_copy
       properties: {height: 58.19996643066406}
       type: Spacer
-      layout_properties: {width: 342.38698779296874}
-    - name: column_panel_1
-      properties: {background: white, col_widths: '{"FKFVNM":25,"LDONGM":10,"EKRNNM":5,"CLCQWK":5,"VLVRBN":5,"GIPCOP":10}',
-        col_spacing: medium}
+      layout_properties: {width: 414.6999755859375}
+    - name: column_panel_1_copy
+      properties: {foreground: '', col_spacing: none, col_widths: '{"DZACHX":9,"EQLJSK":9,"IYMZZI":9,"QMIILD":9,"PIMIYE":8,"YSLIKN":6,"LADGEM":10}'}
       type: ColumnPanel
-      layout_properties: {width: 833.1500244140625, expand: true}
+      layout_properties: {width: 700, expand: false}
       components:
-      - name: link_8_copy
-        properties: {text: Deposit, align: right, bold: false, foreground: '#000',
-          font_size: 15}
+      - name: link_2
+        properties: {text: Deposit, align: center, bold: true, foreground: black}
         type: Link
-        layout_properties: {grid_position: 'JXFFNM,FKFVNM'}
-        event_bindings: {click: link_8_click}
-      - name: link_9_copy
-        properties: {text: Money Transfer, align: center, bold: false, foreground: black,
-          font_size: 15, col_spacing: tiny}
+        layout_properties: {grid_position: 'MNPBPI,DZACHX'}
+        event_bindings: {click: link_2_click}
+      - name: link_3
+        properties: {text: Money Transfer, bold: true, align: center, foreground: black}
         type: Link
-        layout_properties: {grid_position: 'JXFFNM,LDONGM'}
-        event_bindings: {click: link_9_copy_click}
-      - name: link_10_copy
-        properties: {text: 'Withdraw ', bold: false, align: center, foreground: black,
-          font_size: 15, background: white}
+        layout_properties: {grid_position: 'MNPBPI,EQLJSK'}
+        event_bindings: {click: link_3_click}
+      - name: link_4
+        properties: {text: Withdraw, bold: true, align: center, foreground: black}
         type: Link
-        layout_properties: {grid_position: 'JXFFNM,EKRNNM', full_width_row: true}
-        event_bindings: {click: link_10_click}
-      - name: link_12_copy
-        properties: {text: Career, align: center, bold: false, foreground: black,
-          font_size: 15}
+        layout_properties: {grid_position: 'MNPBPI,IYMZZI'}
+        event_bindings: {click: link_4_click}
+      - name: link_5
+        properties: {align: center, bold: true, text: Company, foreground: black}
         type: Link
-        layout_properties: {grid_position: 'JXFFNM,CLCQWK'}
-      - name: link_11_copy
-        properties: {text: 'Company  ', align: center, bold: false, foreground: black,
-          font_size: 15}
+        layout_properties: {grid_position: 'MNPBPI,QMIILD'}
+      - name: link_6
+        properties: {text: Career, align: center, bold: true, foreground: black}
         type: Link
-        layout_properties: {grid_position: 'JXFFNM,VLVRBN'}
-      - name: button_3
-        properties: {text: Home, bold: false, foreground: black, font_size: 15, role: null,
-          background: ''}
-        type: Button
-        layout_properties: {grid_position: 'JXFFNM,GIPCOP'}
-        event_bindings: {click: button_3_click}
+        layout_properties: {grid_position: 'MNPBPI,PIMIYE'}
+        event_bindings: {click: link_6_click}
+      - name: link_7
+        properties: {text: Home, align: center, bold: true, foreground: black}
+        type: Link
+        layout_properties: {grid_position: 'MNPBPI,YSLIKN'}
+        event_bindings: {click: link_7_click}
+      - name: link_13
+        properties: {align: center, bold: true, text: Logout, foreground: black, icon: 'fa:sign-out'}
+        type: Link
+        layout_properties: {grid_position: 'MNPBPI,LADGEM'}
+        event_bindings: {click: link_13_click}
   - name: image_1
     properties: {source: 'https://www.openprovider.com/_next/image?url=https%3A%2F%2Fassets.openprovider.com%2Fwp-content%2Fuploads%2F2022%2F10%2Fcustomer-supp-blog-1200x300-1.png&w=3840&q=75',
       background: '#1f82be'}

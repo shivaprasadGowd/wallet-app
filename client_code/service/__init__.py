@@ -10,23 +10,11 @@ class service(serviceTemplate):
         self.init_components(**properties)
         self.user = user
 
-    def link_1_click(self, **event_args):
-        open_form('Home')
+ 
 
-    def button_2_click(self, **event_args):
-        open_form('SIGNUP')
+   
 
-    def button_3_click(self, **event_args):
-        """This method is called when the button is clicked"""
-        open_form("customer", user=self.user)
-
-    def link_10_click(self, **event_args):
-        """This method is called when the link is clicked"""
-        open_form("withdraw", user=self.user)
-
-    def link_9_copy_click(self, **event_args):
-        """This method is called when the link is clicked"""
-        open_form("transfer", user=self.user)
+  
 
     def button_1_click(self, **event_args):
         """This method is called when the button is clicked"""
@@ -45,3 +33,25 @@ class service(serviceTemplate):
             alert("Your query has been submitted, and our Technical Executive will get in touch with you")
         else:
             alert("User information not found.")
+
+    def link_2_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("deposit",user=self.user)
+
+    def link_3_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("transfer",user=self.user)
+
+    def link_4_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("withdraw",user=self.user)
+
+    def link_7_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("customer", user=self.user)
+
+    def link_13_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("Home")
+
+   

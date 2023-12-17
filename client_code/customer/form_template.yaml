@@ -21,11 +21,11 @@ components:
   - name: spacer_3_copy
     properties: {height: 58.19996643066406}
     type: Spacer
-    layout_properties: {width: 155.36198779296876}
+    layout_properties: {width: 439.3120122070313}
   - name: column_panel_1
     properties: {foreground: '', col_spacing: none, col_widths: '{"DZACHX":9,"EQLJSK":9,"IYMZZI":9,"QMIILD":9,"PIMIYE":8,"YSLIKN":6,"LADGEM":10}'}
     type: ColumnPanel
-    layout_properties: {width: 960.6999755859375}
+    layout_properties: {width: 700, expand: false}
     components:
     - name: link_2
       properties: {text: Deposit, align: center, bold: true, foreground: black}
@@ -62,7 +62,7 @@ components:
       layout_properties: {grid_position: 'MNPBPI,LADGEM'}
       event_bindings: {click: link_13_click}
 - name: xy_panel_1
-  properties: {height: 346, spacing_above: large, spacing_below: large}
+  properties: {height: 294.79998779296875, spacing_above: large, spacing_below: large}
   type: XYPanel
   layout_properties: {grid_position: 'JWDQNU,SBQFQI', full_width_row: true}
   components:
@@ -73,7 +73,7 @@ components:
   - name: xy_panel_1_copy
     properties: {height: 286, spacing_above: large, spacing_below: large, background: '#1e75b9'}
     type: XYPanel
-    layout_properties: {x: 0, y: 0, width: 1460.6000061035156}
+    layout_properties: {x: 0, y: 0, width: 1478.0000244140624}
     components:
     - name: canvas_1_copy
       properties: {height: 100}
@@ -101,76 +101,78 @@ components:
       properties: {height: 263.1999816894531, source: 'https://www.temenos.com/wp-content/uploads/2023/05/Genie-Wallet-pic1-768x432.png'}
       type: Image
       layout_properties: {x: 970.1250732429326, y: 22.8125, width: 411.1875}
-  - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: 20, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '#3FE5FF', bold: true, underline: false,
-      icon: ''}
-    name: label_1
-    layout_properties: {x: 253.850033570081, y: 301.4375, width: 970}
-- name: button_1
-  properties: {role: elevated-button, foreground: '#000000', text: Viewprofile, font_size: 13,
-    font: '', spacing_above: small, spacing_below: small, background: '#3FE5FF', bold: true,
-    icon: 'fa:address-card'}
-  type: Button
-  layout_properties: {grid_position: 'AUXOJI,BZXOFS OIPOLX,AWFASH'}
-  event_bindings: {click: button_1_click}
-- name: button_3
-  properties: {text: Invest, role: outlined-button, background: '#3FE5FF', foreground: '#000000',
-    bold: true, align: left}
-  type: Button
-  layout_properties: {grid_position: 'AUXOJI,BZXOFS KGRJLR,OPIIKE'}
-- name: button_5
-  properties: {text: upi, bold: true, role: outlined-button, background: '#3FE5FF',
-    foreground: '#000000'}
-  type: Button
-  layout_properties: {grid_position: 'AUXOJI,BZXOFS PXVPJN,KJFIKH'}
-- name: button_2
-  properties: {role: elevated-button, foreground: '#000000', text: Create wallet,
-    font_size: 13, font: '', spacing_above: small, spacing_below: small, background: '#3FE5FF',
-    bold: true, icon: 'fa:money'}
-  type: Button
-  layout_properties: {grid_position: 'AUXOJI,FJTMDS DCOAHZ,LUDKIS'}
-  event_bindings: {click: button_2_click}
-- name: button_4
-  properties: {text: Mutual Funds, role: outlined-button, background: '#3FE5FF', foreground: '#000000',
-    bold: true, icon_align: right, align: right}
-  type: Button
-  layout_properties: {grid_position: 'AUXOJI,FJTMDS MOQJKA,FVNXHT'}
-- name: button_6
-  properties: {text: Secure Transactions, bold: true, role: outlined-button, background: '#3FE5FF',
-    foreground: '#000000'}
-  type: Button
-  layout_properties: {grid_position: 'AUXOJI,FJTMDS GFVQWC,AYZMST'}
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '#2270ad',
+    visible: true, text: '', font_size: 23, font: a, spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: true,
+    icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'VWISLN,QDIVXP'}
 - name: image_1
-  properties: {source: _/theme/pngtree-thinking-man-illustration-with-question-mark-and-light-bulb-for-business-png-image_8803664.png,
+  properties: {source: 'https://static.vecteezy.com/system/resources/previews/012/976/256/original/financial-illustration-set-saving-money-in-cash-credit-card-or-savings-in-bank-accounts-payment-transactions-transfer-e-wallet-finance-management-and-savings-concept-flat-illustration-free-vector.jpg',
     height: 272.25}
   type: Image
-  layout_properties: {grid_position: 'EXUMIV,RMJFBQ'}
+  layout_properties: {grid_position: 'NQGNPJ,EWTFPW'}
+- name: spacer_3
+  properties: {height: 5.5999755859375}
+  type: Spacer
+  layout_properties: {grid_position: 'JOFFXL,SAFEMC'}
+- name: button_1
+  properties: {role: elevated-button, align: left, foreground: white, text: 'Viewprofile           ',
+    font_size: 15, font: '', spacing_above: small, spacing_below: small, background: '#1d6eae',
+    bold: true, icon: 'fa:address-card'}
+  type: Button
+  layout_properties: {grid_position: 'AUXOJI,BZXOFS'}
+  event_bindings: {click: button_1_click}
+- name: button_3
+  properties: {text: 'Invest                     ', role: outlined-button, background: '#1d6eae',
+    foreground: white, bold: true, align: center, font_size: 16}
+  type: Button
+  layout_properties: {grid_position: 'AUXOJI,GHKVDP'}
+  event_bindings: {click: button_3_click}
+- name: button_2
+  properties: {role: elevated-button, align: right, foreground: white, text: 'Create
+      wallet       ', font_size: 15, font: '', spacing_above: small, spacing_below: small,
+    background: '#1d6eae', bold: true, icon: 'fa:money'}
+  type: Button
+  layout_properties: {grid_position: 'AUXOJI,FJTMDS'}
+  event_bindings: {click: button_2_click}
+- name: button_6
+  properties: {text: Secure Transactions, bold: true, role: outlined-button, background: '#1d6eae',
+    foreground: white, font_size: 15, align: left}
+  type: Button
+  layout_properties: {grid_position: 'BWEGGJ,CQEKTC'}
+- name: button_5
+  properties: {text: 'UPI                          ', bold: true, role: outlined-button,
+    background: '#1d6eae', foreground: white, font_size: 15, align: center}
+  type: Button
+  layout_properties: {grid_position: 'BWEGGJ,WOXSGV'}
+- name: button_4
+  properties: {text: 'Mutual Funds           ', role: outlined-button, background: '#1d6eae',
+    foreground: white, bold: true, icon_align: right, align: right, font_size: 15}
+  type: Button
+  layout_properties: {grid_position: 'BWEGGJ,RDYILW'}
 - name: spacer_1
-  properties: {height: 61.25}
+  properties: {height: 80}
   type: Spacer
   layout_properties: {grid_position: 'TJENXP,CDZZNM'}
-- name: xy_panel_2
-  properties: {height: 502.24993896484375}
-  type: XYPanel
-  layout_properties: {grid_position: 'KIJJZA,ZTOQRI', full_width_row: true}
-  components:
-  - name: label_7_copy
-    properties: {text: G-Wallet Payments App, font_size: 41, align: center, bold: true}
-    type: Label
-    layout_properties: {x: 0, y: 0, width: 668}
-  - name: label_8_copy
-    properties: {text: ' Experience Digital Wallet from different device', align: center,
-      bold: true, font_size: 30}
-    type: Label
-    layout_properties: {x: 20.046875, y: 323.390625, width: 620}
-  - name: image_4
-    properties: {source: _/theme/laptop.jpg, height: 498.25}
-    type: Image
-    layout_properties: {x: 761, y: 3.984375, width: 1067}
+- name: image_2
+  properties: {height: 218.19998168945312, source: 'https://www.pngitem.com/pimgs/m/730-7301546_digital-wallet-top-up-bill-payments-banner-img.png'}
+  type: Image
+  layout_properties: {grid_position: 'XXDRHN,XUKKMS'}
+- name: label_5
+  properties: {text: 'E-wallets are crucial for modern finance, providing users with
+      convenient and secure digital platforms for transactions. They enhance financial
+      inclusion, offering services to those without access to traditional banking.
+      E-wallets streamline global transactions, enabling cross-border payments and
+      international trade. The integration of rewards and loyalty programs fosters
+      customer loyalty. Contactless payments through e-wallets are essential, offering
+      a safer alternative.', align: center, italic: true, background: '', foreground: '#216aa3',
+    font_size: 18, font: a, bold: true}
+  type: Label
+  layout_properties: {grid_position: 'MSQHNF,HUXYOR'}
 - name: spacer_2
-  properties: {height: 64.25}
+  properties: {height: 216}
   type: Spacer
   layout_properties: {grid_position: 'TSMOOI,LCFSRS'}
 - name: outlined_card_3
@@ -313,7 +315,7 @@ components:
 - name: outlined_card_1_copy
   properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
     wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',
-    spacing_below: none, background: 'theme:On Surface Variant'}
+    spacing_below: none, background: '#1d6eae'}
   type: ColumnPanel
   layout_properties: {grid_position: 'ESUIAU,PGHVRS', full_width_row: true}
   components:

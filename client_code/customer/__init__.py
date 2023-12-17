@@ -57,3 +57,5 @@ class customer(customerTemplate):
       open_form('deposit', user= self.user)
 
    
+
+   

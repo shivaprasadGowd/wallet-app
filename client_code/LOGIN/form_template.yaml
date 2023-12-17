@@ -96,13 +96,13 @@ components:
       properties: {height: 47}
       type: Spacer
       layout_properties: {row: YZSGZO, width_xs: 12, col_xs: 0}
-    - name: label_8_copy
+    - type: Label
       properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-        visible: true, text: 'New user ?', font_size: 16, font: '', spacing_above: small,
+        visible: true, text: 'Existing user ?', font_size: 16, font: '', spacing_above: small,
         icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-        underline: true, icon: ''}
-      type: Label
-      layout_properties: {row: YZSGZO, width_xs: 12, col_xs: 0}
+        underline: false, icon: ''}
+      name: label_8
+      layout_properties: {row: XWWDDB, width_xs: 12, col_xs: 0}
     - type: Label
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
         visible: true, text: Enter Your Username /email /phone number, font_size: null,
@@ -149,13 +149,13 @@ components:
       properties: {height: 57.199981689453125}
       type: Spacer
       layout_properties: {row: QTSQGX, width_xs: 12, col_xs: 0}
-    - type: Label
+    - name: label_8_copy
       properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-        visible: true, text: 'Existing user ?', font_size: 16, font: '', spacing_above: small,
+        visible: true, text: 'New user ?', font_size: 16, font: '', spacing_above: small,
         icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-        underline: false, icon: ''}
-      name: label_8
-      layout_properties: {row: HVMAXF, width_xs: 12, col_xs: 0}
+        underline: true, icon: ''}
+      type: Label
+      layout_properties: {row: KGCPTG, width_xs: 12, col_xs: 0}
     - type: Button
       properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
         foreground: white, visible: true, text: 'Sign up     ', font_size: 16, font: '',

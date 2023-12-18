@@ -88,6 +88,9 @@ class admin_view(admin_viewTemplate):
        user_to_delete = app_tables.users.get(username=username)
   
        if user_to_delete is not None:
+              # Capture changes for logging
+              changes_made = [f"User '{username}' account deleted"]
+         
               # Delete user from 'users' table
               user_to_delete.delete()
       
@@ -102,6 +105,9 @@ class admin_view(admin_viewTemplate):
                   currency.delete()
       
               alert("User and associated information deleted successfully.", title="Success")
+
+              # Log deletion action to 'actions' table
+              self.log_action(username, changes_made)
       
               # Clear textboxes after deletion
               self.clear_textboxes()
@@ -164,7 +170,7 @@ class admin_view(admin_viewTemplate):
                 changes_made = []
                 # Check and log changes made by the admin
                 if user_to_update['email'] != self.text_box_2.text:
-                  changes_made.append(f"Email updated to {self.text_box_2.text}")
+                  changes_made.append(f"Email updated to '{self.text_box_2.text}'")
                 if user_to_update['password'] != self.text_box_3.text:
                   changes_made.append("Password updated")
                 if user_to_update['phone'] != self.text_box_4.text:

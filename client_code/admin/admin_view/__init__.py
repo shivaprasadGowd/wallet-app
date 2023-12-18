@@ -164,13 +164,13 @@ class admin_view(admin_viewTemplate):
                 changes_made = []
                 # Check and log changes made by the admin
                 if user_to_update['email'] != self.text_box_2.text:
-                  changes=changes_made.append(f"Email updated to {self.text_box_2.text}")
+                  changes_made.append(f"Email updated to {self.text_box_2.text}")
                 if user_to_update['password'] != self.text_box_3.text:
-                  changes=changes_made.append("Password updated")
+                  changes_made.append("Password updated")
                 if user_to_update['phone'] != self.text_box_4.text:
-                  changes=changes_made.append(f"Phone number updated to {self.text_box_4.text}")
+                  changes_made.append(f"Phone number updated to {self.text_box_4.text}")
                 if user_to_update['address'] != self.text_box_7.text:
-                  changes=changes_made.append(f"Address updated to {self.text_box_7.text}")
+                  changes_made.append(f"Address updated to {self.text_box_7.text}")
 
               
                 user_to_update.update(
@@ -182,8 +182,9 @@ class admin_view(admin_viewTemplate):
                     address=self.text_box_7.text
                 )
 
-                # Log changes to 'actions' table
-                self.log_action(username, changes_made)
+                # Log changes to 'actions' table if changes were made
+                if changes_made:
+                    self.log_action(username, changes_made)
 
 
                 alert("Changes saved successfully.", title="Success")
@@ -246,31 +247,36 @@ class admin_view(admin_viewTemplate):
             # Update the 'hold' column in the 'users' table
             user_to_update.update(hold=new_state if new_state else None)
 
-            # Update button text based on the new state
-            self.button_5.text = "Unfreeze" if new_state else "Freeze"
-
             # Log action to 'actions' table
             action = "User frozen" if new_state else "User unfrozen"
             self.log_action(username, [action])
 
+            # Update button text based on the new state
+            self.button_5.text = "Unfreeze" if new_state else "Freeze"
 
             # Display alert based on the action
             alert_message = "User is frozen." if new_state else "User is unfrozen."
             alert(alert_message, title="Status")
 
     def log_action(self, username, changes):
-      # Log actions to 'actions' table
-      timestamp = datetime.now()
-      last_login = anvil.users.get_user(username).last_login.timestamp() if anvil.users.get_user(username) else None
-      app_tables.actions.add_row(
-        username=username,
-        last_login=timestamp,
-        changes=", ".join(changes),
-        #timestamp=timestamp
-      )
+        # Retrieve last_login from the 'users' table
+        user = app_tables.users.get(username=username)
+        last_login = None
+
+        if user and user['last_login']:
+            last_login = user['last_login']
+
+        # Log actions to 'actions' table if changes were made
+        if changes:
+            timestamp = datetime.now()
+            app_tables.actions.add_row(
+                username=username,
+                last_login=last_login,
+                changes=", ".join(changes),
+                #timestamp=timestamp
+            )
   
     def link_1_click(self, **event_args):
      open_form('Home')
 
-    def link_8_click(self, **event_args):
-      open_form('admin')
+   

@@ -21,7 +21,7 @@ components:
   - name: spacer_3_copy
     properties: {height: 58.19996643066406}
     type: Spacer
-    layout_properties: {width: 439.3120122070313}
+    layout_properties: {width: 787.297}
   - name: column_panel_1
     properties: {foreground: '', col_spacing: none, col_widths: '{"DZACHX":9,"EQLJSK":9,"IYMZZI":9,"QMIILD":9,"PIMIYE":8,"YSLIKN":6,"LADGEM":10}'}
     type: ColumnPanel
@@ -73,7 +73,7 @@ components:
   - name: xy_panel_1_copy
     properties: {height: 286, spacing_above: large, spacing_below: large, background: '#1e75b9'}
     type: XYPanel
-    layout_properties: {x: 0, y: 0, width: 1478.0000244140624}
+    layout_properties: {x: 0, y: 0, width: 1844}
     components:
     - name: canvas_1_copy
       properties: {height: 100}

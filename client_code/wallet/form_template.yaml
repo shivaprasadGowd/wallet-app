@@ -29,7 +29,7 @@ components:
     - name: spacer_3_copy_copy
       properties: {height: 58.19996643066406}
       type: Spacer
-      layout_properties: {width: 315.4630122070312}
+      layout_properties: {width: 694.438}
     - name: column_panel_1_copy
       properties: {foreground: '', col_spacing: none, col_widths: '{"DZACHX":9,"EQLJSK":9,"IYMZZI":9,"QMIILD":9,"PIMIYE":8,"YSLIKN":6,"LADGEM":10}'}
       type: ColumnPanel
@@ -83,7 +83,7 @@ components:
       properties: {source: 'https://cdni.iconscout.com/illustration/premium/thumb/e-wallet-4487367-3722728.png',
         background: '#258ee1', horizontal_align: center, height: 220.20001220703125}
       type: Image
-      layout_properties: {x: 0, y: 0, width: 1426.5999633789063}
+      layout_properties: {x: 0, y: 0, width: 1814.5898779296874}
     - name: label_2
       properties: {text: '" The Best way to handle your money "', bold: true, align: left,
         foreground: white, font: a, font_size: 25}

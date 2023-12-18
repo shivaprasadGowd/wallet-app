@@ -38,6 +38,9 @@ class admin(adminTemplate):
 
   def button_4_click(self, **event_args):
     pass
+
+  def button_3_click(self, **event_args):
+    open_form('admin.report_analysis')
  
 
        

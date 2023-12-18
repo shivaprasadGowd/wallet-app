@@ -11,6 +11,7 @@ class report_analysis(report_analysisTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
+        self.button_1_click()  # Call the button click to hide the plot initially
         self.refresh_data()
 
     def refresh_data(self):
@@ -39,12 +40,22 @@ class report_analysis(report_analysisTemplate):
             elif trans_type == 'Account to E-wallet':
                 data_for_plot[date]['Account to E-wallet'] += money_amount
 
-        # Plot the data
-        categories = list(data_for_plot.keys())
-        deposit_values = [data['Deposit'] for data in data_for_plot.values()]
-        e_wallet_values = [data['Account to E-wallet'] for data in data_for_plot.values()]
+        # Plot the data only when the button is clicked
+        if self.button_1.text == "Transaction trends":
+            self.plot_1.visible = False
+        else:
+            categories = list(data_for_plot.keys())
+            deposit_values = [data['Deposit'] for data in data_for_plot.values()]
+            e_wallet_values = [data['Account to E-wallet'] for data in data_for_plot.values()]
 
-        self.plot_1.data = [
-            {'x': categories, 'y': deposit_values, 'type': 'bar', 'name': 'Deposit'},
-            {'x': categories, 'y': e_wallet_values, 'type': 'bar', 'name': 'Account to E-wallet'}
-        ]
+            self.plot_1.data = [
+                {'x': categories, 'y': deposit_values, 'type': 'bar', 'name': 'Deposit'},
+                {'x': categories, 'y': e_wallet_values, 'type': 'bar', 'name': 'Account to E-wallet'}
+            ]
+            self.plot_1.visible = True
+
+    def button_1_click(self, **event_args):
+        # Toggle the text of the button
+        self.button_1.text = "Hide Transaction trends" if self.button_1.text == "Transaction trends" else "Transaction trends"
+        # Refresh the data to update the graph visibility
+        self.refresh_data()

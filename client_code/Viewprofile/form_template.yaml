@@ -109,7 +109,7 @@ components:
   - name: grid_panel_1
     properties: {}
     type: GridPanel
-    layout_properties: {grid_position: ',undefined'}
+    layout_properties: {grid_position: 'GQLOOV,NOODBG'}
     components:
     - type: Label
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
@@ -117,11 +117,11 @@ components:
         icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
         underline: false, icon: ''}
       name: label_7
-      layout_properties: {row: VSGPRU, width_xs: 4, col_xs: 0}
+      layout_properties: {row: VSGPRU, width_xs: 2, col_xs: 3}
     - type: TextBox
       properties: {background: white}
       name: text_box_1
-      layout_properties: {row: VSGPRU, width_xs: 8, col_xs: 4}
+      layout_properties: {row: VSGPRU, width_xs: 5, col_xs: 5}
       data_bindings:
       - {property: text, code: 'self.item[''email'']', writeback: true}
     - type: Label
@@ -130,14 +130,14 @@ components:
         icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
         underline: false, icon: ''}
       name: label_9
-      layout_properties: {row: MQPQVI, width_xs: 4, col_xs: 0}
+      layout_properties: {row: RAKHCV, width_xs: 2, col_xs: 3}
     - type: TextBox
       properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
         border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
         font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
         background: white, bold: false, underline: false}
       name: text_box_2
-      layout_properties: {row: MQPQVI, width_xs: 8, col_xs: 4}
+      layout_properties: {row: RAKHCV, width_xs: 5, col_xs: 5}
       data_bindings:
       - {property: text, code: 'self.item[''phone'']', writeback: true}
       event_bindings: {pressed_enter: text_box_2_pressed_enter}
@@ -147,11 +147,11 @@ components:
         icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
         underline: false, icon: ''}
       name: label_10
-      layout_properties: {row: CHDOHQ, width_xs: 4, col_xs: 0}
+      layout_properties: {row: YQXCIG, width_xs: 2, col_xs: 3}
     - type: TextBox
       properties: {background: white}
       name: text_box_3
-      layout_properties: {row: CHDOHQ, width_xs: 8, col_xs: 4}
+      layout_properties: {row: YQXCIG, width_xs: 5, col_xs: 5}
       data_bindings:
       - {property: text, code: 'self.item[''pan'']', writeback: true}
       event_bindings: {change: text_box_3_change}
@@ -161,14 +161,14 @@ components:
         icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
         underline: false, icon: ''}
       name: label_11
-      layout_properties: {row: GRKRPC, width_xs: 4, col_xs: 0}
+      layout_properties: {row: GRKRPC, width_xs: 2, col_xs: 3}
     - type: TextBox
       properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
         border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
         font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
         background: white, bold: false, underline: false}
       name: text_box_4
-      layout_properties: {row: GRKRPC, width_xs: 8, col_xs: 4}
+      layout_properties: {row: GRKRPC, width_xs: 5, col_xs: 4}
       data_bindings:
       - {property: text, code: 'self.item[''aadhar'']', writeback: true}
     - type: Button

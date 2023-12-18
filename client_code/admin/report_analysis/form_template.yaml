@@ -7,4 +7,5 @@ components:
   name: plot_1
   layout_properties: {grid_position: 'ADJYEY,OGHVMB'}
   event_bindings: {click: plot_1_click}
+  data_bindings: []
 is_package: true

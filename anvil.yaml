@@ -52,9 +52,6 @@ db_schema:
     - name: hold
       admin_ui: {order: 10, width: 200}
       type: bool
-    - name: limit
-      admin_ui: {order: 14.5, width: 200}
-      type: string
     - name: confirmed_email
       admin_ui: {width: 200}
       type: bool

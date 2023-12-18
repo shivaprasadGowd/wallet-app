@@ -13,7 +13,7 @@ class report_analysis(report_analysisTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-
-  def plot_1_click(self, points, **event_args):
-    """This method is called when a data point is clicked."""
-    pass
+    self.plot_1.data = anvil.server.call('generate_transaction_trend_data')
+    self.plot_1.x = 'transaction_type'
+    self.plot_1.y = 'total_volume'
+    self.plot_1.type = 'bar'

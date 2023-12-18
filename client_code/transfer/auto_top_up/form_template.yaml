@@ -139,36 +139,42 @@ components:
     properties: {height: 297.74993896484375}
     type: Spacer
     layout_properties: {grid_position: 'ZJYNZW,DLBRCE'}
-  - name: outlined_card_1_copy_2
+  - name: outlined_card_1_copy_3
     properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
       wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',
-      spacing_below: none, background: 'theme:On Surface Variant'}
+      spacing_below: none, background: '#2270ad'}
     type: ColumnPanel
-    layout_properties: {grid_position: 'NDQHUN,IVCMRX', full_width_row: true}
+    layout_properties: {grid_position: 'NDQHUN,ATWBDS', full_width_row: true}
     components:
-    - name: label_1_copy
-      properties: {text: CopyRight2023@Gwallet, align: left, bold: true, font_size: 16,
+    - name: label_1_copy_copy
+      properties: {text: CopyRight2023@Gwallet, align: left, bold: false, font_size: 12,
         visible: true, role: input-prompt, foreground: 'theme:On Primary'}
       type: Label
       layout_properties: {grid_position: 'XSXLAE,XVKBKL'}
-    - name: label_2_copy
-      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
-          Primary', visible: true, text: 'Disclaimer ', font_size: 18, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    - name: label_2_copy_2
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: Disclaimer, font_size: 12, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
         underline: false, icon: ''}
       type: Label
       layout_properties: {grid_position: 'XSXLAE,VMILPR'}
-    - name: label_3_copy
+    - name: label_3_copy_2
       properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
-          Primary', visible: true, text: 'Privacy Policy ', font_size: 18, font: '',
+          Primary', visible: true, text: Privacy Policy, font_size: 12, font: '',
         spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-        background: '', bold: true, underline: false, icon: ''}
+        background: '', bold: false, underline: false, icon: ''}
       type: Label
       layout_properties: {grid_position: 'XSXLAE,FDANOO'}
-    - name: label_4_copy
+    - name: label_4
       properties: {role: null, align: right, tooltip: '', border: '', foreground: 'theme:On
-          Primary', visible: true, text: 'Code Of Commitment ', font_size: 18, font: '',
+          Primary', visible: true, text: Code Of Commitment, font_size: 12, font: '',
         spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-        background: '', bold: true, underline: false, icon: ''}
+        background: '', bold: false, underline: false, icon: ''}
       type: Label
       layout_properties: {grid_position: 'XSXLAE,HAKDVS'}
+    - name: link_8_copy
+      properties: {align: right, text: Customer Service, foreground: white, font_size: 12,
+        bold: false}
+      type: Link
+      layout_properties: {grid_position: 'XSXLAE,NFTMSZ'}
+      event_bindings: {click: link_8_click}

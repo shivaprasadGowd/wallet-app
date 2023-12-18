@@ -1,6 +1,5 @@
 from ._anvil_designer import report_analysisTemplate
 from anvil import *
-import plotly.graph_objects as go
 import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
@@ -25,7 +24,7 @@ class report_analysis(report_analysisTemplate):
             trans_type = transaction['transaction_type']
 
             if date not in data_for_plot:
-                data_for_plot[date] = {'Deposit': 0, 'Account to E-wallet': 0}
+                data_for_plot[date] = {'Deposit': 0, 'Withdrawal': 0, 'Account to E-wallet': 0}
 
             # Extract numeric value from the 'money' field using regular expressions
             money_match = re.search(r'[-€$]?([\d,.]+)', transaction['money'])
@@ -37,6 +36,8 @@ class report_analysis(report_analysisTemplate):
 
             if trans_type == 'Deposit':
                 data_for_plot[date]['Deposit'] += money_amount
+            elif trans_type == 'Withdrawal':
+                data_for_plot[date]['Withdrawal'] += money_amount
             elif trans_type == 'Account to E-wallet':
                 data_for_plot[date]['Account to E-wallet'] += money_amount
 
@@ -46,12 +47,15 @@ class report_analysis(report_analysisTemplate):
         else:
             categories = list(data_for_plot.keys())
             deposit_values = [data['Deposit'] for data in data_for_plot.values()]
+            withdrawal_values = [data['Withdrawal'] for data in data_for_plot.values()]
             e_wallet_values = [data['Account to E-wallet'] for data in data_for_plot.values()]
 
             self.plot_1.data = [
                 {'x': categories, 'y': deposit_values, 'type': 'bar', 'name': 'Deposit'},
+                {'x': categories, 'y': withdrawal_values, 'type': 'bar', 'name': 'Withdrawal'},
                 {'x': categories, 'y': e_wallet_values, 'type': 'bar', 'name': 'Account to E-wallet'}
             ]
+
             self.plot_1.visible = True
 
     def button_1_click(self, **event_args):

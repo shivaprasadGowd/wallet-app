@@ -13,6 +13,7 @@ unique_ids:
     admin.transaction_monitoring: '1702379421139779860213683.6781'
     admin.set_limit: '170247960216686412415526.09702'
     admin: '1700199610247838843848268.7214'
+    admin.audit_trail.ItemTemplate7: '1702896380065690208086312.5657'
     admin.account_management.ItemTemplate6: '1702466863839286833553505.93054'
     admin.admin_add_user: 32Q2RSJZI57ON37KYU63PP4TMBFH3JKF
     admin.show_users: '1701866131079410237471234.79047'
@@ -26,6 +27,7 @@ unique_ids:
     SIGNUP: '1700198434288731474488224.3363'
     service: '1702379982871794148779167.743'
     customer: '1700650184946263831557477.6373'
+    admin.audit_trail: '1702895127831863299320417.6018'
     admin.user_management: '1702374973447618923926485.4978'
     transfer.transaction_history: '1702315180069530524430198.96936'
     transfer.transaction_history.ItemTemplate4: '17023778375281450567700.6879659'

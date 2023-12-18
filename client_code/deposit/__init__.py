@@ -116,5 +116,9 @@ class deposit(depositTemplate):
       """This method is called when the link is clicked"""
       open_form("Home")
 
+    def link_8_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("service",user=self.user)
+
   
   

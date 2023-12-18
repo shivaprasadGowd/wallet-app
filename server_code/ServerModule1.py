@@ -54,7 +54,6 @@ def add_info(email, username, password, pan, address, phone, aadhar):
         aadhar=aadhar,
         usertype='customer',
         confirmed=True,
-        limit=str(100000),
         last_login=datetime.datetime.now().date()
     )
     return user_row
@@ -202,23 +201,8 @@ def get_accounts_emoney_with_user(name):
 
 
 @anvil.server.callable
-def generate_transaction_trend_data():
-    # Fetch transaction data from the data table
-    transaction_data = app_tables.transactions.search()
-
-    # Process the data to calculate total transaction volume for each type
-    trend_data = {}
-    for record in transaction_data:
-        transaction_type = record['transaction_type']
-        money = record['money']
-        if transaction_type not in trend_data:
-            trend_data[transaction_type] = money
-        else:
-            trend_data[transaction_type] += money
-
-    # Convert the data to a list of dictionaries
-    result = [{'transaction_type': key, 'total_volume': value} for key, value in trend_data.items()]
-    return result
+def get_transactions():
+    return app_tables.transactions.search()
 
 
     

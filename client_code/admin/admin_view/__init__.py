@@ -54,7 +54,7 @@ class admin_view(admin_viewTemplate):
 
     def button_2_click(self, **event_args):
     # Get the selected account number from the dropdown
-       selected_account_number = float(self.drop_down_1.selected_value)
+       selected_account_number = (self.drop_down_1.selected_value)
 
 # Get the 'e_money' amount from the 'accounts' table
        account = app_tables.accounts.get(user=self.text_box_1.text, casa=selected_account_number)
@@ -68,7 +68,7 @@ class admin_view(admin_viewTemplate):
           return
   
       # Check if currency values are not empty
-       currency_details = app_tables.currencies.get(casa=float(selected_account_number))
+       currency_details = app_tables.currencies.get(casa=(selected_account_number))
 
        if currency_details and (
           currency_details['money_usd'] is not None and float(currency_details['money_usd']) > 0 or

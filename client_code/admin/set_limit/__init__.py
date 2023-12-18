@@ -40,7 +40,7 @@ class set_limit(set_limitTemplate):
         
         # Log actions to 'actions' table if changes were made
         if changes:
-            timestamp = datetime.now()
+            current_datetime = datetime.now()
             app_tables.actions.add_row(
                 username=username,
                 last_login=last_login,

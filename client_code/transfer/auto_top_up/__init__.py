@@ -17,17 +17,7 @@ class auto_top_up(auto_top_upTemplate):
     self.button_2.visible= False
 
 
-  def link_8_click(self, **event_args):
-    open_form('deposit',user= self.user)
 
-  def link_10_click(self, **event_args):
-    open_form('withdraw',user= self.user)
-
-  def link_1_click(self, **event_args):
-    open_form('customer', user= self.user)
-
-  def link_9_click(self, **event_args):
-    open_form('transfer',user= self.user)
 
   def button_1_click(self, **event_args):
     self.user['top_up']= True
@@ -75,3 +65,31 @@ class auto_top_up(auto_top_upTemplate):
     self.user.update()
     self.button_1.visible = True
     self.button_2.visible = False
+
+  def link_8_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form("service",user=self.user)
+
+  def link_2_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form("deposit",user=self.user)
+
+  def link_3_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form("transfer",user=self.user)
+
+  def link_4_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form("withdraw",user=self.user)
+
+  def link_7_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form("service",user=self.user)
+
+  def link_1_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form("customer",user=self.user)
+
+  def link_13_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form("Home")

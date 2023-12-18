@@ -55,7 +55,7 @@ def add_info(email, username, password, pan, address, phone, aadhar):
         usertype='customer',
         confirmed=True,
         limit=str(100000),
-        last_login= datetime.now()
+        last_login=datetime.datetime.now().date()
     )
     return user_row
 

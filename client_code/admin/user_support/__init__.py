@@ -13,3 +13,7 @@ class user_support(user_supportTemplate):
     if serves_data is not None:
             # Bind the data to the Repeating Panel
      self.repeating_panel_1.items = serves_data
+
+  def link_1_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('LOGIN')

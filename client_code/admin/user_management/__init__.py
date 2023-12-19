@@ -7,15 +7,13 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 class user_management(user_managementTemplate):
-  def __init__(self, user= None, **properties):
+  def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.user = user
-
     # Any code you write here will run before the form opens.
 
   def button_2_click(self, **event_args):
-   open_form('admin.show_users', user= self.user)
+   open_form('admin.show_users')
 
   def button_1_click(self, **event_args):
-   open_form('admin.admin_add_user', user = self.user)
+   open_form('admin.admin_add_user')

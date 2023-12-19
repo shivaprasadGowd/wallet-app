@@ -38,6 +38,10 @@ class admin(adminTemplate):
   def button_4_click(self, **event_args):
     pass
 
+
+  def button_7_click(self, **event_args):
+    open_form('admin.audit_trail')
+
   def button_3_click(self, **event_args):
     open_form('admin.report_analysis')
     # Retrieve data from the 'serves' table
@@ -45,6 +49,7 @@ class admin(adminTemplate):
 
     # Open the admin.user_support form and pass the serves_data
     user_support_form = open_form('admin.user_support', serves_data=serves_data)
+
 
 
  

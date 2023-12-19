@@ -119,6 +119,7 @@ components:
         background: '#3FE5FF', bold: true, underline: false, icon: ''}
       name: button_7
       layout_properties: {grid_position: 'QXQZMX,DHQSXC'}
+      event_bindings: {click: button_7_click}
     - type: Button
       properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
         foreground: '#000000', visible: true, text: User Support, font_size: null,

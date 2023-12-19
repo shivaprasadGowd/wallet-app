@@ -2,6 +2,7 @@ import anvil.users
 from ._anvil_designer import admin_viewTemplate
 from anvil import alert, open_form
 from anvil.tables import app_tables
+from datetime import datetime
 import re
 
 class admin_view(admin_viewTemplate):
@@ -54,7 +55,7 @@ class admin_view(admin_viewTemplate):
 
     def button_2_click(self, **event_args):
     # Get the selected account number from the dropdown
-       selected_account_number = float(self.drop_down_1.selected_value)
+       selected_account_number = (self.drop_down_1.selected_value)
 
 # Get the 'e_money' amount from the 'accounts' table
        account = app_tables.accounts.get(user=self.text_box_1.text, casa=selected_account_number)
@@ -68,7 +69,7 @@ class admin_view(admin_viewTemplate):
           return
   
       # Check if currency values are not empty
-       currency_details = app_tables.currencies.get(casa=float(selected_account_number))
+       currency_details = app_tables.currencies.get(casa=(selected_account_number))
 
        if currency_details and (
           currency_details['money_usd'] is not None and float(currency_details['money_usd']) > 0 or
@@ -87,6 +88,9 @@ class admin_view(admin_viewTemplate):
        user_to_delete = app_tables.users.get(username=username)
   
        if user_to_delete is not None:
+              # Capture changes for logging
+              changes_made = [f"User '{username}' account deleted"]
+         
               # Delete user from 'users' table
               user_to_delete.delete()
       
@@ -101,6 +105,9 @@ class admin_view(admin_viewTemplate):
                   currency.delete()
       
               alert("User and associated information deleted successfully.", title="Success")
+
+              # Log deletion action to 'actions' table
+              self.log_action(username, changes_made)
       
               # Clear textboxes after deletion
               self.clear_textboxes()
@@ -159,6 +166,18 @@ class admin_view(admin_viewTemplate):
             user_to_update = app_tables.users.get(username=username)
 
             if user_to_update is not None:
+                
+                changes_made = []
+                # Check and log changes made by the admin
+                if user_to_update['email'] != self.text_box_2.text:
+                  changes_made.append(f"User '{username}' Email updated to '{self.text_box_2.text}'")
+                if user_to_update['password'] != self.text_box_3.text:
+                  changes_made.append(f"User '{username}' Password updated")
+                if user_to_update['phone'] != self.text_box_4.text:
+                  changes_made.append(f"User '{username}' Phone number updated to '{self.text_box_4.text}'")
+                if user_to_update['address'] != self.text_box_7.text:
+                  changes_made.append(f"User '{username}' Address updated to '{self.text_box_7.text}'")
+              
                 user_to_update.update(
                     email=self.text_box_2.text,
                     password=self.text_box_3.text,
@@ -168,6 +187,11 @@ class admin_view(admin_viewTemplate):
                     address=self.text_box_7.text
                 )
 
+                # Log changes to 'actions' table if changes were made
+                if changes_made:
+                    self.log_action(username, changes_made)
+
+
                 alert("Changes saved successfully.", title="Success")
 
                 # Toggle back to view mode after saving changes
@@ -175,6 +199,7 @@ class admin_view(admin_viewTemplate):
         else:
             # Toggle to edit mode
             self.toggle_edit_mode()
+
 
     def button_3_click(self, **event_args):
         open_form('admin.show_users')
@@ -228,6 +253,10 @@ class admin_view(admin_viewTemplate):
             # Update the 'hold' column in the 'users' table
             user_to_update.update(hold=new_state if new_state else None)
 
+            # Log action to 'actions' table
+            action = f"User '{username}' is frozen" if new_state else f"User '{username}' is unfrozen"
+            self.log_action(username, [action])
+
             # Update button text based on the new state
             self.button_5.text = "Unfreeze" if new_state else "Freeze"
 
@@ -235,5 +264,34 @@ class admin_view(admin_viewTemplate):
             alert_message = "User is frozen." if new_state else "User is unfrozen."
             alert(alert_message, title="Status")
 
+    def log_action(self, username, changes):
+        # Retrieve last_login from the 'users' table
+        user = app_tables.users.get(username=username)
+        last_login = None
+
+        if user and user['last_login']:
+            last_login = user['last_login']
+
+        # Retrieve the user's type ('admin' or 'customer')
+        usertype = user['usertype'] if user else None
+        admin_email = None
+
+        if usertype == 'admin':
+          # Retrieve the admin's email if the user is an admin
+          admin_email = anvil.server.call('get_admin_email', username)
+
+        # Log actions to 'actions' table if changes were made
+        if changes:
+            timestamp = datetime.now()
+            app_tables.actions.add_row(
+                username=username,
+                last_login=last_login,
+                changes=", ".join(changes),
+                admin_email=admin_email,
+                date=timestamp
+            )
+  
     def link_1_click(self, **event_args):
      open_form('Home')
+
+   

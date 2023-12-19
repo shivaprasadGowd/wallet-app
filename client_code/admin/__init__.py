@@ -12,6 +12,7 @@ class admin(adminTemplate):
   def __init__(self, user=None, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.user = user
     if user is not None:
             self.label_1.text = f"Welcome to Green Gate Financial, {user['username']}"
     else:
@@ -39,7 +40,7 @@ class admin(adminTemplate):
 
 
   def button_7_click(self, **event_args):
-    open_form('admin.audit_trail')
+    open_form('admin.audit_trail', user = self.user)
 
   def button_3_click(self, **event_args):
     open_form('admin.report_analysis')

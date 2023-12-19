@@ -43,7 +43,7 @@ class set_limit(set_limitTemplate):
                 username=username,
                 last_login=last_login,
                 changes=", ".join(changes),
-                date=current_datetime
+                date=current_datetime,
+                admin_email= self.user_data['email']
             )
-    setter = anvil.server.call('user_detail', username, self.text_box_1.text)
     

@@ -8,9 +8,10 @@ from anvil.tables import app_tables
 from datetime import datetime
 
 class audit_trail(audit_trailTemplate):
-  def __init__(self, **properties):
+  def __init__(self, user= None, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.user = user
     self.repeating_panel_1.items = app_tables.actions.search()
 
             

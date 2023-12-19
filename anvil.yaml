@@ -183,4 +183,9 @@ db_schema:
       admin_ui: {order: 4, width: 200}
       type: datetime
     title: actions
+  admins:
+    client: none
+    server: full
+    columns: []
+    title: admins
 renamed: true

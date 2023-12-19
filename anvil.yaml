@@ -182,10 +182,8 @@ db_schema:
     - name: last_login
       admin_ui: {order: 4, width: 200}
       type: datetime
+    - name: admin_identifier
+      admin_ui: {width: 200, order: 5}
+      type: string
     title: actions
-  admins:
-    client: none
-    server: full
-    columns: []
-    title: admins
 renamed: true

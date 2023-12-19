@@ -178,6 +178,9 @@ class admin_view(admin_viewTemplate):
                 if user_to_update['address'] != self.text_box_7.text:
                   changes_made.append(f"Address updated to {self.text_box_7.text}")
 
+                # Get the admin's identifier here (you should substitute 'get_admin_identifier' with the actual method or variable to retrieve the admin's name or ID)
+                admin_identifier = anvil.server.call('get_admin_identifier', username)
+
               
                 user_to_update.update(
                     email=self.text_box_2.text,
@@ -190,7 +193,7 @@ class admin_view(admin_viewTemplate):
 
                 # Log changes to 'actions' table if changes were made
                 if changes_made:
-                    self.log_action(username, changes_made)
+                    self.log_action(username, changes_made,admin_identifier)
 
 
                 alert("Changes saved successfully.", title="Success")
@@ -200,6 +203,10 @@ class admin_view(admin_viewTemplate):
         else:
             # Toggle to edit mode
             self.toggle_edit_mode()
+
+    # def get_admin_identifier(self,usertype):
+    #   admin_data = app_tables.users.get(usertype=admin)
+    #   return admin_data
 
     def button_3_click(self, **event_args):
         open_form('admin.show_users')
@@ -264,7 +271,7 @@ class admin_view(admin_viewTemplate):
             alert_message = "User is frozen." if new_state else "User is unfrozen."
             alert(alert_message, title="Status")
 
-    def log_action(self, username, changes):
+    def log_action(self, username, changes, admin_identifier):
         # Retrieve last_login from the 'users' table
         user = app_tables.users.get(username=username)
         last_login = None
@@ -279,6 +286,7 @@ class admin_view(admin_viewTemplate):
                 username=username,
                 last_login=last_login,
                 changes=", ".join(changes),
+                admin_identifier=admin_identifier
                 #timestamp=timestamp
             )
   

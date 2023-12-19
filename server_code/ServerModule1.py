@@ -38,10 +38,20 @@ def get_user_for_login(login_input):
   else:
             return None
 
-
 @anvil.server.callable
 def add_info(email, username, password, pan, address, phone, aadhar):
     current_datetime = datetime.now()
+    user_type = 'customer'  # Default user type is set to 'customer'
+    limit = None  # Default limit for admin users
+    
+    # Check if the email domain indicates an admin user
+    if email.endswith('@admin.com'):
+        current_datetime = datetime.now()
+        user_type = 'admin'  # Set user type as 'admin'
+    else:
+        limit = str(100000)  # Set limit for customer users
+    
+    #current_datetime = datetime.now()
     user_row = app_tables.users.add_row(
         email=email,
         username=username,
@@ -50,12 +60,41 @@ def add_info(email, username, password, pan, address, phone, aadhar):
         address=address,
         phone=phone,
         aadhar=aadhar,
-        usertype='customer',
+        usertype=user_type,  # Use the determined user type
         confirmed=True,
-        limit=str(100000),
+        limit=limit,  # Set the limit based on the user type
         last_login=datetime.now()
     )
     return user_row
+
+@anvil.server.callable
+def get_admin_identifier(username):
+    current_user = app_tables.users.get(username=username)
+    
+    if current_user and current_user['email'].endswith('@admin.com'):
+        return current_user['email']  # Return the email of the admin user
+    else:
+        return None  # If the current user is not recognized as an admin
+
+
+
+# @anvil.server.callable
+# def add_info(email, username, password, pan, address, phone, aadhar):
+#     current_datetime = datetime.now()
+#     user_row = app_tables.users.add_row(
+#         email=email,
+#         username=username,
+#         password=password,
+#         pan=pan,
+#         address=address,
+#         phone=phone,
+#         aadhar=aadhar,
+#         usertype='customer',
+#         confirmed=True,
+#         limit=str(100000),
+#         last_login=datetime.now()
+#     )
+#     return user_row
 
 @anvil.server.callable
 def generate_unique_id(username, phone):

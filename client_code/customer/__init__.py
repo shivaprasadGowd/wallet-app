@@ -10,9 +10,9 @@ class customer(customerTemplate):
         date = datetime.datetime.now().date()
         if date != self.user['last_login']:
           if self.user['daily_limit_set'] == None:
-            self.user['limit']=str(100000)
+            self.user['daily_limit_set']=str(100000)
           else:
-            self.user['limit']= self.user['daily_limit_set']
+            self.user['daily_limit_set']= self.user['daily_limit_set']
           self.user['last_login']= date
         self.user.update()
 

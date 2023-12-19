@@ -40,18 +40,6 @@ def get_user_for_login(login_input):
 
 @anvil.server.callable
 def add_info(email, username, password, pan, address, phone, aadhar):
-    current_datetime = datetime.now()
-    user_type = 'customer'  # Default user type is set to 'customer'
-    limit = None  # Default limit for admin users
-    
-    # Check if the email domain indicates an admin user
-    if email.endswith('@admin.com'):
-        current_datetime = datetime.now()
-        user_type = 'admin'  # Set user type as 'admin'
-    else:
-        limit = str(100000)  # Set limit for customer users
-    
-    #current_datetime = datetime.now()
     user_row = app_tables.users.add_row(
         email=email,
         username=username,
@@ -60,10 +48,10 @@ def add_info(email, username, password, pan, address, phone, aadhar):
         address=address,
         phone=phone,
         aadhar=aadhar,
-        usertype=user_type,  # Use the determined user type
+        usertype='customer',
         confirmed=True,
-        limit=limit,  # Set the limit based on the user type
-        last_login=datetime.now()
+        limit=str(100000),
+        last_login=datetime.datetime.now().date()
     )
     return user_row
 

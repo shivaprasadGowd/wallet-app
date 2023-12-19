@@ -45,3 +45,5 @@ class set_limit(set_limitTemplate):
                 changes=", ".join(changes),
                 date=current_datetime
             )
+    setter = anvil.server.call('user_detail', username, self.text_box_1.text)
+    

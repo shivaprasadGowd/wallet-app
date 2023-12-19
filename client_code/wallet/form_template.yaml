@@ -29,7 +29,7 @@ components:
     - name: spacer_3_copy_copy
       properties: {height: 58.19996643066406}
       type: Spacer
-      layout_properties: {width: 315.4630122070312}
+      layout_properties: {width: 694.438}
     - name: column_panel_1_copy
       properties: {foreground: '', col_spacing: none, col_widths: '{"DZACHX":9,"EQLJSK":9,"IYMZZI":9,"QMIILD":9,"PIMIYE":8,"YSLIKN":6,"LADGEM":10}'}
       type: ColumnPanel
@@ -83,7 +83,7 @@ components:
       properties: {source: 'https://cdni.iconscout.com/illustration/premium/thumb/e-wallet-4487367-3722728.png',
         background: '#258ee1', horizontal_align: center, height: 220.20001220703125}
       type: Image
-      layout_properties: {x: 0, y: 0, width: 1426.5999633789063}
+      layout_properties: {x: 0, y: 0, width: 1814.5898779296874}
     - name: label_2
       properties: {text: '" The Best way to handle your money "', bold: true, align: left,
         foreground: white, font: a, font_size: 25}
@@ -222,3 +222,42 @@ components:
     name: button_save_bank_details
     layout_properties: {grid_position: 'TQGSCO,HHFHNO'}
     event_bindings: {click: button_save_bank_details_click}
+  - name: outlined_card_1
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: none, spacing_above: none, col_widths: '{"VMILPR":8,"FDANOO":15,"HAKDVS":15}',
+      spacing_below: none, background: '#2270ad'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'IGGAGX,SSUGIR', full_width_row: true}
+    components:
+    - name: label_1_copy
+      properties: {text: CopyRight2023@Gwallet, align: left, bold: false, font_size: 12,
+        visible: true, role: input-prompt, foreground: 'theme:On Primary'}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,XVKBKL'}
+    - name: label_2_copy
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: Disclaimer, font_size: 12, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,VMILPR'}
+    - name: label_3_copy
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: Privacy Policy, font_size: 12, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,FDANOO'}
+    - name: label_4_copy
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: Code Of Commitment, font_size: 12, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'XSXLAE,HAKDVS'}
+    - name: link_8
+      properties: {align: right, text: Customer Service, foreground: white, font_size: 12,
+        bold: false}
+      type: Link
+      layout_properties: {grid_position: 'XSXLAE,NFTMSZ'}
+      event_bindings: {click: link_8_click}

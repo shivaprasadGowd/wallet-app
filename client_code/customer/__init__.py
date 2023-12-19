@@ -11,10 +11,12 @@ class customer(customerTemplate):
         current_datetime = datetime.now()
         if current_datetime != self.user['last_login']:
           if self.user['daily_limit_set'] == None:
-            self.user['limit']=str(100000)
+            self.user['daily_limit_set']=str(100000)
           else:
             self.user['limit']= self.user['daily_limit_set']
           self.user['last_login']= current_datetime
+            self.user['daily_limit_set']= self.user['daily_limit_set']
+          self.user['last_login']= date
         self.user.update()
 
         if user:
@@ -56,6 +58,10 @@ class customer(customerTemplate):
     def link_2_click(self, **event_args):
       """This method is called when the link is clicked"""
       open_form('deposit', user= self.user)
+
+    def link_8_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("service",user=self.user)
 
    
 

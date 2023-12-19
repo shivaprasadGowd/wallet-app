@@ -23,4 +23,4 @@ class set_limit(set_limitTemplate):
   def outlined_button_1_click(self, **event_args):
     username = self.user_data['username']
     setter = anvil.server.call('user_detail', username, self.text_box_1.text)
-
+    

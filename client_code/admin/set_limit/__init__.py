@@ -18,8 +18,6 @@ class set_limit(set_limitTemplate):
         # Now you can access the username or any other user data
             
   def outlined_button_1_click(self, **event_args):
-    # username = self.user_data['username']
-    # setter = anvil.server.call('user_detail', username, self.text_box_1.text)
     username = self.user_data['username']
     new_limit = self.text_box_1.text
         
@@ -45,5 +43,5 @@ class set_limit(set_limitTemplate):
                 username=username,
                 last_login=last_login,
                 changes=", ".join(changes),
-                #timestamp=timestamp
+                date=current_datetime
             )

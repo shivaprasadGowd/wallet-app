@@ -170,17 +170,13 @@ class admin_view(admin_viewTemplate):
                 changes_made = []
                 # Check and log changes made by the admin
                 if user_to_update['email'] != self.text_box_2.text:
-                  changes_made.append(f"Email updated to '{self.text_box_2.text}'")
+                  changes_made.append(f"User '{username}' Email updated to '{self.text_box_2.text}'")
                 if user_to_update['password'] != self.text_box_3.text:
-                  changes_made.append("Password updated")
+                  changes_made.append(f"User '{username}' Password updated")
                 if user_to_update['phone'] != self.text_box_4.text:
-                  changes_made.append(f"Phone number updated to {self.text_box_4.text}")
+                  changes_made.append(f"User '{username}' Phone number updated to '{self.text_box_4.text}'")
                 if user_to_update['address'] != self.text_box_7.text:
-                  changes_made.append(f"Address updated to {self.text_box_7.text}")
-
-                # Get the admin's identifier here (you should substitute 'get_admin_identifier' with the actual method or variable to retrieve the admin's name or ID)
-                admin_identifier = anvil.server.call('get_admin_identifier', username)
-
+                  changes_made.append(f"User '{username}' Address updated to '{self.text_box_7.text}'")
               
                 user_to_update.update(
                     email=self.text_box_2.text,
@@ -193,7 +189,7 @@ class admin_view(admin_viewTemplate):
 
                 # Log changes to 'actions' table if changes were made
                 if changes_made:
-                    self.log_action(username, changes_made,admin_identifier)
+                    self.log_action(username, changes_made)
 
 
                 alert("Changes saved successfully.", title="Success")
@@ -204,9 +200,6 @@ class admin_view(admin_viewTemplate):
             # Toggle to edit mode
             self.toggle_edit_mode()
 
-    # def get_admin_identifier(self,usertype):
-    #   admin_data = app_tables.users.get(usertype=admin)
-    #   return admin_data
 
     def button_3_click(self, **event_args):
         open_form('admin.show_users')
@@ -261,7 +254,7 @@ class admin_view(admin_viewTemplate):
             user_to_update.update(hold=new_state if new_state else None)
 
             # Log action to 'actions' table
-            action = "User frozen" if new_state else "User unfrozen"
+            action = f"User '{username}' is frozen" if new_state else f"User '{username}' is unfrozen"
             self.log_action(username, [action])
 
             # Update button text based on the new state
@@ -271,7 +264,7 @@ class admin_view(admin_viewTemplate):
             alert_message = "User is frozen." if new_state else "User is unfrozen."
             alert(alert_message, title="Status")
 
-    def log_action(self, username, changes, admin_identifier):
+    def log_action(self, username, changes):
         # Retrieve last_login from the 'users' table
         user = app_tables.users.get(username=username)
         last_login = None
@@ -286,8 +279,7 @@ class admin_view(admin_viewTemplate):
                 username=username,
                 last_login=last_login,
                 changes=", ".join(changes),
-                admin_identifier=admin_identifier
-                #timestamp=timestamp
+                date=timestamp
             )
   
     def link_1_click(self, **event_args):

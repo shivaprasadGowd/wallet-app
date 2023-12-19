@@ -125,6 +125,9 @@ db_schema:
     - name: transaction_type
       admin_ui: {order: 5, width: 246}
       type: string
+    - name: proof
+      admin_ui: {width: 200, order: 6}
+      type: string
     title: transactions
   currencies:
     client: full

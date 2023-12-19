@@ -204,6 +204,38 @@ def get_accounts_emoney_with_user(name):
 def get_transactions():
     return app_tables.transactions.search()
 
+@anvil.server.callable
+def get_user_data():
+    # Fetch user data from the 'users' table
+    users_data = app_tables.users.search()
+
+    # Create a list to store user information
+    user_list = []
+
+    # Iterate through each user's data
+    for user_row in users_data:
+        # Check the 'banned' column to determine if the user is active or non-active
+        if user_row['banned'] is None:
+            status = 'Active'
+        else:
+            status = 'Non-Active'
+
+        # Append user information to the list
+        user_info = {
+            'username': user_row['username'],
+            'banned': user_row['banned'],
+            'status': status  # Include the 'status' information based on the 'banned' column
+        }
+        user_list.append(user_info)
+
+    return user_list
+  
+@anvil.server.callable
+def get_transaction_proofs():
+    # Fetch proof data from the 'transactions' table
+    transaction_proofs = app_tables.transactions.search()
+
+    return transaction_proofs
 
     
     

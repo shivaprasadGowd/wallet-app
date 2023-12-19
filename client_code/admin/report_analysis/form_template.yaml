@@ -51,12 +51,12 @@ components:
     layout_properties: {grid_position: 'RQYEAC,FVDCJP'}
     event_bindings: {click: link_1_click}
 - type: Button
-  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+  properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '#000', visible: true, text: ' Transaction Trends', font_size: null,
     font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
     background: '#3FE5FF', bold: true, underline: false, icon: ''}
   name: button_1
-  layout_properties: {grid_position: 'UACVUG,MOPDDS'}
+  layout_properties: {grid_position: 'BWPOPQ,CMWHCK', full_width_row: false, row_background: ''}
   event_bindings: {click: button_1_click}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
@@ -64,18 +64,33 @@ components:
     spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#3FE5FF',
     bold: true, underline: false, icon: ''}
   name: button_2
-  layout_properties: {grid_position: 'UACVUG,BJECVG'}
+  layout_properties: {grid_position: 'BWPOPQ,CBARFI', row_background: '', full_width_row: false}
+  event_bindings: {click: button_2_click}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: black, visible: true, text: System Performance, font_size: null, font: '',
+    foreground: black, visible: true, text: System performance, font_size: null, font: '',
     spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#3FE5FF',
     bold: true, underline: false, icon: ''}
   name: button_3
-  layout_properties: {grid_position: 'UACVUG,YGGEIN'}
+  layout_properties: {grid_position: 'BWPOPQ,AEMFXH', row_background: '', full_width_row: false}
+  event_bindings: {click: button_3_click}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_1
+  layout_properties: {grid_position: 'RTKTUI,RCYVSQ'}
 - type: Plot
   properties: {}
   name: plot_1
   layout_properties: {grid_position: 'ADJYEY,OGHVMB'}
   event_bindings: {click: plot_1_click}
   data_bindings: []
+- type: Plot
+  properties: {}
+  name: plot_2
+  layout_properties: {grid_position: 'LJCEPA,LIQZGG'}
+  event_bindings: {click: plot_2_click}
+- type: Plot
+  properties: {}
+  name: plot_3
+  layout_properties: {grid_position: 'PNJBTR,DWEMVH'}
 is_package: true

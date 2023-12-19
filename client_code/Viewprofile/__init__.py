@@ -120,6 +120,10 @@ class Viewprofile(ViewprofileTemplate):
       """This method is called when the link is clicked"""
       open_form("customer",user=self.user)
 
+    def link_8_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form("service",user=self.user)
+
   
 
 

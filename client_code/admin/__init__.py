@@ -40,6 +40,13 @@ class admin(adminTemplate):
 
   def button_3_click(self, **event_args):
     open_form('admin.report_analysis')
+    # Retrieve data from the 'serves' table
+    serves_data = app_tables.sevices.search()
+
+    # Open the admin.user_support form and pass the serves_data
+    user_support_form = open_form('admin.user_support', serves_data=serves_data)
+
+
  
 
        

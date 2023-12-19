@@ -8,7 +8,7 @@ from anvil.tables import app_tables
 import re
 
 class admin_add_user(admin_add_userTemplate):
-  def __init__(self, **properties):
+  def __init__(self,user= None **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 

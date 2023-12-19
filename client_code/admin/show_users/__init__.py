@@ -7,8 +7,9 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 class show_users(show_usersTemplate):
-    def __init__(self, **properties):
+    def __init__(self, user= None, **properties):
         self.init_components(**properties)
+        self.user= user
 
         # Set the visibility of the button to False
         self.button_1.visible = False

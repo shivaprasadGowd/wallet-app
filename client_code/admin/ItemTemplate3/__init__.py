@@ -8,8 +8,9 @@ from anvil.tables import app_tables
 
 
 class ItemTemplate3(ItemTemplate3Template):
-    def __init__(self, **properties):
+    def __init__(self, user= None, **properties):
         self.init_components(**properties)
+        self.user =user
        
        
     def button_1_click(self, **event_args):
@@ -17,7 +18,7 @@ class ItemTemplate3(ItemTemplate3Template):
         selected_user = self.item  # Assuming you have set the 'item' property of the repeating panel to the user row
         
         # Open the admin_view form and pass the user details
-        open_form('admin.admin_view', user_data=selected_user)
+        open_form('admin.admin_view', user= self.user, user_data=selected_user)
 
     
 

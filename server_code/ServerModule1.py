@@ -67,6 +67,16 @@ def add_info(email, username, password, pan, address, phone, aadhar):
     )
     return user_row
 
+@anvil.server.callable
+def get_admin_email(username):
+    admin_user = app_tables.users.get(username=username, usertype='admin')
+    
+    if admin_user and admin_user['email'].endswith('@admin.com'):
+        return admin_user['email']  # Return the email of the admin user
+    else:
+        return None  # If the current user is not recognized as an admin
+
+
 
 @anvil.server.callable
 def generate_unique_id(username, phone):

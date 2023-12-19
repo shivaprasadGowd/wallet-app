@@ -2,20 +2,18 @@ import anvil.users
 from ._anvil_designer import customerTemplate
 from anvil import open_form
 import datetime
-from datetime import datetime
+
 
 class customer(customerTemplate):
     def __init__(self, user=None, **properties):
         self.init_components(**properties)
         self.user = user  # Set the user attribute
-        current_datetime = datetime.now()
-        if current_datetime != self.user['last_login']:
+        date = datetime.datetime.now().date()
+        if date != self.user['last_login']:
           if self.user['daily_limit_set'] == None:
-            self.user['daily_limit_set']=str(100000)
+            self.user['limit']=str(100000)
           else:
             self.user['limit']= self.user['daily_limit_set']
-            self.user['last_login']= current_datetime
-            self.user['daily_limit_set']= self.user['daily_limit_set']
           self.user['last_login']= date
         self.user.update()
 

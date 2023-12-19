@@ -12,7 +12,18 @@ class audit_trail(audit_trailTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.user = user
+    self.action_info()
     self.repeating_panel_1.items = app_tables.actions.search()
+
+  def action_info(self):
+    
+    if self.user is not None:
+      user_info = anvil.server.call('add_info', self.user['username'], self.last_login['last_login'])
+      app_tables.actions.add_row(
+                username=user_info['username'],
+                last_login=datetime.datetime.now().date(),
+                changes=changes
+            )
 
             
 

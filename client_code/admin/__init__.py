@@ -35,8 +35,7 @@ class admin(adminTemplate):
   def button_2_click(self, **event_args):
     open_form('admin.transaction_monitoring')
 
-  def button_4_click(self, **event_args):
-    pass
+  
 
 
   def button_7_click(self, **event_args):
@@ -44,7 +43,10 @@ class admin(adminTemplate):
 
   def button_3_click(self, **event_args):
     open_form('admin.report_analysis')
-    # Retrieve data from the 'serves' table
+   
+
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
     serves_data = app_tables.sevices.search()
 
     # Open the admin.user_support form and pass the serves_data

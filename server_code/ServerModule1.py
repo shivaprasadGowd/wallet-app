@@ -64,8 +64,6 @@ def add_info(email, username, password, pan, address, phone, aadhar):
         confirmed=True,
         limit=limit,  # Set the limit based on the user type
         last_login=datetime.now()
-
-        last_login=datetime.datetime.now().date()
     )
     return user_row
 

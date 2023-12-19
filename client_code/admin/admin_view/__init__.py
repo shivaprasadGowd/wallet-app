@@ -284,11 +284,11 @@ class admin_view(admin_viewTemplate):
         if changes:
             timestamp = datetime.now()
             app_tables.actions.add_row(
-                username=username,
+                username= self.user_data['username'],
                 last_login=last_login,
                 changes=", ".join(changes),
-                admin_email=admin_email,
-                date=timestamp
+                date=timestamp,
+                admin_email = self.user_data['email']
             )
   
     def link_1_click(self, **event_args):

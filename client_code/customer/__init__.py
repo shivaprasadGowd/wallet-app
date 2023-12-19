@@ -14,7 +14,7 @@ class customer(customerTemplate):
             self.user['daily_limit_set']=str(100000)
           else:
             self.user['limit']= self.user['daily_limit_set']
-          self.user['last_login']= current_datetime
+            self.user['last_login']= current_datetime
             self.user['daily_limit_set']= self.user['daily_limit_set']
           self.user['last_login']= date
         self.user.update()

@@ -273,14 +273,6 @@ class admin_view(admin_viewTemplate):
         if user and user['last_login']:
             last_login = user['last_login']
 
-        # Retrieve the user's type ('admin' or 'customer')
-        usertype = user['usertype'] if user else None
-        admin_email = None
-
-        if usertype == 'admin':
-          # Retrieve the admin's email if the user is an admin
-          admin_email = anvil.server.call('get_admin_email', username)
-
         # Log actions to 'actions' table if changes were made
         if changes:
             timestamp = datetime.now()
@@ -289,7 +281,6 @@ class admin_view(admin_viewTemplate):
                 last_login=last_login,
                 changes=", ".join(changes),
                 date=timestamp,
-                admin_email = self.user_data['email']
             )
   
     def link_1_click(self, **event_args):

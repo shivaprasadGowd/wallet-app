@@ -64,14 +64,14 @@ components:
     spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#3FE5FF',
     bold: true, underline: false, icon: ''}
   name: button_2
-  layout_properties: {grid_position: 'UAZLZB,KSPPCS'}
+  layout_properties: {grid_position: 'UACVUG,BJECVG'}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: black, visible: true, text: System Performance, font_size: null, font: '',
     spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#3FE5FF',
     bold: true, underline: false, icon: ''}
   name: button_3
-  layout_properties: {grid_position: 'TLZFIG,FFLRKT'}
+  layout_properties: {grid_position: 'UACVUG,YGGEIN'}
 - type: Plot
   properties: {}
   name: plot_1

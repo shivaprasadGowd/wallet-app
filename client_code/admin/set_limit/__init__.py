@@ -11,9 +11,9 @@ class set_limit(set_limitTemplate):
   def __init__(self, user_data=None, **properties):
         # Initialize the base class
         self.init_components(**properties)
-        
         # Access the user_data passed from the calling form
         self.user_data = user_data
+        print(name)
         
         # Now you can access the username or any other user data
             
@@ -35,6 +35,7 @@ class set_limit(set_limitTemplate):
         
         if user and user['last_login']:
             last_login = user['last_login']
+          
         
         # Log actions to 'actions' table if changes were made
         if changes:

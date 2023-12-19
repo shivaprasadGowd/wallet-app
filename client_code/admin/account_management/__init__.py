@@ -7,10 +7,9 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 class account_management(account_managementTemplate):
-  def __init__(self,user = None, **properties):
+  def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.user = user
     self.button_1.visible = False
        
 

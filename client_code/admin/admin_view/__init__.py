@@ -6,9 +6,8 @@ from datetime import datetime
 import re
 
 class admin_view(admin_viewTemplate):
-    def __init__(self, user= None, user_data=None, **properties):
+    def __init__(self, user_data=None, **properties):
         self.init_components(**properties)
-        self.user= user
         self.edit_mode = False 
       
         self.text_box_8.visible = False

@@ -12,7 +12,7 @@ components:
   - name: flow_panel_1
     properties: {}
     type: FlowPanel
-    layout_properties: {grid_position: 'QJPOVR,RFLMAJ'}
+    layout_properties: {grid_position: 'QJPOVR,RFLMAJ', full_width_row: true}
     components:
     - name: image_1_copy
       properties: {role: null, vertical_align: center, height: 44.80000305175781,
@@ -26,8 +26,12 @@ components:
         font: a, italic: false, underline: false, foreground: black}
       type: Label
       layout_properties: {}
+    - name: spacer_4_copy
+      properties: {height: 46.75}
+      type: Spacer
+      layout_properties: {width: 285}
     - name: column_panel_1
-      properties: {background: white, col_widths: '{"FKFVNM":26,"LDONGM":11,"EKRNNM":9,"CLCQWK":2,"DAOHBK":12}',
+      properties: {background: white, col_widths: '{"FKFVNM":26,"LDONGM":11,"EKRNNM":9,"DAOHBK":12}',
         col_spacing: medium}
       type: ColumnPanel
       layout_properties: {width: 833.1500244140625, expand: true}

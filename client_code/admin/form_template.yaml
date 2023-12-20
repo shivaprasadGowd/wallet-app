@@ -26,6 +26,10 @@ components:
         font: a, italic: false, underline: false, foreground: black}
       type: Label
       layout_properties: {}
+    - name: spacer_4
+      properties: {height: 46.75}
+      type: Spacer
+      layout_properties: {width: 359}
     - name: column_panel_1
       properties: {background: white, col_widths: '{"FKFVNM":26,"LDONGM":11,"EKRNNM":9,"CLCQWK":2,"DAOHBK":12}',
         col_spacing: medium}

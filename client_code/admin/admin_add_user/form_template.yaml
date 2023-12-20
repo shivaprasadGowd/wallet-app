@@ -84,9 +84,9 @@ components:
     layout_properties: {grid_position: 'QBMHRG,LJULLI RUZJVE,JHYSWX'}
   - name: text_box_1
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Email,
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      border: '', enabled: true, foreground: black, visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: email, spacing_below: small, italic: false,
-      background: '#DFFDFF', bold: false, underline: false}
+      background: white, bold: false, underline: false}
     type: TextBox
     layout_properties: {grid_position: 'QBMHRG,LJULLI RUZJVE,FRGCYP'}
     data_bindings:
@@ -100,9 +100,9 @@ components:
     layout_properties: {grid_position: 'QBMHRG,LJULLI TWOERD,EDXCCQ'}
   - name: text_box_2
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Username,
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      border: '', enabled: true, foreground: black, visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '#DFFDFF', bold: false, underline: false}
+      background: white, bold: false, underline: false}
     type: TextBox
     layout_properties: {grid_position: 'QBMHRG,LJULLI TWOERD,INKPMZ'}
     data_bindings:
@@ -116,9 +116,9 @@ components:
     layout_properties: {slot: default, grid_position: 'QBMHRG,LJULLI RVDJCO,TGXZHF'}
   - name: text_box_3
     properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Password,
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      border: '', enabled: true, foreground: black, visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '#DFFDFF', bold: false, underline: false}
+      background: white, bold: false, underline: false}
     type: TextBox
     layout_properties: {grid_position: 'QBMHRG,LJULLI RVDJCO,QYNMUG'}
     data_bindings:
@@ -128,10 +128,10 @@ components:
     type: Label
     layout_properties: {grid_position: 'QBMHRG,LJULLI UTUTVB,OUYMFM'}
   - name: text_box_7
-    properties: {align: left, hide_text: true, tooltip: '', placeholder: Retype Password,
-      border: '', enabled: true, foreground: '', visible: true, text: '', font: '',
-      spacing_above: small, type: text, spacing_below: small, italic: false, background: '#DFFDFF',
-      bold: false, underline: false}
+    properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Retype Password,
+      border: '', enabled: true, foreground: black, visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: white, bold: false, underline: false}
     type: TextBox
     layout_properties: {grid_position: 'QBMHRG,LJULLI UTUTVB,CJFWKJ CWIIDG,ZBIBMP'}
   - name: label_17
@@ -148,9 +148,9 @@ components:
     layout_properties: {grid_position: 'QBMHRG,LJULLI RVPAQU,KMVOHA'}
   - name: text_box_4
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Pan,
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      border: '', enabled: true, foreground: black, visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '#DFFDFF', bold: false, underline: false}
+      background: white, bold: false, underline: false}
     type: TextBox
     layout_properties: {grid_position: 'QBMHRG,LJULLI RVPAQU,NYRBDH BPZHTQ,SSOYEU'}
     data_bindings:
@@ -169,9 +169,9 @@ components:
     layout_properties: {grid_position: 'QBMHRG,LJULLI SAEDAX,PECDUQ'}
   - name: text_box_6
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Phone Number,
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      border: '', enabled: true, foreground: black, visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
-      background: '#DFFDFF', bold: false, underline: false}
+      background: white, bold: false, underline: false}
     type: TextBox
     layout_properties: {grid_position: 'QBMHRG,LJULLI SAEDAX,MNYPJE DATAZI,ROHYRG'}
     data_bindings:
@@ -190,9 +190,9 @@ components:
     layout_properties: {grid_position: 'QBMHRG,LJULLI CANMCM,FUNPMI'}
   - name: text_box_5
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Address,
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      border: '', enabled: true, foreground: black, visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '#DFFDFF', bold: false, underline: false}
+      background: white, bold: false, underline: false}
     type: TextBox
     layout_properties: {grid_position: 'QBMHRG,LJULLI CANMCM,XETVER'}
     data_bindings:
@@ -206,9 +206,9 @@ components:
     layout_properties: {grid_position: 'QBMHRG,LJULLI OFIHSF,ZSVTWG'}
   - name: text_box_8
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Aadhar detalis,
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      border: '', enabled: true, foreground: black, visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
-      background: '#DFFDFF', bold: false, underline: false}
+      background: white, bold: false, underline: false}
     type: TextBox
     layout_properties: {grid_position: 'QBMHRG,LJULLI OFIHSF,WOIVWM KYGRAD,NAHVJA'}
     data_bindings:
@@ -226,10 +226,10 @@ components:
     type: Spacer
     layout_properties: {grid_position: 'QBMHRG,LJULLI FRDZCL,CABLKA'}
   - name: button_1
-    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '#000000', visible: true, text: ADD USERS, font_size: 16, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '#0770FF', bold: true, underline: false, icon: ''}
+    properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: white, visible: true, text: Add User, font_size: 16, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: true, background: '#1d86da',
+      bold: true, underline: false, icon: ''}
     type: Button
     layout_properties: {grid_position: 'QBMHRG,LJULLI NPRIVT,GRWXXL'}
     event_bindings: {click: button_1_click}

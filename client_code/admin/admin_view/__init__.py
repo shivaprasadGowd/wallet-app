@@ -286,4 +286,16 @@ class admin_view(admin_viewTemplate):
     def link_1_click(self, **event_args):
      open_form('Home')
 
+    def link_8_copy_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form('admin')
+
+    def link_10_copy_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form('admin.user_support')
+
+    def button_8_click(self, **event_args):
+      """This method is called when the button is clicked"""
+      open_form('Home')
+
    

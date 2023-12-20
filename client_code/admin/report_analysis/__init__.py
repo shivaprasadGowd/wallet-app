@@ -149,4 +149,16 @@ class report_analysis(report_analysisTemplate):
         self.plot_3.title = 'Transaction Proof Distribution'
 
         # Hide other plots if they're visible
+
+    def link_8_copy_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form('admin')
+
+    def link_10_copy_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form('admin.user_support')
+
+    def button_8_click(self, **event_args):
+      """This method is called when the button is clicked"""
+      open_form('Home')
         

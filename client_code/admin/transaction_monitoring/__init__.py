@@ -24,4 +24,16 @@ class transaction_monitoring(transaction_monitoringTemplate):
 
         # Update the repeating panel with the filtered transactions
         self.repeating_panel_1.items = filtered_transactions
+
+    def link_8_copy_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form('admin')
+
+    def link_10_copy_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form('admin.user_support')
+
+    def button_8_click(self, **event_args):
+      """This method is called when the button is clicked"""
+      open_form('Home')
       

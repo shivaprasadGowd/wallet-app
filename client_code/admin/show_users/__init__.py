@@ -37,3 +37,15 @@ class show_users(show_usersTemplate):
         # Handle search button click event to refresh users based on entered username
         username_filter = self.text_box_1.text
         self.refresh_users(username_filter)
+
+    def button_8_click(self, **event_args):
+      """This method is called when the button is clicked"""
+      open_form('Home')
+
+    def link_10_copy_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form('admin.user_support')
+
+    def link_8_copy_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form('admin')

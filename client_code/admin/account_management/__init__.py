@@ -7,13 +7,13 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 class account_management(account_managementTemplate):
-  def __init__(self, **properties):
+  def __init__(self, user= None, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
     self.button_1.visible = False
-       
-
+    self.user =user
+    mail= self.user['email']
+    print(mail)
     self.refresh_users()
 
   def refresh_users(self, username_filter=None):
@@ -37,5 +37,17 @@ class account_management(account_managementTemplate):
         username_filter = self.text_box_1.text
         self.refresh_users(username_filter)
 # Any code you write here will run before the form opens.
+
+  def link_8_copy_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('admin')
+
+  def link_10_copy_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('admin.user_support')
+
+  def button_8_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('Home')
 
  

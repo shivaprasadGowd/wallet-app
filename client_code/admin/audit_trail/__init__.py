@@ -8,7 +8,7 @@ from anvil.tables import app_tables
 from datetime import datetime
 
 class audit_trail(audit_trailTemplate):
-  def __init__(self, user= None, **properties):
+  def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.user = user
@@ -31,5 +31,17 @@ class audit_trail(audit_trailTemplate):
         entered_user = self.text_box_1.text
         filtered_actions = app_tables.actions.search(username=entered_user)
         self.repeating_panel_1.items = filtered_actions
+
+  def link_8_copy_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('admin')
+
+  def link_10_copy_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('admin.user_support')
+
+  def button_8_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('Home')
 
 

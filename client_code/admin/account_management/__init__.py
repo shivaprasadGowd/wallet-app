@@ -38,4 +38,16 @@ class account_management(account_managementTemplate):
         self.refresh_users(username_filter)
 # Any code you write here will run before the form opens.
 
+  def link_8_copy_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('admin')
+
+  def link_10_copy_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('admin.user_support')
+
+  def button_8_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('Home')
+
  

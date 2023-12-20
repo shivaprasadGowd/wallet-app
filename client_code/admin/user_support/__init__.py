@@ -17,3 +17,15 @@ class user_support(user_supportTemplate):
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
     open_form('LOGIN')
+
+  def button_8_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('Home')
+
+  def link_10_copy_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('admin.user_support')
+
+  def link_8_copy_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('admin')

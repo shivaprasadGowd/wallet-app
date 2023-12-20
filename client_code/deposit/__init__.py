@@ -86,7 +86,7 @@ class deposit(depositTemplate):
                     transaction_type="Deposit"
                 )
 
-                # self.label_2.text = "Money added successfully to the account. Remaining limit: {}".format(remaining_limit)
+                self.label_2.text = "Money added successfully to the account."#Remaining limit: {}".format(remaining_limit)
             else:
                 self.label_2.text = "Error: No matching accounts found for the user or invalid account number."
         else:

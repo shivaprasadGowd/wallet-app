@@ -49,44 +49,44 @@ class e_wallet_to_accounts(e_wallet_to_accountsTemplate):
         if selected_symbol == '$':
            if float(user_currency['money_usd']) >= money_value:
                if(float(fore_money['e_money']) < float(money_value)):
-                 alert("insufficient funds")
+                 self.label_3.text = "Insufficient funds"
                else:
                 money_inr_equivalent_string = str(main_money - money_value * conversion_rate_usd_to_inr)
                 if float(money_inr_equivalent_string) < 0:
-                   alert("insfficient funds")
+                   self.label_3.text = "Insufficient funds"
                 else:
                   user_currency['money_usd'] = str(float(user_currency['money_usd']) + money_value)
                   anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_string)
         elif selected_symbol == 'Є':
               if float(user_currency['money_usd']) >= money_value:
                 if(float(fore_money['e_money']) < float(money_value)):
-                 alert("insufficient funds")
+                 self.label_3.text = "Insufficient funds"
                 else:
                   money_inr_equivalent_string = str(main_money - money_value * conversion_rate_euro_to_inr)
                 if float(money_inr_equivalent_string) < 0:
-                   alert("insfficient funds")
+                   self.label_3.text = "Insufficient funds"
                 else:
                   user_currency['money_euro'] = str(float(user_currency['money_euro']) + money_value)
                   anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_string)
         elif selected_symbol == '₣':
               if float(user_currency['money_usd']) >= money_value:
                 if(float(fore_money['e_money']) < float(money_value)):
-                 alert("insufficient funds")
+                 self.label_3.text = "Insufficient funds"
                 else:
                   money_inr_equivalent_string = str(main_money - money_value * conversion_rate_swis_to_inr)
                 if float(money_inr_equivalent_string) < 0:
-                   alert("insfficient funds")
+                   self.label_3.text = "Insufficient funds"
                 else:
                   user_currency['money_swis'] = str(float(user_currency['money_swis']) + money_value)
                   anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_string)
         elif selected_symbol == '₹':
               if float(user_currency['money_usd']) >= money_value:
                 if(float(fore_money['e_money']) < float(money_value)):
-                 alert("insufficient funds")
+                 self.label_3.text = "Insufficient funds"
                 else:
                   money_inr_equivalent_string = str(main_money - money_value * 1)
                 if float(money_inr_equivalent_string) < 0:
-                   alert("insfficient funds")
+                   self.label_3.text = "Insufficient funds"
                 else:
                   user_currency['money_inr'] = str(float(user_currency['money_inr']) + money_value)
                   anvil.server.call('update_all_rows', user_for_emoney, money_inr_equivalent_string)
@@ -101,7 +101,7 @@ class e_wallet_to_accounts(e_wallet_to_accountsTemplate):
                 e_wallet=wallet3,
                 money=f"{selected_symbol}-{money_value}",
                 date=current_datetime,
-                transaction_type="Account to E-wallet"
+                transaction_type="E-wallet to Account"
             )
       open_form('transfer',user=self.user)
 

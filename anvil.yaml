@@ -71,7 +71,10 @@ db_schema:
       admin_ui: {width: 200, order: 17.25}
       type: date
     - name: limit
-      admin_ui: {order: 14.5625, width: 200}
+
+      admin_ui: {order: 14.5, width: 200}
+=======
+      
       type: string
     title: users
   accounts:
